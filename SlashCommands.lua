@@ -393,7 +393,11 @@ function VGuide:ArrowDebug()
     -- Check waypoint
     if VGuideWaypointArrow:HasWaypoint() then
         local wp = VGuideWaypointArrow:GetWaypoint()
-        msg = msg .. "WP=" .. (wp.zone or "?") .. "(" .. (wp.x or "?") .. "," .. (wp.y or "?") .. ")"
+        if type(wp) == "table" then
+            msg = msg .. "WP=" .. (wp.zone or "?") .. "(" .. (wp.x or "?") .. "," .. (wp.y or "?") .. ")"
+        else
+            msg = msg .. "WP=" .. tostring(wp)
+        end
     else
         msg = msg .. "WP=none"
     end

@@ -79,30 +79,52 @@ function VGuideArrow:new(oSettings)
         -- Method 1: AddZWaypoint (zone name, x, y, title)
         if TomTom.AddZWaypoint then
             DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddZWaypoint...|r")
-            obj.tomtomWaypoint = TomTom:AddZWaypoint(zone, x, y, title or "VGuide")
-            success = true
+            local ok, result = pcall(function() return TomTom:AddZWaypoint(zone, x, y, title or "VGuide") end)
+            if ok then
+                obj.tomtomWaypoint = result
+                success = true
+                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+            else
+                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  AddZWaypoint error: " .. tostring(result) .. "|r")
+            end
         end
         
-        -- Method 2: AddWaypoint (continent, zone, x, y, title) - older API
+        -- Method 2: AddWaypoint - older API
         if not success and TomTom.AddWaypoint then
             DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddWaypoint...|r")
-            -- Try with different parameter orders
-            obj.tomtomWaypoint = TomTom:AddWaypoint(x/100, y/100, title or "VGuide")
-            success = true
+            local ok, result = pcall(function() return TomTom:AddWaypoint(x/100, y/100, title or "VGuide") end)
+            if ok then
+                obj.tomtomWaypoint = result
+                success = true
+                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+            else
+                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  AddWaypoint error: " .. tostring(result) .. "|r")
+            end
         end
         
         -- Method 3: SetCustomWaypoint
         if not success and TomTom.SetCustomWaypoint then
             DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying SetCustomWaypoint...|r")
-            obj.tomtomWaypoint = TomTom:SetCustomWaypoint(zone, x, y, title or "VGuide")
-            success = true
+            local ok, result = pcall(function() return TomTom:SetCustomWaypoint(zone, x, y, title or "VGuide") end)
+            if ok then
+                obj.tomtomWaypoint = result
+                success = true
+                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+            else
+                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  SetCustomWaypoint error: " .. tostring(result) .. "|r")
+            end
         end
         
         -- Method 4: SetWaypoint
         if not success and TomTom.SetWaypoint then
             DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying SetWaypoint...|r")
-            TomTom:SetWaypoint(x/100, y/100, title or "VGuide")
-            success = true
+            local ok, result = pcall(function() TomTom:SetWaypoint(x/100, y/100, title or "VGuide") end)
+            if ok then
+                success = true
+                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+            else
+                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  SetWaypoint error: " .. tostring(result) .. "|r")
+            end
         end
         
         if not success then
@@ -114,11 +136,13 @@ function VGuideArrow:new(oSettings)
     
     obj.ClearWaypoint = function(self)
         if obj.tomtomWaypoint and TomTom then
-            if TomTom.RemoveWaypoint then
-                TomTom:RemoveWaypoint(obj.tomtomWaypoint)
-            elseif TomTom.ClearWaypoint then
-                TomTom:ClearWaypoint(obj.tomtomWaypoint)
-            end
+            pcall(function()
+                if TomTom.RemoveWaypoint then
+                    TomTom:RemoveWaypoint(obj.tomtomWaypoint)
+                elseif TomTom.ClearWaypoint then
+                    TomTom:ClearWaypoint(obj.tomtomWaypoint)
+                end
+            end)
         end
         obj.tomtomWaypoint = nil
         obj.waypoint = nil
