@@ -76,27 +76,27 @@ function VGuideArrow:new(oSettings)
         frame:SetFrameStrata("HIGH")
         frame:Hide()
         
-        -- Background (optional, semi-transparent)
+        -- Background (semi-transparent)
         local bg = frame:CreateTexture(nil, "BACKGROUND")
         bg:SetAllPoints()
-        bg:SetTexture(0, 0, 0, 0.3)
+        bg:SetTexture(0, 0, 0, 0.7)
         frame.bg = bg
         
-        -- Arrow texture container (for rotation)
+        -- Arrow container
         local arrowFrame = CreateFrame("Frame", nil, frame)
         arrowFrame:SetWidth(ARROW_SIZE)
         arrowFrame:SetHeight(ARROW_SIZE)
         arrowFrame:SetPoint("TOP", frame, "TOP", 0, -5)
         frame.arrowFrame = arrowFrame
         
-        -- Use WorldMapArrow - the player position arrow from world map
-        -- This is a proper arrow shape that exists in vanilla 1.12.1
+        -- Use a scroll button arrow texture (definitely exists in vanilla)
+        -- This is an upward pointing arrow
         local arrow = arrowFrame:CreateTexture(nil, "ARTWORK")
         arrow:SetWidth(ARROW_SIZE)
         arrow:SetHeight(ARROW_SIZE)
-        arrow:SetTexture("Interface\\WorldMap\\WorldMapArrow")
+        arrow:SetTexture("Interface\\BUTTONS\\UI-ScrollBar-ScrollUpButton-Up")
         arrow:SetAllPoints(arrowFrame)
-        arrow:SetVertexColor(0.2, 1, 0.2, 1)  -- Bright green like TomTom
+        arrow:SetVertexColor(0.3, 1, 0.3, 1)  -- Tint green
         frame.arrow = arrow
         
         -- Title text
