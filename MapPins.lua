@@ -184,20 +184,10 @@ end
 
 -- Hook WorldMapFrame to refresh pins
 function VGuideMapPins:HookWorldMap()
-    -- Store original function
-    local originalShow = WorldMapFrame:GetScript("OnShow")
-    
-    local this = self
-    WorldMapFrame:SetScript("OnShow", function()
-        if originalShow then
-            originalShow()
-        end
-        this:RefreshPins()
-    end)
-    
-    -- Also refresh when map zone changes
+    -- Refresh when map zone changes (not on open)
     local originalUpdate = WorldMapFrame:GetScript("OnUpdate")
     local lastZone = ""
+    local this = self
     WorldMapFrame:SetScript("OnUpdate", function()
         if originalUpdate then
             originalUpdate()
