@@ -233,6 +233,9 @@ function objGuideTable:new(oSettings)
 			{ "s", "Starting Zones" },
 			{ "s", "Later Leveling" },
 			{ "s", "Profession Guides" },
+			{ "s", "Dungeon Guides" },
+			{ "s", "Gold Making" },
+			{ "s", "Reputation Guides" },
 		},
 		lvl2 = {
 			["Later Leveling"] = {
@@ -253,6 +256,56 @@ function objGuideTable:new(oSettings)
 				{ "v", "Tailoring", id = nil },
 				{ "v", "First Aid", id = nil },
 				{ "v", "Fishing", id = nil }
+			},
+			["Dungeon Guides"] = {
+				{ "v", "Ragefire Chasm (13-18)", id = nil },
+				{ "v", "Deadmines (17-26)", id = nil },
+				{ "v", "Wailing Caverns (17-24)", id = nil },
+				{ "v", "Shadowfang Keep (22-30)", id = nil },
+				{ "v", "Blackfathom Deeps (24-32)", id = nil },
+				{ "v", "Gnomeregan (29-38)", id = nil },
+				{ "v", "Scarlet Monastery - Graveyard (28-33)", id = nil },
+				{ "v", "Scarlet Monastery - Library (29-39)", id = nil },
+				{ "v", "Scarlet Monastery - Armory (32-42)", id = nil },
+				{ "v", "Scarlet Monastery - Cathedral (35-45)", id = nil },
+				{ "v", "Razorfen Kraul (29-38)", id = nil },
+				{ "v", "Uldaman (41-51)", id = nil },
+				{ "v", "Zul'Farrak (44-54)", id = nil },
+				{ "v", "Maraudon (46-55)", id = nil },
+				{ "v", "Sunken Temple (50-60)", id = nil },
+				{ "v", "Blackrock Depths (52-60)", id = nil },
+				{ "v", "Lower Blackrock Spire (55-60)", id = nil },
+				{ "v", "Upper Blackrock Spire (58-60)", id = nil },
+				{ "v", "Stratholme (58-60)", id = nil },
+				{ "v", "Scholomance (58-60)", id = nil },
+				{ "v", "Dire Maul East (55-60)", id = nil },
+				{ "v", "Dire Maul West (55-60)", id = nil },
+				{ "v", "Dire Maul North - Tribute (55-60)", id = nil },
+			},
+			["Gold Making"] = {
+				{ "v", "Gold Making - General Tips", id = nil },
+				{ "v", "Auction House Mastery", id = nil },
+				{ "v", "Farming Spots: Level 30-40", id = nil },
+				{ "v", "Farming Spots: Level 40-50", id = nil },
+				{ "v", "Farming Spots: Level 50-60", id = nil },
+				{ "v", "Dungeon Gold Farms", id = nil },
+				{ "v", "Profession Gold Making", id = nil },
+				{ "v", "Vendor Tricks & Flipping", id = nil },
+				{ "v", "Epic Mount Gold Guide", id = nil },
+				{ "v", "Raid Consumables Farming", id = nil },
+			},
+			["Reputation Guides"] = {
+				{ "v", "Argent Dawn Reputation", id = nil },
+				{ "v", "Timbermaw Hold Reputation", id = nil },
+				{ "v", "Cenarion Circle Reputation", id = nil },
+				{ "v", "Thorium Brotherhood Reputation", id = nil },
+				{ "v", "Hydraxian Waterlords Reputation", id = nil },
+				{ "v", "Brood of Nozdormu Reputation", id = nil },
+				{ "v", "Zandalar Tribe Reputation", id = nil },
+				{ "v", "Steamwheedle Cartel / Bloodsail", id = nil },
+				{ "v", "Wintersaber Trainers (Alliance)", id = nil },
+				{ "v", "Home City Reputation", id = nil },
+				{ "v", "Shen'dralar Reputation", id = nil },
 			},
 			["[H] Starting Zones"] = {
 				{ "s", "Orcs & Trolls" },
@@ -451,6 +504,9 @@ function objGuideTable:new(oSettings)
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_003_Horde_40to50))
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_003_Horde_50to60))
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_004_Professions))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_005_Dungeons))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_006_GoldFarming))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_007_Reputation))
 	end
 
 	obj.PrepareNoGuidesTableHorde = function(self, tRace)
@@ -486,6 +542,9 @@ function objGuideTable:new(oSettings)
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_003_Alliance_40to50))
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_003_Alliance_50to60))
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_004_Professions))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_005_Dungeons))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_006_GoldFarming))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_007_Reputation))
 	end
 
 	obj.PrepareNoGuidesTableAlliance = function(self, tRace)
@@ -576,6 +635,18 @@ function objGuideTable:new(oSettings)
 		end
 	end
 
+	obj.DefineDDMDungeonGuidesSubMenu = function(self)
+		xSearchID(obj.TableDDM.lvl2["Dungeon Guides"])
+	end
+
+	obj.DefineDDMGoldMakingSubMenu = function(self)
+		xSearchID(obj.TableDDM.lvl2["Gold Making"])
+	end
+
+	obj.DefineDDMReputationGuidesSubMenu = function(self)
+		xSearchID(obj.TableDDM.lvl2["Reputation Guides"])
+	end
+
 	-- Clear Tables read from .toc
 	obj.ClearInitialTablesContent = function(self)
 		Table_001_Introduction = nil
@@ -596,6 +667,9 @@ function objGuideTable:new(oSettings)
 		Table_003_Alliance_40to50 = nil
 		Table_003_Alliance_50to60 = nil
 		Table_004_Professions = nil
+		Table_005_Dungeons = nil
+		Table_006_GoldFarming = nil
+		Table_007_Reputation = nil
 	end
 
 	-- Query object methods
@@ -631,6 +705,9 @@ function objGuideTable:new(oSettings)
 	obj:DefineDDMProfessionsSubMenu()
 	obj:DefineDDMStartingZonesSubMenu(obj.Faction)
 	obj:DefineDDMLaterLevelingSubMenu(obj.Faction)
+	obj:DefineDDMDungeonGuidesSubMenu()
+	obj:DefineDDMGoldMakingSubMenu()
+	obj:DefineDDMReputationGuidesSubMenu()
 
 	obj:ClearInitialTablesContent()
 

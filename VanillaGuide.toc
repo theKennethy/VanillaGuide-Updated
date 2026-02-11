@@ -46,6 +46,9 @@ GuideTables\Alliance\003_Alliance_30to40.lua
 GuideTables\Alliance\003_Alliance_40to50.lua
 GuideTables\Alliance\003_Alliance_50to60.lua
 GuideTables\004_Professions.lua
+GuideTables\005_Dungeons.lua
+GuideTables\006_GoldFarming.lua
+GuideTables\007_Reputation.lua
 QuestDatabase.lua
 QuestLogTracker.lua
 AutoAdvance.lua

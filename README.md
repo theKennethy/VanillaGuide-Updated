@@ -167,6 +167,72 @@ VanillaGuide is compatible with:
 | 40-50 | Tanaris, Feralas, Hinterlands |
 | 50-60 | Un'Goro, Felwood, Winterspring, EPL/WPL |
 
+### Profession Guides (1-300)
+| Profession | Coverage |
+|------------|----------|
+| Alchemy | Full 1-300 Guide |
+| Blacksmithing | Full 1-300 Guide |
+| Cooking | Alliance & Horde Guides |
+| Enchanting | Full 1-300 Guide |
+| Engineering | Full 1-300 Guide |
+| First Aid | Full 1-300 Guide |
+| Fishing | Full 1-300 Guide |
+| Leatherworking | Full 1-300 Guide |
+| Tailoring | Full 1-300 Guide |
+
+### Dungeon Guides
+Complete guides for all vanilla dungeons with boss strategies, loot, and quest pickups:
+
+| Dungeon | Level Range |
+|---------|-------------|
+| Ragefire Chasm | 13-18 |
+| Deadmines | 17-26 |
+| Wailing Caverns | 17-24 |
+| Shadowfang Keep | 22-30 |
+| Blackfathom Deeps | 24-32 |
+| Gnomeregan | 29-38 |
+| Scarlet Monastery (All Wings) | 28-45 |
+| Razorfen Kraul | 29-38 |
+| Uldaman | 41-51 |
+| Zul'Farrak | 44-54 |
+| Maraudon | 46-55 |
+| Sunken Temple | 50-60 |
+| Blackrock Depths | 52-60 |
+| Lower Blackrock Spire | 55-60 |
+| Upper Blackrock Spire | 58-60 |
+| Stratholme | 58-60 |
+| Scholomance | 58-60 |
+| Dire Maul (All Wings) | 55-60 |
+
+### Gold Making Guides
+| Guide | Description |
+|-------|-------------|
+| General Tips | Fundamentals of gold making |
+| Auction House | Buying/selling strategies |
+| Level 30-40 Spots | Farming locations for mid levels |
+| Level 40-50 Spots | Pre-mount farming |
+| Level 50-60 Spots | Endgame farming |
+| Dungeon Farms | DM, Strat, Mara runs |
+| Profession Gold | Making gold with professions |
+| Vendor Tricks | Limited supply flipping |
+| Epic Mount Guide | Getting your 1000g |
+| Raid Consumables | Farming for raids |
+
+### Reputation Guides
+| Faction | Rewards |
+|---------|---------|
+| Argent Dawn | Head/leg enchants, Naxx attunement |
+| Timbermaw Hold | Transmute recipes, Enchant Agility |
+| Cenarion Circle | AQ gear, Nature Resist |
+| Thorium Brotherhood | Fire Resist gear, Dark Iron crafting |
+| Hydraxian Waterlords | MC attunement (douse runes) |
+| Brood of Nozdormu | AQ40 rings, Scepter quest |
+| Zandalar Tribe | ZG enchants, class gear |
+| Steamwheedle/Bloodsail | Admiral hat, goblin access |
+| Wintersaber Trainers | Frostsaber mount (Alliance) |
+| Home Cities | Ride other race mounts |
+| Shen'dralar | Dire Maul enchants |
+
 ## Contributing
 
 ### Adding/Updating Guides
