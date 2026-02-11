@@ -49,6 +49,8 @@ GuideTables\004_Professions.lua
 GuideTables\005_Dungeons.lua
 GuideTables\006_GoldFarming.lua
 GuideTables\007_Reputation.lua
+GuideTables\008_TalentGuides.lua
+GuideTables\009_GearGuides.lua
 QuestDatabase.lua
 QuestLogTracker.lua
 AutoAdvance.lua

@@ -236,6 +236,8 @@ function objGuideTable:new(oSettings)
 			{ "s", "Dungeon Guides" },
 			{ "s", "Gold Making" },
 			{ "s", "Reputation Guides" },
+			{ "s", "Talent Guides" },
+			{ "s", "Gear Guides" },
 		},
 		lvl2 = {
 			["Later Leveling"] = {
@@ -306,6 +308,38 @@ function objGuideTable:new(oSettings)
 				{ "v", "Wintersaber Trainers (Alliance)", id = nil },
 				{ "v", "Home City Reputation", id = nil },
 				{ "v", "Shen'dralar Reputation", id = nil },
+			},
+			["Talent Guides"] = {
+				{ "v", "Warrior - Fury DPS Talents", id = nil },
+				{ "v", "Warrior - Arms PvP Talents", id = nil },
+				{ "v", "Warrior - Protection Tank Talents", id = nil },
+				{ "v", "Rogue - Combat Swords Talents", id = nil },
+				{ "v", "Rogue - Dagger Talents", id = nil },
+				{ "v", "Mage - Frost Leveling Talents", id = nil },
+				{ "v", "Mage - Fire Raid Talents", id = nil },
+				{ "v", "Priest - Shadow Leveling Talents", id = nil },
+				{ "v", "Priest - Holy Healing Talents", id = nil },
+				{ "v", "Warlock - SM/Ruin Talents", id = nil },
+				{ "v", "Warlock - DS/Ruin Talents", id = nil },
+				{ "v", "Hunter - Marksmanship Talents", id = nil },
+				{ "v", "Hunter - Beast Mastery Talents", id = nil },
+				{ "v", "Druid - Feral Leveling/Tank Talents", id = nil },
+				{ "v", "Druid - Restoration Healing Talents", id = nil },
+				{ "v", "Shaman - Enhancement Leveling Talents", id = nil },
+				{ "v", "Shaman - Restoration Talents", id = nil },
+				{ "v", "Paladin - Holy Healing Talents", id = nil },
+				{ "v", "Paladin - Retribution Leveling Talents", id = nil },
+			},
+			["Gear Guides"] = {
+				{ "v", "Gearing Guide - Overview", id = nil },
+				{ "v", "Warrior - Pre-Raid BiS (Fury DPS)", id = nil },
+				{ "v", "Warrior - Pre-Raid BiS (Prot Tank)", id = nil },
+				{ "v", "Rogue - Pre-Raid BiS", id = nil },
+				{ "v", "Mage - Pre-Raid BiS", id = nil },
+				{ "v", "Healer - Pre-Raid BiS", id = nil },
+				{ "v", "Hunter - Pre-Raid BiS", id = nil },
+				{ "v", "Warlock - Pre-Raid BiS", id = nil },
+				{ "v", "Leveling Gear - Key Upgrades", id = nil },
 			},
 			["[H] Starting Zones"] = {
 				{ "s", "Orcs & Trolls" },
@@ -507,6 +541,8 @@ function objGuideTable:new(oSettings)
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_005_Dungeons))
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_006_GoldFarming))
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_007_Reputation))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_008_TalentGuides))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_009_GearGuides))
 	end
 
 	obj.PrepareNoGuidesTableHorde = function(self, tRace)
@@ -545,6 +581,8 @@ function objGuideTable:new(oSettings)
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_005_Dungeons))
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_006_GoldFarming))
 		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_007_Reputation))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_008_TalentGuides))
+		obj.Guide = TablesMerge(obj.Guide, ProcessTable(Table_009_GearGuides))
 	end
 
 	obj.PrepareNoGuidesTableAlliance = function(self, tRace)
@@ -647,6 +685,14 @@ function objGuideTable:new(oSettings)
 		xSearchID(obj.TableDDM.lvl2["Reputation Guides"])
 	end
 
+	obj.DefineDDMTalentGuidesSubMenu = function(self)
+		xSearchID(obj.TableDDM.lvl2["Talent Guides"])
+	end
+
+	obj.DefineDDMGearGuidesSubMenu = function(self)
+		xSearchID(obj.TableDDM.lvl2["Gear Guides"])
+	end
+
 	-- Clear Tables read from .toc
 	obj.ClearInitialTablesContent = function(self)
 		Table_001_Introduction = nil
@@ -670,6 +716,8 @@ function objGuideTable:new(oSettings)
 		Table_005_Dungeons = nil
 		Table_006_GoldFarming = nil
 		Table_007_Reputation = nil
+		Table_008_TalentGuides = nil
+		Table_009_GearGuides = nil
 	end
 
 	-- Query object methods
@@ -708,6 +756,8 @@ function objGuideTable:new(oSettings)
 	obj:DefineDDMDungeonGuidesSubMenu()
 	obj:DefineDDMGoldMakingSubMenu()
 	obj:DefineDDMReputationGuidesSubMenu()
+	obj:DefineDDMTalentGuidesSubMenu()
+	obj:DefineDDMGearGuidesSubMenu()
 
 	obj:ClearInitialTablesContent()
 
