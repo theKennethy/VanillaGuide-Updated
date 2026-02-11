@@ -194,15 +194,38 @@ function VGuideArrow:new(oSettings)
     frame:SetFrameStrata("HIGH")
     frame:Hide()
     
-    -- Border
-    frame:SetBackdrop({
-        bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
-        edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-        tile = true, tileSize = 16, edgeSize = 16,
-        insets = { left = 4, right = 4, top = 4, bottom = 4 }
-    })
-    frame:SetBackdropColor(0, 0, 0, 0.85)
-    frame:SetBackdropBorderColor(0.4, 0.6, 0.4, 1)
+    -- Background texture (simpler than SetBackdrop for vanilla)
+    local bg = frame:CreateTexture(nil, "BACKGROUND")
+    bg:SetAllPoints(frame)
+    bg:SetTexture(0, 0, 0, 0.85)
+    
+    -- Border textures
+    local borderSize = 2
+    local borderColor = {0.4, 0.6, 0.4, 1}
+    
+    local borderTop = frame:CreateTexture(nil, "BORDER")
+    borderTop:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+    borderTop:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, 0)
+    borderTop:SetHeight(borderSize)
+    borderTop:SetTexture(borderColor[1], borderColor[2], borderColor[3], borderColor[4])
+    
+    local borderBottom = frame:CreateTexture(nil, "BORDER")
+    borderBottom:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 0, 0)
+    borderBottom:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 0)
+    borderBottom:SetHeight(borderSize)
+    borderBottom:SetTexture(borderColor[1], borderColor[2], borderColor[3], borderColor[4])
+    
+    local borderLeft = frame:CreateTexture(nil, "BORDER")
+    borderLeft:SetPoint("TOPLEFT", frame, "TOPLEFT", 0, 0)
+    borderLeft:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 0, 0)
+    borderLeft:SetWidth(borderSize)
+    borderLeft:SetTexture(borderColor[1], borderColor[2], borderColor[3], borderColor[4])
+    
+    local borderRight = frame:CreateTexture(nil, "BORDER")
+    borderRight:SetPoint("TOPRIGHT", frame, "TOPRIGHT", 0, 0)
+    borderRight:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 0, 0)
+    borderRight:SetWidth(borderSize)
+    borderRight:SetTexture(borderColor[1], borderColor[2], borderColor[3], borderColor[4])
     
     -- Title text (zone/quest name)
     local title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
@@ -243,9 +266,8 @@ function VGuideArrow:new(oSettings)
     -- Arrived text (shown when close)
     local arrived = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
     arrived:SetPoint("CENTER", frame, "CENTER", 0, 8)
-    arrived:SetText("ARRIVED!")
+    arrived:SetText("")  -- Start empty, set when arrived
     arrived:SetTextColor(0, 1, 0)
-    arrived:Hide()
     obj.arrivedText = arrived
     
     -- Close button
@@ -281,8 +303,9 @@ function VGuideArrow:new(oSettings)
         if px == 0 and py == 0 then
             obj.directionText:SetText("Open Map")
             obj.directionText:SetTextColor(1, 0.5, 0)
+            obj.directionText:SetAlpha(1)
             obj.distanceText:SetText("for position")
-            obj.arrivedText:Hide()
+            obj.arrivedText:SetText("")
             obj.coordsText:SetText("")
             return
         end
@@ -303,9 +326,10 @@ function VGuideArrow:new(oSettings)
         if not inCorrectZone then
             obj.directionText:SetText("WRONG ZONE")
             obj.directionText:SetTextColor(1, 0.5, 0)
+            obj.directionText:SetAlpha(1)
             obj.distanceText:SetText("Go to: " .. waypointZone)
             obj.distanceText:SetTextColor(1, 0.5, 0)
-            obj.arrivedText:Hide()
+            obj.arrivedText:SetText("")
             obj.coordsText:SetText(string.format("(%d, %d)", obj.waypoint.x, obj.waypoint.y))
             return
         end
@@ -347,14 +371,14 @@ function VGuideArrow:new(oSettings)
         -- Check if arrived (within 15 yards)
         if distance < 15 then
             obj.arrow:Hide()
-            obj.arrivedText:Show()
+            obj.arrivedText:SetText("ARRIVED!")
             obj.distanceText:SetText("")
-            obj.directionText:Hide()
+            obj.directionText:SetAlpha(0)
             obj.coordsText:SetText("")
             return
         else
-            obj.arrivedText:Hide()
-            obj.directionText:Show()
+            obj.arrivedText:SetText("")
+            obj.directionText:SetAlpha(1)
         end
         
         -- Format distance

@@ -247,6 +247,12 @@ VGuideMinimapCompass.labels = {}
 VGuideMinimapCompass.enabled = true
 
 function VGuideMinimapCompass:Create()
+    -- Check if Minimap exists
+    if not Minimap then
+        DEFAULT_CHAT_FRAME:AddMessage("|cFFFF6600VanillaGuide:|r Minimap not available for compass")
+        return
+    end
+    
     -- Create compass direction labels around the minimap (all 8 directions)
     local radius = 72
     local compassData = {
@@ -284,15 +290,17 @@ function VGuideMinimapCompass:Create()
 end
 
 function VGuideMinimapCompass:Show()
+    if not self.labels then return end
     for _, label in ipairs(self.labels) do
-        label:Show()
+        if label then label:SetAlpha(1) end
     end
     self.enabled = true
 end
 
 function VGuideMinimapCompass:Hide()
+    if not self.labels then return end
     for _, label in ipairs(self.labels) do
-        label:Hide()
+        if label then label:SetAlpha(0) end
     end
     self.enabled = false
 end
