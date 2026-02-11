@@ -65,6 +65,7 @@ WaypointArrow.lua
 QuestList.lua
 MapPins.lua
 QuestMapPins.lua
+MinimapObjectives.lua
 NPCDatabase.lua
 NPCModelViewer.lua
 GuideTable.lua

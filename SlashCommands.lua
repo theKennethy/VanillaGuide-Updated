@@ -122,6 +122,13 @@ local options = {
 				get = "IsQuestPinsVisible",
 				set = "ToggleQuestPins"
 			},
+			minimapmobs = {
+				type = 'toggle',
+				name = 'minimapmobs',
+				desc = 'Toggle quest objective dots on minimap (like pfQuest)',
+				get = "IsMinimapObjectivesVisible",
+				set = "ToggleMinimapObjectives"
+			},
 			progress = {
 				type = 'execute',
 				name = 'progress',
@@ -262,6 +269,21 @@ function VGuide:ToggleQuestPins()
         VGuideQuestMapPins:Toggle()
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Quest pins not initialized")
+    end
+end
+
+function VGuide:IsMinimapObjectivesVisible()
+    if VGuideMinimapObjectives then
+        return VGuideMinimapObjectives.enabled
+    end
+    return false
+end
+
+function VGuide:ToggleMinimapObjectives()
+    if VGuideMinimapObjectives then
+        VGuideMinimapObjectives:Toggle()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap objectives not initialized")
     end
 end
 
