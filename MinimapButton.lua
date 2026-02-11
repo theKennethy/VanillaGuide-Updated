@@ -245,6 +245,7 @@ end
 local VGuideMinimapCompass = {}
 VGuideMinimapCompass.labels = {}
 VGuideMinimapCompass.enabled = true
+VGuideMinimapCompass.frame = nil
 
 function VGuideMinimapCompass:Create()
     -- Check if Minimap exists
@@ -253,17 +254,25 @@ function VGuideMinimapCompass:Create()
         return
     end
     
+    -- Create a frame around minimap for compass labels (avoid clipping)
+    local compassFrame = CreateFrame("Frame", "VGuideCompassFrame", UIParent)
+    compassFrame:SetWidth(180)
+    compassFrame:SetHeight(180)
+    compassFrame:SetPoint("CENTER", Minimap, "CENTER", 0, 0)
+    compassFrame:SetFrameStrata("LOW")
+    self.frame = compassFrame
+    
     -- Create compass direction labels around the minimap (all 8 directions)
-    local radius = 72
+    local radius = 80  -- Just outside minimap edge
     local compassData = {
         { dir = "N",  angle = 90,  color = {1, 0.2, 0.2} },      -- North - Red
-        { dir = "NE", angle = 45,  color = {0.6, 0.6, 0.6} },    -- NE - Dim
-        { dir = "E",  angle = 0,   color = {0.8, 0.8, 0.8} },    -- East - Gray
-        { dir = "SE", angle = -45, color = {0.6, 0.6, 0.6} },    -- SE - Dim
-        { dir = "S",  angle = -90, color = {0.8, 0.8, 0.8} },    -- South - Gray
-        { dir = "SW", angle = -135, color = {0.6, 0.6, 0.6} },   -- SW - Dim
-        { dir = "W",  angle = 180, color = {0.8, 0.8, 0.8} },    -- West - Gray
-        { dir = "NW", angle = 135, color = {0.6, 0.6, 0.6} },    -- NW - Dim
+        { dir = "NE", angle = 45,  color = {0.7, 0.7, 0.7} },    -- NE - Gray
+        { dir = "E",  angle = 0,   color = {1, 1, 1} },          -- East - White
+        { dir = "SE", angle = -45, color = {0.7, 0.7, 0.7} },    -- SE - Gray
+        { dir = "S",  angle = -90, color = {1, 1, 1} },          -- South - White
+        { dir = "SW", angle = -135, color = {0.7, 0.7, 0.7} },   -- SW - Gray
+        { dir = "W",  angle = 180, color = {1, 1, 1} },          -- West - White
+        { dir = "NW", angle = 135, color = {0.7, 0.7, 0.7} },    -- NW - Gray
     }
     
     for i, data in ipairs(compassData) do
@@ -271,16 +280,16 @@ function VGuideMinimapCompass:Create()
         local x = math.cos(rad) * radius
         local y = math.sin(rad) * radius
         
-        local label = Minimap:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        label:SetPoint("CENTER", Minimap, "CENTER", x, y)
+        local label = compassFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+        label:SetPoint("CENTER", compassFrame, "CENTER", x, y)
         label:SetText(data.dir)
         label:SetTextColor(data.color[1], data.color[2], data.color[3])
         
-        -- Smaller font for diagonal directions
+        -- Font with outline for visibility
         if string.len(data.dir) > 1 then
-            label:SetFont("Fonts\\FRIZQT__.TTF", 9, "OUTLINE")
+            label:SetFont("Fonts\\FRIZQT__.TTF", 10, "OUTLINE")
         else
-            label:SetFont("Fonts\\FRIZQT__.TTF", 11, "OUTLINE")
+            label:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
         end
         
         self.labels[i] = label
@@ -290,17 +299,15 @@ function VGuideMinimapCompass:Create()
 end
 
 function VGuideMinimapCompass:Show()
-    if not self.labels then return end
-    for _, label in ipairs(self.labels) do
-        if label then label:SetAlpha(1) end
+    if self.frame then
+        self.frame:Show()
     end
     self.enabled = true
 end
 
 function VGuideMinimapCompass:Hide()
-    if not self.labels then return end
-    for _, label in ipairs(self.labels) do
-        if label then label:SetAlpha(0) end
+    if self.frame then
+        self.frame:Hide()
     end
     self.enabled = false
 end
