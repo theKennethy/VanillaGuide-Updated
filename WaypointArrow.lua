@@ -3,13 +3,13 @@
 ------------------
 WaypointArrow.lua
 Authors: VanillaGuide Contributors
-Version: 1.06.0
+Version: 1.07.0
 ------------------------------------------------------
 Description: 
-    Standalone waypoint arrow system for VanillaGuide
-    Displays a TomTom-style arrow pointing toward quest objectives
+    TomTom-style waypoint arrow system for VanillaGuide
+    Uses 108-frame texture atlas for smooth rotation
     Features:
-    - Direction arrow that rotates toward waypoint
+    - Direction arrow with pre-rotated frames (TomTom style)
     - Distance display in yards
     - Zone-aware (only shows when in correct zone)
     - Arrival detection
@@ -22,14 +22,18 @@ VGuideArrow = {}
 VGuideArrow.__index = VGuideArrow
 
 -- Constants
-local ARROW_SIZE = 56
-local UPDATE_INTERVAL = 0.05  -- 20 FPS
+local ARROW_SIZE = 42
+local UPDATE_INTERVAL = 0.03  -- ~30 FPS for smooth rotation
 local ARRIVAL_DISTANCE = 5   -- yards
 local PI = math.pi
 local TWO_PI = PI * 2
 
+-- TomTom-style arrow texture atlas settings
+local ARROW_COLS = 12        -- Columns in texture atlas
+local ARROW_ROWS = 9         -- Rows in texture atlas
+local ARROW_FRAMES = 108     -- Total frames (12 x 9)
+
 -- Yard conversion factor (approximate for WoW vanilla)
--- 1 coordinate unit = ~4.57 yards in most zones
 local YARDS_PER_UNIT = 4.57
 
 function VGuideArrow:new(oSettings)
@@ -55,7 +59,7 @@ function VGuideArrow:new(oSettings)
     local function CreateArrowFrame()
         local frame = CreateFrame("Frame", "VGuideArrowFrame", UIParent)
         frame:SetWidth(ARROW_SIZE + 100)  -- Extra width for text
-        frame:SetHeight(ARROW_SIZE + 40)
+        frame:SetHeight(ARROW_SIZE + 60)  -- Extra height for taller arrow
         frame:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
         frame:SetMovable(true)
         frame:EnableMouse(true)
@@ -85,16 +89,18 @@ function VGuideArrow:new(oSettings)
         -- Arrow container
         local arrowFrame = CreateFrame("Frame", nil, frame)
         arrowFrame:SetWidth(ARROW_SIZE)
-        arrowFrame:SetHeight(ARROW_SIZE)
+        arrowFrame:SetHeight(ARROW_SIZE * 1.3)  -- Slightly taller for arrow shape
         arrowFrame:SetPoint("TOP", frame, "TOP", 0, -5)
         frame.arrowFrame = arrowFrame
         
-        -- Use our custom arrow texture (bundled with addon)
+        -- TomTom-style arrow texture atlas (108 pre-rotated frames)
         local arrow = arrowFrame:CreateTexture(nil, "ARTWORK")
         arrow:SetWidth(ARROW_SIZE)
-        arrow:SetHeight(ARROW_SIZE)
+        arrow:SetHeight(ARROW_SIZE * 1.3)
         arrow:SetTexture("Interface\\AddOns\\VanillaGuide\\Textures\\Arrow")
         arrow:SetAllPoints(arrowFrame)
+        -- Start with first cell (pointing up)
+        arrow:SetTexCoord(0, 1/12, 0, 1/9)
         frame.arrow = arrow
         
         -- Title text
@@ -137,40 +143,36 @@ function VGuideArrow:new(oSettings)
     obj.frame = CreateArrowFrame()
     
     ---------------------------------------
-    -- Arrow Rotation (Lua 5.0 compatible)
+    -- Arrow Rotation (TomTom-style cell selection)
     ---------------------------------------
     
-    -- Rotate arrow to point in direction
+    -- Select arrow frame based on direction
     -- Angle is in radians, 0 = up, positive = clockwise
     obj.SetArrowDirection = function(self, angle)
         -- Normalize angle to 0-2PI
         while angle < 0 do angle = angle + TWO_PI end
         while angle >= TWO_PI do angle = angle - TWO_PI end
         
-        -- The minimap arrow texture is oriented pointing up at angle 0
-        -- We need to rotate the texture coords
-        local sin = math.sin(angle)
-        local cos = math.cos(angle)
+        -- Convert angle to frame index (0 to 107)
+        -- Frame 0 = pointing up (north), increases clockwise
+        local frameIndex = math.floor((angle / TWO_PI) * ARROW_FRAMES + 0.5)
+        if frameIndex >= ARROW_FRAMES then frameIndex = 0 end
         
-        -- Rotate texture coordinates for a simple rotation
-        -- For the built-in arrow, we adjust the SetRotation or use TexCoord
-        local arrow = obj.frame.arrow
+        -- Calculate row and column in texture atlas
+        local col = frameIndex % ARROW_COLS
+        local row = math.floor(frameIndex / ARROW_COLS)
         
-        -- Vanilla WoW 1.12 supports SetTexCoord for rotation
-        -- We'll rotate the corners of the texture
-        local ofs = 0.5  -- center offset
+        -- Calculate texture coordinates
+        local cellWidth = 1 / ARROW_COLS
+        local cellHeight = 1 / ARROW_ROWS
         
-        -- Calculate rotated corner positions
-        local LRx = ofs * cos - (-ofs) * sin + ofs
-        local LRy = ofs * sin + (-ofs) * cos + ofs
-        local LLx = (-ofs) * cos - (-ofs) * sin + ofs
-        local LLy = (-ofs) * sin + (-ofs) * cos + ofs
-        local ULx = (-ofs) * cos - ofs * sin + ofs
-        local ULy = (-ofs) * sin + ofs * cos + ofs
-        local URx = ofs * cos - ofs * sin + ofs
-        local URy = ofs * sin + ofs * cos + ofs
+        local left = col * cellWidth
+        local right = left + cellWidth
+        local top = row * cellHeight
+        local bottom = top + cellHeight
         
-        arrow:SetTexCoord(ULx, ULy, LLx, LLy, URx, URy, LRx, LRy)
+        -- Set texture coordinates to display this cell
+        obj.frame.arrow:SetTexCoord(left, right, top, bottom)
     end
     
     ---------------------------------------
