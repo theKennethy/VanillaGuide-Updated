@@ -3,16 +3,11 @@
 ------------------
 WaypointArrow.lua
 Authors: VanillaGuide Contributors
-Version: 1.07.0
+Version: 1.08.0
 ------------------------------------------------------
 Description: 
-    TomTom-style waypoint arrow system for VanillaGuide
-    Uses 108-frame texture atlas for smooth rotation
-    Features:
-    - Direction arrow with pre-rotated frames (TomTom style)
-    - Distance display in yards
-    - Zone-aware (only shows when in correct zone)
-    - Arrival detection
+    Waypoint arrow system for VanillaGuide
+    Integrates with TomTom if available, otherwise uses built-in arrow
 ------------------------------------------------------
 ]]--
 
@@ -23,12 +18,10 @@ VGuideArrow.__index = VGuideArrow
 
 -- Constants
 local ARROW_SIZE = 56
-local UPDATE_INTERVAL = 0.03  -- ~30 FPS for smooth rotation
-local ARRIVAL_DISTANCE = 5   -- yards
+local UPDATE_INTERVAL = 0.05
+local ARRIVAL_DISTANCE = 10
 local PI = math.pi
 local TWO_PI = PI * 2
-
--- Yard conversion factor (approximate for WoW vanilla)
 local YARDS_PER_UNIT = 4.57
 
 function VGuideArrow:new(oSettings)
@@ -36,87 +29,63 @@ function VGuideArrow:new(oSettings)
     setmetatable(obj, self)
     
     obj.Settings = oSettings
-    
-    -- Current waypoint data
-    obj.waypoint = nil  -- { x, y, zone, title, description }
+    obj.waypoint = nil
     obj.enabled = true
-    
-    -- Timing
     obj.lastUpdate = 0
+    obj.useTomTom = false
+    obj.tomtomWaypoint = nil
     
-    -- Player facing cache
-    obj.playerFacing = 0
+    -- Check if TomTom is available
+    if TomTom and TomTom.AddZWaypoint then
+        obj.useTomTom = true
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r TomTom detected, using TomTom for waypoints")
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Using built-in waypoint arrow")
+    end
     
     ---------------------------------------
-    -- Frame Creation
+    -- Built-in Arrow Frame (when TomTom not available)
     ---------------------------------------
     
-    local function CreateArrowFrame()
+    if not obj.useTomTom then
         local frame = CreateFrame("Frame", "VGuideArrowFrame", UIParent)
-        frame:SetWidth(ARROW_SIZE + 100)  -- Extra width for text
-        frame:SetHeight(ARROW_SIZE + 50)
+        frame:SetWidth(160)
+        frame:SetHeight(80)
         frame:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
         frame:SetMovable(true)
         frame:EnableMouse(true)
         frame:RegisterForDrag("LeftButton")
         frame:SetScript("OnDragStart", function() this:StartMoving() end)
-        frame:SetScript("OnDragStop", function() 
-            this:StopMovingOrSizing()
-            -- Save position
-            local point, _, relPoint, xOfs, yOfs = this:GetPoint()
-            if obj.Settings and obj.Settings.db and obj.Settings.db.char then
-                obj.Settings.db.char.Arrow = obj.Settings.db.char.Arrow or {}
-                obj.Settings.db.char.Arrow.point = point
-                obj.Settings.db.char.Arrow.relPoint = relPoint
-                obj.Settings.db.char.Arrow.x = xOfs
-                obj.Settings.db.char.Arrow.y = yOfs
-            end
-        end)
+        frame:SetScript("OnDragStop", function() this:StopMovingOrSizing() end)
         frame:SetFrameStrata("HIGH")
         frame:Hide()
         
-        -- Background (semi-transparent circle)
+        -- Background
         local bg = frame:CreateTexture(nil, "BACKGROUND")
         bg:SetAllPoints()
-        bg:SetTexture(0, 0, 0, 0.6)
-        frame.bg = bg
+        bg:SetTexture(0, 0, 0, 0.7)
         
-        -- Arrow container
-        local arrowFrame = CreateFrame("Frame", nil, frame)
-        arrowFrame:SetWidth(ARROW_SIZE)
-        arrowFrame:SetHeight(ARROW_SIZE)
-        arrowFrame:SetPoint("TOP", frame, "TOP", 0, -5)
-        frame.arrowFrame = arrowFrame
-        
-        -- Arrow texture - use built-in WoW texture
-        local arrow = arrowFrame:CreateTexture(nil, "ARTWORK")
+        -- Arrow texture
+        local arrow = frame:CreateTexture(nil, "ARTWORK")
         arrow:SetWidth(ARROW_SIZE)
         arrow:SetHeight(ARROW_SIZE)
+        arrow:SetPoint("TOP", frame, "TOP", 0, -5)
         arrow:SetTexture("Interface\\Minimap\\MinimapArrow")
-        arrow:SetAllPoints(arrowFrame)
-        arrow:SetVertexColor(0, 1, 0)  -- Green
+        arrow:SetVertexColor(0, 1, 0)
         frame.arrow = arrow
         
         -- Title text
         local titleText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        titleText:SetPoint("TOP", arrowFrame, "BOTTOM", 0, -2)
-        titleText:SetTextColor(1, 0.82, 0)  -- Gold
-        titleText:SetText("")
+        titleText:SetPoint("TOP", arrow, "BOTTOM", 0, -2)
+        titleText:SetWidth(150)
+        titleText:SetTextColor(1, 0.82, 0)
         frame.titleText = titleText
         
-        -- Distance text
+        -- Distance/status text
         local distText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
         distText:SetPoint("TOP", titleText, "BOTTOM", 0, -2)
-        distText:SetTextColor(0.2, 1, 0.2)  -- Green
-        distText:SetText("")
+        distText:SetTextColor(0.2, 1, 0.2)
         frame.distText = distText
-        
-        -- Status text (wrong zone, arrived, etc.)
-        local statusText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        statusText:SetPoint("TOP", distText, "BOTTOM", 0, -2)
-        statusText:SetTextColor(1, 0.5, 0)  -- Orange
-        statusText:SetText("")
-        frame.statusText = statusText
         
         -- Close button
         local closeBtn = CreateFrame("Button", nil, frame)
@@ -129,32 +98,29 @@ function VGuideArrow:new(oSettings)
         closeBtn:SetScript("OnClick", function()
             obj:ClearWaypoint()
         end)
-        frame.closeBtn = closeBtn
         
-        return frame
+        obj.frame = frame
+        
+        -- Update script
+        frame:SetScript("OnUpdate", function()
+            obj:Update(arg1)
+        end)
     end
     
-    obj.frame = CreateArrowFrame()
-    
     ---------------------------------------
-    -- Arrow Rotation (TexCoord-based)
+    -- Arrow Rotation
     ---------------------------------------
     
-    -- Rotate arrow to point in direction using SetTexCoord
-    -- Angle is in radians, 0 = up, positive = clockwise
     obj.SetArrowDirection = function(self, angle)
-        -- Normalize angle to 0-2PI
+        if obj.useTomTom or not obj.frame then return end
+        
         while angle < 0 do angle = angle + TWO_PI end
         while angle >= TWO_PI do angle = angle - TWO_PI end
         
         local sin = math.sin(angle)
         local cos = math.cos(angle)
         
-        -- The 8-arg SetTexCoord rotates texture around center
-        -- Corner order: UL, LL, UR, LR (each has x,y)
-        -- Original corners at: UL(0,0), LL(0,1), UR(1,0), LR(1,1)
-        -- Rotate around center (0.5, 0.5)
-        
+        -- Rotate texture using 8-arg SetTexCoord
         local ULx = 0.5 - 0.5*cos + 0.5*sin
         local ULy = 0.5 - 0.5*sin - 0.5*cos
         local LLx = 0.5 - 0.5*cos - 0.5*sin
@@ -168,12 +134,10 @@ function VGuideArrow:new(oSettings)
     end
     
     ---------------------------------------
-    -- Distance Calculation
+    -- Position/Zone Helpers
     ---------------------------------------
     
-    -- Get player position (returns x, y in 0-100 scale, or nil if unavailable)
     obj.GetPlayerPosition = function(self)
-        -- SetMapToCurrentZone() first to ensure we're reading right map
         SetMapToCurrentZone()
         local x, y = GetPlayerMapPosition("player")
         if x and y and (x ~= 0 or y ~= 0) then
@@ -182,38 +146,24 @@ function VGuideArrow:new(oSettings)
         return nil, nil
     end
     
-    -- Get current zone name
     obj.GetPlayerZone = function(self)
         return GetRealZoneText() or GetZoneText() or ""
     end
     
-    -- Calculate distance between two points (in yards)
     obj.CalculateDistance = function(self, x1, y1, x2, y2)
         if not x1 or not y1 or not x2 or not y2 then return nil end
         local dx = x2 - x1
         local dy = y2 - y1
-        -- Distance in coordinate units, convert to yards
-        local dist = math.sqrt(dx * dx + dy * dy)
-        return dist * YARDS_PER_UNIT
+        return math.sqrt(dx * dx + dy * dy) * YARDS_PER_UNIT
     end
     
-    -- Calculate angle from player to waypoint (in radians)
-    -- Returns angle where 0 = north, positive = clockwise
     obj.CalculateAngle = function(self, playerX, playerY, waypointX, waypointY)
         if not playerX or not waypointX then return 0 end
-        
         local dx = waypointX - playerX
         local dy = waypointY - playerY
-        
-        -- atan2(dx, -dy) gives angle from north
-        -- Map coords: X increases right (east), Y increases down (south)
-        local angle = math.atan2(dx, -dy)
-        
-        return angle
+        return math.atan2(dx, -dy)
     end
     
-    -- Get player facing direction (radians)
-    -- In WoW: 0 = north, increases counter-clockwise
     obj.GetPlayerFacing = function(self)
         if GetPlayerFacing then
             return GetPlayerFacing()
@@ -222,16 +172,16 @@ function VGuideArrow:new(oSettings)
     end
     
     ---------------------------------------
-    -- Update Logic
+    -- Update (built-in arrow only)
     ---------------------------------------
     
     obj.Update = function(self, elapsed)
+        if obj.useTomTom then return end
         if not obj.enabled or not obj.waypoint then
-            obj.frame:Hide()
+            if obj.frame then obj.frame:Hide() end
             return
         end
         
-        -- Throttle updates
         obj.lastUpdate = obj.lastUpdate + elapsed
         if obj.lastUpdate < UPDATE_INTERVAL then return end
         obj.lastUpdate = 0
@@ -240,27 +190,21 @@ function VGuideArrow:new(oSettings)
         local playerX, playerY = obj:GetPlayerPosition()
         local playerZone = obj:GetPlayerZone()
         
-        -- Check if we're in the right zone
-        local inCorrectZone = (playerZone == wp.zone)
-        
-        if not inCorrectZone then
-            -- Show "wrong zone" message
+        -- Zone check
+        if playerZone ~= wp.zone then
             obj.frame:Show()
             obj.frame.arrow:Hide()
             obj.frame.titleText:SetText(wp.title or "Waypoint")
-            obj.frame.distText:SetText("")
-            obj.frame.statusText:SetText("Go to: " .. (wp.zone or "Unknown"))
+            obj.frame.distText:SetText("|cffff8800Go to: " .. (wp.zone or "?") .. "|r")
             return
         end
         
         if not playerX or not playerY then
-            obj.frame.statusText:SetText("Position unavailable")
+            obj.frame.distText:SetText("Position unavailable")
             return
         end
         
-        -- Calculate distance
         local distance = obj:CalculateDistance(playerX, playerY, wp.x, wp.y)
-        
         if not distance then
             obj.frame:Hide()
             return
@@ -269,59 +213,45 @@ function VGuideArrow:new(oSettings)
         obj.frame:Show()
         obj.frame.arrow:Show()
         
-        -- Check if arrived
         if distance < ARRIVAL_DISTANCE then
             obj.frame.titleText:SetText(wp.title or "Waypoint")
             obj.frame.distText:SetText("|cff00ff00Arrived!|r")
-            obj.frame.statusText:SetText("")
-            obj:SetArrowDirection(0)  -- Point up when arrived
+            obj:SetArrowDirection(0)
             return
         end
         
-        -- Calculate direction
-        local angleToWaypoint = obj:CalculateAngle(playerX, playerY, wp.x, wp.y)
-        local playerFacing = obj:GetPlayerFacing()
-        
-        -- Arrow should point relative to player facing direction
-        -- angleToWaypoint: 0 = north, increases clockwise
-        -- playerFacing: 0 = north, increases counter-clockwise (WoW convention)
-        -- So we add them (since playerFacing is CCW, negating it = adding)
-        local arrowAngle = angleToWaypoint + playerFacing
+        -- Calculate arrow direction
+        local angleToWP = obj:CalculateAngle(playerX, playerY, wp.x, wp.y)
+        local facing = obj:GetPlayerFacing()
+        local arrowAngle = angleToWP + facing
         
         obj:SetArrowDirection(arrowAngle)
         
-        -- Update text
         obj.frame.titleText:SetText(wp.title or "Waypoint")
-        
-        -- Format distance
-        local distStr
         if distance >= 1000 then
-            distStr = string.format("%.1f km", distance / 1000)
+            obj.frame.distText:SetText(string.format("%.1f km", distance / 1000))
         else
-            distStr = string.format("%.0f yards", distance)
+            obj.frame.distText:SetText(string.format("%.0f yards", distance))
         end
-        obj.frame.distText:SetText(distStr)
-        obj.frame.statusText:SetText("")
     end
     
     ---------------------------------------
     -- Public API
     ---------------------------------------
     
-    -- Set a waypoint
     obj.SetWaypoint = function(self, x, y, zone, title, description)
-        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFFVGuide Arrow:|r SetWaypoint called")
-        
-        if not x or not y or not zone then
-            DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000VGuide Arrow:|r Invalid data - x=" .. tostring(x) .. " y=" .. tostring(y) .. " zone=" .. tostring(zone))
-            return false
-        end
+        if not x or not y or not zone then return false end
         
         x = tonumber(x)
         y = tonumber(y)
-        if not x or not y then
-            DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000VGuide Arrow:|r Invalid coordinate values")
-            return false
+        if not x or not y then return false end
+        
+        -- Clear existing TomTom waypoint
+        if obj.useTomTom and obj.tomtomWaypoint then
+            if TomTom.RemoveWaypoint then
+                TomTom:RemoveWaypoint(obj.tomtomWaypoint)
+            end
+            obj.tomtomWaypoint = nil
         end
         
         obj.waypoint = {
@@ -332,75 +262,61 @@ function VGuideArrow:new(oSettings)
             description = description or ""
         }
         
-        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VGuide Arrow:|r Waypoint set to " .. zone .. " (" .. x .. ", " .. y .. ")")
+        -- Use TomTom if available
+        if obj.useTomTom and TomTom.AddZWaypoint then
+            -- TomTom expects coords in 0-100 format
+            obj.tomtomWaypoint = TomTom:AddZWaypoint(zone, x, y, title or "VGuide Waypoint")
+        elseif obj.frame then
+            obj.frame:Show()
+        end
         
-        obj.frame:Show()
-        obj.frame.arrow:Show()
         return true
     end
     
-    -- Clear current waypoint
     obj.ClearWaypoint = function(self)
+        if obj.useTomTom and obj.tomtomWaypoint then
+            if TomTom.RemoveWaypoint then
+                TomTom:RemoveWaypoint(obj.tomtomWaypoint)
+            end
+            obj.tomtomWaypoint = nil
+        end
+        
         obj.waypoint = nil
-        obj.frame:Hide()
-        Dv("    VGuideArrow: Waypoint cleared")
+        if obj.frame then
+            obj.frame:Hide()
+        end
     end
     
-    -- Check if a waypoint is set
     obj.HasWaypoint = function(self)
         return obj.waypoint ~= nil
     end
     
-    -- Get current waypoint
     obj.GetWaypoint = function(self)
         return obj.waypoint
     end
     
-    -- Enable/disable the arrow
     obj.SetEnabled = function(self, enabled)
         obj.enabled = enabled
         if not enabled then
-            obj.frame:Hide()
-        elseif obj.waypoint then
-            obj.frame:Show()
+            obj:ClearWaypoint()
         end
     end
     
-    -- Check if enabled
     obj.IsEnabled = function(self)
         return obj.enabled
     end
     
-    -- Toggle visibility
     obj.Toggle = function(self)
-        if obj.frame:IsShown() then
+        if obj.frame and obj.frame:IsShown() then
             obj.frame:Hide()
-        elseif obj.waypoint then
+        elseif obj.waypoint and obj.frame then
             obj.frame:Show()
         end
     end
     
-    ---------------------------------------
-    -- Frame Scripts
-    ---------------------------------------
-    
-    obj.frame:SetScript("OnUpdate", function()
-        obj:Update(arg1)
-    end)
-    
-    -- Restore saved position
-    obj.RestorePosition = function(self)
-        if obj.Settings and obj.Settings.db and obj.Settings.db.char and obj.Settings.db.char.Arrow then
-            local saved = obj.Settings.db.char.Arrow
-            if saved.point and saved.relPoint then
-                obj.frame:ClearAllPoints()
-                obj.frame:SetPoint(saved.point, UIParent, saved.relPoint, saved.x or 0, saved.y or 0)
-            end
-        end
+    obj.IsTomTomActive = function(self)
+        return obj.useTomTom
     end
-    
-    -- Restore position on creation
-    obj:RestorePosition()
     
     return obj
 end
