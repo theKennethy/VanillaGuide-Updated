@@ -161,7 +161,11 @@ function VGuideArrow:new(oSettings)
             if ok and result then
                 obj.tomtomWaypoint = result
                 success = true
-                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  AddZWaypoint Success!|r")
+                -- SetCrazyArrow points the arrow at this waypoint
+                if TomTom.SetCrazyArrow then
+                    pcall(function() TomTom:SetCrazyArrow(result, title or "VGuide") end)
+                end
             elseif ok then
                 DEFAULT_CHAT_FRAME:AddMessage("|cFFFF6600  AddZWaypoint returned nil|r")
             else
@@ -176,7 +180,11 @@ function VGuideArrow:new(oSettings)
             if ok and result then
                 obj.tomtomWaypoint = result
                 success = true
-                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  AddWaypoint Success!|r")
+                -- SetCrazyArrow points the arrow at this waypoint
+                if TomTom.SetCrazyArrow then
+                    pcall(function() TomTom:SetCrazyArrow(result, title or "VGuide") end)
+                end
             elseif ok then
                 DEFAULT_CHAT_FRAME:AddMessage("|cFFFF6600  AddWaypoint returned nil|r")
             else
@@ -184,26 +192,17 @@ function VGuideArrow:new(oSettings)
             end
         end
         
-        -- Method 3: SetCrazyArrow (some TomTom versions)
-        if not success and TomTom.SetCrazyArrow then
-            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying SetCrazyArrow...|r")
-            local ok, result = pcall(function() return TomTom:SetCrazyArrow(c, z, x, y, title or "VGuide") end)
-            if ok then
-                success = true
-                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
-            else
-                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  SetCrazyArrow error: " .. tostring(result) .. "|r")
-            end
-        end
-        
-        -- Method 4: Try with x/100, y/100 normalization if above failed  
+        -- Method 3: Try with x/100, y/100 normalization if above failed  
         if not success and TomTom.AddWaypoint then
             DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddWaypoint with normalized coords...|r")
             local ok, result = pcall(function() return TomTom:AddWaypoint(c, z, x/100, y/100, title or "VGuide") end)
             if ok and result then
                 obj.tomtomWaypoint = result
                 success = true
-                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Normalized AddWaypoint Success!|r")
+                if TomTom.SetCrazyArrow then
+                    pcall(function() TomTom:SetCrazyArrow(result, title or "VGuide") end)
+                end
             else
                 DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  Normalized AddWaypoint error: " .. tostring(result) .. "|r")
             end
