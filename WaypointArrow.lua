@@ -89,15 +89,14 @@ function VGuideArrow:new(oSettings)
         arrowFrame:SetPoint("TOP", frame, "TOP", 0, -5)
         frame.arrowFrame = arrowFrame
         
-        -- Arrow texture (we'll draw this with multiple textures to form an arrow)
-        -- Using a simple approach with colored textures
+        -- Use WorldMapArrow - the player position arrow from world map
+        -- This is a proper arrow shape that exists in vanilla 1.12.1
         local arrow = arrowFrame:CreateTexture(nil, "ARTWORK")
         arrow:SetWidth(ARROW_SIZE)
         arrow:SetHeight(ARROW_SIZE)
-        -- Use a simple green arrow texture path or create with vertex colors
-        -- For vanilla WoW, we'll use the built-in arrow or create one
-        arrow:SetTexture("Interface\\Minimap\\ROTATING-MINIMAPGUIDEARROW")
+        arrow:SetTexture("Interface\\WorldMap\\WorldMapArrow")
         arrow:SetAllPoints(arrowFrame)
+        arrow:SetVertexColor(0.2, 1, 0.2, 1)  -- Bright green like TomTom
         frame.arrow = arrow
         
         -- Title text
