@@ -1025,36 +1025,80 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 		local normX = nX / 100
 		local normY = nY / 100
 		
-		Dv("    Setting pfQuest waypoint: " .. sZone .. " (" .. nX .. ", " .. nY .. ")")
+		Dv("    Setting pfQuest waypoint: " .. sZone .. " (" .. nX .. ", " .. nY .. ") norm=(" .. normX .. ", " .. normY .. ")")
 		
-		-- Method 1: Use pfQuest's arrow/route system if available
-		if pfQuest and pfQuest.route then
-			-- Clear previous VanillaGuide waypoint
-			obj:ClearPfQuestWaypoint()
-			
-			-- Add new waypoint node
-			if pfQuest.route.AddRouteNode then
-				local success, err = pcall(function()
-					pfQuest.route:AddRouteNode({
+		-- Clear previous waypoint first
+		obj:ClearPfQuestWaypoint()
+		
+		local waypointSet = false
+		
+		-- Method 1: pfQuest-turtle arrow API (most common)
+		if pfQuest and pfQuest.arrow then
+			local success, err = pcall(function()
+				-- pfQuest-turtle stores waypoint data and shows arrow
+				if pfQuest.arrow.waypoint then
+					pfQuest.arrow.waypoint = {
+						m = obj:GetPfQuestMapID(sZone) or 0,
+						f = 0,
 						x = normX,
 						y = normY,
-						zone = sZone,
 						title = title or "VanillaGuide",
-						spawn = tostring(nX) .. ":" .. tostring(nY),
-						texture = "Interface\\AddOns\\pfQuest\\img\\node",
-					})
-				end)
-				if not success then
-					Dv("    pfQuest.route:AddRouteNode failed: " .. tostring(err))
+					}
+					if pfQuest.arrow.frame and pfQuest.arrow.frame.Show then
+						pfQuest.arrow.frame:Show()
+					end
+					waypointSet = true
+					Dv("    Method 1 (pfQuest.arrow.waypoint): Success")
 				end
+			end)
+			if not success then
+				Dv("    Method 1 failed: " .. tostring(err))
 			end
 		end
 		
-		-- Method 2: Use pfMap directly if available
-		if pfMap then
-			-- Get zone/map ID
+		-- Method 2: pfQuest route system with AddNode
+		if not waypointSet and pfQuest and pfQuest.route and pfQuest.route.AddNode then
+			local success, err = pcall(function()
+				local node = {
+					["x"] = normX,
+					["y"] = normY,
+					["m"] = obj:GetPfQuestMapID(sZone) or 0,
+					["f"] = 0,
+					["title"] = title or "VanillaGuide",
+					["addon"] = "VanillaGuide",
+				}
+				pfQuest.route:AddNode(node)
+				waypointSet = true
+				Dv("    Method 2 (pfQuest.route:AddNode): Success")
+			end)
+			if not success then
+				Dv("    Method 2 failed: " .. tostring(err))
+			end
+		end
+		
+		-- Method 3: Direct arrow target (standalone pfQuestArrow)
+		if not waypointSet and pfQuestArrow then
+			local success, err = pcall(function()
+				if pfQuestArrow.SetTarget then
+					pfQuestArrow:SetTarget(normX, normY, obj:GetPfQuestMapID(sZone), title)
+					waypointSet = true
+					Dv("    Method 3 (pfQuestArrow:SetTarget): Success")
+				elseif pfQuestArrow.target ~= nil then
+					pfQuestArrow.target = { x = normX, y = normY, m = obj:GetPfQuestMapID(sZone), title = title }
+					if pfQuestArrow.Show then pfQuestArrow:Show() end
+					waypointSet = true
+					Dv("    Method 3 (pfQuestArrow.target): Success")
+				end
+			end)
+			if not success then
+				Dv("    Method 3 failed: " .. tostring(err))
+			end
+		end
+		
+		-- Method 4: Use pfMap for map markers (doesn't control arrow but shows on map)
+		if pfMap and pfMap.AddNode then
 			local mapFile = obj:GetPfQuestMapFile(sZone)
-			if mapFile and pfMap.AddNode and normX and normY then
+			if mapFile and normX and normY then
 				local nodeName = "VGuide_waypoint"
 				local success, err = pcall(function()
 					pfMap:AddNode({
@@ -1066,23 +1110,25 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 						layer = 4,
 						texture = "Interface\\AddOns\\pfQuest\\img\\node",
 					}, nodeName)
+					Dv("    Method 4 (pfMap:AddNode): Success")
 				end)
 				if not success then
-					Dv("    pfMap:AddNode failed: " .. tostring(err))
+					Dv("    Method 4 failed: " .. tostring(err))
 				end
 			end
 		end
 		
-		-- Method 3: Use pfQuest arrow frame directly if exposed
-		if pfQuestArrow and normX and normY then
-			local success, err = pcall(function()
-				if pfQuestArrow.target then
-					pfQuestArrow.target = { x = normX, y = normY, zone = sZone, title = title }
-				end
-			end)
-			if not success then
-				Dv("    pfQuestArrow.target failed: " .. tostring(err))
+		if not waypointSet then
+			-- Debug: Print available pfQuest API
+			Dv("    WARNING: No waypoint method succeeded. Available APIs:")
+			if pfQuest then
+				Dv("      pfQuest exists")
+				if pfQuest.arrow then Dv("      - pfQuest.arrow exists") end
+				if pfQuest.route then Dv("      - pfQuest.route exists") end
+				if pfQuest.map then Dv("      - pfQuest.map exists") end
 			end
+			if pfQuestArrow then Dv("      pfQuestArrow exists") end
+			if pfMap then Dv("      pfMap exists") end
 		end
 	end
 	
@@ -1095,10 +1141,24 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 			pfMap:DeleteNode("VGuide_waypoint")
 		end
 		
-		-- Clear from route if using that system
-		if pfQuest and pfQuest.route and pfQuest.route.Reset then
-			-- Only clear our specific nodes, not entire route
-			-- This depends on pfQuest version
+		-- Clear pfQuest arrow waypoint
+		if pfQuest and pfQuest.arrow and pfQuest.arrow.waypoint then
+			pfQuest.arrow.waypoint = nil
+			if pfQuest.arrow.frame and pfQuest.arrow.frame.Hide then
+				pfQuest.arrow.frame:Hide()
+			end
+		end
+		
+		-- Clear standalone pfQuestArrow
+		if pfQuestArrow then
+			if pfQuestArrow.ClearTarget then
+				pfQuestArrow:ClearTarget()
+			elseif pfQuestArrow.target then
+				pfQuestArrow.target = nil
+			end
+			if pfQuestArrow.Hide then
+				pfQuestArrow:Hide()
+			end
 		end
 	end
 	
@@ -1206,6 +1266,66 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 		}
 		
 		return zoneToMapFile[zoneName] or zoneName
+	end
+	
+	-- Get pfQuest map ID from zone name (numeric ID for waypoint API)
+	obj.GetPfQuestMapID = function(self, zoneName)
+		if not zoneName then return nil end
+		
+		-- Zone name to numeric map ID (used by pfQuest arrow)
+		local zoneToMapID = {
+			-- Kalimdor
+			["Durotar"] = 1411,
+			["Mulgore"] = 1412,
+			["The Barrens"] = 1413,
+			["Teldrassil"] = 1438,
+			["Darkshore"] = 1439,
+			["Ashenvale"] = 1440,
+			["Thousand Needles"] = 1441,
+			["Stonetalon Mountains"] = 1442,
+			["Desolace"] = 1443,
+			["Feralas"] = 1444,
+			["Dustwallow Marsh"] = 1445,
+			["Tanaris"] = 1446,
+			["Azshara"] = 1447,
+			["Felwood"] = 1448,
+			["Un'Goro Crater"] = 1449,
+			["Moonglade"] = 1450,
+			["Silithus"] = 1451,
+			["Winterspring"] = 1452,
+			["Orgrimmar"] = 1454,
+			["Thunder Bluff"] = 1456,
+			["Darnassus"] = 1457,
+			
+			-- Eastern Kingdoms
+			["Tirisfal Glades"] = 1420,
+			["Silverpine Forest"] = 1421,
+			["Western Plaguelands"] = 1422,
+			["Eastern Plaguelands"] = 1423,
+			["Hillsbrad Foothills"] = 1424,
+			["The Hinterlands"] = 1425,
+			["Dun Morogh"] = 1426,
+			["Searing Gorge"] = 1427,
+			["Burning Steppes"] = 1428,
+			["Elwynn Forest"] = 1429,
+			["Deadwind Pass"] = 1430,
+			["Duskwood"] = 1431,
+			["Loch Modan"] = 1432,
+			["Redridge Mountains"] = 1433,
+			["Stranglethorn Vale"] = 1434,
+			["Swamp of Sorrows"] = 1435,
+			["Westfall"] = 1436,
+			["Wetlands"] = 1437,
+			["Alterac Mountains"] = 1416,
+			["Arathi Highlands"] = 1417,
+			["Badlands"] = 1418,
+			["Blasted Lands"] = 1419,
+			["Ironforge"] = 1455,
+			["Stormwind City"] = 1453,
+			["Undercity"] = 1458,
+		}
+		
+		return zoneToMapID[zoneName]
 	end
 	
 	-------------------------------
