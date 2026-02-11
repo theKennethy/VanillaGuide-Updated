@@ -30,6 +30,14 @@ function VGuideArrow:new(oSettings)
     if TomTom then
         obj.tomtomAvailable = true
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r TomTom detected!")
+        -- Debug: List available TomTom functions
+        local funcs = ""
+        for k, v in pairs(TomTom) do
+            if type(v) == "function" then
+                funcs = funcs .. k .. ", "
+            end
+        end
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF TomTom functions:|r " .. funcs)
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFFFF6600VanillaGuide:|r TomTom not found. Install TomTom for waypoint arrows.")
     end
@@ -39,8 +47,14 @@ function VGuideArrow:new(oSettings)
     ---------------------------------------
     
     obj.SetWaypoint = function(self, x, y, zone, title, description)
-        if not obj.tomtomAvailable then return false end
-        if not x or not y or not zone then return false end
+        if not obj.tomtomAvailable then 
+            DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000VGuide:|r TomTom not available")
+            return false 
+        end
+        if not x or not y or not zone then 
+            DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000VGuide:|r Missing coordinates")
+            return false 
+        end
         
         x = tonumber(x)
         y = tonumber(y)
@@ -57,15 +71,45 @@ function VGuideArrow:new(oSettings)
             description = description or ""
         }
         
-        -- Add TomTom waypoint
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VGuide:|r Setting waypoint: " .. zone .. " (" .. x .. ", " .. y .. ")")
+        
+        -- Try various TomTom API methods
+        local success = false
+        
+        -- Method 1: AddZWaypoint (zone name, x, y, title)
         if TomTom.AddZWaypoint then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddZWaypoint...|r")
             obj.tomtomWaypoint = TomTom:AddZWaypoint(zone, x, y, title or "VGuide")
-        elseif TomTom.AddWaypoint then
-            -- Alternative API
-            obj.tomtomWaypoint = TomTom:AddWaypoint(x, y, title or "VGuide", zone)
+            success = true
         end
         
-        return true
+        -- Method 2: AddWaypoint (continent, zone, x, y, title) - older API
+        if not success and TomTom.AddWaypoint then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddWaypoint...|r")
+            -- Try with different parameter orders
+            obj.tomtomWaypoint = TomTom:AddWaypoint(x/100, y/100, title or "VGuide")
+            success = true
+        end
+        
+        -- Method 3: SetCustomWaypoint
+        if not success and TomTom.SetCustomWaypoint then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying SetCustomWaypoint...|r")
+            obj.tomtomWaypoint = TomTom:SetCustomWaypoint(zone, x, y, title or "VGuide")
+            success = true
+        end
+        
+        -- Method 4: SetWaypoint
+        if not success and TomTom.SetWaypoint then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying SetWaypoint...|r")
+            TomTom:SetWaypoint(x/100, y/100, title or "VGuide")
+            success = true
+        end
+        
+        if not success then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000VGuide:|r No compatible TomTom API found")
+        end
+        
+        return success
     end
     
     obj.ClearWaypoint = function(self)
