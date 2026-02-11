@@ -370,7 +370,6 @@ function VGuideArrow:new(oSettings)
         
         -- Check if arrived (within 15 yards)
         if distance < 15 then
-            obj.arrow:Hide()
             obj.arrivedText:SetText("ARRIVED!")
             obj.distanceText:SetText("")
             obj.directionText:SetAlpha(0)
