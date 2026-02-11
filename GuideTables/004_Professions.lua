@@ -361,4 +361,76 @@ Table_004_Professions = {
 			[22] = { str = "#VIDEO[280-300]# 20x Runecloth Gloves (4x Bolt of Runecloth, 4x Rugged Leather, 1x Rune Thread)" },
 		}
 	},
+
+-----------1-300 First Aid
+	[7010] = {
+		title = "1-300 First Aid",
+		items = {
+			[1] = { str = "#NPC1-300 First Aid#" },
+			[2] = { str = "#DOQUESTAprx. Mats Required#: #VIDEO80#x #TURNINLinen Cloth# #VIDEO80#x #TURNINWool Cloth# " ..
+				"#VIDEO90#x #TURNINSilk Cloth# #VIDEO80#x #TURNINMageweave Cloth# #VIDEO130#x #TURNINRunecloth#" },
+			[3] = { str = "#VIDEO[1-40]# 50x Linen Bandage (1x Linen Cloth) - Train at any First Aid trainer" },
+			[4] = { str = "#VIDEO[40-80]# 50x Heavy Linen Bandage (2x Linen Cloth)" },
+			[5] = { str = "#VIDEO[80-115]# 50x Wool Bandage (1x Wool Cloth)" },
+			[6] = { str = "#VIDEO[115-150]# 50x Heavy Wool Bandage (2x Wool Cloth)" },
+			[7] = { str = "#VIDEO[150]# #ACCEPTExpert First Aid (Horde)#: Buy 'Expert First Aid - Under Wraps' from Balai Lok'Wein in Brackenwall Village, Dustwallow Marsh" },
+			[8] = { str = "#VIDEO[150]# #ACCEPTExpert First Aid (Alliance)#: Buy 'Expert First Aid - Under Wraps' from Deneb Walker in Stromgarde Keep, Arathi Highlands" },
+			[9] = { str = "#VIDEO[150-180]# 45x Silk Bandage (1x Silk Cloth)" },
+			[10] = { str = "#VIDEO[180-210]# 45x Heavy Silk Bandage (2x Silk Cloth)" },
+			[11] = { str = "#VIDEO[210-240]# 40x Mageweave Bandage (1x Mageweave Cloth)" },
+			[12] = { str = "#VIDEO[240-260]# 40x Heavy Mageweave Bandage (2x Mageweave Cloth)" },
+			[13] = { str = "#VIDEO[260]# #ACCEPTArtisan First Aid Quest#: Go to Hammerfall (Horde) or Theramore (Alliance). " ..
+				"Complete the 'Triage' quest from Doctor Gregory Victor (H) or Doctor Gustaf VanHowzen (A). " ..
+				"Save 15 patients before 6 die. Prioritize: Critically Injured > Badly Injured > Injured" },
+			[14] = { str = "#VIDEO[260-290]# 50x Runecloth Bandage (1x Runecloth)" },
+			[15] = { str = "#VIDEO[290-300]# 40x Heavy Runecloth Bandage (2x Runecloth)" },
+			[16] = { str = "#DOQUESTTip#: Heavy Runecloth Bandages are the best bandages in vanilla. " ..
+				"They heal 2000 HP over 8 seconds. Great for all classes, essential for warriors/rogues!" },
+		}
+	},
+
+-----------1-300 Fishing
+	[7011] = {
+		title = "1-300 Fishing",
+		items = {
+			[1] = { str = "#NPC1-300 Fishing#" },
+			[2] = { str = "#DOQUESTEquipment Needed#: Buy a #TURNINFishing Pole# from any trade goods vendor. " ..
+				"Optionally get #TURNINShiny Bauble# (+25 fishing for 10 min) from vendors or fishing supplies." },
+			[3] = { str = "#VIDEO[1-75]# Fish in any starting zone or capital city. #COORDSRecommended#: " ..
+				"Orgrimmar (Valley of Honor pool), Stormwind (Canals), Darnassus, Thunder Bluff" },
+			[4] = { str = "#VIDEO[75]# #ACCEPTJourneyman Fishing#: Train at any fishing trainer for 5 silver" },
+			[5] = { str = "#VIDEO[75-150]# Fish in level 10-20 zones. #COORDSRecommended#: " ..
+				"The Barrens (oases), Westfall, Loch Modan, Darkshore, Silverpine Forest" },
+			[6] = { str = "#VIDEO[150]# #ACCEPTExpert Fishing (Horde)#: Buy 'Expert Fishing - The Bass and You' from Old Man Heming in Booty Bay, STV" },
+			[7] = { str = "#VIDEO[150]# #ACCEPTExpert Fishing (Alliance)#: Buy 'Expert Fishing - The Bass and You' from Old Man Heming in Booty Bay, STV" },
+			[8] = { str = "#VIDEO[150-225]# Fish in level 20-40 zones. #COORDSRecommended#: " ..
+				"Stranglethorn Vale (coast for Oily Blackmouth), Dustwallow Marsh, Hillsbrad Foothills, Arathi Highlands" },
+			[9] = { str = "#VIDEO[225]# #ACCEPTArtisan Fishing Quest#: Go to Dustwallow Marsh. Find Nat Pagle at his house on an island (58.6, 60.0). " ..
+				"Get quest 'Nat Pagle, Angler Extreme'. You need to catch 4 rare fish:" },
+			[10] = { str = "#DOQUEST1. Feralas Ahi# - Verdantis River, Feralas (inside rivers, not coast)" },
+			[11] = { str = "#DOQUEST2. Misty Reed Mahi Mahi# - Misty Reed Strand, Swamp of Sorrows (east coast)" },
+			[12] = { str = "#DOQUEST3. Sar'theris Striker# - Sar'theris Strand, Desolace (west coast)" },
+			[13] = { str = "#DOQUEST4. Savage Coast Blue Sailfin# - Savage Coast, Stranglethorn Vale (south of Grom'gol)" },
+			[14] = { str = "#VIDEO[225-260]# Fish in level 35-50 zones. #COORDSRecommended#: " ..
+				"Tanaris (coast for Stonescale Eel), Feralas, Hinterlands, Azshara" },
+			[15] = { str = "#VIDEO[260-300]# Fish in level 45-60 zones. #COORDSRecommended#: " ..
+				"Azshara (Bay of Storms for essence of water pools), Winterspring (for fish AND raw whitescale salmon), " ..
+				"Eastern Plaguelands (for Plagueland Termites bait)" },
+			[16] = { str = "#DOQUESTValuable Fish to Sell#: " ..
+				"#TURNINOily Blackmouth# (used in Free Action Potion) - Coastal zones level 15-35 " ..
+				"#TURNINFirefin Snapper# (used in Fire Oil) - Coastal zones level 20-40 " ..
+				"#TURNINStonescale Eel# (used in Flask of the Titans) - Coastal zones level 40-55 " ..
+				"#TURNINWinter Squid# (used in food buff) - Azshara, Bay of Storms, winter months only!" },
+			[17] = { str = "#DOQUESTFishing Gear Upgrades#: " ..
+				"#TURNINBig Iron Fishing Pole# (+20) - Rare drop from Shellfish Traps in Desolace " ..
+				"#TURNINNat Pagle's Extreme Angler FC-5000# (+25) - Reward from Artisan quest " ..
+				"#TURNINArcanite Fishing Pole# (+35) - Win the Stranglethorn Fishing Extravaganza (Sundays 2pm)" },
+			[18] = { str = "#DOQUESTLure Upgrades#: " ..
+				"#TURNINShiny Bauble# (+25) - Vendor " ..
+				"#TURNINNightcrawlers# (+50) - Vendor " ..
+				"#TURNINBright Baubles# (+75) - Vendor, requires 100 fishing " ..
+				"#TURNINAquadynamic Fish Lens# (+50) - Engineering crafted " ..
+				"#TURNINAquadynamic Fish Attractor# (+100) - Engineering crafted" },
+		}
+	},
 }

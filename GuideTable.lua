@@ -250,7 +250,9 @@ function objGuideTable:new(oSettings)
 				{ "v", "Enchanting", id = nil },
 				{ "v", "Engineering", id = nil },
 				{ "v", "Leatherworking", id = nil },
-				{ "v", "Tailoring", id = nil }
+				{ "v", "Tailoring", id = nil },
+				{ "v", "First Aid", id = nil },
+				{ "v", "Fishing", id = nil }
 			},
 			["[H] Starting Zones"] = {
 				{ "s", "Orcs & Trolls" },
