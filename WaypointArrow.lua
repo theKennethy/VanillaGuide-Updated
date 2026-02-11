@@ -210,8 +210,8 @@ function VGuideArrow:new(oSettings)
     
     -- Main frame
     local frame = CreateFrame("Frame", "VGuideWaypointFrame", UIParent)
-    frame:SetWidth(120)
-    frame:SetHeight(90)
+    frame:SetWidth(130)
+    frame:SetHeight(110)
     frame:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
     frame:SetMovable(true)
     frame:EnableMouse(true)
@@ -237,10 +237,31 @@ function VGuideArrow:new(oSettings)
     frame:SetBackdropColor(0, 0, 0, 0.8)
     frame:SetBackdropBorderColor(0.6, 0.6, 0.6, 1)
     
+    -- Compass labels
+    local compassN = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    compassN:SetPoint("TOP", frame, "TOP", 0, -20)
+    compassN:SetText("N")
+    compassN:SetTextColor(0.5, 0.5, 0.5)
+    
+    local compassS = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    compassS:SetPoint("BOTTOM", frame, "BOTTOM", 0, 32)
+    compassS:SetText("S")
+    compassS:SetTextColor(0.5, 0.5, 0.5)
+    
+    local compassE = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    compassE:SetPoint("RIGHT", frame, "RIGHT", -8, 5)
+    compassE:SetText("E")
+    compassE:SetTextColor(0.5, 0.5, 0.5)
+    
+    local compassW = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    compassW:SetPoint("LEFT", frame, "LEFT", 8, 5)
+    compassW:SetText("W")
+    compassW:SetTextColor(0.5, 0.5, 0.5)
+    
     -- Arrow texture (green arrow pointing up)
     local arrow = frame:CreateTexture(nil, "ARTWORK")
-    arrow:SetWidth(40)
-    arrow:SetHeight(40)
+    arrow:SetWidth(32)
+    arrow:SetHeight(32)
     arrow:SetPoint("CENTER", frame, "CENTER", 0, 5)
     arrow:SetTexture("Interface\\Minimap\\ROTATING-MINIMAPARROW")
     arrow:SetVertexColor(0.2, 1, 0.2) -- Green tint
@@ -254,6 +275,13 @@ function VGuideArrow:new(oSettings)
     title:SetText("")
     title:SetTextColor(1, 0.82, 0) -- Gold
     obj.titleText = title
+    
+    -- Direction text (N, NE, E, etc.)
+    local dirText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    dirText:SetPoint("CENTER", frame, "CENTER", 0, -18)
+    dirText:SetText("")
+    dirText:SetTextColor(0.8, 0.8, 1)
+    obj.directionText = dirText
     
     -- Distance text
     local dist = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -304,7 +332,10 @@ function VGuideArrow:new(oSettings)
         if obj.lastUpdate < obj.updateInterval then return end
         obj.lastUpdate = 0
         
-        -- Get player position on current map
+        -- Ensure map is set to current zone for accurate position
+        SetMapToCurrentZone()
+        
+        -- Get player position on current map (0-1 range)
         local px, py = GetPlayerMapPosition("player")
         
         -- If player position is 0,0, we're not on the map or in instance
@@ -314,6 +345,7 @@ function VGuideArrow:new(oSettings)
             obj.arrow:Hide()
             obj.arrivedText:Hide()
             obj.etaText:SetText("")
+            obj.directionText:SetText("")
             return
         end
         
@@ -337,6 +369,7 @@ function VGuideArrow:new(oSettings)
             obj.arrow:Hide()
             obj.arrivedText:Hide()
             obj.etaText:SetText("")
+            obj.directionText:SetText("")
             return
         end
         
@@ -382,6 +415,7 @@ function VGuideArrow:new(oSettings)
             obj.distanceText:SetText("0 yards")
             obj.distanceText:SetTextColor(0, 1, 0)
             obj.etaText:SetText("")
+            obj.directionText:SetText("")
             return
         else
             obj.arrivedText:Hide()
@@ -409,24 +443,25 @@ function VGuideArrow:new(oSettings)
         
         -- Calculate angle to waypoint
         -- Map: +x = East, +y = South (y increases downward on map)
-        local angleToWaypoint = atan2(dx, -dy)  -- negative dy because map y is inverted
+        -- This is compass-style: arrow points in absolute map direction
+        -- North = up on the arrow (when waypoint is north of player)
+        local angleToWaypoint = atan2(dx, -dy)
         
-        -- Get player facing (radians, 0 = North, increases counterclockwise)
-        local playerFacing = 0
-        if GetPlayerFacing then
-            playerFacing = GetPlayerFacing()
-        end
+        -- Rotate the arrow texture (compass style - no player facing adjustment)
+        obj.RotateArrow(obj.arrow, angleToWaypoint)
         
-        -- Calculate rotation needed for arrow
-        -- Arrow points in direction of waypoint relative to camera/player facing
-        local rotation = angleToWaypoint - playerFacing
+        -- Calculate compass direction text
+        -- Normalize angle to 0-2PI
+        local normAngle = angleToWaypoint
+        while normAngle < 0 do normAngle = normAngle + TWO_PI end
+        while normAngle >= TWO_PI do normAngle = normAngle - TWO_PI end
         
-        -- Normalize to 0 to 2*PI
-        while rotation < 0 do rotation = rotation + TWO_PI end
-        while rotation >= TWO_PI do rotation = rotation - TWO_PI end
-        
-        -- Rotate the arrow texture
-        obj.RotateArrow(obj.arrow, rotation)
+        -- Convert to compass direction (8 directions)
+        local dirIndex = math.floor((normAngle + PI/8) / (PI/4)) + 1
+        if dirIndex > 8 then dirIndex = 1 end
+        local directions = {"N", "NE", "E", "SE", "S", "SW", "W", "NW"}
+        local dirName = directions[dirIndex] or "?"
+        obj.directionText:SetText("Go " .. dirName)
         
         -- ETA calculation (running ~7 yards/sec, mounted ~14 yards/sec)
         local speed = 7
