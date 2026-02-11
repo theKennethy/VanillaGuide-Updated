@@ -219,11 +219,21 @@ function VGuideArrow:new(oSettings)
         return angle
     end
     
-    -- Get player facing direction (radians, 0 = north)
-    obj.GetPlayerFacing = function(self)
+    -- Get camera/player facing direction (radians, 0 = north)
+    -- Uses minimap rotation which follows camera when "rotate minimap" is on
+    obj.GetCameraFacing = function(self)
+        -- Try to get minimap rotation (follows camera)
+        local minimapRotation = 0
+        if MinimapCompassTexture and MinimapCompassTexture.IsVisible and MinimapCompassTexture:IsVisible() then
+            -- Minimap is rotating with camera
+            minimapRotation = MiniMapCompassRing and MiniMapCompassRing:GetFacing() or 0
+        end
+        
+        -- Fallback to GetPlayerFacing (works when rotate minimap is off)
         local facing = GetPlayerFacing and GetPlayerFacing() or 0
+        
         -- GetPlayerFacing returns radians where 0 = north, increases counter-clockwise
-        -- We need to negate for our clockwise system
+        -- Negate for our clockwise system
         return -facing
     end
     
@@ -286,10 +296,10 @@ function VGuideArrow:new(oSettings)
         
         -- Calculate direction
         local angleToWaypoint = obj:CalculateAngle(playerX, playerY, wp.x, wp.y)
-        local playerFacing = obj:GetPlayerFacing()
+        local cameraFacing = obj:GetCameraFacing()
         
-        -- Arrow should point relative to player facing
-        local arrowAngle = angleToWaypoint - playerFacing
+        -- Arrow should point relative to camera/player facing
+        local arrowAngle = angleToWaypoint - cameraFacing
         
         obj:SetArrowDirection(arrowAngle)
         
