@@ -22,16 +22,11 @@ VGuideArrow = {}
 VGuideArrow.__index = VGuideArrow
 
 -- Constants
-local ARROW_SIZE = 42
+local ARROW_SIZE = 56
 local UPDATE_INTERVAL = 0.03  -- ~30 FPS for smooth rotation
 local ARRIVAL_DISTANCE = 5   -- yards
 local PI = math.pi
 local TWO_PI = PI * 2
-
--- TomTom-style arrow texture atlas settings
-local ARROW_COLS = 12        -- Columns in texture atlas
-local ARROW_ROWS = 9         -- Rows in texture atlas
-local ARROW_FRAMES = 108     -- Total frames (12 x 9)
 
 -- Yard conversion factor (approximate for WoW vanilla)
 local YARDS_PER_UNIT = 4.57
@@ -59,7 +54,7 @@ function VGuideArrow:new(oSettings)
     local function CreateArrowFrame()
         local frame = CreateFrame("Frame", "VGuideArrowFrame", UIParent)
         frame:SetWidth(ARROW_SIZE + 100)  -- Extra width for text
-        frame:SetHeight(ARROW_SIZE + 60)  -- Extra height for taller arrow
+        frame:SetHeight(ARROW_SIZE + 50)
         frame:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
         frame:SetMovable(true)
         frame:EnableMouse(true)
@@ -89,18 +84,27 @@ function VGuideArrow:new(oSettings)
         -- Arrow container
         local arrowFrame = CreateFrame("Frame", nil, frame)
         arrowFrame:SetWidth(ARROW_SIZE)
-        arrowFrame:SetHeight(ARROW_SIZE * 1.3)  -- Slightly taller for arrow shape
+        arrowFrame:SetHeight(ARROW_SIZE)
         arrowFrame:SetPoint("TOP", frame, "TOP", 0, -5)
         frame.arrowFrame = arrowFrame
         
-        -- TomTom-style arrow texture atlas (108 pre-rotated frames)
+        -- Arrow texture - try custom first, fallback to built-in
         local arrow = arrowFrame:CreateTexture(nil, "ARTWORK")
         arrow:SetWidth(ARROW_SIZE)
-        arrow:SetHeight(ARROW_SIZE * 1.3)
+        arrow:SetHeight(ARROW_SIZE)
+        
+        -- Try to set custom texture (bundled with addon)
         arrow:SetTexture("Interface\\AddOns\\VanillaGuide\\Textures\\Arrow")
+        
+        -- If texture didn't load (GetTexture returns nil), use fallback
+        if not arrow:GetTexture() then
+            -- Fallback: Use minimap tracking arrow
+            arrow:SetTexture("Interface\\Minimap\\ROTATING-MINIMAPGUIDEARROW")
+            DEFAULT_CHAT_FRAME:AddMessage("|cFFFFFF00VG Arrow:|r Using fallback texture")
+        end
+        
         arrow:SetAllPoints(arrowFrame)
-        -- Start with first cell (pointing up)
-        arrow:SetTexCoord(0, 1/12, 0, 1/9)
+        arrow:SetVertexColor(0.2, 1, 0.2)  -- Green tint
         frame.arrow = arrow
         
         -- Title text
@@ -143,36 +147,34 @@ function VGuideArrow:new(oSettings)
     obj.frame = CreateArrowFrame()
     
     ---------------------------------------
-    -- Arrow Rotation (TomTom-style cell selection)
+    -- Arrow Rotation (TexCoord-based)
     ---------------------------------------
     
-    -- Select arrow frame based on direction
+    -- Rotate arrow to point in direction using SetTexCoord
     -- Angle is in radians, 0 = up, positive = clockwise
     obj.SetArrowDirection = function(self, angle)
         -- Normalize angle to 0-2PI
         while angle < 0 do angle = angle + TWO_PI end
         while angle >= TWO_PI do angle = angle - TWO_PI end
         
-        -- Convert angle to frame index (0 to 107)
-        -- Frame 0 = pointing up (north), increases clockwise
-        local frameIndex = math.floor((angle / TWO_PI) * ARROW_FRAMES + 0.5)
-        if frameIndex >= ARROW_FRAMES then frameIndex = 0 end
+        local sin = math.sin(angle)
+        local cos = math.cos(angle)
         
-        -- Calculate row and column in texture atlas
-        local col = frameIndex % ARROW_COLS
-        local row = math.floor(frameIndex / ARROW_COLS)
+        -- Rotate texture coordinates around center (0.5, 0.5)
+        local ofs = 0.5
         
-        -- Calculate texture coordinates
-        local cellWidth = 1 / ARROW_COLS
-        local cellHeight = 1 / ARROW_ROWS
+        -- Calculate rotated corner positions for SetTexCoord
+        -- SetTexCoord expects: ULx, ULy, LLx, LLy, URx, URy, LRx, LRy
+        local ULx = ofs - ofs * cos - ofs * sin
+        local ULy = ofs + ofs * sin - ofs * cos
+        local LLx = ofs - ofs * cos + ofs * sin
+        local LLy = ofs + ofs * sin + ofs * cos
+        local URx = ofs + ofs * cos - ofs * sin
+        local URy = ofs - ofs * sin - ofs * cos
+        local LRx = ofs + ofs * cos + ofs * sin
+        local LRy = ofs - ofs * sin + ofs * cos
         
-        local left = col * cellWidth
-        local right = left + cellWidth
-        local top = row * cellHeight
-        local bottom = top + cellHeight
-        
-        -- Set texture coordinates to display this cell
-        obj.frame.arrow:SetTexCoord(left, right, top, bottom)
+        obj.frame.arrow:SetTexCoord(ULx, ULy, LLx, LLy, URx, URy, LRx, LRy)
     end
     
     ---------------------------------------
@@ -325,15 +327,17 @@ function VGuideArrow:new(oSettings)
     
     -- Set a waypoint
     obj.SetWaypoint = function(self, x, y, zone, title, description)
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFFVGuide Arrow:|r SetWaypoint called")
+        
         if not x or not y or not zone then
-            Dv("    VGuideArrow: Invalid waypoint data")
+            DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000VGuide Arrow:|r Invalid data - x=" .. tostring(x) .. " y=" .. tostring(y) .. " zone=" .. tostring(zone))
             return false
         end
         
         x = tonumber(x)
         y = tonumber(y)
         if not x or not y then
-            Dv("    VGuideArrow: Invalid coordinate values")
+            DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000VGuide Arrow:|r Invalid coordinate values")
             return false
         end
         
@@ -345,9 +349,10 @@ function VGuideArrow:new(oSettings)
             description = description or ""
         }
         
-        Dv("    VGuideArrow: Set waypoint to " .. zone .. " (" .. x .. ", " .. y .. ") - " .. (title or ""))
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VGuide Arrow:|r Waypoint set to " .. zone .. " (" .. x .. ", " .. y .. ")")
         
         obj.frame:Show()
+        obj.frame.arrow:Show()
         return true
     end
     
