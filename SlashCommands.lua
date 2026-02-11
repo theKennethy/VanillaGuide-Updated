@@ -54,6 +54,19 @@ local options = {
 				desc = 'Mark current step as completed',
 				func = "MarkComplete"
 			},
+			quests = {
+				type = 'execute',
+				name = 'quests',
+				desc = 'Toggle quest list pop-out',
+				func = "ToggleQuestList"
+			},
+			arrow = {
+				type = 'toggle',
+				name = 'arrow',
+				desc = 'Toggle waypoint arrow visibility',
+				get = "IsArrowVisible",
+				set = "ToggleArrow"
+			},
 			minimap = {
 				type = 'toggle',
 				name = 'minimap',
@@ -192,6 +205,35 @@ function VGuide:ResetProgress()
         VGuideProgress:ResetGuideProgress(guideID)
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Progress tracker not initialized")
+    end
+end
+
+function VGuide:ToggleQuestList()
+    if VGuideQuestListObj then
+        VGuideQuestListObj:Toggle()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Quest list not initialized")
+    end
+end
+
+function VGuide:IsArrowVisible()
+    if VGuideWaypointArrow then
+        return VGuideWaypointArrow:IsEnabled()
+    end
+    return false
+end
+
+function VGuide:ToggleArrow()
+    if VGuideWaypointArrow then
+        local enabled = VGuideWaypointArrow:IsEnabled()
+        VGuideWaypointArrow:SetEnabled(not enabled)
+        if enabled then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Waypoint arrow disabled")
+        else
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Waypoint arrow enabled")
+        end
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Waypoint arrow not initialized")
     end
 end
 

@@ -211,6 +211,11 @@ function VGuide:OnEnable(first)
     VGuideWaypointArrow = VGuideArrow:new(self.Settings)
     Di("      - Waypoint Arrow initialized")
 
+    -- Initialize Quest List system
+    VGuideQuestListObj = VGuideQuestList:new(self.Settings, self.Display)
+    VGuideQuestListObj:Initialize()
+    Di("      - Quest List initialized")
+
     -- Register for quest log events to update quest status indicators
     self:RegisterEvent("QUEST_LOG_UPDATE", "OnQuestLogUpdate")
     self:RegisterEvent("UNIT_QUEST_LOG_CHANGED", "OnQuestLogUpdate")

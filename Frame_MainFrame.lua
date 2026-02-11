@@ -407,6 +407,9 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 	-- ChangeView Button
 		obj.tWidgets.button_ChangeViewButton = Render_Button(obj.tWidgets.frame_MainFrame, nil, 16, 16, tTexture.B_FLASH)
 		obj.tWidgets.button_ChangeViewButton:SetPoint("TOPRIGHT", obj.tWidgets.frame_MainFrame, "TOPRIGHT", -105, -5)
+	-- Quest List Button (pop-out)
+		obj.tWidgets.button_QuestListButton = Render_Button(obj.tWidgets.frame_MainFrame, nil, 16, 16, tTexture.B_DETAILS)
+		obj.tWidgets.button_QuestListButton:SetPoint("TOPRIGHT", obj.tWidgets.frame_MainFrame, "TOPRIGHT", -85, -5)
     -- Prev and Next Guide Buttons
 		obj.tWidgets.button_PrevGuideButton = Render_Button(obj.tWidgets.frame_MainFrame, nil, 25, 16, tTexture.B_DOUBLEARROWLEFT)
 		obj.tWidgets.button_PrevGuideButton:SetPoint("BOTTOMRIGHT", obj.tWidgets.frame_MainFrame, "BOTTOMRIGHT", -75, 7)
@@ -513,6 +516,21 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 		  else
 			fAbout:Show()
 		  end
+		end)
+	-- Quest List Button
+		obj.tWidgets.button_QuestListButton:SetScript("OnClick", function()
+			if VGuideQuestListObj then
+				VGuideQuestListObj:Toggle()
+			end
+		end)
+		obj.tWidgets.button_QuestListButton:SetScript("OnEnter", function()
+			GameTooltip:SetOwner(this, "ANCHOR_BOTTOMRIGHT")
+			GameTooltip:SetText("Quest List")
+			GameTooltip:AddLine("Show active quests from guide", 1, 1, 1)
+			GameTooltip:Show()
+		end)
+		obj.tWidgets.button_QuestListButton:SetScript("OnLeave", function()
+			GameTooltip:Hide()
 		end)
 	-- Change View Button
 		obj.tWidgets.button_ChangeViewButton:SetScript("OnClick", function()

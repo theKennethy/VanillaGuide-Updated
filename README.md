@@ -30,6 +30,14 @@ A powerful in-game leveling guide addon for World of Warcraft 1.12.1 (Vanilla) w
   - `[!]` - Quest ready to turn in (100% complete)
 - **Color Coding** - Visual feedback for quest status
 
+### Quest List Pop-Out
+- **Active Quest View** - Shows all guide quests currently in your quest log
+- **Progress Display** - See completion percentage for each quest
+- **Click to Navigate** - Click any quest to jump to that step and set waypoint
+- **Draggable Window** - Position the quest list anywhere on screen
+- **Toggle Button** - Quick access from the main guide window
+- **Slash Command** - Use `/vguide quests` to toggle
+
 ### Auto-Advance
 Automatically progress through the guide when you:
 - **Accept** a quest
@@ -124,6 +132,8 @@ These addons enhance VanillaGuide but are **not required**:
 | `/vguide suggest` | Switch to guide for your level |
 | `/vguide skip` | Skip to next incomplete step |
 | `/vguide complete` | Mark current step as completed |
+| `/vguide quests` | Toggle quest list pop-out |
+| `/vguide arrow` | Toggle waypoint arrow |
 | `/vguide minimap` | Toggle minimap button visibility |
 | `/vguide resetminimap` | Reset minimap button position |
 | `/vguide progress` | Show current guide progress |
@@ -146,10 +156,9 @@ Access settings via the gear icon or `/vguide options`:
 - Lock/unlock window position
 - Show/hide on login
 
-#### pfQuest Settings
-- Enable/disable waypoint arrows
-- Enable/disable map markers
-- Auto-clear waypoints on step change
+#### Arrow Settings
+- Enable/disable waypoint arrow
+- Arrow position (draggable)
 
 #### Auto-Advance Settings
 - Enable/disable auto-advance
