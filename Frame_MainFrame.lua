@@ -1008,7 +1008,18 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 	
 	-- Set waypoint using pfQuest
 	obj.SetPfQuestWaypoint = function(self, nX, nY, sZone, title, description)
-		if not nX or not nY or not sZone then return end
+		if not nX or not nY or not sZone then 
+			Dv("    SetPfQuestWaypoint: Missing coordinates (x=" .. tostring(nX) .. ", y=" .. tostring(nY) .. ", zone=" .. tostring(sZone) .. ")")
+			return 
+		end
+		
+		-- Ensure coordinates are numbers
+		nX = tonumber(nX)
+		nY = tonumber(nY)
+		if not nX or not nY then
+			Dv("    SetPfQuestWaypoint: Invalid coordinate values")
+			return
+		end
 		
 		-- Normalize coordinates (VanillaGuide uses 0-100, pfQuest uses 0-1)
 		local normX = nX / 100
@@ -1023,14 +1034,19 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 			
 			-- Add new waypoint node
 			if pfQuest.route.AddRouteNode then
-				pfQuest.route:AddRouteNode({
-					x = normX,
-					y = normY,
-					zone = sZone,
-					title = title or "VanillaGuide",
-					spawn = nX .. ":" .. nY,
-					texture = "Interface\\AddOns\\pfQuest\\img\\node",
-				})
+				local success, err = pcall(function()
+					pfQuest.route:AddRouteNode({
+						x = normX,
+						y = normY,
+						zone = sZone,
+						title = title or "VanillaGuide",
+						spawn = tostring(nX) .. ":" .. tostring(nY),
+						texture = "Interface\\AddOns\\pfQuest\\img\\node",
+					})
+				end)
+				if not success then
+					Dv("    pfQuest.route:AddRouteNode failed: " .. tostring(err))
+				end
 			end
 		end
 		
@@ -1038,24 +1054,34 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 		if pfMap then
 			-- Get zone/map ID
 			local mapFile = obj:GetPfQuestMapFile(sZone)
-			if mapFile and pfMap.AddNode then
+			if mapFile and pfMap.AddNode and normX and normY then
 				local nodeName = "VGuide_waypoint"
-				pfMap:AddNode({
-					addon = "VanillaGuide",
-					title = title or "VanillaGuide Waypoint",
-					coord = { normX, normY },
-					zone = sZone,
-					mapfile = mapFile,
-					layer = 4,
-					texture = "Interface\\AddOns\\pfQuest\\img\\node",
-				}, nodeName)
+				local success, err = pcall(function()
+					pfMap:AddNode({
+						addon = "VanillaGuide",
+						title = title or "VanillaGuide Waypoint",
+						coord = { normX, normY },
+						zone = sZone,
+						mapfile = mapFile,
+						layer = 4,
+						texture = "Interface\\AddOns\\pfQuest\\img\\node",
+					}, nodeName)
+				end)
+				if not success then
+					Dv("    pfMap:AddNode failed: " .. tostring(err))
+				end
 			end
 		end
 		
 		-- Method 3: Use pfQuest arrow frame directly if exposed
-		if pfQuestArrow then
-			if pfQuestArrow.target then
-				pfQuestArrow.target = { x = normX, y = normY, zone = sZone, title = title }
+		if pfQuestArrow and normX and normY then
+			local success, err = pcall(function()
+				if pfQuestArrow.target then
+					pfQuestArrow.target = { x = normX, y = normY, zone = sZone, title = title }
+				end
+			end)
+			if not success then
+				Dv("    pfQuestArrow.target failed: " .. tostring(err))
 			end
 		end
 	end
