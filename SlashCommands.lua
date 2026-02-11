@@ -126,6 +126,18 @@ local options = {
 				desc = 'Reset progress for current guide',
 				func = "ResetProgress"
 			},
+			testarrow = {
+				type = 'execute',
+				name = 'testarrow',
+				desc = 'Test waypoint arrow with current location',
+				func = "TestArrow"
+			},
+			arrowdebug = {
+				type = 'execute',
+				name = 'arrowdebug',
+				desc = 'Show arrow debug info',
+				func = "ArrowDebug"
+			},
 	},
 }
 
@@ -323,6 +335,80 @@ function VGuide:ToggleNPCViewer()
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r NPC Viewer not initialized")
     end
+end
+
+function VGuide:TestArrow()
+    if not VGuideWaypointArrow then
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Waypoint arrow not initialized")
+        return
+    end
+    
+    -- Get current player position
+    SetMapToCurrentZone()
+    local x, y = GetPlayerMapPosition("player")
+    local zone = GetRealZoneText() or GetZoneText() or "Unknown"
+    
+    if not x or x == 0 then
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Cannot get player position")
+        return
+    end
+    
+    -- Set waypoint 10 units north of player
+    local testX = x * 100
+    local testY = (y * 100) - 5  -- 5 units north
+    
+    if testY < 0 then testY = 5 end
+    
+    VGuideWaypointArrow:SetEnabled(true)
+    local success = VGuideWaypointArrow:SetWaypoint(testX, testY, zone, "Test Waypoint", "Walk north to test")
+    
+    if success then
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Test waypoint set! Walk north to find it.")
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Zone: " .. zone .. " (".. testX .. ", " .. testY .. ")")
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Failed to set test waypoint")
+    end
+end
+
+function VGuide:ArrowDebug()
+    if not VGuideWaypointArrow then
+        DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000Arrow Error:|r VGuideWaypointArrow is nil")
+        return
+    end
+    
+    local msg = "|cFF00FF00Arrow Debug:|r "
+    
+    -- Check enabled status
+    local enabled = VGuideWaypointArrow:IsEnabled()
+    msg = msg .. "Enabled=" .. tostring(enabled) .. ", "
+    
+    -- Check frame
+    if VGuideWaypointArrow.frame then
+        local visible = VGuideWaypointArrow.frame:IsVisible()
+        msg = msg .. "FrameVisible=" .. tostring(visible) .. ", "
+    else
+        msg = msg .. "Frame=nil, "
+    end
+    
+    -- Check waypoint
+    if VGuideWaypointArrow:HasWaypoint() then
+        local wp = VGuideWaypointArrow:GetWaypoint()
+        msg = msg .. "WP=" .. (wp.zone or "?") .. "(" .. (wp.x or "?") .. "," .. (wp.y or "?") .. ")"
+    else
+        msg = msg .. "WP=none"
+    end
+    
+    DEFAULT_CHAT_FRAME:AddMessage(msg)
+    
+    -- Check player position
+    SetMapToCurrentZone()
+    local x, y = GetPlayerMapPosition("player")
+    local zone = GetRealZoneText() or "?"
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00Player:|r " .. zone .. " (" .. (x and x*100 or "?") .. ", " .. (y and y*100 or "?") .. ")")
+    
+    -- Check GetPlayerFacing
+    local facing = GetPlayerFacing and GetPlayerFacing() or "N/A"
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00Facing:|r " .. tostring(facing))
 end
 
 return VGuide
