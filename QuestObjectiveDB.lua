@@ -130,6 +130,7 @@ VGuideQuestObjectives.Data = {
     [826] = { -- Zalazane
         name = "Zalazane",
         zone = "Durotar",
+        start = { npc = "Master Gadrin", x = 55.9, y = 74.6 },
         objectives = {
             { type = "kill", name = "Zalazane", spawns = {{67.1, 86.9}} },
         }
@@ -138,6 +139,7 @@ VGuideQuestObjectives.Data = {
     [834] = { -- Winds in the Desert
         name = "Winds in the Desert",
         zone = "Durotar",
+        start = { npc = "Rezlak", x = 46.4, y = 8.4 },
         objectives = {
             { type = "item", name = "Sack of Supplies", spawns = {
                 {49.2, 60.1}, {52.3, 58.7}, {54.1, 61.2}, {50.8, 63.5}
@@ -435,6 +437,7 @@ VGuideQuestObjectives.Data = {
     [182] = { -- Coldridge Valley Mail Delivery
         name = "Coldridge Valley Mail Delivery",
         zone = "Dun Morogh",
+        start = { npc = "Grelin Whitebeard", x = 24.8, y = 76.8 },
         objectives = {
             { type = "talk", name = "Talin Keeneye", spawns = {{25.1, 75.2}} },
         }
@@ -443,6 +446,7 @@ VGuideQuestObjectives.Data = {
     [183] = { -- Coldridge Valley Mail Delivery (2)
         name = "Coldridge Valley Mail Delivery",
         zone = "Dun Morogh",
+        start = { npc = "Talin Keeneye", x = 25.1, y = 75.2 },
         objectives = {
             { type = "talk", name = "Grelin Whitebeard", spawns = {{24.8, 76.8}} },
         }
@@ -451,6 +455,7 @@ VGuideQuestObjectives.Data = {
     [233] = { -- Frostmane Hold
         name = "Frostmane Hold",
         zone = "Dun Morogh",
+        start = { npc = "Grelin Whitebeard", x = 24.8, y = 76.8 },
         objectives = {
             { type = "kill", name = "Frostmane Troll Whelp", spawns = {
                 {19.2, 78.5}, {20.5, 76.8}, {18.1, 79.2}, {21.2, 77.5}
@@ -465,6 +470,7 @@ VGuideQuestObjectives.Data = {
     [36] = { -- Patrolling Westfall
         name = "Patrolling Westfall",
         zone = "Westfall",
+        start = { npc = "Marshal Dughan", x = 42.1, y = 65.9 },
         objectives = {
             { type = "talk", name = "Captain Danuvin", spawns = {{56.3, 47.5}} },
         }
@@ -473,6 +479,7 @@ VGuideQuestObjectives.Data = {
     [64] = { -- The Forgotten Heirloom
         name = "The Forgotten Heirloom",
         zone = "Westfall",
+        start = { npc = "Farmer Furlbrow", x = 59.9, y = 19.4 },
         objectives = {
             { type = "item", name = "Westfall Deed", spawns = {
                 {44.8, 36.2}, {46.1, 35.8}, {45.2, 37.5}
@@ -483,6 +490,7 @@ VGuideQuestObjectives.Data = {
     [102] = { -- The Defias Brotherhood
         name = "The Defias Brotherhood",
         zone = "Westfall",
+        start = { npc = "Gryan Stoutmantle", x = 56.3, y = 47.5 },
         objectives = {
             { type = "kill", name = "Defias Trapper", spawns = {
                 {45.2, 68.1}, {46.8, 70.3}, {44.1, 69.5}, {47.5, 67.8}
@@ -496,6 +504,7 @@ VGuideQuestObjectives.Data = {
     [109] = { -- Collecting Kelp
         name = "Collecting Kelp",
         zone = "Westfall",
+        start = { npc = "Captain Grayson", x = 30.3, y = 85.6 },
         objectives = {
             { type = "item", name = "Murloc Fin", spawns = {
                 {35.2, 48.1}, {36.8, 46.5}, {34.5, 49.8}, {37.2, 47.2},
@@ -507,6 +516,7 @@ VGuideQuestObjectives.Data = {
     [153] = { -- The Defias Brotherhood (Chain)
         name = "The Defias Brotherhood",
         zone = "Westfall",
+        start = { npc = "Gryan Stoutmantle", x = 56.3, y = 47.5 },
         objectives = {
             { type = "kill", name = "Defias Messenger", spawns = {
                 {44.2, 69.8}, {45.8, 71.2}, {43.5, 72.5}, {46.1, 68.5}
@@ -517,6 +527,7 @@ VGuideQuestObjectives.Data = {
     [155] = { -- Red Leather Bandanas
         name = "Red Leather Bandanas",
         zone = "Westfall",
+        start = { npc = "Scout Galiaan", x = 56.5, y = 47.2 },
         objectives = {
             { type = "item", name = "Red Leather Bandana", spawns = {
                 {44.5, 70.2}, {45.8, 69.1}, {43.2, 71.8}, {46.5, 68.5},
@@ -528,6 +539,7 @@ VGuideQuestObjectives.Data = {
     [184] = { -- Goretusk Liver Pie
         name = "Goretusk Liver Pie",
         zone = "Westfall",
+        start = { npc = "Salma Saldean", x = 56.0, y = 31.2 },
         objectives = {
             { type = "kill", name = "Goretusk", spawns = {
                 {51.2, 48.5}, {52.8, 46.2}, {50.5, 50.1}, {53.5, 47.8},
@@ -539,6 +551,7 @@ VGuideQuestObjectives.Data = {
     [212] = { -- Westfall Stew
         name = "Westfall Stew",
         zone = "Westfall",
+        start = { npc = "Salma Saldean", x = 56.0, y = 31.2 },
         objectives = {
             { type = "kill", name = "Harvest Watcher", spawns = {
                 {52.5, 32.1}, {54.2, 30.8}, {51.8, 33.5}, {55.1, 31.2}
@@ -553,6 +566,7 @@ VGuideQuestObjectives.Data = {
     [224] = { -- In Defense of the King's Lands
         name = "In Defense of the King's Lands",
         zone = "Loch Modan",
+        start = { npc = "Captain Rugelfuss", x = 23.2, y = 73.8 },
         objectives = {
             { type = "kill", name = "Stonesplinter Trogg", spawns = {
                 {37.5, 43.2}, {38.8, 41.5}, {36.2, 44.8}, {39.5, 42.1}
@@ -566,6 +580,7 @@ VGuideQuestObjectives.Data = {
     [237] = { -- Thelsamar Blood Sausages
         name = "Thelsamar Blood Sausages",
         zone = "Loch Modan",
+        start = { npc = "Vidra Hearthstove", x = 34.8, y = 49.2 },
         objectives = {
             { type = "kill", name = "Mountain Boar", spawns = {
                 {42.1, 28.5}, {43.5, 27.2}, {41.2, 29.8}, {44.2, 26.5}
@@ -579,6 +594,7 @@ VGuideQuestObjectives.Data = {
     [267] = { -- In Search of the Excavation Team
         name = "In Search of the Excavation Team",
         zone = "Loch Modan",
+        start = { npc = "Jern Hornhelm", x = 37.1, y = 47.4 },
         objectives = {
             { type = "talk", name = "Prospector Ironband", spawns = {{65.1, 65.8}} },
         }
@@ -587,6 +603,7 @@ VGuideQuestObjectives.Data = {
     [298] = { -- A Dark Threat Looms
         name = "A Dark Threat Looms",
         zone = "Loch Modan",
+        start = { npc = "Chief Engineer Hinderweir VII", x = 45.3, y = 13.2 },
         objectives = {
             { type = "talk", name = "Chief Engineer Hinderweir VII", spawns = {{45.3, 13.2}} },
         }
@@ -595,6 +612,7 @@ VGuideQuestObjectives.Data = {
     [416] = { -- Rat Catching
         name = "Rat Catching",
         zone = "Loch Modan",
+        start = { npc = "Mountaineer Kadrell", x = 23.2, y = 73.8 },
         objectives = {
             { type = "kill", name = "Tunnel Rat Vermin", spawns = {
                 {32.5, 72.1}, {33.8, 70.5}, {31.2, 73.8}, {34.5, 71.2}
@@ -612,6 +630,7 @@ VGuideQuestObjectives.Data = {
     [947] = { -- Buzzbox 827
         name = "Buzzbox 827",
         zone = "Darkshore",
+        start = { npc = "Wizbang Cranktoggle", x = 37.4, y = 43.5 },
         objectives = {
             { type = "kill", name = "Pygmy Tide Crawler", spawns = {
                 {36.2, 48.5}, {37.8, 46.2}, {35.5, 50.1}, {38.5, 47.8}
@@ -622,6 +641,7 @@ VGuideQuestObjectives.Data = {
     [958] = { -- The Red Crystal
         name = "The Red Crystal",
         zone = "Darkshore",
+        start = { npc = "Sentinel Glynda Nal'Shea", x = 37.2, y = 44.0 },
         objectives = {
             { type = "item", name = "Red Crystal", spawns = {{49.5, 24.8}} },
         }
@@ -630,6 +650,7 @@ VGuideQuestObjectives.Data = {
     [983] = { -- Washed Ashore
         name = "Washed Ashore",
         zone = "Darkshore",
+        start = { npc = "Gwennyth Bly'Leggonde", x = 36.4, y = 45.6 },
         objectives = {
             { type = "item", name = "Sea Creature Bones", spawns = {{36.2, 54.8}} },
         }
@@ -638,6 +659,7 @@ VGuideQuestObjectives.Data = {
     [2098] = { -- Cleansing of the Infected
         name = "Cleansing of the Infected",
         zone = "Darkshore",
+        start = { npc = "Tharnariun Treetender", x = 38.3, y = 43.4 },
         objectives = {
             { type = "kill", name = "Rabid Thistle Bear", spawns = {
                 {40.5, 57.2}, {42.1, 55.8}, {39.2, 58.5}, {43.5, 56.1}
@@ -652,6 +674,7 @@ VGuideQuestObjectives.Data = {
     [844] = { -- Plainstrider Menace
         name = "Plainstrider Menace",
         zone = "The Barrens",
+        start = { npc = "Sergra Darkthorn", x = 52.2, y = 31.0 },
         objectives = {
             { type = "kill", name = "Zhevra", spawns = {
                 {53.2, 26.1}, {54.8, 24.5}, {52.5, 27.8}, {55.5, 25.2},
@@ -663,6 +686,7 @@ VGuideQuestObjectives.Data = {
     [845] = { -- The Zhevra
         name = "The Zhevra",
         zone = "The Barrens",
+        start = { npc = "Sergra Darkthorn", x = 52.2, y = 31.0 },
         objectives = {
             { type = "kill", name = "Zhevra Runner", spawns = {
                 {49.5, 48.2}, {50.8, 46.5}, {48.2, 49.8}, {51.5, 47.1},
@@ -674,6 +698,7 @@ VGuideQuestObjectives.Data = {
     [850] = { -- Centaur Bracers
         name = "Centaur Bracers",
         zone = "The Barrens",
+        start = { npc = "Regthar Deathgate", x = 45.3, y = 28.4 },
         objectives = {
             { type = "kill", name = "Kolkar Wrangler", spawns = {
                 {43.5, 79.2}, {44.8, 77.5}, {42.2, 80.8}, {45.5, 78.1}
@@ -687,6 +712,7 @@ VGuideQuestObjectives.Data = {
     [852] = { -- Raptor Thieves
         name = "Raptor Thieves",
         zone = "The Barrens",
+        start = { npc = "Gazrog", x = 51.9, y = 30.7 },
         objectives = {
             { type = "kill", name = "Sunscale Raptor", spawns = {
                 {55.2, 30.8}, {56.5, 29.1}, {54.1, 32.5}, {57.2, 28.2},
@@ -698,6 +724,7 @@ VGuideQuestObjectives.Data = {
     [865] = { -- Stolen Silver
         name = "Stolen Silver",
         zone = "The Barrens",
+        start = { npc = "Gazrog", x = 51.9, y = 30.7 },
         objectives = {
             { type = "item", name = "Stolen Silver", spawns = {
                 {53.8, 28.5}, {54.5, 27.2}, {52.8, 29.8}
@@ -708,6 +735,7 @@ VGuideQuestObjectives.Data = {
     [869] = { -- Consumed by Hatred
         name = "Consumed by Hatred",
         zone = "The Barrens",
+        start = { npc = "Mankrik", x = 45.1, y = 59.2 },
         objectives = {
             { type = "kill", name = "Bristleback Quilboar", spawns = {
                 {41.2, 47.5}, {42.8, 45.8}, {40.5, 49.2}, {43.5, 46.5}
@@ -721,6 +749,7 @@ VGuideQuestObjectives.Data = {
     [870] = { -- Harpy Raiders
         name = "Harpy Raiders",
         zone = "The Barrens",
+        start = { npc = "Darsok Swiftdagger", x = 51.5, y = 30.9 },
         objectives = {
             { type = "kill", name = "Witchwing Harpy", spawns = {
                 {41.5, 59.2}, {42.8, 57.5}, {40.2, 60.8}, {43.5, 58.1}
@@ -734,6 +763,7 @@ VGuideQuestObjectives.Data = {
     [872] = { -- The Stagnant Oasis
         name = "The Stagnant Oasis",
         zone = "The Barrens",
+        start = { npc = "Tonga Runetotem", x = 52.2, y = 31.9 },
         objectives = {
             { type = "item", name = "Bubbling Oasis Water", spawns = {{55.2, 42.8}} },
         }
@@ -742,6 +772,7 @@ VGuideQuestObjectives.Data = {
     [877] = { -- Echeyakee
         name = "Echeyakee",
         zone = "The Barrens",
+        start = { npc = "Sergra Darkthorn", x = 52.2, y = 31.0 },
         objectives = {
             { type = "kill", name = "Echeyakee", spawns = {{56.5, 17.2}} },
         }
@@ -750,6 +781,7 @@ VGuideQuestObjectives.Data = {
     [880] = { -- Ishamuhale
         name = "Ishamuhale",
         zone = "The Barrens",
+        start = { npc = "Jorn Skyseer", x = 44.9, y = 59.1 },
         objectives = {
             { type = "kill", name = "Ishamuhale", spawns = {{59.2, 30.5}} },
         }
@@ -758,6 +790,7 @@ VGuideQuestObjectives.Data = {
     [896] = { -- Samophlange
         name = "Samophlange",
         zone = "The Barrens",
+        start = { npc = "Sputtervalve", x = 62.3, y = 38.5 },
         objectives = {
             { type = "talk", name = "Control Console", spawns = {{52.5, 11.2}} },
         }
@@ -766,6 +799,7 @@ VGuideQuestObjectives.Data = {
     [903] = { -- Fungal Spores
         name = "Fungal Spores",
         zone = "The Barrens",
+        start = { npc = "Apothecary Helbrim", x = 51.5, y = 30.2 },
         objectives = {
             { type = "item", name = "Fungal Spore", spawns = {
                 {56.8, 18.5}, {57.5, 17.2}, {55.5, 19.8}, {58.2, 16.5}
@@ -780,6 +814,7 @@ VGuideQuestObjectives.Data = {
     [430] = { -- The Dead Fields
         name = "The Dead Fields",
         zone = "Silverpine Forest",
+        start = { npc = "High Executor Hadrec", x = 43.4, y = 40.8 },
         objectives = {
             { type = "kill", name = "Rot Hide Gnoll", spawns = {
                 {51.2, 36.5}, {52.8, 34.2}, {50.5, 38.1}, {53.5, 35.5}
@@ -793,6 +828,7 @@ VGuideQuestObjectives.Data = {
     [478] = { -- Prove Your Worth
         name = "Prove Your Worth",
         zone = "Silverpine Forest",
+        start = { npc = "High Executor Hadrec", x = 43.4, y = 40.8 },
         objectives = {
             { type = "kill", name = "Moonrage Glutton", spawns = {
                 {44.5, 39.2}, {45.8, 37.5}, {43.2, 40.8}, {46.5, 38.1}
@@ -803,6 +839,7 @@ VGuideQuestObjectives.Data = {
     [481] = { -- Ivar the Foul
         name = "Ivar the Foul",
         zone = "Silverpine Forest",
+        start = { npc = "High Executor Hadrec", x = 43.4, y = 40.8 },
         objectives = {
             { type = "kill", name = "Ivar the Foul", spawns = {{46.2, 35.8}} },
         }
@@ -811,6 +848,7 @@ VGuideQuestObjectives.Data = {
     [491] = { -- Border Crossings
         name = "Border Crossings",
         zone = "Silverpine Forest",
+        start = { npc = "High Executor Hadrec", x = 43.4, y = 40.8 },
         objectives = {
             { type = "talk", name = "Shadow Priest Allister", spawns = {{43.8, 40.5}} },
         }
@@ -819,6 +857,7 @@ VGuideQuestObjectives.Data = {
     [525] = { -- Arugal's Folly
         name = "Arugal's Folly",
         zone = "Silverpine Forest",
+        start = { npc = "Dalar Dawnweaver", x = 44.4, y = 39.5 },
         objectives = {
             { type = "item", name = "Remedy of Arugal", spawns = {
                 {47.2, 71.5}, {48.5, 69.8}, {46.1, 72.8}
@@ -833,6 +872,7 @@ VGuideQuestObjectives.Data = {
     [20] = { -- Blackrock Menace
         name = "Blackrock Menace",
         zone = "Redridge Mountains",
+        start = { npc = "Marshal Marris", x = 29.6, y = 44.4 },
         objectives = {
             { type = "kill", name = "Blackrock Grunt", spawns = {
                 {24.5, 31.2}, {25.8, 29.5}, {23.2, 32.8}, {26.5, 30.1}
@@ -846,6 +886,7 @@ VGuideQuestObjectives.Data = {
     [91] = { -- Selling Fish
         name = "Selling Fish",
         zone = "Redridge Mountains",
+        start = { npc = "Dockmaster Baren", x = 26.8, y = 47.2 },
         objectives = {
             { type = "talk", name = "Dockmaster Baren", spawns = {{26.8, 47.2}} },
         }
@@ -854,6 +895,7 @@ VGuideQuestObjectives.Data = {
     [118] = { -- Messenger to Stormwind
         name = "Messenger to Stormwind",
         zone = "Redridge Mountains",
+        start = { npc = "Magistrate Solomon", x = 29.8, y = 44.4 },
         objectives = {
             { type = "talk", name = "General Marcus Jonathan", spawns = {{74.2, 55.8}} },
         }
@@ -862,6 +904,7 @@ VGuideQuestObjectives.Data = {
     [125] = { -- Missing In Action
         name = "Missing In Action",
         zone = "Redridge Mountains",
+        start = { npc = "Marshal Marris", x = 29.6, y = 44.4 },
         objectives = {
             { type = "talk", name = "Corporal Keeshan", spawns = {{26.5, 10.2}} },
         }
@@ -870,6 +913,7 @@ VGuideQuestObjectives.Data = {
     [126] = { -- Shadow Magic
         name = "Shadow Magic",
         zone = "Redridge Mountains",
+        start = { npc = "Watcher Dodds", x = 26.6, y = 52.6 },
         objectives = {
             { type = "kill", name = "Shadowhide Gnoll", spawns = {
                 {30.5, 61.2}, {31.8, 59.5}, {29.2, 62.8}, {32.5, 60.1}
@@ -883,6 +927,7 @@ VGuideQuestObjectives.Data = {
     [129] = { -- Glyph Chasing
         name = "Glyph Chasing",
         zone = "Redridge Mountains",
+        start = { npc = "Watcher Dodds", x = 26.6, y = 52.6 },
         objectives = {
             { type = "item", name = "Shadowhide Pendant", spawns = {
                 {32.5, 59.8}, {33.8, 58.2}, {31.2, 61.5}, {34.5, 57.5}
@@ -897,6 +942,7 @@ VGuideQuestObjectives.Data = {
     [500] = { -- Dangerous!
         name = "Dangerous!",
         zone = "Hillsbrad Foothills",
+        start = { npc = "Wanted Poster", x = 62.3, y = 20.4 },
         objectives = {
             { type = "kill", name = "Stanley", spawns = {{52.1, 56.8}} },
         }
@@ -905,6 +951,7 @@ VGuideQuestObjectives.Data = {
     [506] = { -- Syndicate Assassins
         name = "Syndicate Assassins",
         zone = "Hillsbrad Foothills",
+        start = { npc = "High Executor Darthalia", x = 62.1, y = 20.2 },
         objectives = {
             { type = "kill", name = "Syndicate Footpad", spawns = {
                 {36.5, 46.2}, {37.8, 44.5}, {35.2, 47.8}, {38.5, 45.1}
@@ -918,6 +965,7 @@ VGuideQuestObjectives.Data = {
     [513] = { -- Souvenirs of Death
         name = "Souvenirs of Death",
         zone = "Hillsbrad Foothills",
+        start = { npc = "Deathguard Samsa", x = 62.5, y = 19.0 },
         objectives = {
             { type = "kill", name = "Hillsbrad Human", spawns = {
                 {32.5, 44.2}, {33.8, 42.5}, {31.2, 45.8}, {34.5, 43.1}
@@ -928,6 +976,7 @@ VGuideQuestObjectives.Data = {
     [527] = { -- Elixir of Suffering
         name = "Elixir of Suffering",
         zone = "Hillsbrad Foothills",
+        start = { npc = "Apothecary Lydon", x = 61.5, y = 19.1 },
         objectives = {
             { type = "kill", name = "Mudsnout Gnoll", spawns = {
                 {45.5, 60.2}, {46.8, 58.5}, {44.2, 61.8}, {47.5, 59.1}
@@ -938,6 +987,7 @@ VGuideQuestObjectives.Data = {
     [542] = { -- Crushridge Bounty
         name = "Crushridge Bounty",
         zone = "Hillsbrad Foothills",
+        start = { npc = "High Executor Darthalia", x = 62.1, y = 20.2 },
         objectives = {
             { type = "item", name = "Crushridge Collar", spawns = {
                 {53.5, 78.2}, {54.8, 76.5}, {52.2, 79.8}, {55.5, 77.1}
@@ -952,6 +1002,7 @@ VGuideQuestObjectives.Data = {
     [1016] = { -- The Ashenvale Hunt
         name = "The Ashenvale Hunt",
         zone = "Ashenvale",
+        start = { npc = "Senani Thunderheart", x = 73.6, y = 61.5 },
         objectives = {
             { type = "kill", name = "Ashenvale Bear", spawns = {
                 {74.2, 70.5}, {75.5, 68.8}, {73.1, 72.1}, {76.2, 69.5}
@@ -962,6 +1013,7 @@ VGuideQuestObjectives.Data = {
     [1022] = { -- Stonetalon Standstill
         name = "Stonetalon Standstill",
         zone = "Ashenvale",
+        start = { npc = "Kaela Shadowspear", x = 26.9, y = 36.5 },
         objectives = {
             { type = "talk", name = "Kaela Shadowspear", spawns = {{42.5, 71.2}} },
         }
@@ -970,6 +1022,7 @@ VGuideQuestObjectives.Data = {
     [1054] = { -- The Howling Vale
         name = "The Howling Vale",
         zone = "Ashenvale",
+        start = { npc = "Sentinel Melyria Frostshadow", x = 26.5, y = 36.7 },
         objectives = {
             { type = "kill", name = "Terrowulf", spawns = {
                 {52.5, 30.2}, {53.8, 28.5}, {51.2, 31.8}, {54.5, 29.1}
@@ -980,6 +1033,7 @@ VGuideQuestObjectives.Data = {
     [1056] = { -- Elemental Bracers
         name = "Elemental Bracers",
         zone = "Ashenvale",
+        start = { npc = "Sentinel Thenysil", x = 34.7, y = 49.8 },
         objectives = {
             { type = "item", name = "Burning Bracer", spawns = {
                 {57.2, 36.5}, {58.5, 34.8}, {56.1, 38.1}, {59.2, 35.5}
@@ -990,6 +1044,7 @@ VGuideQuestObjectives.Data = {
     [1058] = { -- The Tower of Althalaxx
         name = "The Tower of Althalaxx",
         zone = "Ashenvale",
+        start = { npc = "Delgren the Purifier", x = 26.2, y = 38.7 },
         objectives = {
             { type = "talk", name = "Balthule Shadowstrike", spawns = {{26.5, 38.2}} },
         }
@@ -1002,6 +1057,7 @@ VGuideQuestObjectives.Data = {
     [1062] = { -- Boulderslide Ravine
         name = "Boulderslide Ravine",
         zone = "Stonetalon Mountains",
+        start = { npc = "Ziz Fizziks", x = 59.0, y = 62.6 },
         objectives = {
             { type = "item", name = "Unidentified Ore", spawns = {
                 {62.5, 92.1}, {63.8, 90.5}, {61.2, 93.8}, {64.5, 91.2}
@@ -1012,6 +1068,7 @@ VGuideQuestObjectives.Data = {
     [1083] = { -- Super Reaper 6000
         name = "Super Reaper 6000",
         zone = "Stonetalon Mountains",
+        start = { npc = "Ziz Fizziks", x = 59.0, y = 62.6 },
         objectives = {
             { type = "item", name = "Super Reaper 6000 Parts", spawns = {
                 {63.2, 38.5}, {64.5, 36.8}, {62.1, 40.1}, {65.2, 37.5}
@@ -1022,6 +1079,7 @@ VGuideQuestObjectives.Data = {
     [1090] = { -- Arachnophobia
         name = "Arachnophobia",
         zone = "Stonetalon Mountains",
+        start = { npc = "Seereth Stonebreak", x = 47.2, y = 61.0 },
         objectives = {
             { type = "kill", name = "Besseleth", spawns = {{54.5, 75.2}} },
         }
@@ -1030,6 +1088,7 @@ VGuideQuestObjectives.Data = {
     [6461] = { -- Gerenzo Wrenchwhistle
         name = "Gerenzo Wrenchwhistle",
         zone = "Stonetalon Mountains",
+        start = { npc = "Ziz Fizziks", x = 59.0, y = 62.6 },
         objectives = {
             { type = "kill", name = "Gerenzo Wrenchwhistle", spawns = {{62.8, 41.5}} },
         }
@@ -1042,6 +1101,7 @@ VGuideQuestObjectives.Data = {
     [1148] = { -- Pacify the Centaur
         name = "Pacify the Centaur",
         zone = "Thousand Needles",
+        start = { npc = "Cliffwatcher Longhorn", x = 21.4, y = 32.2 },
         objectives = {
             { type = "kill", name = "Galak Wrangler", spawns = {
                 {39.2, 29.5}, {40.5, 27.8}, {38.1, 31.1}, {41.2, 28.5}
@@ -1055,6 +1115,7 @@ VGuideQuestObjectives.Data = {
     [1149] = { -- Alien Egg
         name = "Alien Egg",
         zone = "Thousand Needles",
+        start = { npc = "Hagar Lightninghoof", x = 21.2, y = 32.4 },
         objectives = {
             { type = "item", name = "Alien Egg", spawns = {{52.5, 53.2}} },
         }
@@ -1063,6 +1124,7 @@ VGuideQuestObjectives.Data = {
     [1176] = { -- Test of Endurance
         name = "Test of Endurance",
         zone = "Thousand Needles",
+        start = { npc = "Dorn Plainstalker", x = 21.5, y = 32.0 },
         objectives = {
             { type = "item", name = "Grenka's Claw", spawns = {{29.5, 36.8}} },
         }
@@ -1071,6 +1133,7 @@ VGuideQuestObjectives.Data = {
     [4767] = { -- Salt Flat Venom
         name = "Salt Flat Venom",
         zone = "Thousand Needles",
+        start = { npc = "Fizzle Brassbolts", x = 78.1, y = 77.1 },
         objectives = {
             { type = "kill", name = "Saltstone Basilisk", spawns = {
                 {72.5, 71.2}, {73.8, 69.5}, {71.2, 72.8}, {74.5, 70.1}
@@ -1085,6 +1148,7 @@ VGuideQuestObjectives.Data = {
     [185] = { -- Raptor Mastery
         name = "Raptor Mastery",
         zone = "Stranglethorn Vale",
+        start = { npc = "Hemet Nesingwary", x = 35.7, y = 10.8 },
         objectives = {
             { type = "kill", name = "Stranglethorn Raptor", spawns = {
                 {31.5, 17.2}, {32.8, 15.5}, {30.2, 18.8}, {33.5, 16.1}
@@ -1095,6 +1159,7 @@ VGuideQuestObjectives.Data = {
     [189] = { -- Tiger Mastery
         name = "Tiger Mastery",
         zone = "Stranglethorn Vale",
+        start = { npc = "Ajeck Rouack", x = 35.6, y = 10.6 },
         objectives = {
             { type = "kill", name = "Stranglethorn Tiger", spawns = {
                 {27.2, 11.5}, {28.5, 9.8}, {26.1, 13.1}, {29.2, 10.5}
@@ -1105,6 +1170,7 @@ VGuideQuestObjectives.Data = {
     [191] = { -- Panther Mastery
         name = "Panther Mastery",
         zone = "Stranglethorn Vale",
+        start = { npc = "Sir S. J. Erlgadin", x = 35.5, y = 10.5 },
         objectives = {
             { type = "kill", name = "Shadowmaw Panther", spawns = {
                 {37.5, 35.2}, {38.8, 33.5}, {36.2, 36.8}, {39.5, 34.1}
@@ -1115,6 +1181,7 @@ VGuideQuestObjectives.Data = {
     [204] = { -- Big Game Hunter
         name = "Big Game Hunter",
         zone = "Stranglethorn Vale",
+        start = { npc = "Hemet Nesingwary", x = 35.7, y = 10.8 },
         objectives = {
             { type = "kill", name = "King Bangalash", spawns = {{29.8, 9.5}} },
         }
@@ -1123,6 +1190,7 @@ VGuideQuestObjectives.Data = {
     [571] = { -- Bloodscalp Ears
         name = "Bloodscalp Ears",
         zone = "Stranglethorn Vale",
+        start = { npc = "Kebok", x = 27.1, y = 77.2 },
         objectives = {
             { type = "kill", name = "Bloodscalp Troll", spawns = {
                 {33.5, 11.2}, {34.8, 9.5}, {32.2, 12.8}, {35.5, 10.1}
@@ -1133,6 +1201,7 @@ VGuideQuestObjectives.Data = {
     [577] = { -- Headhunting
         name = "Headhunting",
         zone = "Stranglethorn Vale",
+        start = { npc = "Nimboya", x = 32.2, y = 29.2 },
         objectives = {
             { type = "kill", name = "Bloodscalp Headhunter", spawns = {
                 {32.5, 12.2}, {33.8, 10.5}, {31.2, 13.8}, {34.5, 11.1}
@@ -1146,6 +1215,7 @@ VGuideQuestObjectives.Data = {
     [581] = { -- Speaking with Nezzliok
         name = "Speaking with Nezzliok",
         zone = "Stranglethorn Vale",
+        start = { npc = "Nimboya", x = 32.2, y = 29.2 },
         objectives = {
             { type = "talk", name = "Nezzliok the Dire", spawns = {{33.2, 52.8}} },
         }
@@ -1154,6 +1224,7 @@ VGuideQuestObjectives.Data = {
     [586] = { -- The Singing Crystals
         name = "The Singing Crystals",
         zone = "Stranglethorn Vale",
+        start = { npc = "Crank Fizzlebub", x = 27.8, y = 77.1 },
         objectives = {
             { type = "item", name = "Singing Blue Crystal", spawns = {
                 {27.5, 69.2}, {28.8, 67.5}, {26.2, 70.8}, {29.5, 68.1}
@@ -1164,6 +1235,7 @@ VGuideQuestObjectives.Data = {
     [597] = { -- Supplies to Private Thorsen
         name = "Supplies to Private Thorsen",
         zone = "Stranglethorn Vale",
+        start = { npc = "Corporal Kaleb", x = 37.8, y = 3.4 },
         objectives = {
             { type = "talk", name = "Private Thorsen", spawns = {{38.2, 3.5}} },
         }
@@ -1172,6 +1244,7 @@ VGuideQuestObjectives.Data = {
     [600] = { -- Krazek's Cookery
         name = "Krazek's Cookery",
         zone = "Stranglethorn Vale",
+        start = { npc = "Corporal Kaleb", x = 37.8, y = 3.4 },
         objectives = {
             { type = "talk", name = "Krazek", spawns = {{28.5, 77.2}} },
         }
@@ -1184,6 +1257,7 @@ VGuideQuestObjectives.Data = {
     [699] = { -- The Atal'ai Exile
         name = "The Atal'ai Exile",
         zone = "Swamp of Sorrows",
+        start = { npc = "Brohann Caskbelly", x = 64.6, y = 20.7 },
         objectives = {
             { type = "talk", name = "Atal'ai Exile", spawns = {{62.5, 33.8}} },
         }
@@ -1192,6 +1266,7 @@ VGuideQuestObjectives.Data = {
     [1392] = { -- Galen's Escape
         name = "Galen's Escape",
         zone = "Swamp of Sorrows",
+        start = { npc = "Galen Goodward", x = 53.8, y = 29.5 },
         objectives = {
             { type = "talk", name = "Galen Goodward", spawns = {{53.8, 29.5}} },
         }
@@ -1200,6 +1275,7 @@ VGuideQuestObjectives.Data = {
     [1422] = { -- Pool of Tears
         name = "Pool of Tears",
         zone = "Swamp of Sorrows",
+        start = { npc = "Holaaru", x = 26.8, y = 33.4 },
         objectives = {
             { type = "item", name = "Atal'ai Artifact", spawns = {
                 {65.2, 47.5}, {66.5, 45.8}, {64.1, 49.1}, {67.2, 46.5}
@@ -1214,6 +1290,7 @@ VGuideQuestObjectives.Data = {
     [703] = { -- Badlands Reagent Run
         name = "Badlands Reagent Run",
         zone = "Badlands",
+        start = { npc = "Rigglefuzz", x = 42.4, y = 52.8 },
         objectives = {
             { type = "kill", name = "Buzzard", spawns = {
                 {10.5, 32.2}, {11.8, 30.5}, {9.2, 33.8}, {12.5, 31.1}
@@ -1224,6 +1301,7 @@ VGuideQuestObjectives.Data = {
     [705] = { -- Pearl Diving
         name = "Pearl Diving",
         zone = "Badlands",
+        start = { npc = "Rigglefuzz", x = 42.4, y = 52.8 },
         objectives = {
             { type = "item", name = "Blue Pearl", spawns = {
                 {52.5, 11.2}, {53.8, 9.5}, {51.2, 12.8}, {54.5, 10.1}
@@ -1234,6 +1312,7 @@ VGuideQuestObjectives.Data = {
     [720] = { -- A Dwarf and His Tools
         name = "A Dwarf and His Tools",
         zone = "Badlands",
+        start = { npc = "Prospector Ryedol", x = 53.0, y = 43.2 },
         objectives = {
             { type = "item", name = "Ryedol's Lucky Pick", spawns = {{51.8, 63.2}} },
         }
@@ -1242,6 +1321,7 @@ VGuideQuestObjectives.Data = {
     [733] = { -- Barbecued Buzzard Wings
         name = "Barbecued Buzzard Wings",
         zone = "Badlands",
+        start = { npc = "Rigglefuzz", x = 42.4, y = 52.8 },
         objectives = {
             { type = "kill", name = "Giant Buzzard", spawns = {
                 {12.5, 41.2}, {13.8, 39.5}, {11.2, 42.8}, {14.5, 40.1}
@@ -1256,6 +1336,7 @@ VGuideQuestObjectives.Data = {
     [351] = { -- Wanted: Andre Firebeard
         name = "Wanted: Andre Firebeard",
         zone = "Tanaris",
+        start = { npc = "Wanted Poster", x = 51.5, y = 26.8 },
         objectives = {
             { type = "kill", name = "Andre Firebeard", spawns = {{72.5, 47.8}} },
         }
@@ -1264,6 +1345,7 @@ VGuideQuestObjectives.Data = {
     [1690] = { -- Thistleshrub Valley
         name = "Thistleshrub Valley",
         zone = "Tanaris",
+        start = { npc = "Tran'rek", x = 51.6, y = 26.8 },
         objectives = {
             { type = "kill", name = "Thistleshrub", spawns = {
                 {28.5, 67.2}, {29.8, 65.5}, {27.2, 68.8}, {30.5, 66.1}
@@ -1274,6 +1356,7 @@ VGuideQuestObjectives.Data = {
     [1707] = { -- Southsea Shakedown
         name = "Southsea Shakedown",
         zone = "Tanaris",
+        start = { npc = "Security Chief Bilgewhizzle", x = 51.6, y = 28.6 },
         objectives = {
             { type = "kill", name = "Southsea Pirate", spawns = {
                 {71.5, 47.2}, {72.8, 45.5}, {70.2, 48.8}, {73.5, 46.1}
@@ -1284,6 +1367,7 @@ VGuideQuestObjectives.Data = {
     [2781] = { -- Water Pouch Bounty
         name = "Water Pouch Bounty",
         zone = "Tanaris",
+        start = { npc = "Chief Engineer Bilgewhizzle", x = 52.5, y = 28.5 },
         objectives = {
             { type = "kill", name = "Wastewander Bandit", spawns = {
                 {60.5, 32.2}, {61.8, 30.5}, {59.2, 33.8}, {62.5, 31.1}
@@ -1298,6 +1382,7 @@ VGuideQuestObjectives.Data = {
     [3883] = { -- The Apes of Un'Goro
         name = "The Apes of Un'Goro",
         zone = "Un'Goro Crater",
+        start = { npc = "Torwa Pathfinder", x = 71.6, y = 76.0 },
         objectives = {
             { type = "kill", name = "U'cha", spawns = {{67.5, 16.2}} },
         }
@@ -1306,6 +1391,7 @@ VGuideQuestObjectives.Data = {
     [4141] = { -- Beware of Pterrordax
         name = "Beware of Pterrordax",
         zone = "Un'Goro Crater",
+        start = { npc = "Dadanga", x = 71.4, y = 76.0 },
         objectives = {
             { type = "kill", name = "Pterrordax", spawns = {
                 {53.5, 72.2}, {54.8, 70.5}, {52.2, 73.8}, {55.5, 71.1}
@@ -1316,6 +1402,7 @@ VGuideQuestObjectives.Data = {
     [4284] = { -- Volcanic Activity
         name = "Volcanic Activity",
         zone = "Un'Goro Crater",
+        start = { npc = "Scientist Willard Wozzle", x = 55.0, y = 13.8 },
         objectives = {
             { type = "item", name = "Un'Goro Ash", spawns = {
                 {50.5, 48.2}, {51.8, 46.5}, {49.2, 49.8}, {52.5, 47.1}
@@ -1326,6 +1413,7 @@ VGuideQuestObjectives.Data = {
     [4289] = { -- Lost!
         name = "Lost!",
         zone = "Un'Goro Crater",
+        start = { npc = "Spraggle Frock", x = 42.5, y = 9.8 },
         objectives = {
             { type = "talk", name = "Spraggle Frock", spawns = {{42.5, 9.8}} },
         }
@@ -1338,6 +1426,7 @@ VGuideQuestObjectives.Data = {
     [4101] = { -- Cleansing Felwood
         name = "Cleansing Felwood",
         zone = "Felwood",
+        start = { npc = "Maybess Riverbreeze", x = 54.3, y = 86.7 },
         objectives = {
             { type = "item", name = "Corrupted Soul Shard", spawns = {
                 {51.5, 82.2}, {52.8, 80.5}, {50.2, 83.8}, {53.5, 81.1}
@@ -1348,6 +1437,7 @@ VGuideQuestObjectives.Data = {
     [4421] = { -- A Strange Red Key
         name = "A Strange Red Key",
         zone = "Felwood",
+        start = { npc = "Item Drop", x = 35.5, y = 59.0 },
         objectives = {
             { type = "item", name = "Blood Red Key", spawns = {{39.5, 58.2}} },
         }
@@ -1356,6 +1446,7 @@ VGuideQuestObjectives.Data = {
     [4441] = { -- Stealing Onar's Scrying Eye
         name = "Stealing Onar's Scrying Eye",
         zone = "Felwood",
+        start = { npc = "Onar's Scrying Eye", x = 40.2, y = 59.5 },
         objectives = {
             { type = "item", name = "Onar's Scrying Eye", spawns = {{40.2, 59.5}} },
         }
@@ -1364,6 +1455,7 @@ VGuideQuestObjectives.Data = {
     [5155] = { -- Timbermaw Ally
         name = "Timbermaw Ally",
         zone = "Felwood",
+        start = { npc = "Nafien", x = 64.2, y = 8.1 },
         objectives = {
             { type = "kill", name = "Winterfall Runner", spawns = {
                 {61.5, 10.2}, {62.8, 8.5}, {60.2, 11.8}, {63.5, 9.1}
@@ -1378,6 +1470,7 @@ VGuideQuestObjectives.Data = {
     [5082] = { -- Ursius of the Shardtooth
         name = "Ursius of the Shardtooth",
         zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.9, y = 9.8 },
         objectives = {
             { type = "kill", name = "Ursius", spawns = {{57.5, 52.8}} },
         }
@@ -1386,6 +1479,7 @@ VGuideQuestObjectives.Data = {
     [5085] = { -- Brumeran of the Chillwind
         name = "Brumeran of the Chillwind",
         zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.9, y = 9.8 },
         objectives = {
             { type = "kill", name = "Brumeran", spawns = {{59.2, 34.5}} },
         }
@@ -1394,6 +1488,7 @@ VGuideQuestObjectives.Data = {
     [5121] = { -- The Everlook Report
         name = "The Everlook Report",
         zone = "Winterspring",
+        start = { npc = "Donova Snowden", x = 31.2, y = 45.2 },
         objectives = {
             { type = "talk", name = "Jessara Cordell", spawns = {{62.5, 37.2}} },
         }
@@ -1402,6 +1497,7 @@ VGuideQuestObjectives.Data = {
     [5156] = { -- Winterfall Activity
         name = "Winterfall Activity",
         zone = "Winterspring",
+        start = { npc = "Salfa", x = 31.4, y = 45.0 },
         objectives = {
             { type = "kill", name = "Winterfall Shaman", spawns = {
                 {67.5, 35.2}, {68.8, 33.5}, {66.2, 36.8}, {69.5, 34.1}
@@ -1416,6 +1512,7 @@ VGuideQuestObjectives.Data = {
     [5092] = { -- Unfinished Business
         name = "Unfinished Business",
         zone = "Western Plaguelands",
+        start = { npc = "Kirsta Deepshadow", x = 42.6, y = 84.0 },
         objectives = {
             { type = "kill", name = "Cauldron Lord Bilemaw", spawns = {{67.2, 49.5}} },
         }
@@ -1424,6 +1521,7 @@ VGuideQuestObjectives.Data = {
     [5097] = { -- All Along the Watchtowers
         name = "All Along the Watchtowers",
         zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.9, y = 85.0 },
         objectives = {
             { type = "talk", name = "Hearthglen Tower", spawns = {{43.8, 17.2}} },
         }
@@ -1432,6 +1530,7 @@ VGuideQuestObjectives.Data = {
     [5212] = { -- Alas, Andorhal
         name = "Alas, Andorhal",
         zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.9, y = 85.0 },
         objectives = {
             { type = "talk", name = "Andorhal Monument", spawns = {{41.2, 70.5}} },
         }
@@ -1440,6 +1539,7 @@ VGuideQuestObjectives.Data = {
     [5219] = { -- Target: Dalson's Tears
         name = "Target: Dalson's Tears",
         zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 42.8, y = 83.8 },
         objectives = {
             { type = "talk", name = "Scourge Cauldron", spawns = {{45.5, 52.8}} },
         }
@@ -1452,6 +1552,7 @@ VGuideQuestObjectives.Data = {
     [5281] = { -- Demon Dogs
         name = "Demon Dogs",
         zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
         objectives = {
             { type = "kill", name = "Plaguehound", spawns = {
                 {25.5, 78.2}, {26.8, 76.5}, {24.2, 79.8}, {27.5, 77.1}
@@ -1462,6 +1563,7 @@ VGuideQuestObjectives.Data = {
     [5282] = { -- Blood Tinged Skies
         name = "Blood Tinged Skies",
         zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
         objectives = {
             { type = "kill", name = "Plaguebat", spawns = {
                 {26.5, 30.2}, {27.8, 28.5}, {25.2, 31.8}, {28.5, 29.1}
@@ -1472,6 +1574,7 @@ VGuideQuestObjectives.Data = {
     [5511] = { -- The Restless Souls
         name = "The Restless Souls",
         zone = "Eastern Plaguelands",
+        start = { npc = "Caretaker Alen", x = 24.7, y = 74.3 },
         objectives = {
             { type = "talk", name = "Restless Soul", spawns = {
                 {20.5, 24.2}, {21.8, 22.5}, {19.2, 25.8}, {22.5, 23.1}
@@ -1482,6 +1585,7 @@ VGuideQuestObjectives.Data = {
     [5542] = { -- Zaeldarr the Outcast
         name = "Zaeldarr the Outcast",
         zone = "Eastern Plaguelands",
+        start = { npc = "Caretaker Alen", x = 24.7, y = 74.3 },
         objectives = {
             { type = "kill", name = "Zaeldarr the Outcast", spawns = {{27.5, 85.2}} },
         }
@@ -1494,6 +1598,7 @@ VGuideQuestObjectives.Data = {
     [4122] = { -- A Taste of Flame
         name = "A Taste of Flame",
         zone = "Burning Steppes",
+        start = { npc = "Cyrus Therepentous", x = 95.0, y = 31.0 },
         objectives = {
             { type = "kill", name = "Smolderweb", spawns = {
                 {40.5, 56.2}, {41.8, 54.5}, {39.2, 57.8}, {42.5, 55.1}
@@ -1504,6 +1609,7 @@ VGuideQuestObjectives.Data = {
     [4263] = { -- Mother's Milk
         name = "Mother's Milk",
         zone = "Burning Steppes",
+        start = { npc = "Tinkee Steamboil", x = 65.2, y = 23.9 },
         objectives = {
             { type = "kill", name = "Incendosaur", spawns = {
                 {32.5, 47.2}, {33.8, 45.5}, {31.2, 48.8}, {34.5, 46.1}
@@ -1514,6 +1620,7 @@ VGuideQuestObjectives.Data = {
     [4726] = { -- Broodling Essence
         name = "Broodling Essence",
         zone = "Burning Steppes",
+        start = { npc = "Tinkee Steamboil", x = 65.2, y = 23.9 },
         objectives = {
             { type = "kill", name = "Black Broodling", spawns = {
                 {26.5, 38.2}, {27.8, 36.5}, {25.2, 39.8}, {28.5, 37.1}
