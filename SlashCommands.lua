@@ -108,6 +108,13 @@ local options = {
 				desc = 'Reset minimap button position',
 				func = "ResetMinimapButton"
 			},
+			compass = {
+				type = 'toggle',
+				name = 'compass',
+				desc = 'Toggle minimap compass (N/E/S/W)',
+				get = "IsCompassVisible",
+				set = "ToggleCompass"
+			},
 			progress = {
 				type = 'execute',
 				name = 'progress',
@@ -213,6 +220,26 @@ function VGuide:ResetMinimapButton()
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap button position reset")
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap button not initialized")
+    end
+end
+
+function VGuide:IsCompassVisible()
+    if VGuideCompass then
+        return VGuideCompass.enabled
+    end
+    return false
+end
+
+function VGuide:ToggleCompass()
+    if VGuideCompass then
+        VGuideCompass:Toggle()
+        if VGuideCompass.enabled then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Compass enabled")
+        else
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Compass disabled")
+        end
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Compass not initialized")
     end
 end
 

@@ -238,6 +238,60 @@ function VGuideMinimapButton:ResetPosition()
     UpdateButtonPosition(self)
 end
 
+----------------------------------------------
+-- Minimap Compass Labels (N, E, S, W)
+----------------------------------------------
+
+local VGuideMinimapCompass = {}
+VGuideMinimapCompass.labels = {}
+VGuideMinimapCompass.enabled = true
+
+function VGuideMinimapCompass:Create()
+    -- Create compass direction labels around the minimap
+    local compassData = {
+        { dir = "N", x = 0, y = 75, color = {1, 0.2, 0.2} },      -- North - Red
+        { dir = "E", x = 75, y = 0, color = {0.8, 0.8, 0.8} },    -- East - Gray
+        { dir = "S", x = 0, y = -75, color = {0.8, 0.8, 0.8} },   -- South - Gray
+        { dir = "W", x = -75, y = 0, color = {0.8, 0.8, 0.8} },   -- West - Gray
+    }
+    
+    for i, data in ipairs(compassData) do
+        local label = Minimap:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+        label:SetPoint("CENTER", Minimap, "CENTER", data.x, data.y)
+        label:SetText(data.dir)
+        label:SetTextColor(data.color[1], data.color[2], data.color[3])
+        label:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
+        self.labels[i] = label
+    end
+    
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap compass enabled (N/E/S/W)")
+end
+
+function VGuideMinimapCompass:Show()
+    for _, label in ipairs(self.labels) do
+        label:Show()
+    end
+    self.enabled = true
+end
+
+function VGuideMinimapCompass:Hide()
+    for _, label in ipairs(self.labels) do
+        label:Hide()
+    end
+    self.enabled = false
+end
+
+function VGuideMinimapCompass:Toggle()
+    if self.enabled then
+        self:Hide()
+    else
+        self:Show()
+    end
+end
+
+-- Make compass available globally
+VGuideCompass = VGuideMinimapCompass
+
 -- Make available globally
 -- VGuideMinimapButton is already global
 
@@ -250,6 +304,7 @@ if VGuide then
             oldOnEnable(self, first)
         end
         VGuideMinimapButton:Initialize()
+        VGuideMinimapCompass:Create()
     end
 else
     -- If VGuide doesn't exist yet, wait for PLAYER_LOGIN
@@ -259,5 +314,6 @@ else
         -- Slight delay to ensure VGuide is loaded
         this:UnregisterAllEvents()
         VGuideMinimapButton:Initialize()
+        VGuideMinimapCompass:Create()
     end)
 end
