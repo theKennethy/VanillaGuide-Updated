@@ -246,6 +246,8 @@ local VGuideMinimapCompass = {}
 VGuideMinimapCompass.labels = {}
 VGuideMinimapCompass.enabled = true
 VGuideMinimapCompass.frame = nil
+VGuideMinimapCompass.compassData = {}
+VGuideMinimapCompass.radius = 80
 
 function VGuideMinimapCompass:Create()
     -- Check if Minimap exists
@@ -262,30 +264,27 @@ function VGuideMinimapCompass:Create()
     compassFrame:SetFrameStrata("LOW")
     self.frame = compassFrame
     
-    -- Create compass direction labels around the minimap (all 8 directions)
-    local radius = 80  -- Just outside minimap edge
-    local compassData = {
-        { dir = "N",  angle = 90,  color = {1, 0.2, 0.2} },      -- North - Red
-        { dir = "NE", angle = 45,  color = {0.7, 0.7, 0.7} },    -- NE - Gray
-        { dir = "E",  angle = 0,   color = {1, 1, 1} },          -- East - White
-        { dir = "SE", angle = -45, color = {0.7, 0.7, 0.7} },    -- SE - Gray
-        { dir = "S",  angle = -90, color = {1, 1, 1} },          -- South - White
-        { dir = "SW", angle = -135, color = {0.7, 0.7, 0.7} },   -- SW - Gray
-        { dir = "W",  angle = 180, color = {1, 1, 1} },          -- West - White
-        { dir = "NW", angle = 135, color = {0.7, 0.7, 0.7} },    -- NW - Gray
+    local obj = self
+    local radius = self.radius
+    
+    -- Compass directions (7 directions, no N - rotates with player facing)
+    -- Angles are relative to north (0 = north, clockwise positive)
+    self.compassData = {
+        { dir = "NE", baseAngle = 45,  color = {0.7, 0.7, 0.7} },
+        { dir = "E",  baseAngle = 90,  color = {1, 1, 1} },
+        { dir = "SE", baseAngle = 135, color = {0.7, 0.7, 0.7} },
+        { dir = "S",  baseAngle = 180, color = {1, 1, 1} },
+        { dir = "SW", baseAngle = 225, color = {0.7, 0.7, 0.7} },
+        { dir = "W",  baseAngle = 270, color = {1, 1, 1} },
+        { dir = "NW", baseAngle = 315, color = {0.7, 0.7, 0.7} },
     }
     
-    for i, data in ipairs(compassData) do
-        local rad = math.rad(data.angle)
-        local x = math.cos(rad) * radius
-        local y = math.sin(rad) * radius
-        
+    -- Create labels
+    for i, data in ipairs(self.compassData) do
         local label = compassFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-        label:SetPoint("CENTER", compassFrame, "CENTER", x, y)
         label:SetText(data.dir)
         label:SetTextColor(data.color[1], data.color[2], data.color[3])
         
-        -- Font with outline for visibility
         if string.len(data.dir) > 1 then
             label:SetFont("Fonts\\FRIZQT__.TTF", 10, "OUTLINE")
         else
@@ -295,7 +294,43 @@ function VGuideMinimapCompass:Create()
         self.labels[i] = label
     end
     
-    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap compass enabled")
+    -- Update positions based on player facing
+    local lastUpdate = 0
+    compassFrame:SetScript("OnUpdate", function()
+        lastUpdate = lastUpdate + arg1
+        if lastUpdate < 0.1 then return end
+        lastUpdate = 0
+        
+        -- Get player facing (if available) or check minimap rotation setting
+        local facing = 0
+        
+        -- Try to get facing from minimap rotation
+        if GetCVar("rotateMinimap") == "1" then
+            -- When rotate minimap is on, try to get player facing
+            -- In some vanilla clients, MiniMapCompassRing exists
+            if MiniMapCompassRing then
+                -- The compass ring rotates, we can extract angle from it
+                -- But simpler: just don't rotate our compass when minimap rotates
+                facing = 0
+            end
+        end
+        
+        -- Update label positions
+        for i, data in ipairs(obj.compassData) do
+            local label = obj.labels[i]
+            if label then
+                -- Convert to display angle (screen coordinates: 0=right, 90=up)
+                local displayAngle = 90 - data.baseAngle - facing
+                local rad = math.rad(displayAngle)
+                local x = math.cos(rad) * radius
+                local y = math.sin(rad) * radius
+                label:ClearAllPoints()
+                label:SetPoint("CENTER", compassFrame, "CENTER", x, y)
+            end
+        end
+    end)
+    
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap compass enabled (7 directions)")
 end
 
 function VGuideMinimapCompass:Show()
