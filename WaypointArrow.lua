@@ -76,10 +76,10 @@ function VGuideArrow:new(oSettings)
         frame:SetFrameStrata("HIGH")
         frame:Hide()
         
-        -- Background (semi-transparent)
+        -- Background (semi-transparent circle)
         local bg = frame:CreateTexture(nil, "BACKGROUND")
         bg:SetAllPoints()
-        bg:SetTexture(0, 0, 0, 0.7)
+        bg:SetTexture(0, 0, 0, 0.6)
         frame.bg = bg
         
         -- Arrow container
@@ -89,14 +89,12 @@ function VGuideArrow:new(oSettings)
         arrowFrame:SetPoint("TOP", frame, "TOP", 0, -5)
         frame.arrowFrame = arrowFrame
         
-        -- Use a scroll button arrow texture (definitely exists in vanilla)
-        -- This is an upward pointing arrow
+        -- Use our custom arrow texture (bundled with addon)
         local arrow = arrowFrame:CreateTexture(nil, "ARTWORK")
         arrow:SetWidth(ARROW_SIZE)
         arrow:SetHeight(ARROW_SIZE)
-        arrow:SetTexture("Interface\\BUTTONS\\UI-ScrollBar-ScrollUpButton-Up")
+        arrow:SetTexture("Interface\\AddOns\\VanillaGuide\\Textures\\Arrow")
         arrow:SetAllPoints(arrowFrame)
-        arrow:SetVertexColor(0.3, 1, 0.3, 1)  -- Tint green
         frame.arrow = arrow
         
         -- Title text
