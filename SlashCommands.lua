@@ -115,6 +115,13 @@ local options = {
 				get = "IsCompassVisible",
 				set = "ToggleCompass"
 			},
+			questpins = {
+				type = 'toggle',
+				name = 'questpins',
+				desc = 'Toggle quest objective pins on world map (like pfQuest)',
+				get = "IsQuestPinsVisible",
+				set = "ToggleQuestPins"
+			},
 			progress = {
 				type = 'execute',
 				name = 'progress',
@@ -240,6 +247,21 @@ function VGuide:ToggleCompass()
         end
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Compass not initialized")
+    end
+end
+
+function VGuide:IsQuestPinsVisible()
+    if VGuideQuestMapPins then
+        return VGuideQuestMapPins.enabled
+    end
+    return false
+end
+
+function VGuide:ToggleQuestPins()
+    if VGuideQuestMapPins then
+        VGuideQuestMapPins:Toggle()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Quest pins not initialized")
     end
 end
 
