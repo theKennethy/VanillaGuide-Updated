@@ -102,7 +102,18 @@ function VGuidePfQuest:new(oSettings)
     -- Uses pfQuest's arrow system if available
     obj.SetWaypoint = function(self, x, y, zone, title, description)
         if not obj.pfQuestPresent then return false end
-        if not x or not y or not zone then return false end
+        if not x or not y or not zone then 
+            Dv("    SetWaypoint: Missing coordinates (x=" .. tostring(x) .. ", y=" .. tostring(y) .. ", zone=" .. tostring(zone) .. ")")
+            return false 
+        end
+        
+        -- Ensure x and y are numbers
+        x = tonumber(x)
+        y = tonumber(y)
+        if not x or not y then
+            Dv("    SetWaypoint: Invalid coordinate values")
+            return false
+        end
         
         -- Normalize coordinates (VanillaGuide uses 0-100, pfQuest uses 0-1)
         local normX = x / 100
@@ -131,33 +142,45 @@ function VGuidePfQuest:new(oSettings)
                 title = title or "VanillaGuide Waypoint",
                 spawn = normX .. ":" .. normY
             }
-            pfQuest.route:AddNode(node)
-            return true
+            local success, err = pcall(function() pfQuest.route:AddNode(node) end)
+            if success then
+                return true
+            else
+                Dv("    pfQuest.route:AddNode failed: " .. tostring(err))
+            end
         end
         
         -- Method 2: Use pfMap to add a visible node
         if pfMap and pfMap.AddNode then
             local mapID = obj:GetMapIDForZone(zone)
-            if mapID then
+            if mapID and normX and normY then
                 local nodeName = obj.nodePrefix .. "waypoint"
                 local nodeData = {
                     title = title or "VanillaGuide",
-                    spawn = normX .. ":" .. normY,
+                    spawn = tostring(normX) .. ":" .. tostring(normY),
                     zone = zone,
                     x = normX,
                     y = normY,
                     layer = "TOOLTIP",
                     texture = "Interface\\AddOns\\pfQuest\\img\\node",
                 }
-                pfMap:AddNode(mapID, normX, normY, nodeData, nodeName)
-                return true
+                local success, err = pcall(function() pfMap:AddNode(mapID, normX, normY, nodeData, nodeName) end)
+                if success then
+                    return true
+                else
+                    Dv("    pfMap:AddNode failed: " .. tostring(err))
+                end
             end
         end
         
         -- Method 3: Use global arrow frame if pfQuest exposes it
         if pfQuestArrow and pfQuestArrow.SetTarget then
-            pfQuestArrow:SetTarget(normX, normY, zone, title)
-            return true
+            local success, err = pcall(function() pfQuestArrow:SetTarget(normX, normY, zone, title) end)
+            if success then
+                return true
+            else
+                Dv("    pfQuestArrow:SetTarget failed: " .. tostring(err))
+            end
         end
         
         return false
