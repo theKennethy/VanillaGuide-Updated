@@ -49,6 +49,7 @@ GuideTables\004_Professions.lua
 QuestDatabase.lua
 QuestLogTracker.lua
 AutoAdvance.lua
+LevelDetector.lua
 GuideTable.lua
 Display.lua
 pfQuestIntegration.lua

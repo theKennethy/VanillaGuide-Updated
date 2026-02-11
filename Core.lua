@@ -191,9 +191,16 @@ function VGuide:OnEnable(first)
     VGuideAutoAdvancer = VGuideAutoAdvance:new(self.Settings, self.Display)
     VGuideAutoAdvancer:Initialize()
 
+    -- Initialize Level Detector system
+    VGuideLevelDetect = VGuideLevelDetector:new(self.Settings, self.GuideTable, self.Display)
+    VGuideLevelDetect:Initialize()
+
     -- Register for quest log events to update quest status indicators
     self:RegisterEvent("QUEST_LOG_UPDATE", "OnQuestLogUpdate")
     self:RegisterEvent("UNIT_QUEST_LOG_CHANGED", "OnQuestLogUpdate")
+    
+    -- Register for level up events
+    self:RegisterEvent("PLAYER_LEVEL_UP", "OnPlayerLevelUp")
     
     -- Store previous quest count for detecting new quests
     local _, numQuests = GetNumQuestLogEntries()
@@ -230,6 +237,13 @@ function VGuide:OnQuestLogUpdate()
             self.UI.MainFrame:RefreshStepFrameLabel()
             self.UI.MainFrame:RefreshScrollFrame()
         end
+    end
+end
+
+-- Called when player levels up
+function VGuide:OnPlayerLevelUp()
+    if VGuideLevelDetect then
+        VGuideLevelDetect:OnLevelUp()
     end
 end
 

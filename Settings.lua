@@ -130,6 +130,13 @@ function objSettings:new()
 			OnQuestTurnIn = true,
 			ShowNotification = true,
 		},
+		LevelDetector = {
+			Enable = true,
+			AutoSuggestOnLogin = true,
+			AutoSwitchOnLevelUp = false,
+			SkipCompletedQuests = true,
+			ShowNotification = true,
+		},
 	}
 
 	obj = AceLibrary("AceAddon-2.0"):new("AceDB-2.0")
@@ -332,6 +339,14 @@ function objSettings:new()
 
 	obj.SetSettingsAutoAdvance = function(self, tAutoAdvance)
 		obj.db.char.AutoAdvance = tAutoAdvance
+	end
+
+	obj.GetSettingsLevelDetector = function(self)
+		return obj.db.char.LevelDetector
+	end
+
+	obj.SetSettingsLevelDetector = function(self, tLevelDetector)
+		obj.db.char.LevelDetector = tLevelDetector
 	end
 
 	obj.SetSettingEntireCharDB = function(self, tSettingsTable)

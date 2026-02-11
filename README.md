@@ -41,6 +41,17 @@ Automatically progress through the guide when you:
 
 Each trigger can be individually enabled/disabled in settings.
 
+### Auto-Level Detection
+- **Automatic Guide Suggestions** - On login, suggests the best guide for your level
+- **Level-Up Detection** - When you level up, can auto-switch to appropriate guide
+- **Smart Matching** - Finds guides that match your current level range
+
+### Skip Completed Quests
+- **Completed Quest Tracking** - Remembers quests you've turned in
+- **Auto-Skip** - Automatically skips steps for already-completed quests
+- **Manual Skip** - Use `/vguide skip` to jump to next incomplete step
+- **Mark Complete** - Use `/vguide complete` to manually mark steps done
+
 ## Installation
 
 1. Download the latest release
@@ -86,6 +97,9 @@ These addons enhance VanillaGuide but are **not required**:
 | `/vguide prev` | Go to previous step |
 | `/vguide reset` | Reset to step 1 |
 | `/vguide options` | Open settings |
+| `/vguide suggest` | Switch to guide for your level |
+| `/vguide skip` | Skip to next incomplete step |
+| `/vguide complete` | Mark current step as completed |
 
 ### Navigation
 - **Arrow Buttons** - Navigate between steps
@@ -113,6 +127,13 @@ Access settings via the gear icon or `/vguide options`:
 - Trigger on quest accept
 - Trigger on quest complete
 - Trigger on quest turn-in
+- Show notification messages
+
+#### Level Detection Settings
+- Enable/disable level detection
+- Auto-suggest guide on login
+- Auto-switch guide on level-up
+- Skip completed quests
 - Show notification messages
 
 ## Supported Servers
@@ -186,6 +207,8 @@ VGuide_QuestDB = {
 | Waypoint arrows | ✅ (pfQuest) | ✅ | ❌ |
 | Auto-advance | ✅ | ✅ | ❌ |
 | Progress % | ✅ | ✅ | ❌ |
+| Auto-level detection | ✅ | ✅ | ❌ |
+| Skip completed quests | ✅ | ✅ | ❌ |
 | Free & open source | ✅ | ❌ | ❌ |
 | 1.12.1 compatible | ✅ | ❌ | ✅ |
 

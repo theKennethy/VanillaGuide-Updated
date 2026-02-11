@@ -35,8 +35,25 @@ local options = {
 				desc = 'This Toggle VanillaGuide Main Frame visibility',
 				get = "IsMFVisible",
 				set = "ToggleMFVisibility"
-			}
-		--},
+			},
+			suggest = {
+				type = 'execute',
+				name = 'suggest',
+				desc = 'Switch to suggested guide for your level',
+				func = "SuggestGuide"
+			},
+			skip = {
+				type = 'execute',
+				name = 'skip',
+				desc = 'Skip to the next incomplete step',
+				func = "SkipCompleted"
+			},
+			complete = {
+				type = 'execute',
+				name = 'complete',
+				desc = 'Mark current step as completed',
+				func = "MarkComplete"
+			},
 	},
 }
 
@@ -61,6 +78,33 @@ function VGuide:ToggleMFVisibility()
 		if fSettings.showthis then
 			fSettings:Show()
 		end
+    end
+end
+
+function VGuide:SuggestGuide()
+    if VGuideLevelDetect then
+        VGuideLevelDetect:SwitchToSuggestedGuide()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Level detector not initialized")
+    end
+end
+
+function VGuide:SkipCompleted()
+    if VGuideLevelDetect then
+        local skipped = VGuideLevelDetect:SkipCompletedSteps()
+        if not skipped then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r No completed steps to skip")
+        end
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Level detector not initialized")
+    end
+end
+
+function VGuide:MarkComplete()
+    if VGuideLevelDetect then
+        VGuideLevelDetect:MarkCurrentStepCompleted()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Level detector not initialized")
     end
 end
 
