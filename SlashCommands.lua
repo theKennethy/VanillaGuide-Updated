@@ -67,6 +67,13 @@ local options = {
 				get = "IsArrowVisible",
 				set = "ToggleArrow"
 			},
+			autoquest = {
+				type = 'toggle',
+				name = 'autoquest',
+				desc = 'Toggle auto accept/turn-in for guide quests',
+				get = "IsAutoQuestEnabled",
+				set = "ToggleAutoQuest"
+			},
 			minimap = {
 				type = 'toggle',
 				name = 'minimap',
@@ -234,6 +241,21 @@ function VGuide:ToggleArrow()
         end
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Waypoint arrow not initialized")
+    end
+end
+
+function VGuide:IsAutoQuestEnabled()
+    if VGuideAutoQuestObj then
+        return VGuideAutoQuestObj:IsEnabled()
+    end
+    return false
+end
+
+function VGuide:ToggleAutoQuest()
+    if VGuideAutoQuestObj then
+        VGuideAutoQuestObj:Toggle()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Auto Quest not initialized")
     end
 end
 

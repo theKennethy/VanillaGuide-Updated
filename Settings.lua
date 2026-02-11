@@ -124,6 +124,13 @@ function objSettings:new()
 			x = 0,
 			y = 200,
 		},
+		AutoQuest = {
+			Enable = true,
+			AutoAccept = true,
+			AutoTurnIn = true,
+			SkipRewardChoice = true,
+			ShowNotification = true,
+		},
 		AutoAdvance = {
 			Enable = true,
 			OnQuestAccept = true,

@@ -216,6 +216,10 @@ function VGuide:OnEnable(first)
     VGuideQuestListObj:Initialize()
     Di("      - Quest List initialized")
 
+    -- Initialize Auto Quest system
+    VGuideAutoQuestObj = VGuideAutoQuest:new(self.Settings, self.Display)
+    VGuideAutoQuestObj:Initialize()
+
     -- Register for quest log events to update quest status indicators
     self:RegisterEvent("QUEST_LOG_UPDATE", "OnQuestLogUpdate")
     self:RegisterEvent("UNIT_QUEST_LOG_CHANGED", "OnQuestLogUpdate")

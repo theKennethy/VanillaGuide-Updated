@@ -1,8 +1,8 @@
 ## Interface: 11200
 ## Title: VanillaGuide |cff7fff7f -Ace2-|r
-## Notes: Step-by-Step 1to60 Guides, in an Ace2 addon. Features built-in waypoint arrow.
+## Notes: Step-by-Step 1to60 Guides, in an Ace2 addon. Features built-in waypoint arrow and auto-quest.
 ## Author: mrmr
-## Version: 1.06.0
+## Version: 1.07.0
 ## DefaultState: enabled
 ## LoadOnDemand: 0
 
@@ -55,6 +55,7 @@ QuestDatabase.lua
 ItemDatabase.lua
 QuestLogTracker.lua
 AutoAdvance.lua
+AutoQuest.lua
 TravelHelper.lua
 DungeonDetector.lua
 ProgressTracker.lua

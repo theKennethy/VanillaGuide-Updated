@@ -46,6 +46,14 @@ Automatically progress through the guide when you:
 
 Each trigger can be individually enabled/disabled in settings.
 
+### Auto Quest Accept/Turn-In
+- **Auto-Accept** - Automatically accepts quests from the guide when talking to NPCs
+- **Auto-Turn-In** - Automatically completes quests (unless reward choice needed)
+- **Reward Choice Protection** - Stops if quest has multiple reward options to let you choose
+- **Gossip Handling** - Works with NPC gossip dialogs too
+- **Guide-Only** - Only affects quests in your current guide
+- **Toggle** - Use `/vguide autoquest` to enable/disable
+
 ### Auto-Level Detection
 - **Automatic Guide Suggestions** - On login, suggests the best guide for your level
 - **Level-Up Detection** - When you level up, can auto-switch to appropriate guide
@@ -134,6 +142,7 @@ These addons enhance VanillaGuide but are **not required**:
 | `/vguide complete` | Mark current step as completed |
 | `/vguide quests` | Toggle quest list pop-out |
 | `/vguide arrow` | Toggle waypoint arrow |
+| `/vguide autoquest` | Toggle auto accept/turn-in |
 | `/vguide minimap` | Toggle minimap button visibility |
 | `/vguide resetminimap` | Reset minimap button position |
 | `/vguide progress` | Show current guide progress |
@@ -159,6 +168,13 @@ Access settings via the gear icon or `/vguide options`:
 #### Arrow Settings
 - Enable/disable waypoint arrow
 - Arrow position (draggable)
+
+#### Auto Quest Settings
+- Enable/disable auto quest system
+- Auto-accept guide quests
+- Auto-turn-in completed quests
+- Skip quests with reward choices
+- Show notification messages
 
 #### Auto-Advance Settings
 - Enable/disable auto-advance
