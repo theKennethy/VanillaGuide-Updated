@@ -3,12 +3,12 @@
 ------------------
 QuestDatabase.lua
 Authors: VanillaGuide Contributors
-Version: 1.05.0
+Version: 1.06.0
 ------------------------------------------------------
 Description: 
-    Quest ID lookup table for pfQuest integration.
-    Maps quest names to their database IDs for direct
-    quest tracking and objective display.
+    Quest ID lookup table for VanillaGuide.
+    Maps quest names to their database IDs for quest
+    tracking and progress display.
     
     Quest IDs are from the vanilla 1.12 database.
 ------------------------------------------------------

@@ -3,7 +3,7 @@
 ------------------
 AutoAdvance.lua
 Authors: VanillaGuide Contributors
-Version: 1.05.0
+Version: 1.06.0
 ------------------------------------------------------
 Description: 
     Auto-Advance module for VanillaGuide
@@ -11,8 +11,6 @@ Description:
     - A quest mentioned in the current step is accepted
     - A quest mentioned in the current step is completed
     - A quest mentioned in the current step is turned in
-    
-    Integrates with pfQuest for enhanced tracking.
 ------------------------------------------------------
 Events Used:
     QUEST_ACCEPTED - Fired when accepting a quest
@@ -290,21 +288,6 @@ function VGuideAutoAdvance:new(oSettings, oDisplay)
     end
     
     ---------------------------------------
-    -- pfQuest Integration
-    ---------------------------------------
-    
-    -- Hook into pfQuest events if available
-    obj.IntegrateWithPfQuest = function(self)
-        -- pfQuest may provide additional hooks for quest tracking
-        if pfQuest then
-            Dv("    AutoAdvance: pfQuest detected, enhancing tracking")
-            
-            -- pfQuest stores quest data that we can use
-            -- This gives us better quest ID matching
-        end
-    end
-    
-    ---------------------------------------
     -- Initialization
     ---------------------------------------
     
@@ -317,7 +300,6 @@ function VGuideAutoAdvance:new(oSettings, oDisplay)
     
     obj.Initialize = function(self)
         obj:ParseCurrentStep()
-        obj:IntegrateWithPfQuest()
         
         -- Initial quest log scan
         local numEntries = GetNumQuestLogEntries()

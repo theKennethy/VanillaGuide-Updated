@@ -1,8 +1,8 @@
 # VanillaGuide
 
-A powerful in-game leveling guide addon for World of Warcraft 1.12.1 (Vanilla) with modern features like pfQuest integration, quest log tracking, and auto-advance.
+A powerful in-game leveling guide addon for World of Warcraft 1.12.1 (Vanilla) with modern features like built-in waypoint arrows, quest log tracking, and auto-advance.
 
-![Version](https://img.shields.io/badge/version-1.05.0-blue)
+![Version](https://img.shields.io/badge/version-1.06.0-blue)
 ![WoW Version](https://img.shields.io/badge/WoW-1.12.1-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -14,16 +14,13 @@ A powerful in-game leveling guide addon for World of Warcraft 1.12.1 (Vanilla) w
 - **Coordinate System** - Automatic coordinate parsing from guide text
 - **FuBar Support** - Optional FuBar plugin for quick access
 
-### pfQuest Integration
-When [pfQuest](https://github.com/shagu/pfQuest) is installed:
-- **Waypoint Arrows** - Automatic waypoint arrows pointing to objectives
-- **Map Markers** - Show quest objectives on the world map
-- **Quest Tracking** - Track quests directly through pfQuest's database
-
-### pfUI Integration
-When [pfUI](https://github.com/shagu/pfUI) is installed:
-- **Automatic Skinning** - VanillaGuide frames match your pfUI theme
-- **Seamless Integration** - Consistent look with your UI
+### Built-in Waypoint Arrow
+- **TomTom-style Arrow** - Direction arrow points toward your current objective
+- **Distance Display** - Shows remaining yards/distance to destination
+- **Zone Awareness** - Shows "Go to: Zone Name" when in wrong zone
+- **Arrival Detection** - Notifies when you've reached the waypoint
+- **Draggable** - Position the arrow anywhere on screen
+- **Auto-Update** - Arrow automatically updates when changing guide steps
 
 ### Quest Log Tracking
 - **Real-time Progress** - See quest completion percentage in the guide
@@ -108,9 +105,6 @@ These addons enhance VanillaGuide but are **not required**:
 
 | Addon | Benefit |
 |-------|---------|
-| [pfQuest](https://github.com/shagu/pfQuest) | Waypoint arrows, map markers, quest tracking |
-| [pfQuest-turtle](https://github.com/shagu/pfQuest-turtle) | Turtle WoW specific quest data |
-| [pfUI](https://github.com/shagu/pfUI) | Automatic UI skinning |
 | [FuBar](https://github.com/shirsig/FuBar) | Quick-access toolbar button |
 | [MetaMap](https://github.com/laytya/MetaMap) | Alternative map integration |
 

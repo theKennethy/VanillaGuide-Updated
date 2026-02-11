@@ -115,13 +115,14 @@ function objSettings:new()
 			NotesEnable = false,
 			BWPEnable = false,
 		},
-		pfQuest = {
-			Presence = false,
-			pfUIPresence = false,
-			WaypointEnable = true,
-			QuestTrackingEnable = true,
-			AutoShowQuest = true,
-			UsepfUISkin = true,
+		Arrow = {
+			Enable = true,
+			ShowDistance = true,
+			ShowTitle = true,
+			point = "CENTER",
+			relPoint = "CENTER",
+			x = 0,
+			y = 200,
 		},
 		AutoAdvance = {
 			Enable = true,
@@ -160,11 +161,10 @@ function objSettings:new()
 		Dv(" -  - Notes: " .. tostring(obj.db.char.MetaMap.NotesEnable))
 		Dv(" -  - BWP: " .. tostring(obj.db.char.MetaMap.BWPEnable))
 		Dv(" ------------------")
-		Dv(" -- pfQuest")
-		Dv(" -  - Presence: " .. tostring(obj.db.char.pfQuest.Presence))
-		Dv(" -  - pfUIPresence: " .. tostring(obj.db.char.pfQuest.pfUIPresence))
-		Dv(" -  - WaypointEnable: " .. tostring(obj.db.char.pfQuest.WaypointEnable))
-		Dv(" -  - QuestTrackingEnable: " .. tostring(obj.db.char.pfQuest.QuestTrackingEnable))
+		Dv(" -- Arrow")
+		Dv(" -  - Enable: " .. tostring(obj.db.char.Arrow.Enable))
+		Dv(" -  - ShowDistance: " .. tostring(obj.db.char.Arrow.ShowDistance))
+		Dv(" -  - ShowTitle: " .. tostring(obj.db.char.Arrow.ShowTitle))
 		Dv(" ------------------")
 		Dv(" -- GuideValues")
 		Dv(" -  - GuideID: " .. tostring(obj.db.char.GuideValues.GuideID))
@@ -233,29 +233,6 @@ function objSettings:new()
 			return MetaMapPresence, MetaMapNotesPresence, MetaMapBWPPresence
 		end
 
-		local function pfQuestSupportCheck()
-			local pfQuestPresence, pfUIPresence = false, false
-			Dv("    pfQuest Support Check:")
-			
-			-- Check for pfQuest (supports both regular and turtle versions)
-			if IsAddOnLoaded("pfQuest") or IsAddOnLoaded("pfQuest-turtle") then
-				pfQuestPresence = true
-				Di("      - pfQuest Support Present")
-			else
-				Di("      - pfQuest not detected")
-			end
-			
-			-- Check for pfUI
-			if IsAddOnLoaded("pfUI") then
-				pfUIPresence = true
-				Di("      - pfUI Support Present")
-			else
-				Di("      - pfUI not detected")
-			end
-			
-			return pfQuestPresence, pfUIPresence
-		end
-
 		if obj.db.char.CharInfo.CharName == "Unknown" then
 			Di(" New Settings for \"|cFFbb7777" .. AceLibrary("AceDB-2.0").CHAR_ID .. " - " .. AceLibrary("AceDB-2.0").FACTION .."|r\"")
 			obj.db.char.CharInfo.CharName = AceLibrary("AceDB-2.0").NAME
@@ -276,9 +253,6 @@ function objSettings:new()
 		obj.db.char.MetaMap.Presence, 
 		obj.db.char.MetaMap.NotesPresence,	
 		obj.db.char.MetaMap.BWPPresence = MetaMapBWPSupportCheck()
-		
-		obj.db.char.pfQuest.Presence,
-		obj.db.char.pfQuest.pfUIPresence = pfQuestSupportCheck()
 	end
 
 	obj.GetSettingsCharInfo = function(self)
@@ -301,8 +275,8 @@ function objSettings:new()
 		return obj.db.char.MetaMap
 	end
 
-	obj.GetSettingsPfQuest = function(self)
-		return obj.db.char.pfQuest
+	obj.GetSettingsArrow = function(self)
+		return obj.db.char.Arrow
 	end
 
 	obj.GetSettingsAutoAdvance = function(self)
@@ -333,8 +307,8 @@ function objSettings:new()
 		obj.db.char.MetaMap = tMetaMap
 	end
 
-	obj.SetSettingsPfQuest = function(self, tPfQuest)
-		obj.db.char.pfQuest = tPfQuest
+	obj.SetSettingsArrow = function(self, tArrow)
+		obj.db.char.Arrow = tArrow
 	end
 
 	obj.SetSettingsAutoAdvance = function(self, tAutoAdvance)

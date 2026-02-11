@@ -207,6 +207,10 @@ function VGuide:OnEnable(first)
     VGuideProgress = VGuideProgressTracker:new(self.Settings, self.Display)
     VGuideProgress:Initialize()
 
+    -- Initialize Waypoint Arrow system
+    VGuideWaypointArrow = VGuideArrow:new(self.Settings)
+    Di("      - Waypoint Arrow initialized")
+
     -- Register for quest log events to update quest status indicators
     self:RegisterEvent("QUEST_LOG_UPDATE", "OnQuestLogUpdate")
     self:RegisterEvent("UNIT_QUEST_LOG_CHANGED", "OnQuestLogUpdate")
