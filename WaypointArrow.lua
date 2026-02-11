@@ -150,19 +150,19 @@ function VGuideArrow:new(oSettings)
         local sin = math.sin(angle)
         local cos = math.cos(angle)
         
-        -- Rotate texture coordinates around center (0.5, 0.5)
-        local ofs = 0.5
+        -- The 8-arg SetTexCoord rotates texture around center
+        -- Corner order: UL, LL, UR, LR (each has x,y)
+        -- Original corners at: UL(0,0), LL(0,1), UR(1,0), LR(1,1)
+        -- Rotate around center (0.5, 0.5)
         
-        -- Calculate rotated corner positions for SetTexCoord
-        -- SetTexCoord expects: ULx, ULy, LLx, LLy, URx, URy, LRx, LRy
-        local ULx = ofs - ofs * cos - ofs * sin
-        local ULy = ofs + ofs * sin - ofs * cos
-        local LLx = ofs - ofs * cos + ofs * sin
-        local LLy = ofs + ofs * sin + ofs * cos
-        local URx = ofs + ofs * cos - ofs * sin
-        local URy = ofs - ofs * sin - ofs * cos
-        local LRx = ofs + ofs * cos + ofs * sin
-        local LRy = ofs - ofs * sin + ofs * cos
+        local ULx = 0.5 - 0.5*cos + 0.5*sin
+        local ULy = 0.5 - 0.5*sin - 0.5*cos
+        local LLx = 0.5 - 0.5*cos - 0.5*sin
+        local LLy = 0.5 - 0.5*sin + 0.5*cos
+        local URx = 0.5 + 0.5*cos + 0.5*sin
+        local URy = 0.5 + 0.5*sin - 0.5*cos
+        local LRx = 0.5 + 0.5*cos - 0.5*sin
+        local LRy = 0.5 + 0.5*sin + 0.5*cos
         
         obj.frame.arrow:SetTexCoord(ULx, ULy, LLx, LLy, URx, URy, LRx, LRy)
     end
@@ -205,30 +205,20 @@ function VGuideArrow:new(oSettings)
         local dx = waypointX - playerX
         local dy = waypointY - playerY
         
-        -- atan2 gives angle from positive X axis (east)
-        -- We want angle from north (up on map = negative Y in WoW coords)
-        -- Map coords: X increases right, Y increases down
+        -- atan2(dx, -dy) gives angle from north
+        -- Map coords: X increases right (east), Y increases down (south)
         local angle = math.atan2(dx, -dy)
         
         return angle
     end
     
-    -- Get camera/player facing direction (radians, 0 = north)
-    -- Uses minimap rotation which follows camera when "rotate minimap" is on
-    obj.GetCameraFacing = function(self)
-        -- Try to get minimap rotation (follows camera)
-        local minimapRotation = 0
-        if MinimapCompassTexture and MinimapCompassTexture.IsVisible and MinimapCompassTexture:IsVisible() then
-            -- Minimap is rotating with camera
-            minimapRotation = MiniMapCompassRing and MiniMapCompassRing:GetFacing() or 0
+    -- Get player facing direction (radians)
+    -- In WoW: 0 = north, increases counter-clockwise
+    obj.GetPlayerFacing = function(self)
+        if GetPlayerFacing then
+            return GetPlayerFacing()
         end
-        
-        -- Fallback to GetPlayerFacing (works when rotate minimap is off)
-        local facing = GetPlayerFacing and GetPlayerFacing() or 0
-        
-        -- GetPlayerFacing returns radians where 0 = north, increases counter-clockwise
-        -- Negate for our clockwise system
-        return -facing
+        return 0
     end
     
     ---------------------------------------
@@ -290,10 +280,13 @@ function VGuideArrow:new(oSettings)
         
         -- Calculate direction
         local angleToWaypoint = obj:CalculateAngle(playerX, playerY, wp.x, wp.y)
-        local cameraFacing = obj:GetCameraFacing()
+        local playerFacing = obj:GetPlayerFacing()
         
-        -- Arrow should point relative to camera/player facing
-        local arrowAngle = angleToWaypoint - cameraFacing
+        -- Arrow should point relative to player facing direction
+        -- angleToWaypoint: 0 = north, increases clockwise
+        -- playerFacing: 0 = north, increases counter-clockwise (WoW convention)
+        -- So we add them (since playerFacing is CCW, negating it = adding)
+        local arrowAngle = angleToWaypoint + playerFacing
         
         obj:SetArrowDirection(arrowAngle)
         
