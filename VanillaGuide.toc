@@ -52,12 +52,17 @@ GuideTables\007_Reputation.lua
 GuideTables\008_TalentGuides.lua
 GuideTables\009_GearGuides.lua
 QuestDatabase.lua
+ItemDatabase.lua
 QuestLogTracker.lua
 AutoAdvance.lua
+TravelHelper.lua
+DungeonDetector.lua
+ProgressTracker.lua
 LevelDetector.lua
 GuideTable.lua
 Display.lua
 pfQuestIntegration.lua
+MinimapButton.lua
 SlashCommands.lua
 Frame_MainFrame.lua
 Frame_AboutFrame.lua

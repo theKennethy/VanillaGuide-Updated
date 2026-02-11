@@ -54,6 +54,37 @@ local options = {
 				desc = 'Mark current step as completed',
 				func = "MarkComplete"
 			},
+			minimap = {
+				type = 'toggle',
+				name = 'minimap',
+				desc = 'Toggle minimap button visibility',
+				get = "IsMinimapButtonVisible",
+				set = "ToggleMinimapButton"
+			},
+			resetminimap = {
+				type = 'execute',
+				name = 'resetminimap',
+				desc = 'Reset minimap button position',
+				func = "ResetMinimapButton"
+			},
+			progress = {
+				type = 'execute',
+				name = 'progress',
+				desc = 'Show current guide progress',
+				func = "ShowProgress"
+			},
+			markdone = {
+				type = 'execute',
+				name = 'markdone',
+				desc = 'Mark current step as completed',
+				func = "MarkStepDone"
+			},
+			resetprogress = {
+				type = 'execute',
+				name = 'resetprogress',
+				desc = 'Reset progress for current guide',
+				func = "ResetProgress"
+			},
 	},
 }
 
@@ -105,6 +136,62 @@ function VGuide:MarkComplete()
         VGuideLevelDetect:MarkCurrentStepCompleted()
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Level detector not initialized")
+    end
+end
+
+function VGuide:IsMinimapButtonVisible()
+    if VGuideMinimapButton and VGuideMinimapButton.frame then
+        return VGuideMinimapButton.frame:IsVisible()
+    end
+    return false
+end
+
+function VGuide:ToggleMinimapButton()
+    if VGuideMinimapButton then
+        VGuideMinimapButton:Toggle()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap button not initialized")
+    end
+end
+
+function VGuide:ResetMinimapButton()
+    if VGuideMinimapButton then
+        VGuideMinimapButton:ResetPosition()
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap button position reset")
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap button not initialized")
+    end
+end
+
+function VGuide:ShowProgress()
+    if VGuideProgress then
+        local summary = VGuideProgress:GetProgressSummary()
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r " .. summary)
+        
+        -- Also show stats
+        local stats = VGuideProgress:GetStats()
+        if stats then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Total steps completed: " .. stats.totalStepsCompleted)
+        end
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Progress tracker not initialized")
+    end
+end
+
+function VGuide:MarkStepDone()
+    if VGuideProgress then
+        VGuideProgress:MarkCurrentCompleted()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Progress tracker not initialized")
+    end
+end
+
+function VGuide:ResetProgress()
+    if VGuideProgress and self.Display then
+        local guideID = self.Display:GetCurrentGuideID()
+        VGuideProgress:ResetGuideProgress(guideID)
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Progress tracker not initialized")
     end
 end
 

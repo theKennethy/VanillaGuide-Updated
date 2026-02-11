@@ -96,16 +96,34 @@ function objDisplay:new(oSettings, oGuideTables)
 	obj.GuideByID = function(self, nGuideID)
 		local bChange = false
 		obj.CurrentGuideID = nGuideID
-		obj.CurrentStep = 1
+		
+		-- Try to restore last step from progress tracker
+		local lastStep = 1
+		if VGuideProgress and VGuideProgress.OnGuideChanged then
+			lastStep = VGuideProgress:OnGuideChanged(nGuideID) or 1
+		end
+		
+		obj.CurrentStep = 1  -- Always start at 1 initially for data retrieval
 		obj:RetriveData()
+		
+		-- Now set to last step if valid
+		if lastStep > 1 and lastStep <= obj.CurrentStepCount then
+			obj.CurrentStep = lastStep
+			obj.StepFrameDisplay = obj.ScrollFrameDisplay[obj.CurrentStep]
+			obj:UpdateGuideValuesSettings()
+		end
+		
 		bChange = true
-
 		return bChange
 	end
 
 	obj.StepByID = function(self, nStep)
 		obj.CurrentStep = nStep
 		obj:RetriveData()
+		-- Notify progress tracker
+		if VGuideProgress and VGuideProgress.OnStepChanged then
+			VGuideProgress:OnStepChanged()
+		end
 	end
 
 	-- bMode tells us if we need to position CurrentStep to the last
@@ -143,6 +161,10 @@ function objDisplay:new(oSettings, oGuideTables)
 			if VGuideAutoAdvancer and VGuideAutoAdvancer.OnStepChanged then
 				VGuideAutoAdvancer:OnStepChanged()
 			end
+			-- Notify progress tracker of step change
+			if VGuideProgress and VGuideProgress.OnStepChanged then
+				VGuideProgress:OnStepChanged()
+			end
 		else
 			obj:PrevGuide(true)
 		end
@@ -156,6 +178,10 @@ function objDisplay:new(oSettings, oGuideTables)
 			-- Notify auto-advance system of step change
 			if VGuideAutoAdvancer and VGuideAutoAdvancer.OnStepChanged then
 				VGuideAutoAdvancer:OnStepChanged()
+			end
+			-- Notify progress tracker of step change
+			if VGuideProgress and VGuideProgress.OnStepChanged then
+				VGuideProgress:OnStepChanged()
 			end
 		else
 			obj:NextGuide()

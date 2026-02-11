@@ -620,6 +620,13 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 				this:SetTextColor(.91, .91, .91, .99)
 				this:SetBackdropColor(.3, .3, .3, .7)
 				local tx = tonumber(strsub(this:GetName(), 11))
+				-- Show item tooltip if entry contains an item from gear guides
+				if VGuideItemDB and this.entryText then
+					local itemName, itemId = VGuideItemDB:FindItemInText(this.entryText)
+					if itemId then
+						VGuideItemDB:ShowItemTooltip(itemId)
+					end
+				end
 			end)
 			sh:SetScript("OnLeave", function()
 				local UI = oSettings:GetSettingsUI()
@@ -631,6 +638,10 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 					this:SetBackdropColor(tColF.nR, tColF.nG, tColF.nB, tColF.nA)
 				else
 					this:SetBackdropColor(.1, .1, .1, .5)
+				end
+				-- Hide item tooltip
+				if VGuideItemDB then
+					VGuideItemDB:HideItemTooltip()
 				end
 			end)
 			sh:SetScript("OnMouseUp", function()
@@ -747,6 +758,8 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 				totalHeight = totalHeight + t.textHeight[k] + tTexture.SCROLLFRAME_PADDING
 				v:SetWidth(shWidth)
 				v:SetHeight(t.textHeight[k])
+				-- Store original text for item tooltip lookup
+				v.entryText = t[k]
 				-- Enhance step text with quest log status
 				local displayText = t[k]
 				if VGuideQuestTracker and VGuideQuestTracker.EnhanceColorizedText then

@@ -195,12 +195,27 @@ function VGuide:OnEnable(first)
     VGuideLevelDetect = VGuideLevelDetector:new(self.Settings, self.GuideTable, self.Display)
     VGuideLevelDetect:Initialize()
 
+    -- Initialize Travel Helper system
+    VGuideTravelHelp = VGuideTravelHelper:new(self.Settings)
+    VGuideTravelHelp:Initialize()
+
+    -- Initialize Dungeon Detector system
+    VGuideDungeonDetect = VGuideDungeonDetector:new(self.Settings, self.GuideTable, self.Display)
+    VGuideDungeonDetect:Initialize()
+
+    -- Initialize Progress Tracker system
+    VGuideProgress = VGuideProgressTracker:new(self.Settings, self.Display)
+    VGuideProgress:Initialize()
+
     -- Register for quest log events to update quest status indicators
     self:RegisterEvent("QUEST_LOG_UPDATE", "OnQuestLogUpdate")
     self:RegisterEvent("UNIT_QUEST_LOG_CHANGED", "OnQuestLogUpdate")
     
     -- Register for level up events
     self:RegisterEvent("PLAYER_LEVEL_UP", "OnPlayerLevelUp")
+    
+    -- Register for zone change events (travel helper)
+    self:RegisterEvent("ZONE_CHANGED_NEW_AREA", "OnZoneChanged")
     
     -- Store previous quest count for detecting new quests
     local _, numQuests = GetNumQuestLogEntries()
@@ -244,6 +259,18 @@ end
 function VGuide:OnPlayerLevelUp()
     if VGuideLevelDetect then
         VGuideLevelDetect:OnLevelUp()
+    end
+end
+
+-- Called when player enters a new zone
+function VGuide:OnZoneChanged()
+    if VGuideTravelHelp then
+        VGuideTravelHelp:OnZoneChanged()
+    end
+    
+    -- Check for dungeon entry/exit
+    if VGuideDungeonDetect then
+        VGuideDungeonDetect:CheckCurrentZone()
     end
 end
 

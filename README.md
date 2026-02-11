@@ -52,6 +52,36 @@ Each trigger can be individually enabled/disabled in settings.
 - **Manual Skip** - Use `/vguide skip` to jump to next incomplete step
 - **Mark Complete** - Use `/vguide complete` to manually mark steps done
 
+### Minimap Button
+- **Quick Toggle** - Click to show/hide the guide window
+- **Right-Click** - Open settings
+- **Shift-Click** - Open guide selection
+- **Draggable** - Reposition around the minimap
+- **No FuBar Required** - Works standalone
+
+### Item Tooltips
+- **Gear Guide Integration** - Hover over gear items to see tooltips
+- **Item Links** - Items show full WoW tooltips with stats
+- **Instant Info** - No need to search for items
+
+### Smart Travel Suggestions
+- **Hearthstone Tips** - Suggests when to rebind your hearthstone
+- **Flight Path Hints** - Shows quickest routes to destinations
+- **Zone Change Alerts** - Notifies of travel shortcuts when you zone in
+- **Boat/Zeppelin Info** - Reminds about ship routes
+
+### Dungeon Auto-Detection
+- **Automatic Guide Switch** - Switches to dungeon guide when entering an instance
+- **Position Memory** - Returns to your previous guide when leaving
+- **Level-Appropriate** - Only suggests dungeons within your level range
+- **Faction-Aware** - Shows correct dungeons for your faction
+
+### Progress Persistence
+- **Per-Character Tracking** - Each character has separate progress
+- **Step Completion** - Tracks which steps you've completed
+- **Position Memory** - Remembers your last position in each guide
+- **Auto-Resume** - Opens to where you left off
+
 ## Installation
 
 1. Download the latest release
@@ -100,6 +130,11 @@ These addons enhance VanillaGuide but are **not required**:
 | `/vguide suggest` | Switch to guide for your level |
 | `/vguide skip` | Skip to next incomplete step |
 | `/vguide complete` | Mark current step as completed |
+| `/vguide minimap` | Toggle minimap button visibility |
+| `/vguide resetminimap` | Reset minimap button position |
+| `/vguide progress` | Show current guide progress |
+| `/vguide markdone` | Mark current step as done |
+| `/vguide resetprogress` | Reset progress for current guide |
 
 ### Navigation
 - **Arrow Buttons** - Navigate between steps
@@ -310,6 +345,11 @@ VGuide_QuestDB = {
 | Dungeon guides | ✅ | ✅ | ❌ |
 | Gold/farming guides | ✅ | ✅ | ❌ |
 | Reputation guides | ✅ | ✅ | ❌ |
+| Minimap button | ✅ | ✅ | ❌ |
+| Item tooltips | ✅ | ✅ | ❌ |
+| Travel suggestions | ✅ | ✅ | ❌ |
+| Dungeon auto-detect | ✅ | ✅ | ❌ |
+| Progress persistence | ✅ | ✅ | ❌ |
 | Free & open source | ✅ | ❌ | ❌ |
 | 1.12.1 compatible | ✅ | ❌ | ✅ |
 
