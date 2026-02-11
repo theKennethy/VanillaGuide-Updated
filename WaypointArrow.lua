@@ -25,21 +25,28 @@ local ZoneLookup = {
     ["Redridge Mountains"] = { c = 2, z = 6 },
     ["Duskwood"] = { c = 2, z = 7 },
     ["Hillsbrad Foothills"] = { c = 2, z = 8 },
+    ["Hillsbard Foothills"] = { c = 2, z = 8 }, -- typo variant
+    ["Tarren Mill"] = { c = 2, z = 8 }, -- subzone of Hillsbrad
     ["Wetlands"] = { c = 2, z = 9 },
     ["Alterac Mountains"] = { c = 2, z = 10 },
     ["Arathi Highlands"] = { c = 2, z = 11 },
     ["Stranglethorn Vale"] = { c = 2, z = 12 },
     ["Badlands"] = { c = 2, z = 13 },
     ["Swamp of Sorrows"] = { c = 2, z = 14 },
+    ["Swamp of Sorrow"] = { c = 2, z = 14 }, -- typo variant
     ["The Hinterlands"] = { c = 2, z = 15 },
+    ["Hinterlands"] = { c = 2, z = 15 }, -- short variant
     ["Searing Gorge"] = { c = 2, z = 16 },
     ["Blasted Lands"] = { c = 2, z = 17 },
     ["Burning Steppes"] = { c = 2, z = 18 },
+    ["Burning Steps"] = { c = 2, z = 18 }, -- typo variant
     ["Western Plaguelands"] = { c = 2, z = 19 },
     ["Eastern Plaguelands"] = { c = 2, z = 20 },
     ["Silverpine Forest"] = { c = 2, z = 21 },
     ["Stormwind City"] = { c = 2, z = 22 },
+    ["Stormwind"] = { c = 2, z = 22 }, -- short variant
     ["Ironforge"] = { c = 2, z = 23 },
+    ["Iron Forge"] = { c = 2, z = 23 }, -- space variant
     ["Undercity"] = { c = 2, z = 24 },
     ["Deadwind Pass"] = { c = 2, z = 25 },
     
@@ -54,17 +61,22 @@ local ZoneLookup = {
     ["Stonetalon Mountains"] = { c = 1, z = 8 },
     ["Desolace"] = { c = 1, z = 9 },
     ["Feralas"] = { c = 1, z = 10 },
+    ["Felalas"] = { c = 1, z = 10 }, -- typo variant
     ["Dustwallow Marsh"] = { c = 1, z = 11 },
+    ["Duskwallow Marsh"] = { c = 1, z = 11 }, -- typo variant
     ["Tanaris"] = { c = 1, z = 12 },
     ["Azshara"] = { c = 1, z = 13 },
     ["Felwood"] = { c = 1, z = 14 },
     ["Un'Goro Crater"] = { c = 1, z = 15 },
+    ["Un'Goro"] = { c = 1, z = 15 }, -- short variant
     ["Silithus"] = { c = 1, z = 16 },
     ["Winterspring"] = { c = 1, z = 17 },
     ["Moonglade"] = { c = 1, z = 18 },
+    ["Moodglade"] = { c = 1, z = 18 }, -- typo variant
     ["Orgrimmar"] = { c = 1, z = 19 },
     ["Thunder Bluff"] = { c = 1, z = 20 },
     ["Darnassus"] = { c = 1, z = 21 },
+    ["darnassus"] = { c = 1, z = 21 }, -- lowercase variant
 }
 
 VGuideArrow = {}
