@@ -267,16 +267,16 @@ function VGuideMapPins:RefreshPins()
         return
     end
     
-    -- Get current guide and step
-    if not VGuide or not VGuide.GuideTable then
+    -- Get current step from Display object
+    if not VGuide or not VGuide.Display then
         self:HideAllPins()
         return
     end
     
-    local currentGuide = VGuide.GuideTable:GetGuide()
-    local currentStep = VGuide.GuideTable:GetStep()
+    local currentStep = VGuide.Display:GetCurrentStep()
+    local stepCount = VGuide.Display:GetCurrentStepCount()
     
-    if not currentGuide or not currentStep then
+    if not currentStep or not stepCount then
         self:HideAllPins()
         return
     end
@@ -288,28 +288,34 @@ function VGuideMapPins:RefreshPins()
     local pinIndex = 1
     local stepsToShow = self:ShowRoute() and self.maxPins or 1
     
-    for i = currentStep, math.min(currentStep + stepsToShow - 1, getn(currentGuide)) do
+    for i = currentStep, math.min(currentStep + stepsToShow - 1, stepCount) do
         if pinIndex > self.maxPins then break end
         
-        local step = currentGuide[i]
-        if step and step.text then
-            local x, y, zone = self:ParseCoordinates(step.text)
-            zone = zone or self:GetStepZone(step)
+        -- Get step info from Display
+        local scrollDisplay = VGuide.Display:GetScrollFrameDisplay()
+        local stepText = scrollDisplay and scrollDisplay[i]
+        
+        -- Get coordinates from step info
+        local stepInfo = nil
+        if VGuide.Display.StepInfoDisplay then
+            stepInfo = VGuide.Display.StepInfoDisplay[i]
+        end
+        
+        if stepInfo and stepInfo.x and stepInfo.y and stepInfo.zone then
+            local x, y, zone = stepInfo.x, stepInfo.y, stepInfo.zone
             
-            if x and y and zone then
-                local mapX, mapY = self:GetMapPosition(zone, x, y)
-                
-                if mapX and mapY then
-                    self:PlacePin(pinIndex, mapX, mapY, {
-                        step = i,
-                        text = step.text,
-                        zone = zone,
-                        x = x,
-                        y = y,
-                        isCurrent = (i == currentStep)
-                    })
-                    pinIndex = pinIndex + 1
-                end
+            local mapX, mapY = self:GetMapPosition(zone, x, y)
+            
+            if mapX and mapY then
+                self:PlacePin(pinIndex, mapX, mapY, {
+                    step = i,
+                    text = stepText or "",
+                    zone = zone,
+                    x = x,
+                    y = y,
+                    isCurrent = (i == currentStep)
+                })
+                pinIndex = pinIndex + 1
             end
         end
     end
