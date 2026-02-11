@@ -64,7 +64,7 @@ function VGuideLevelDetector:BuildGuideLevelCache()
     for guideId, guide in pairs(self.GuideTable.Guide) do
         if guide and guide.title then
             -- Parse level range from title like "12-15 Barrens" or "1-6 Durotar"
-            local minLevel, maxLevel = string.match(guide.title, "^(%d+)%-(%d+)")
+            local _, _, minLevel, maxLevel = string.find(guide.title, "^(%d+)%-(%d+)")
             if minLevel and maxLevel then
                 self.GuideLevelRanges[guideId] = {
                     min = tonumber(minLevel),
@@ -252,17 +252,18 @@ function VGuideLevelDetector:IsStepCompleted(stepText, stepData)
     
     -- Extract quest name from step text
     local questName = nil
+    local _
     
     -- Try different patterns for quest names
     -- Pattern: |c0000ffff"Quest Name"|r (from ACCEPT)
-    questName = string.match(stepText, '|c0000ffff"([^"]+)"')
+    _, _, questName = string.find(stepText, '|c0000ffff"([^"]+)"')
     if not questName then
         -- Pattern: |c0000ff00"Quest Name"|r (from TURNIN)
-        questName = string.match(stepText, '|c0000ff00"([^"]+)"')
+        _, _, questName = string.find(stepText, '|c0000ff00"([^"]+)"')
     end
     if not questName then
         -- Pattern: |c000079d2"Quest Name"|r (from DOQUEST)
-        questName = string.match(stepText, '|c000079d2"([^"]+)"')
+        _, _, questName = string.find(stepText, '|c000079d2"([^"]+)"')
     end
     
     local questId = stepData and stepData.questId
@@ -352,8 +353,10 @@ function VGuideLevelDetector:MarkCurrentStepCompleted()
     local stepInfo = self.Display.StepInfoDisplay[currentStep]
     
     -- Extract quest name
-    local questName = string.match(stepText, '|c%x+["\']([^"\']+)["\']') or
-                      string.match(stepText, '"([^"]+)"')
+    local _, _, questName = string.find(stepText, '|c%x+["\']([^"\']+)["\']')
+    if not questName then
+        _, _, questName = string.find(stepText, '"([^"]+)"')
+    end
     
     local questId = stepInfo and stepInfo.questId
     

@@ -197,12 +197,12 @@ function VGuidePfQuest:new(oSettings)
         
         -- Look for quest names in various formats used by VanillaGuide
         -- Format: #ACCEPT"Quest Name"# or #DOQUEST"Quest Name"# or #TURNIN"Quest Name"#
-        local questName = string.match(stepText, "#ACCEPT\"([^\"]+)\"")
+        local _, _, questName = string.find(stepText, '#ACCEPT"([^"]+)"')
         if not questName then
-            questName = string.match(stepText, "#DOQUEST\"([^\"]+)\"")
+            _, _, questName = string.find(stepText, '#DOQUEST"([^"]+)"')
         end
         if not questName then
-            questName = string.match(stepText, "#TURNIN\"([^\"]+)\"")
+            _, _, questName = string.find(stepText, '#TURNIN"([^"]+)"')
         end
         
         return questName

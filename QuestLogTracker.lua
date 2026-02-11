@@ -119,7 +119,7 @@ function VGuideQuestLog:new()
         if not text then return nil, nil end
         
         -- Pattern: "Something: 4/8" or "Something slain: 4/8"
-        local current, required = string.match(text, "(%d+)/(%d+)")
+        local _, _, current, required = string.find(text, "(%d+)/(%d+)")
         if current and required then
             return tonumber(current), tonumber(required)
         end

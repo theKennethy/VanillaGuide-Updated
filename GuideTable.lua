@@ -57,7 +57,7 @@ function objGuideTable:new(oSettings)
 				local guideZone = defaultZone
 				if t1[k1].title then
 					-- Extract zone from title like "1-6 Durotar" or "12-15 Barrens"
-					local titleZone = string.match(t1[k1].title, "%d+%-%d+%s+(.+)")
+					local _, _, titleZone = string.find(t1[k1].title, "%d+%-%d+%s+(.+)")
 					if titleZone then
 						-- Map common title zones to full zone names
 						local zoneMap = {
@@ -107,28 +107,29 @@ function objGuideTable:new(oSettings)
 						-- Only fill if coordinates are missing
 						if not v2.x or not v2.y then
 							local x, y = nil, nil
+							local _
 							
 							-- Pattern 1: "(at 42.68)" or "(at 42,68)"
-							x, y = string.match(v2.str, "%(at%s+(%d+)[%.,](%d+)%)")
+							_, _, x, y = string.find(v2.str, "%(at%s+(%d+)[%.,](%d+)%)")
 							
 							-- Pattern 2: "(42.68)" or "(42,68)" standalone
 							if not x then
-								x, y = string.match(v2.str, "%((%d+)[%.,](%d+)%)")
+								_, _, x, y = string.find(v2.str, "%((%d+)[%.,](%d+)%)")
 							end
 							
 							-- Pattern 3: "at 42.68" without parentheses
 							if not x then
-								x, y = string.match(v2.str, "at%s+(%d+)[%.,](%d+)")
+								_, _, x, y = string.find(v2.str, "at%s+(%d+)[%.,](%d+)")
 							end
 							
 							-- Pattern 4: "42,68" or "42.68" at end of line
 							if not x then
-								x, y = string.match(v2.str, "(%d+)[%.,](%d+)%s*$")
+								_, _, x, y = string.find(v2.str, "(%d+)[%.,](%d+)%s*$")
 							end
 							
 							-- Pattern 5: "around 42.68" or "around 42,68"
 							if not x then
-								x, y = string.match(v2.str, "around%s+(%d+)[%.,](%d+)")
+								_, _, x, y = string.find(v2.str, "around%s+(%d+)[%.,](%d+)")
 							end
 							
 							if x and y then
@@ -146,12 +147,12 @@ function objGuideTable:new(oSettings)
 						
 						-- Try to extract quest ID from quest name
 						if VGuideQuestDB and VGuideQuestDB.GetQuestId then
-							local questName = string.match(v2.str, '#ACCEPT"([^"]+)"')
+							local _, _, questName = string.find(v2.str, '#ACCEPT"([^"]+)"')
 							if not questName then
-								questName = string.match(v2.str, '#DOQUEST"([^"]+)"')
+								_, _, questName = string.find(v2.str, '#DOQUEST"([^"]+)"')
 							end
 							if not questName then
-								questName = string.match(v2.str, '#TURNIN"([^"]+)"')
+								_, _, questName = string.find(v2.str, '#TURNIN"([^"]+)"')
 							end
 							
 							if questName and not t1[k1].items[k2].questId then

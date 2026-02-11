@@ -1069,27 +1069,28 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 		
 		-- Parse quest name from step text
 		local questName = nil
+		local _
 		
 		-- Look for quest names in various formats used by VanillaGuide
 		-- Format: |c0000ffff"Quest Name"|r (after colorization)
 		-- Or original: #ACCEPT"Quest Name"#
-		questName = string.match(stepText, '|c0000ffff"([^"]+)"')
+		_, _, questName = string.find(stepText, '|c0000ffff"([^"]+)"')
 		if not questName then
-			questName = string.match(stepText, '|c000079d2"([^"]+)"')
+			_, _, questName = string.find(stepText, '|c000079d2"([^"]+)"')
 		end
 		if not questName then
-			questName = string.match(stepText, '|c0000ff00"([^"]+)"')
+			_, _, questName = string.find(stepText, '|c0000ff00"([^"]+)"')
 		end
 		
 		-- Also try original format (before colorization)
 		if not questName then
-			questName = string.match(stepText, '#ACCEPT"([^"]+)"')
+			_, _, questName = string.find(stepText, '#ACCEPT"([^"]+)"')
 		end
 		if not questName then
-			questName = string.match(stepText, '#DOQUEST"([^"]+)"')
+			_, _, questName = string.find(stepText, '#DOQUEST"([^"]+)"')
 		end
 		if not questName then
-			questName = string.match(stepText, '#TURNIN"([^"]+)"')
+			_, _, questName = string.find(stepText, '#TURNIN"([^"]+)"')
 		end
 		
 		if not questName then return end
