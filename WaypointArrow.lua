@@ -88,23 +88,13 @@ function VGuideArrow:new(oSettings)
         arrowFrame:SetPoint("TOP", frame, "TOP", 0, -5)
         frame.arrowFrame = arrowFrame
         
-        -- Arrow texture - try custom first, fallback to built-in
+        -- Arrow texture - use built-in WoW texture
         local arrow = arrowFrame:CreateTexture(nil, "ARTWORK")
         arrow:SetWidth(ARROW_SIZE)
         arrow:SetHeight(ARROW_SIZE)
-        
-        -- Try to set custom texture (bundled with addon)
-        arrow:SetTexture("Interface\\AddOns\\VanillaGuide\\Textures\\Arrow")
-        
-        -- If texture didn't load (GetTexture returns nil), use fallback
-        if not arrow:GetTexture() then
-            -- Fallback: Use minimap tracking arrow
-            arrow:SetTexture("Interface\\Minimap\\ROTATING-MINIMAPGUIDEARROW")
-            DEFAULT_CHAT_FRAME:AddMessage("|cFFFFFF00VG Arrow:|r Using fallback texture")
-        end
-        
+        arrow:SetTexture("Interface\\Minimap\\MinimapArrow")
         arrow:SetAllPoints(arrowFrame)
-        arrow:SetVertexColor(0.2, 1, 0.2)  -- Green tint
+        arrow:SetVertexColor(0, 1, 0)  -- Green
         frame.arrow = arrow
         
         -- Title text
