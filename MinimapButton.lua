@@ -247,24 +247,40 @@ VGuideMinimapCompass.labels = {}
 VGuideMinimapCompass.enabled = true
 
 function VGuideMinimapCompass:Create()
-    -- Create compass direction labels around the minimap
+    -- Create compass direction labels around the minimap (all 8 directions)
+    local radius = 72
     local compassData = {
-        { dir = "N", x = 0, y = 75, color = {1, 0.2, 0.2} },      -- North - Red
-        { dir = "E", x = 75, y = 0, color = {0.8, 0.8, 0.8} },    -- East - Gray
-        { dir = "S", x = 0, y = -75, color = {0.8, 0.8, 0.8} },   -- South - Gray
-        { dir = "W", x = -75, y = 0, color = {0.8, 0.8, 0.8} },   -- West - Gray
+        { dir = "N",  angle = 90,  color = {1, 0.2, 0.2} },      -- North - Red
+        { dir = "NE", angle = 45,  color = {0.6, 0.6, 0.6} },    -- NE - Dim
+        { dir = "E",  angle = 0,   color = {0.8, 0.8, 0.8} },    -- East - Gray
+        { dir = "SE", angle = -45, color = {0.6, 0.6, 0.6} },    -- SE - Dim
+        { dir = "S",  angle = -90, color = {0.8, 0.8, 0.8} },    -- South - Gray
+        { dir = "SW", angle = -135, color = {0.6, 0.6, 0.6} },   -- SW - Dim
+        { dir = "W",  angle = 180, color = {0.8, 0.8, 0.8} },    -- West - Gray
+        { dir = "NW", angle = 135, color = {0.6, 0.6, 0.6} },    -- NW - Dim
     }
     
     for i, data in ipairs(compassData) do
+        local rad = math.rad(data.angle)
+        local x = math.cos(rad) * radius
+        local y = math.sin(rad) * radius
+        
         local label = Minimap:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        label:SetPoint("CENTER", Minimap, "CENTER", data.x, data.y)
+        label:SetPoint("CENTER", Minimap, "CENTER", x, y)
         label:SetText(data.dir)
         label:SetTextColor(data.color[1], data.color[2], data.color[3])
-        label:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
+        
+        -- Smaller font for diagonal directions
+        if string.len(data.dir) > 1 then
+            label:SetFont("Fonts\\FRIZQT__.TTF", 9, "OUTLINE")
+        else
+            label:SetFont("Fonts\\FRIZQT__.TTF", 11, "OUTLINE")
+        end
+        
         self.labels[i] = label
     end
     
-    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap compass enabled (N/E/S/W)")
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap compass enabled")
 end
 
 function VGuideMinimapCompass:Show()
