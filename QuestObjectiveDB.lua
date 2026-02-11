@@ -26,7 +26,7 @@ Dv(" VGuide QuestObjectiveDB.lua Start")
 VGuideQuestObjectives = {}
 
 -- Quest objective spawn data
--- Format: [questId] = { name, zone, objectives[] }
+-- Format: [questId] = { name, zone, start = {npc, x, y}, objectives[] }
 VGuideQuestObjectives.Data = {
 
     -----------------------------------------
@@ -36,6 +36,7 @@ VGuideQuestObjectives.Data = {
     [4641] = { -- Your Place In The World
         name = "Your Place In The World",
         zone = "Durotar",
+        start = { npc = "Kaltunk", x = 42.8, y = 69.2 },
         objectives = {
             { type = "talk", name = "Gornek", spawns = {{42.1, 68.4}} },
         }
@@ -44,6 +45,7 @@ VGuideQuestObjectives.Data = {
     [5441] = { -- Cutting Teeth / Lazy Peons
         name = "Cutting Teeth",
         zone = "Durotar",
+        start = { npc = "Gornek", x = 42.1, y = 68.4 },
         objectives = {
             { type = "kill", name = "Mottled Boar", spawns = {
                 {44.2, 66.8}, {45.1, 69.2}, {43.8, 71.5}, {46.3, 68.1},
@@ -55,6 +57,7 @@ VGuideQuestObjectives.Data = {
     [780] = { -- Sarkoth
         name = "Sarkoth",
         zone = "Durotar",
+        start = { npc = "Hana'zua", x = 40.6, y = 66.4 },
         objectives = {
             { type = "kill", name = "Sarkoth", spawns = {{40.6, 62.1}} },
         }
@@ -63,6 +66,7 @@ VGuideQuestObjectives.Data = {
     [789] = { -- Sting of the Scorpid
         name = "Sting of the Scorpid",
         zone = "Durotar",
+        start = { npc = "Gornek", x = 42.1, y = 68.4 },
         objectives = {
             { type = "kill", name = "Scorpid Worker", spawns = {
                 {43.5, 78.2}, {44.1, 79.8}, {45.2, 77.4}, {42.8, 80.1},
@@ -74,6 +78,7 @@ VGuideQuestObjectives.Data = {
     [792] = { -- Vile Familiars
         name = "Vile Familiars",
         zone = "Durotar",
+        start = { npc = "Zureetha Fargaze", x = 42.6, y = 69.1 },
         objectives = {
             { type = "kill", name = "Vile Familiar", spawns = {
                 {45.8, 56.2}, {44.3, 55.8}, {46.2, 54.9}, {43.9, 53.7},
@@ -85,6 +90,7 @@ VGuideQuestObjectives.Data = {
     [794] = { -- Burning Blade Medallion
         name = "Burning Blade Medallion",
         zone = "Durotar",
+        start = { npc = "Zureetha Fargaze", x = 42.6, y = 69.1 },
         objectives = {
             { type = "kill", name = "Yarrog Baneshadow", spawns = {{44.9, 53.6}} },
         }
@@ -93,6 +99,7 @@ VGuideQuestObjectives.Data = {
     [805] = { -- Report to Sen'jin Village
         name = "Report to Sen'jin Village",
         zone = "Durotar",
+        start = { npc = "Gornek", x = 42.1, y = 68.4 },
         objectives = {
             { type = "talk", name = "Master Gadrin", spawns = {{55.9, 74.6}} },
         }
@@ -101,6 +108,7 @@ VGuideQuestObjectives.Data = {
     [786] = { -- Thwarting Kolkar Aggression
         name = "Thwarting Kolkar Aggression",
         zone = "Durotar",
+        start = { npc = "Master Gadrin", x = 55.9, y = 74.6 },
         objectives = {
             { type = "kill", name = "Kolkar Drudge", spawns = {
                 {48.5, 79.3}, {50.1, 78.2}, {49.2, 80.6}, {51.3, 79.8}
@@ -111,6 +119,7 @@ VGuideQuestObjectives.Data = {
     [818] = { -- A Solvent Spirit
         name = "A Solvent Spirit",
         zone = "Durotar",
+        start = { npc = "Master Vornal", x = 55.2, y = 75.6 },
         objectives = {
             { type = "kill", name = "Minor Manifestation of Water", spawns = {
                 {62.4, 79.2}, {63.1, 81.5}, {64.2, 78.8}, {61.8, 80.4}
@@ -143,6 +152,7 @@ VGuideQuestObjectives.Data = {
     [747] = { -- The Hunt Begins
         name = "The Hunt Begins",
         zone = "Mulgore",
+        start = { npc = "Chief Hawkwind", x = 44.6, y = 76.1 },
         objectives = {
             { type = "kill", name = "Plainstrider", spawns = {
                 {44.8, 76.2}, {46.1, 78.5}, {43.5, 74.8}, {45.2, 80.1},
@@ -154,6 +164,7 @@ VGuideQuestObjectives.Data = {
     [757] = { -- Rite of Strength
         name = "Rite of Strength",
         zone = "Mulgore",
+        start = { npc = "Chief Hawkwind", x = 44.6, y = 76.1 },
         objectives = {
             { type = "kill", name = "Battleboar", spawns = {
                 {50.2, 83.1}, {51.8, 81.4}, {49.5, 84.7}, {52.3, 82.8}
@@ -164,6 +175,7 @@ VGuideQuestObjectives.Data = {
     [761] = { -- Swoop Hunting
         name = "Swoop Hunting",
         zone = "Mulgore",
+        start = { npc = "Harken Windtotem", x = 47.6, y = 62.1 },
         objectives = {
             { type = "kill", name = "Swoop", spawns = {
                 {49.3, 58.2}, {51.1, 56.8}, {48.7, 60.1}, {52.4, 59.3},
@@ -175,6 +187,7 @@ VGuideQuestObjectives.Data = {
     [766] = { -- Mazzranache
         name = "Mazzranache",
         zone = "Mulgore",
+        start = { npc = "Maur Raincaller", x = 47.4, y = 57.0 },
         objectives = {
             { type = "kill", name = "Mazzranache", spawns = {{49.6, 55.8}} },
         }
@@ -183,6 +196,7 @@ VGuideQuestObjectives.Data = {
     [745] = { -- Sharing the Land
         name = "Sharing the Land",
         zone = "Mulgore",
+        start = { npc = "Baine Bloodhoof", x = 47.0, y = 60.9 },
         objectives = {
             { type = "kill", name = "Palemane Tanner", spawns = {
                 {38.5, 52.1}, {39.2, 54.8}, {37.8, 56.3}, {40.1, 53.5}
@@ -203,6 +217,7 @@ VGuideQuestObjectives.Data = {
     [363] = { -- Rude Awakening
         name = "Rude Awakening",
         zone = "Tirisfal Glades",
+        start = { npc = "Undertaker Mordo", x = 30.2, y = 71.3 },
         objectives = {
             { type = "talk", name = "Shadow Priest Sarvis", spawns = {{38.2, 56.8}} },
         }
@@ -211,6 +226,7 @@ VGuideQuestObjectives.Data = {
     [364] = { -- The Mindless Ones
         name = "The Mindless Ones",
         zone = "Tirisfal Glades",
+        start = { npc = "Shadow Priest Sarvis", x = 38.2, y = 56.8 },
         objectives = {
             { type = "kill", name = "Mindless Zombie", spawns = {
                 {32.1, 62.4}, {33.8, 60.2}, {31.5, 58.7}, {34.2, 63.1}
@@ -224,6 +240,7 @@ VGuideQuestObjectives.Data = {
     [380] = { -- Night Web's Hollow
         name = "Night Web's Hollow",
         zone = "Tirisfal Glades",
+        start = { npc = "Executor Arren", x = 38.1, y = 56.6 },
         objectives = {
             { type = "kill", name = "Young Night Web Spider", spawns = {
                 {26.5, 57.2}, {27.8, 55.8}, {25.4, 59.1}, {28.2, 58.4}
@@ -237,6 +254,7 @@ VGuideQuestObjectives.Data = {
     [381] = { -- The Scarlet Crusade
         name = "The Scarlet Crusade",
         zone = "Tirisfal Glades",
+        start = { npc = "Executor Arren", x = 38.1, y = 56.6 },
         objectives = {
             { type = "kill", name = "Scarlet Warrior", spawns = {
                 {35.2, 68.1}, {36.8, 66.5}, {34.5, 69.8}, {37.1, 67.2}
@@ -251,6 +269,7 @@ VGuideQuestObjectives.Data = {
     [783] = { -- A Threat Within
         name = "A Threat Within",
         zone = "Elwynn Forest",
+        start = { npc = "Deputy Willem", x = 48.2, y = 42.8 },
         objectives = {
             { type = "talk", name = "Marshal McBride", spawns = {{48.9, 41.6}} },
         }
@@ -259,6 +278,7 @@ VGuideQuestObjectives.Data = {
     [7] = { -- Kobold Camp Cleanup
         name = "Kobold Camp Cleanup",
         zone = "Elwynn Forest",
+        start = { npc = "Marshal McBride", x = 48.9, y = 41.6 },
         objectives = {
             { type = "kill", name = "Kobold Vermin", spawns = {
                 {47.5, 35.8}, {48.2, 37.1}, {46.8, 34.5}, {49.1, 36.2}
@@ -269,6 +289,7 @@ VGuideQuestObjectives.Data = {
     [15] = { -- Investigate Echo Ridge
         name = "Investigate Echo Ridge",
         zone = "Elwynn Forest",
+        start = { npc = "Marshal McBride", x = 48.9, y = 41.6 },
         objectives = {
             { type = "kill", name = "Kobold Worker", spawns = {
                 {48.8, 31.2}, {50.1, 29.8}, {47.5, 32.5}, {51.2, 30.4}
@@ -279,6 +300,7 @@ VGuideQuestObjectives.Data = {
     [21] = { -- Skirmish at Echo Ridge  
         name = "Skirmish at Echo Ridge",
         zone = "Elwynn Forest",
+        start = { npc = "Marshal McBride", x = 48.9, y = 41.6 },
         objectives = {
             { type = "kill", name = "Kobold Laborer", spawns = {
                 {48.2, 28.5}, {49.8, 26.2}, {47.1, 30.1}, {50.5, 27.8}
@@ -289,6 +311,7 @@ VGuideQuestObjectives.Data = {
     [18] = { -- Brotherhood of Thieves
         name = "Brotherhood of Thieves",
         zone = "Elwynn Forest",
+        start = { npc = "Deputy Willem", x = 48.2, y = 42.8 },
         objectives = {
             { type = "kill", name = "Defias Thug", spawns = {
                 {53.2, 49.1}, {54.8, 47.5}, {52.5, 50.8}, {55.1, 48.2}
@@ -299,6 +322,7 @@ VGuideQuestObjectives.Data = {
     [54] = { -- Report to Goldshire
         name = "Report to Goldshire", 
         zone = "Elwynn Forest",
+        start = { npc = "Marshal McBride", x = 48.9, y = 41.6 },
         objectives = {
             { type = "talk", name = "Marshal Dughan", spawns = {{42.1, 65.9}} },
         }
@@ -307,6 +331,7 @@ VGuideQuestObjectives.Data = {
     [47] = { -- Gold Dust Exchange
         name = "Gold Dust Exchange",
         zone = "Elwynn Forest",
+        start = { npc = "Remy "Two Times"", x = 42.1, y = 67.1 },
         objectives = {
             { type = "item", name = "Gold Dust", spawns = {
                 {39.8, 82.1}, {41.2, 80.5}, {38.5, 84.2}, {42.1, 81.8}
@@ -317,6 +342,7 @@ VGuideQuestObjectives.Data = {
     [40] = { -- A Fishy Peril
         name = "A Fishy Peril",
         zone = "Elwynn Forest",
+        start = { npc = "Remy "Two Times"", x = 42.1, y = 67.1 },
         objectives = {
             { type = "talk", name = "Marshal Dughan", spawns = {{42.1, 65.9}} },
         }
@@ -329,6 +355,7 @@ VGuideQuestObjectives.Data = {
     [456] = { -- The Balance of Nature
         name = "The Balance of Nature",
         zone = "Teldrassil",
+        start = { npc = "Conservator Ilthalaine", x = 58.6, y = 44.5 },
         objectives = {
             { type = "kill", name = "Young Nightsaber", spawns = {
                 {58.2, 42.1}, {59.5, 40.8}, {57.1, 43.5}, {60.2, 41.2}
@@ -342,6 +369,7 @@ VGuideQuestObjectives.Data = {
     [457] = { -- The Balance of Nature (2)
         name = "The Balance of Nature",
         zone = "Teldrassil",
+        start = { npc = "Conservator Ilthalaine", x = 58.6, y = 44.5 },
         objectives = {
             { type = "kill", name = "Mangy Nightsaber", spawns = {
                 {55.2, 46.8}, {56.8, 48.2}, {54.1, 45.5}, {57.5, 47.1}
@@ -355,6 +383,7 @@ VGuideQuestObjectives.Data = {
     [458] = { -- The Woodland Protector
         name = "The Woodland Protector",
         zone = "Teldrassil",
+        start = { npc = "Melithar Staghelm", x = 59.0, y = 42.4 },
         objectives = {
             { type = "talk", name = "Tarindrella", spawns = {{57.8, 44.6}} },
         }
@@ -363,6 +392,7 @@ VGuideQuestObjectives.Data = {
     [459] = { -- The Woodland Protector (2)
         name = "The Woodland Protector",
         zone = "Teldrassil",
+        start = { npc = "Tarindrella", x = 57.8, y = 44.6 },
         objectives = {
             { type = "kill", name = "Grell", spawns = {
                 {54.2, 39.8}, {55.8, 38.1}, {53.1, 41.2}, {56.5, 40.5}
@@ -380,6 +410,7 @@ VGuideQuestObjectives.Data = {
     [170] = { -- A New Threat
         name = "A New Threat",
         zone = "Dun Morogh",
+        start = { npc = "Balir Frosthammer", x = 29.9, y = 71.2 },
         objectives = {
             { type = "kill", name = "Rockjaw Trogg", spawns = {
                 {26.5, 78.2}, {27.8, 76.5}, {25.2, 79.8}, {28.5, 77.1}
@@ -393,6 +424,7 @@ VGuideQuestObjectives.Data = {
     [179] = { -- Dwarven Outfitters
         name = "Dwarven Outfitters",
         zone = "Dun Morogh",
+        start = { npc = "Sten Stoutarm", x = 29.7, y = 71.3 },
         objectives = {
             { type = "kill", name = "Ragged Young Wolf", spawns = {
                 {28.2, 71.5}, {29.8, 73.2}, {27.5, 70.1}, {30.1, 72.8}
@@ -1530,10 +1562,36 @@ function VGuideQuestObjectives:GetActiveObjectivesForZone(zoneName)
         if data.zone == zoneName then
             if self:PlayerHasQuest(data.name) then
                 for _, obj in ipairs(data.objectives) do
+                    -- Skip "start" types for active quests (we already have it)
+                    if obj.type ~= "start" then
+                        table.insert(results, {
+                            questId = questId,
+                            questName = data.name,
+                            objective = obj
+                        })
+                    end
+                end
+            end
+        end
+    end
+    return results
+end
+
+-- Get available quests (not yet accepted) for a zone
+function VGuideQuestObjectives:GetAvailableQuestsForZone(zoneName)
+    local results = {}
+    for questId, data in pairs(self.Data) do
+        if data.zone == zoneName then
+            -- Only show if we don't have the quest
+            if not self:PlayerHasQuest(data.name) then
+                -- Check if quest has a start location
+                if data.start then
                     table.insert(results, {
                         questId = questId,
                         questName = data.name,
-                        objective = obj
+                        npc = data.start.npc,
+                        x = data.start.x,
+                        y = data.start.y
                     })
                 end
             end

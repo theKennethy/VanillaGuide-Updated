@@ -65,9 +65,21 @@ function objDisplay:new(oSettings, oGuideTables)
 	obj.RetriveData = function(self)
 		local t = oGuideTables:GetGuide(obj.CurrentGuideID)
 		--Dtprint(t, 4)
+		if not t then
+			obj.GuideTitle = "No Guide Selected"
+			obj.StepFrameDisplay = ""
+			obj.CurrentStepCount = 0
+			return
+		end
+		if not t.items then
+			obj.GuideTitle = t.title or "Unknown Guide"
+			obj.StepFrameDisplay = ""
+			obj.CurrentStepCount = 0
+			return
+		end
 		local count = 0
 		obj.GuideTitle = t.title
-		obj.StepFrameDisplay = t.items[obj.CurrentStep].str
+		obj.StepFrameDisplay = t.items[obj.CurrentStep] and t.items[obj.CurrentStep].str or ""
 		obj:ScrollFrameDisplayWipe()
 		obj:StepInfoDisplayWipe()
 		for k,v in ipairs(t.items) do

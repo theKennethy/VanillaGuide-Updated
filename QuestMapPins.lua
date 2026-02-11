@@ -59,17 +59,26 @@ function VGuideQuestMapPins:CreatePins()
         pin:SetScript("OnEnter", function()
             if this.questName then
                 GameTooltip:SetOwner(this, "ANCHOR_RIGHT")
-                GameTooltip:AddLine(this.questName, 1, 0.82, 0)
-                if this.objectiveName then
-                    local typeText = ""
-                    if this.objectiveType == "kill" then
-                        typeText = "|cFFFF3333Kill:|r "
-                    elseif this.objectiveType == "item" then
-                        typeText = "|cFF33CCFFLoot:|r "
-                    elseif this.objectiveType == "talk" then
-                        typeText = "|cFF33FF33Talk:|r "
+                if this.objectiveType == "start" then
+                    -- Quest giver tooltip
+                    GameTooltip:AddLine("|cFFFFCC00!|r " .. this.questName, 1, 0.82, 0)
+                    if this.objectiveName then
+                        GameTooltip:AddLine("Accept from: " .. this.objectiveName, 0.8, 0.8, 0.8)
                     end
-                    GameTooltip:AddLine(typeText .. this.objectiveName, 1, 1, 1)
+                else
+                    -- Quest objective tooltip
+                    GameTooltip:AddLine(this.questName, 1, 0.82, 0)
+                    if this.objectiveName then
+                        local typeText = ""
+                        if this.objectiveType == "kill" then
+                            typeText = "|cFFFF3333Kill:|r "
+                        elseif this.objectiveType == "item" then
+                            typeText = "|cFF33CCFFLoot:|r "
+                        elseif this.objectiveType == "talk" then
+                            typeText = "|cFF33FF33Talk:|r "
+                        end
+                        GameTooltip:AddLine(typeText .. this.objectiveName, 1, 1, 1)
+                    end
                 end
                 GameTooltip:Show()
             end
@@ -199,6 +208,42 @@ function VGuideQuestMapPins:RefreshPins()
                     pinIndex = pinIndex + 1
                 end
             end
+        end
+    end
+    
+    -- Also show available quests (quest givers with "!" icon)
+    local availableQuests = VGuideQuestObjectives:GetAvailableQuestsForZone(currentZone)
+    
+    for _, questData in ipairs(availableQuests) do
+        if pinIndex <= self.maxPins and questData.x and questData.y then
+            local pin = self.pins[pinIndex]
+            
+            local x = questData.x / 100
+            local y = questData.y / 100
+            
+            local mapWidth = WorldMapButton:GetWidth()
+            local mapHeight = WorldMapButton:GetHeight()
+            
+            pin:ClearAllPoints()
+            pin:SetPoint("CENTER", WorldMapButton, "TOPLEFT", x * mapWidth, -y * mapHeight)
+            
+            pin.questName = questData.questName
+            pin.questId = questData.questId
+            pin.objectiveName = questData.npc or "Quest Giver"
+            pin.objectiveType = "start"
+            pin.x = questData.x
+            pin.y = questData.y
+            pin.zone = currentZone
+            
+            -- Yellow exclamation mark for available quests
+            pin.texture:SetTexture("Interface\\Minimap\\ObjectIcons")
+            pin.texture:SetTexCoord(0.125, 0.25, 0.25, 0.5)  -- Yellow "!" icon
+            pin.texture:SetVertexColor(1, 1, 0)  -- Bright yellow
+            pin:SetWidth(16)
+            pin:SetHeight(16)
+            
+            pin:Show()
+            pinIndex = pinIndex + 1
         end
     end
 end
