@@ -13,6 +13,60 @@ Description:
 
 Dv(" VGuide WaypointArrow.lua Start")
 
+-- Zone name to continent/zone ID lookup for vanilla 1.12.1
+-- Continent: 1 = Kalimdor, 2 = Eastern Kingdoms
+local ZoneLookup = {
+    -- Eastern Kingdoms (Continent 2)
+    ["Elwynn Forest"] = { c = 2, z = 1 },
+    ["Dun Morogh"] = { c = 2, z = 2 },
+    ["Tirisfal Glades"] = { c = 2, z = 3 },
+    ["Loch Modan"] = { c = 2, z = 4 },
+    ["Westfall"] = { c = 2, z = 5 },
+    ["Redridge Mountains"] = { c = 2, z = 6 },
+    ["Duskwood"] = { c = 2, z = 7 },
+    ["Hillsbrad Foothills"] = { c = 2, z = 8 },
+    ["Wetlands"] = { c = 2, z = 9 },
+    ["Alterac Mountains"] = { c = 2, z = 10 },
+    ["Arathi Highlands"] = { c = 2, z = 11 },
+    ["Stranglethorn Vale"] = { c = 2, z = 12 },
+    ["Badlands"] = { c = 2, z = 13 },
+    ["Swamp of Sorrows"] = { c = 2, z = 14 },
+    ["The Hinterlands"] = { c = 2, z = 15 },
+    ["Searing Gorge"] = { c = 2, z = 16 },
+    ["Blasted Lands"] = { c = 2, z = 17 },
+    ["Burning Steppes"] = { c = 2, z = 18 },
+    ["Western Plaguelands"] = { c = 2, z = 19 },
+    ["Eastern Plaguelands"] = { c = 2, z = 20 },
+    ["Silverpine Forest"] = { c = 2, z = 21 },
+    ["Stormwind City"] = { c = 2, z = 22 },
+    ["Ironforge"] = { c = 2, z = 23 },
+    ["Undercity"] = { c = 2, z = 24 },
+    ["Deadwind Pass"] = { c = 2, z = 25 },
+    
+    -- Kalimdor (Continent 1)
+    ["Durotar"] = { c = 1, z = 1 },
+    ["Mulgore"] = { c = 1, z = 2 },
+    ["The Barrens"] = { c = 1, z = 3 },
+    ["Teldrassil"] = { c = 1, z = 4 },
+    ["Darkshore"] = { c = 1, z = 5 },
+    ["Ashenvale"] = { c = 1, z = 6 },
+    ["Thousand Needles"] = { c = 1, z = 7 },
+    ["Stonetalon Mountains"] = { c = 1, z = 8 },
+    ["Desolace"] = { c = 1, z = 9 },
+    ["Feralas"] = { c = 1, z = 10 },
+    ["Dustwallow Marsh"] = { c = 1, z = 11 },
+    ["Tanaris"] = { c = 1, z = 12 },
+    ["Azshara"] = { c = 1, z = 13 },
+    ["Felwood"] = { c = 1, z = 14 },
+    ["Un'Goro Crater"] = { c = 1, z = 15 },
+    ["Silithus"] = { c = 1, z = 16 },
+    ["Winterspring"] = { c = 1, z = 17 },
+    ["Moonglade"] = { c = 1, z = 18 },
+    ["Orgrimmar"] = { c = 1, z = 19 },
+    ["Thunder Bluff"] = { c = 1, z = 20 },
+    ["Darnassus"] = { c = 1, z = 21 },
+}
+
 VGuideArrow = {}
 VGuideArrow.__index = VGuideArrow
 
@@ -73,57 +127,73 @@ function VGuideArrow:new(oSettings)
         
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VGuide:|r Setting waypoint: " .. zone .. " (" .. x .. ", " .. y .. ")")
         
+        -- Get continent and zone indices from lookup table
+        local c, z
+        local zoneInfo = ZoneLookup[zone]
+        if zoneInfo then
+            c, z = zoneInfo.c, zoneInfo.z
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Zone lookup: " .. zone .. " => c=" .. c .. ", z=" .. z .. "|r")
+        else
+            -- Fallback to current map zone
+            c, z = GetCurrentMapContinent(), GetCurrentMapZone()
+            DEFAULT_CHAT_FRAME:AddMessage("|cFFFF6600  Zone '" .. zone .. "' not in lookup, using current map: c=" .. tostring(c) .. ", z=" .. tostring(z) .. "|r")
+        end
+        
         -- Try various TomTom API methods
         local success = false
         
-        -- Method 1: AddZWaypoint (zone name, x, y, title)
+        -- Method 1: AddZWaypoint with continent, zone, x, y, desc (vanilla TomTom format)
         if TomTom.AddZWaypoint then
-            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddZWaypoint...|r")
-            local ok, result = pcall(function() return TomTom:AddZWaypoint(zone, x, y, title or "VGuide") end)
-            if ok then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddZWaypoint(c=" .. tostring(c) .. ", z=" .. tostring(z) .. ")...|r")
+            local ok, result = pcall(function() return TomTom:AddZWaypoint(c, z, x, y, title or "VGuide") end)
+            if ok and result then
                 obj.tomtomWaypoint = result
                 success = true
                 DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+            elseif ok then
+                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF6600  AddZWaypoint returned nil|r")
             else
                 DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  AddZWaypoint error: " .. tostring(result) .. "|r")
             end
         end
         
-        -- Method 2: AddWaypoint - older API
+        -- Method 2: AddWaypoint with continent, zone, x, y, desc
         if not success and TomTom.AddWaypoint then
-            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddWaypoint...|r")
-            local ok, result = pcall(function() return TomTom:AddWaypoint(x/100, y/100, title or "VGuide") end)
-            if ok then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddWaypoint(c,z,x,y)...|r")
+            local ok, result = pcall(function() return TomTom:AddWaypoint(c, z, x, y, title or "VGuide") end)
+            if ok and result then
                 obj.tomtomWaypoint = result
                 success = true
                 DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+            elseif ok then
+                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF6600  AddWaypoint returned nil|r")
             else
                 DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  AddWaypoint error: " .. tostring(result) .. "|r")
             end
         end
         
-        -- Method 3: SetCustomWaypoint
-        if not success and TomTom.SetCustomWaypoint then
-            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying SetCustomWaypoint...|r")
-            local ok, result = pcall(function() return TomTom:SetCustomWaypoint(zone, x, y, title or "VGuide") end)
+        -- Method 3: SetCrazyArrow (some TomTom versions)
+        if not success and TomTom.SetCrazyArrow then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying SetCrazyArrow...|r")
+            local ok, result = pcall(function() return TomTom:SetCrazyArrow(c, z, x, y, title or "VGuide") end)
             if ok then
+                success = true
+                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
+            else
+                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  SetCrazyArrow error: " .. tostring(result) .. "|r")
+            end
+        end
+        
+        -- Method 4: Try with x/100, y/100 normalization if above failed  
+        if not success and TomTom.AddWaypoint then
+            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying AddWaypoint with normalized coords...|r")
+            local ok, result = pcall(function() return TomTom:AddWaypoint(c, z, x/100, y/100, title or "VGuide") end)
+            if ok and result then
                 obj.tomtomWaypoint = result
                 success = true
                 DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
             else
-                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  SetCustomWaypoint error: " .. tostring(result) .. "|r")
-            end
-        end
-        
-        -- Method 4: SetWaypoint
-        if not success and TomTom.SetWaypoint then
-            DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFF  Trying SetWaypoint...|r")
-            local ok, result = pcall(function() TomTom:SetWaypoint(x/100, y/100, title or "VGuide") end)
-            if ok then
-                success = true
-                DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00  Success!|r")
-            else
-                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  SetWaypoint error: " .. tostring(result) .. "|r")
+                DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000  Normalized AddWaypoint error: " .. tostring(result) .. "|r")
             end
         end
         
