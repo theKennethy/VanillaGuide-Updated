@@ -256,6 +256,11 @@ function VGuideMinimapCompass:Create()
         return
     end
     
+    -- Hide minimap clutter (sun/moon, zoom buttons, etc.)
+    if GameTimeFrame then GameTimeFrame:Hide() end
+    if MinimapZoomIn then MinimapZoomIn:Hide() end
+    if MinimapZoomOut then MinimapZoomOut:Hide() end
+    
     -- Create a frame around minimap for compass labels (avoid clipping)
     local compassFrame = CreateFrame("Frame", "VGuideCompassFrame", UIParent)
     compassFrame:SetWidth(180)
