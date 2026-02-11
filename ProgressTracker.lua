@@ -319,6 +319,6 @@ function VGuideProgressTracker:SkipCurrentStep()
 end
 
 -- Make available globally
-_G.VGuideProgressTracker = VGuideProgressTracker
+-- VGuideProgressTracker is already global
 
 Dv(" VGuide ProgressTracker.lua End")

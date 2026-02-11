@@ -239,7 +239,7 @@ function VGuideMinimapButton:ResetPosition()
 end
 
 -- Make available globally
-_G.VGuideMinimapButton = VGuideMinimapButton
+-- VGuideMinimapButton is already global
 
 -- Initialize when Core.lua calls us
 -- Hook into VGuide initialization

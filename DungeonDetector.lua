@@ -279,6 +279,6 @@ function VGuideDungeonDetector:SetShowNotification(enabled)
 end
 
 -- Make available globally
-_G.VGuideDungeonDetector = VGuideDungeonDetector
+-- VGuideDungeonDetector is already global
 
 Dv(" VGuide DungeonDetector.lua End")

@@ -308,6 +308,6 @@ function VGuideTravelHelper:OnZoneChanged()
 end
 
 -- Make available globally
-_G.VGuideTravelHelper = VGuideTravelHelper
+-- VGuideTravelHelper is already global
 
 Dv(" VGuide TravelHelper.lua End")

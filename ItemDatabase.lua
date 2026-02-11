@@ -475,6 +475,3 @@ end
 function VGuideItemDB:HideItemTooltip()
     GameTooltip:Hide()
 end
-
--- Make available globally
-_G.VGuideItemDB = VGuideItemDB
