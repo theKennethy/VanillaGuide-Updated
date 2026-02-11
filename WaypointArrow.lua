@@ -170,39 +170,12 @@ function VGuideArrow:new(oSettings)
     obj.waypoint = nil
     obj.enabled = true
     obj.frame = nil
-    obj.arrow = nil
     obj.distanceText = nil
     obj.titleText = nil
+    obj.directionText = nil
+    obj.coordsText = nil
     obj.lastUpdate = 0
-    obj.updateInterval = 0.1 -- Update 10 times per second
-    
-    ---------------------------------------
-    -- Arrow Rotation via SetTexCoord
-    ---------------------------------------
-    
-    -- Rotate texture using SetTexCoord (vanilla compatible)
-    local function RotateTexture(texture, angle)
-        -- angle in radians, 0 = up, positive = clockwise
-        local cos = math.cos(angle)
-        local sin = math.sin(angle)
-        
-        -- Calculate rotated corners (centered at 0.5, 0.5)
-        local function rotate(x, y)
-            local rx = cos * (x - 0.5) - sin * (y - 0.5) + 0.5
-            local ry = sin * (x - 0.5) + cos * (y - 0.5) + 0.5
-            return rx, ry
-        end
-        
-        -- Original corners: UL, LL, UR, LR
-        local ulx, uly = rotate(0, 0)
-        local llx, lly = rotate(0, 1)
-        local urx, ury = rotate(1, 0)
-        local lrx, lry = rotate(1, 1)
-        
-        texture:SetTexCoord(ulx, uly, llx, lly, urx, ury, lrx, lry)
-    end
-    
-    obj.RotateArrow = RotateTexture
+    obj.updateInterval = 0.2 -- Update 5 times per second
     
     ---------------------------------------
     -- Frame Creation
@@ -210,8 +183,8 @@ function VGuideArrow:new(oSettings)
     
     -- Main frame
     local frame = CreateFrame("Frame", "VGuideWaypointFrame", UIParent)
-    frame:SetWidth(130)
-    frame:SetHeight(110)
+    frame:SetWidth(150)
+    frame:SetHeight(75)
     frame:SetPoint("CENTER", UIParent, "CENTER", 0, 200)
     frame:SetMovable(true)
     frame:EnableMouse(true)
@@ -221,12 +194,6 @@ function VGuideArrow:new(oSettings)
     frame:SetFrameStrata("HIGH")
     frame:Hide()
     
-    -- Background (semi-transparent)
-    local bg = frame:CreateTexture(nil, "BACKGROUND")
-    bg:SetAllPoints(frame)
-    bg:SetTexture(0, 0, 0, 0.6)
-    obj.background = bg
-    
     -- Border
     frame:SetBackdrop({
         bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
@@ -234,77 +201,49 @@ function VGuideArrow:new(oSettings)
         tile = true, tileSize = 16, edgeSize = 16,
         insets = { left = 4, right = 4, top = 4, bottom = 4 }
     })
-    frame:SetBackdropColor(0, 0, 0, 0.8)
-    frame:SetBackdropBorderColor(0.6, 0.6, 0.6, 1)
+    frame:SetBackdropColor(0, 0, 0, 0.85)
+    frame:SetBackdropBorderColor(0.4, 0.6, 0.4, 1)
     
-    -- Compass labels
-    local compassN = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    compassN:SetPoint("TOP", frame, "TOP", 0, -20)
-    compassN:SetText("N")
-    compassN:SetTextColor(0.5, 0.5, 0.5)
-    
-    local compassS = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    compassS:SetPoint("BOTTOM", frame, "BOTTOM", 0, 32)
-    compassS:SetText("S")
-    compassS:SetTextColor(0.5, 0.5, 0.5)
-    
-    local compassE = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    compassE:SetPoint("RIGHT", frame, "RIGHT", -8, 5)
-    compassE:SetText("E")
-    compassE:SetTextColor(0.5, 0.5, 0.5)
-    
-    local compassW = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    compassW:SetPoint("LEFT", frame, "LEFT", 8, 5)
-    compassW:SetText("W")
-    compassW:SetTextColor(0.5, 0.5, 0.5)
-    
-    -- Arrow texture (green arrow pointing up)
-    local arrow = frame:CreateTexture(nil, "ARTWORK")
-    arrow:SetWidth(32)
-    arrow:SetHeight(32)
-    arrow:SetPoint("CENTER", frame, "CENTER", 0, 5)
-    arrow:SetTexture("Interface\\Minimap\\ROTATING-MINIMAPARROW")
-    arrow:SetVertexColor(0.2, 1, 0.2) -- Green tint
-    obj.arrow = arrow
-    
-    -- Title text
+    -- Title text (zone/quest name)
     local title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     title:SetPoint("TOP", frame, "TOP", 0, -8)
-    title:SetWidth(110)
+    title:SetWidth(140)
     title:SetJustifyH("CENTER")
     title:SetText("")
     title:SetTextColor(1, 0.82, 0) -- Gold
     obj.titleText = title
     
-    -- Direction text (N, NE, E, etc.)
-    local dirText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    dirText:SetPoint("CENTER", frame, "CENTER", 0, -18)
+    -- Big direction text (GO NORTH, GO SOUTHEAST, etc.)
+    local dirText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    dirText:SetPoint("CENTER", frame, "CENTER", 0, 8)
+    dirText:SetWidth(140)
+    dirText:SetJustifyH("CENTER")
     dirText:SetText("")
-    dirText:SetTextColor(0.8, 0.8, 1)
+    dirText:SetTextColor(0.2, 1, 0.2) -- Green
     obj.directionText = dirText
     
     -- Distance text
     local dist = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    dist:SetPoint("BOTTOM", frame, "BOTTOM", 0, 18)
-    dist:SetWidth(110)
+    dist:SetPoint("BOTTOM", frame, "BOTTOM", 0, 20)
+    dist:SetWidth(140)
     dist:SetJustifyH("CENTER")
     dist:SetText("")
     dist:SetTextColor(1, 1, 1)
     obj.distanceText = dist
     
-    -- ETA text
-    local eta = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    eta:SetPoint("BOTTOM", frame, "BOTTOM", 0, 6)
-    eta:SetWidth(110)
-    eta:SetJustifyH("CENTER")
-    eta:SetText("")
-    eta:SetTextColor(0.7, 0.7, 0.7)
-    obj.etaText = eta
+    -- Coords text (shows target coords)
+    local coords = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    coords:SetPoint("BOTTOM", frame, "BOTTOM", 0, 8)
+    coords:SetWidth(140)
+    coords:SetJustifyH("CENTER")
+    coords:SetText("")
+    coords:SetTextColor(0.6, 0.6, 0.6)
+    obj.coordsText = coords
     
     -- Arrived text (shown when close)
     local arrived = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    arrived:SetPoint("CENTER", frame, "CENTER", 0, 5)
-    arrived:SetText("ARRIVED")
+    arrived:SetPoint("CENTER", frame, "CENTER", 0, 8)
+    arrived:SetText("ARRIVED!")
     arrived:SetTextColor(0, 1, 0)
     arrived:Hide()
     obj.arrivedText = arrived
@@ -340,12 +279,11 @@ function VGuideArrow:new(oSettings)
         
         -- If player position is 0,0, we're not on the map or in instance
         if px == 0 and py == 0 then
-            obj.distanceText:SetText("Open map")
-            obj.distanceText:SetTextColor(1, 0.5, 0)
-            obj.arrow:Hide()
+            obj.directionText:SetText("Open Map")
+            obj.directionText:SetTextColor(1, 0.5, 0)
+            obj.distanceText:SetText("for position")
             obj.arrivedText:Hide()
-            obj.etaText:SetText("")
-            obj.directionText:SetText("")
+            obj.coordsText:SetText("")
             return
         end
         
@@ -363,13 +301,12 @@ function VGuideArrow:new(oSettings)
         end
         
         if not inCorrectZone then
-            obj.distanceText:SetText("Go to:")
-            obj.titleText:SetText(waypointZone)
+            obj.directionText:SetText("WRONG ZONE")
+            obj.directionText:SetTextColor(1, 0.5, 0)
+            obj.distanceText:SetText("Go to: " .. waypointZone)
             obj.distanceText:SetTextColor(1, 0.5, 0)
-            obj.arrow:Hide()
             obj.arrivedText:Hide()
-            obj.etaText:SetText("")
-            obj.directionText:SetText("")
+            obj.coordsText:SetText(string.format("(%d, %d)", obj.waypoint.x, obj.waypoint.y))
             return
         end
         
@@ -381,7 +318,6 @@ function VGuideArrow:new(oSettings)
         obj.titleText:SetText(displayTitle)
         
         obj.distanceText:SetTextColor(1, 1, 1)
-        obj.arrow:Show()
         
         -- Waypoint position (convert from 0-100 to 0-1)
         local wx = obj.waypoint.x / 100
@@ -412,43 +348,34 @@ function VGuideArrow:new(oSettings)
         if distance < 15 then
             obj.arrow:Hide()
             obj.arrivedText:Show()
-            obj.distanceText:SetText("0 yards")
-            obj.distanceText:SetTextColor(0, 1, 0)
-            obj.etaText:SetText("")
-            obj.directionText:SetText("")
+            obj.distanceText:SetText("")
+            obj.directionText:Hide()
+            obj.coordsText:SetText("")
             return
         else
             obj.arrivedText:Hide()
-            obj.arrow:Show()
+            obj.directionText:Show()
         end
         
         -- Format distance
         if distance > 1000 then
-            obj.distanceText:SetText(string.format("%.1f km", distance / 1000))
+            obj.distanceText:SetText(string.format("%.1f km away", distance / 1000))
         else
-            obj.distanceText:SetText(string.format("%d yards", math.floor(distance)))
+            obj.distanceText:SetText(string.format("%d yards away", math.floor(distance)))
         end
         
         -- Color based on distance
         if distance < 50 then
             obj.distanceText:SetTextColor(0, 1, 0) -- Green
-            obj.arrow:SetVertexColor(0.2, 1, 0.2)
         elseif distance < 200 then
             obj.distanceText:SetTextColor(1, 1, 0) -- Yellow
-            obj.arrow:SetVertexColor(1, 1, 0.2)
         else
             obj.distanceText:SetTextColor(1, 1, 1) -- White
-            obj.arrow:SetVertexColor(0.2, 1, 0.2)
         end
         
         -- Calculate angle to waypoint
         -- Map: +x = East, +y = South (y increases downward on map)
-        -- This is compass-style: arrow points in absolute map direction
-        -- North = up on the arrow (when waypoint is north of player)
         local angleToWaypoint = atan2(dx, -dy)
-        
-        -- Rotate the arrow texture (compass style - no player facing adjustment)
-        obj.RotateArrow(obj.arrow, angleToWaypoint)
         
         -- Calculate compass direction text
         -- Normalize angle to 0-2PI
@@ -459,23 +386,29 @@ function VGuideArrow:new(oSettings)
         -- Convert to compass direction (8 directions)
         local dirIndex = math.floor((normAngle + PI/8) / (PI/4)) + 1
         if dirIndex > 8 then dirIndex = 1 end
-        local directions = {"N", "NE", "E", "SE", "S", "SW", "W", "NW"}
+        local directions = {"NORTH", "NE", "EAST", "SE", "SOUTH", "SW", "WEST", "NW"}
         local dirName = directions[dirIndex] or "?"
+        
+        -- Color code direction based on quadrant
+        if dirIndex == 1 then -- North
+            obj.directionText:SetTextColor(0.2, 1, 0.2) -- Green
+        elseif dirIndex == 5 then -- South
+            obj.directionText:SetTextColor(1, 0.5, 0.2) -- Orange
+        elseif dirIndex == 3 then -- East  
+            obj.directionText:SetTextColor(0.4, 0.8, 1) -- Light blue
+        elseif dirIndex == 7 then -- West
+            obj.directionText:SetTextColor(1, 0.8, 0.4) -- Gold
+        else -- Diagonals
+            obj.directionText:SetTextColor(0.8, 1, 0.8) -- Light green
+        end
+        
         obj.directionText:SetText("Go " .. dirName)
         
-        -- ETA calculation (running ~7 yards/sec, mounted ~14 yards/sec)
-        local speed = 7
-        local eta = distance / speed
-        if eta > 3600 then
-            obj.etaText:SetText(string.format("ETA: %.1f hr", eta / 3600))
-        elseif eta > 60 then
-            obj.etaText:SetText(string.format("ETA: %d min", math.floor(eta / 60)))
-        else
-            obj.etaText:SetText(string.format("ETA: %d sec", math.floor(eta)))
-        end
+        -- Show target coordinates
+        obj.coordsText:SetText(string.format("(%d, %d)", obj.waypoint.x, obj.waypoint.y))
     end)
     
-    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Waypoint arrow ready!")
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Waypoint ready!")
     
     ---------------------------------------
     -- Public API
