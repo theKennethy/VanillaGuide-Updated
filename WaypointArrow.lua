@@ -397,11 +397,17 @@ function VGuideArrow:new(oSettings)
         end
         
         -- Calculate angle to waypoint
-        -- Map: +x = East, +y = South (y increases downward on map)
+        -- WoW map: +x = East (right), +y = South (down)
+        -- We want: 0 = North, PI/2 = East, PI = South, 3PI/2 = West
+        -- Use atan2(dx, -dy) so that:
+        --   North (dy<0): atan2(0, positive) = 0
+        --   South (dy>0): atan2(0, negative) = PI
+        --   East (dx>0): atan2(positive, 0) = PI/2
+        --   West (dx<0): atan2(negative, 0) = -PI/2
         local angleToWaypoint = atan2(dx, -dy)
         
-        -- Debug: show player pos in title
-        obj.titleText:SetText(string.format("You: %.1f,%.1f", px*100, py*100))
+        -- Debug: show player pos and delta
+        obj.titleText:SetText(string.format("dx:%.0f dy:%.0f", dx*100, dy*100))
         
         -- Calculate compass direction text
         -- Normalize angle to 0-2PI
