@@ -294,41 +294,18 @@ function VGuideMinimapCompass:Create()
         self.labels[i] = label
     end
     
-    -- Update positions based on player facing
-    local lastUpdate = 0
-    compassFrame:SetScript("OnUpdate", function()
-        lastUpdate = lastUpdate + arg1
-        if lastUpdate < 0.1 then return end
-        lastUpdate = 0
-        
-        -- Get player facing (if available) or check minimap rotation setting
-        local facing = 0
-        
-        -- Try to get facing from minimap rotation
-        if GetCVar("rotateMinimap") == "1" then
-            -- When rotate minimap is on, try to get player facing
-            -- In some vanilla clients, MiniMapCompassRing exists
-            if MiniMapCompassRing then
-                -- The compass ring rotates, we can extract angle from it
-                -- But simpler: just don't rotate our compass when minimap rotates
-                facing = 0
-            end
+    -- Set static positions (north-up minimap)
+    for i, data in ipairs(self.compassData) do
+        local label = self.labels[i]
+        if label then
+            -- Convert to display angle (screen coordinates: 0=right, 90=up)
+            local displayAngle = 90 - data.baseAngle
+            local rad = math.rad(displayAngle)
+            local x = math.cos(rad) * radius
+            local y = math.sin(rad) * radius
+            label:SetPoint("CENTER", compassFrame, "CENTER", x, y)
         end
-        
-        -- Update label positions
-        for i, data in ipairs(obj.compassData) do
-            local label = obj.labels[i]
-            if label then
-                -- Convert to display angle (screen coordinates: 0=right, 90=up)
-                local displayAngle = 90 - data.baseAngle - facing
-                local rad = math.rad(displayAngle)
-                local x = math.cos(rad) * radius
-                local y = math.sin(rad) * radius
-                label:ClearAllPoints()
-                label:SetPoint("CENTER", compassFrame, "CENTER", x, y)
-            end
-        end
-    end)
+    end
     
     DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Minimap compass enabled (7 directions)")
 end
