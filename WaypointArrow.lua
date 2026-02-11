@@ -400,6 +400,9 @@ function VGuideArrow:new(oSettings)
         -- Map: +x = East, +y = South (y increases downward on map)
         local angleToWaypoint = atan2(dx, -dy)
         
+        -- Debug: show player pos in title
+        obj.titleText:SetText(string.format("You: %.1f,%.1f", px*100, py*100))
+        
         -- Calculate compass direction text
         -- Normalize angle to 0-2PI
         local normAngle = angleToWaypoint
