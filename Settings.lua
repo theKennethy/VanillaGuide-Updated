@@ -145,6 +145,13 @@ function objSettings:new()
 			SkipCompletedQuests = true,
 			ShowNotification = true,
 		},
+		MapPins = {
+			Enable = true,
+			ShowRoute = true,
+		},
+		NPCViewer = {
+			Enable = true,
+		},
 	}
 
 	obj = AceLibrary("AceAddon-2.0"):new("AceDB-2.0")

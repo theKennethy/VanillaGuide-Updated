@@ -74,6 +74,27 @@ local options = {
 				get = "IsAutoQuestEnabled",
 				set = "ToggleAutoQuest"
 			},
+			mappins = {
+				type = 'toggle',
+				name = 'mappins',
+				desc = 'Toggle map pins on world map',
+				get = "IsMapPinsEnabled",
+				set = "ToggleMapPins"
+			},
+			route = {
+				type = 'toggle',
+				name = 'route',
+				desc = 'Toggle route preview on world map',
+				get = "IsRouteEnabled",
+				set = "ToggleRoute"
+			},
+			npcviewer = {
+				type = 'toggle',
+				name = 'npcviewer',
+				desc = 'Toggle NPC model viewer',
+				get = "IsNPCViewerEnabled",
+				set = "ToggleNPCViewer"
+			},
 			minimap = {
 				type = 'toggle',
 				name = 'minimap',
@@ -256,6 +277,51 @@ function VGuide:ToggleAutoQuest()
         VGuideAutoQuestObj:Toggle()
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Auto Quest not initialized")
+    end
+end
+
+function VGuide:IsMapPinsEnabled()
+    if VGuideMapPinsObj then
+        return VGuideMapPinsObj:IsEnabled()
+    end
+    return false
+end
+
+function VGuide:ToggleMapPins()
+    if VGuideMapPinsObj then
+        VGuideMapPinsObj:Toggle()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Map pins not initialized")
+    end
+end
+
+function VGuide:IsRouteEnabled()
+    if VGuideMapPinsObj then
+        return VGuideMapPinsObj:ShowRoute()
+    end
+    return false
+end
+
+function VGuide:ToggleRoute()
+    if VGuideMapPinsObj then
+        VGuideMapPinsObj:ToggleRoute()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Map pins not initialized")
+    end
+end
+
+function VGuide:IsNPCViewerEnabled()
+    if VGuideNPCViewerObj then
+        return VGuideNPCViewerObj:IsEnabled()
+    end
+    return false
+end
+
+function VGuide:ToggleNPCViewer()
+    if VGuideNPCViewerObj then
+        VGuideNPCViewerObj:ToggleEnabled()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r NPC Viewer not initialized")
     end
 end
 

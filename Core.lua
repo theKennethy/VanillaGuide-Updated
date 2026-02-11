@@ -220,6 +220,14 @@ function VGuide:OnEnable(first)
     VGuideAutoQuestObj = VGuideAutoQuest:new(self.Settings, self.Display)
     VGuideAutoQuestObj:Initialize()
 
+    -- Initialize Map Pins system
+    VGuideMapPinsObj = VGuideMapPins:new(self.Settings, self.Display)
+    VGuideMapPinsObj:Initialize()
+
+    -- Initialize NPC Model Viewer
+    VGuideNPCViewerObj = VGuideNPCViewer:new(self.Settings)
+    VGuideNPCViewerObj:Initialize()
+
     -- Register for quest log events to update quest status indicators
     self:RegisterEvent("QUEST_LOG_UPDATE", "OnQuestLogUpdate")
     self:RegisterEvent("UNIT_QUEST_LOG_CHANGED", "OnQuestLogUpdate")

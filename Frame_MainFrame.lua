@@ -410,6 +410,9 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 	-- Quest List Button (pop-out)
 		obj.tWidgets.button_QuestListButton = Render_Button(obj.tWidgets.frame_MainFrame, nil, 16, 16, tTexture.B_DETAILS)
 		obj.tWidgets.button_QuestListButton:SetPoint("TOPRIGHT", obj.tWidgets.frame_MainFrame, "TOPRIGHT", -85, -5)
+	-- NPC Viewer Button
+		obj.tWidgets.button_NPCViewerButton = Render_Button(obj.tWidgets.frame_MainFrame, nil, 16, 16, tTexture.B_FLASH)
+		obj.tWidgets.button_NPCViewerButton:SetPoint("TOPRIGHT", obj.tWidgets.frame_MainFrame, "TOPRIGHT", -65, -5)
     -- Prev and Next Guide Buttons
 		obj.tWidgets.button_PrevGuideButton = Render_Button(obj.tWidgets.frame_MainFrame, nil, 25, 16, tTexture.B_DOUBLEARROWLEFT)
 		obj.tWidgets.button_PrevGuideButton:SetPoint("BOTTOMRIGHT", obj.tWidgets.frame_MainFrame, "BOTTOMRIGHT", -75, 7)
@@ -530,6 +533,27 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 			GameTooltip:Show()
 		end)
 		obj.tWidgets.button_QuestListButton:SetScript("OnLeave", function()
+			GameTooltip:Hide()
+		end)
+	-- NPC Viewer Button
+		obj.tWidgets.button_NPCViewerButton:SetScript("OnClick", function()
+			if VGuideNPCViewerObj then
+				-- Get current step NPC name and show it
+				local npcName = obj:GetCurrentStepNPC()
+				if npcName then
+					VGuideNPCViewerObj:ShowNPC(npcName)
+				else
+					DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r No NPC in current step")
+				end
+			end
+		end)
+		obj.tWidgets.button_NPCViewerButton:SetScript("OnEnter", function()
+			GameTooltip:SetOwner(this, "ANCHOR_BOTTOMRIGHT")
+			GameTooltip:SetText("NPC Preview")
+			GameTooltip:AddLine("Show 3D model of current step NPC", 1, 1, 1)
+			GameTooltip:Show()
+		end)
+		obj.tWidgets.button_NPCViewerButton:SetScript("OnLeave", function()
 			GameTooltip:Hide()
 		end)
 	-- Change View Button
@@ -853,6 +877,40 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 				VGuideWaypointArrow:ClearWaypoint()
 			end
 		end
+		
+		-- Refresh map pins if on world map
+		if VGuideMapPinsObj then
+			VGuideMapPinsObj:RefreshPins()
+		end
+	end
+
+	-- Get NPC name from current step text
+	obj.GetCurrentStepNPC = function(self)
+		local t = oDisplay:GetCurrentStepInfo()
+		if not t or not t.text then return nil end
+		
+		local text = t.text
+		
+		-- Look for NPC patterns:
+		-- "Talk to NPC Name" or "Speak with NPC Name"
+		local _, _, npc = string.find(text, "[Tt]alk to ([^%(,]+)")
+		if npc then return string.gsub(npc, "^%s*(.-)%s*$", "%1") end
+		
+		_, _, npc = string.find(text, "[Ss]peak with ([^%(,]+)")
+		if npc then return string.gsub(npc, "^%s*(.-)%s*$", "%1") end
+		
+		-- "Turn in to NPC Name" or "Accept from NPC Name"
+		_, _, npc = string.find(text, "to ([^%(,]+)$")
+		if npc then return string.gsub(npc, "^%s*(.-)%s*$", "%1") end
+		
+		_, _, npc = string.find(text, "from ([^%(,]+)$")
+		if npc then return string.gsub(npc, "^%s*(.-)%s*$", "%1") end
+		
+		-- Look for any capitalized name pattern (2+ words starting with caps)
+		_, _, npc = string.find(text, "([A-Z][a-z]+ [A-Z][a-z]+)")
+		if npc then return npc end
+		
+		return nil
 	end
 
 	obj.RefreshData = function(self)

@@ -54,6 +54,20 @@ Each trigger can be individually enabled/disabled in settings.
 - **Guide-Only** - Only affects quests in your current guide
 - **Toggle** - Use `/vguide autoquest` to enable/disable
 
+### World Map Pins
+- **Current Objective** - Large gold pin shows your current step location
+- **Route Preview** - Smaller pins show upcoming 5 steps on the map
+- **Click to Navigate** - Click any pin to jump to that step
+- **Zone-Aware** - Pins only show when viewing the correct zone
+- **Toggle** - Use `/vguide mappins` or `/vguide route` to customize
+
+### NPC Model Viewer
+- **3D Preview** - See what quest NPCs look like before finding them
+- **Rotatable** - Drag to rotate the model
+- **Database** - Includes 200+ common quest NPCs
+- **Fallback** - Shows generic faction model if NPC not in database
+- **Quick Access** - Button in main frame or from step context
+
 ### Auto-Level Detection
 - **Automatic Guide Suggestions** - On login, suggests the best guide for your level
 - **Level-Up Detection** - When you level up, can auto-switch to appropriate guide
@@ -143,6 +157,9 @@ These addons enhance VanillaGuide but are **not required**:
 | `/vguide quests` | Toggle quest list pop-out |
 | `/vguide arrow` | Toggle waypoint arrow |
 | `/vguide autoquest` | Toggle auto accept/turn-in |
+| `/vguide mappins` | Toggle world map pins |
+| `/vguide route` | Toggle route preview on map |
+| `/vguide npcviewer` | Toggle NPC model viewer |
 | `/vguide minimap` | Toggle minimap button visibility |
 | `/vguide resetminimap` | Reset minimap button position |
 | `/vguide progress` | Show current guide progress |
@@ -168,6 +185,13 @@ Access settings via the gear icon or `/vguide options`:
 #### Arrow Settings
 - Enable/disable waypoint arrow
 - Arrow position (draggable)
+
+#### Map Pins Settings
+- Enable/disable world map pins
+- Show/hide route preview (upcoming steps)
+
+#### NPC Viewer Settings
+- Enable/disable NPC model viewer
 
 #### Auto Quest Settings
 - Enable/disable auto quest system
