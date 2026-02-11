@@ -218,6 +218,36 @@ Complete guides for all vanilla dungeons with boss strategies, loot, and quest p
 | Epic Mount Guide | Getting your 1000g |
 | Raid Consumables | Farming for raids |
 
+### Talent Guides
+Complete talent builds for all 9 classes with level-by-level progression:
+
+| Class | Specs Covered |
+|-------|---------------|
+| Warrior | Fury DPS, Arms PvP, Protection Tank |
+| Rogue | Combat Swords, Dagger |
+| Mage | Frost Leveling, Fire Raid |
+| Priest | Shadow Leveling, Holy Healing |
+| Warlock | SM/Ruin, DS/Ruin |
+| Hunter | Marksmanship, Beast Mastery |
+| Druid | Feral Tank, Restoration |
+| Shaman | Enhancement, Restoration |
+| Paladin | Holy Healing, Retribution |
+
+Each guide includes talent order, rotation tips, and stat priorities.
+
+### Gear Guides
+| Guide | Description |
+|-------|-------------|
+| Gearing Overview | Stat priorities, hit caps, defense cap |
+| Warrior Fury BiS | Pre-raid best-in-slot for DPS |
+| Warrior Prot BiS | Pre-raid tanking gear |
+| Rogue BiS | Pre-raid daggers/swords gear |
+| Mage BiS | Pre-raid caster gear |
+| Healer BiS | Pre-raid healing gear (all classes) |
+| Hunter BiS | Pre-raid ranged DPS gear |
+| Warlock BiS | Pre-raid caster gear |
+| Leveling Upgrades | Key weapon/armor upgrades by level |
+
 ### Reputation Guides
 | Faction | Rewards |
 |---------|---------|
@@ -275,6 +305,11 @@ VGuide_QuestDB = {
 | Progress % | ✅ | ✅ | ❌ |
 | Auto-level detection | ✅ | ✅ | ❌ |
 | Skip completed quests | ✅ | ✅ | ❌ |
+| Talent guides | ✅ | ✅ | ❌ |
+| Gear suggestions | ✅ | ✅ | ❌ |
+| Dungeon guides | ✅ | ✅ | ❌ |
+| Gold/farming guides | ✅ | ✅ | ❌ |
+| Reputation guides | ✅ | ✅ | ❌ |
 | Free & open source | ✅ | ❌ | ❌ |
 | 1.12.1 compatible | ✅ | ❌ | ✅ |
 
