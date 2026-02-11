@@ -329,6 +329,7 @@ if VGuide then
         end
         VGuideMinimapButton:Initialize()
         VGuideMinimapCompass:Create()
+        VGuideMinimapCompass:Show()
     end
 else
     -- If VGuide doesn't exist yet, wait for PLAYER_LOGIN
@@ -339,5 +340,6 @@ else
         this:UnregisterAllEvents()
         VGuideMinimapButton:Initialize()
         VGuideMinimapCompass:Create()
+        VGuideMinimapCompass:Show()
     end)
 end
