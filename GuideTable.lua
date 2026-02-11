@@ -723,6 +723,14 @@ function objGuideTable:new(oSettings)
 
 	-- Query object methods
 	obj.GetGuide = function(self, nGuideID)
+		if not obj.GuideCount then
+			Dv(" -- GuideCount is nil!")
+			return nil
+		end
+		if not nGuideID then
+			Dv(" -- nGuideID is nil!")
+			return nil
+		end
 		if nGuideID > obj.GuideCount then 
 			Dv(" -- Guide not present! ID exceed the GuideCount value!")
 		elseif nGuideID < 1 then
