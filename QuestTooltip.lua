@@ -1656,10 +1656,13 @@ function VGuideQuestTooltip:ParseGuideTables()
         "Table_009_GearGuides",
     }
     
-    for _, tableName in ipairs(guideTables) do
-        local guideTable = getglobal(tableName)
-        if guideTable then
-            self:ParseGuideTable(guideTable)
+    for i = 1, table.getn(guideTables) do
+        local tableName = guideTables[i]
+        if tableName then
+            local guideTable = getglobal(tableName)
+            if guideTable then
+                self:ParseGuideTable(guideTable)
+            end
         end
     end
     
@@ -1761,20 +1764,28 @@ function VGuideQuestTooltip:BuildDatabase()
     for npcName, quests in pairs(self.KnownNPCs) do
         if type(quests) == "table" then
             self.NPCQuests[npcName] = { quests = {} }
-            for _, questName in ipairs(quests) do
-                table.insert(self.NPCQuests[npcName].quests, { name = questName, type = "both" })
-                self.AllQuests[questName] = true
+            for i = 1, table.getn(quests) do
+                local questName = quests[i]
+                if questName then
+                    table.insert(self.NPCQuests[npcName].quests, { name = questName, type = "both" })
+                    self.AllQuests[questName] = true
+                end
             end
         end
     end
     
     -- Build MobDrops from patterns
-    for _, patternData in ipairs(self.QuestMobPatterns) do
-        local pattern, questName, dropName = patternData[1], patternData[2], patternData[3]
-        if not self.MobDrops[pattern] then
-            self.MobDrops[pattern] = {}
+    for i = 1, table.getn(self.QuestMobPatterns) do
+        local patternData = self.QuestMobPatterns[i]
+        if patternData then
+            local pattern, questName, dropName = patternData[1], patternData[2], patternData[3]
+            if pattern and questName and dropName then
+                if not self.MobDrops[pattern] then
+                    self.MobDrops[pattern] = {}
+                end
+                table.insert(self.MobDrops[pattern], { item = dropName, quest = questName })
+            end
         end
-        table.insert(self.MobDrops[pattern], { item = dropName, quest = questName })
     end
     
     self.databaseBuilt = true
@@ -1890,8 +1901,9 @@ function VGuideQuestTooltip:AddQuestObjectives(mobName, added)
                     -- Method 2: Check if objective contains significant words from mob name
                     -- e.g., "Frostmane Troll Whelp" matches "Frostmane Troll" 
                     local wordMatches = 0
-                    for _, word in ipairs(mobWords) do
-                        if string.find(textLower, word, 1, true) then
+                    for i = 1, table.getn(mobWords) do
+                        local word = mobWords[i]
+                        if word and string.find(textLower, word, 1, true) then
                             wordMatches = wordMatches + 1
                         end
                     end
@@ -1912,12 +1924,15 @@ function VGuideQuestTooltip:AddQuestObjectives(mobName, added)
                     
                     -- Method 4: Check if mob drops items mentioned in objective (pfQuest-style)
                     -- e.g., hovering "Rockjaw Trogg" shows "Trogg Stone Tooth: 0/8" objectives
-                    if mobItems then
-                        for _, item in ipairs(mobItems) do
-                            local itemLower = string.lower(item)
-                            if string.find(textLower, itemLower, 1, true) then
-                                hasMatch = true
-                                break
+                    if mobItems and type(mobItems) == "table" then
+                        for i = 1, table.getn(mobItems) do
+                            local item = mobItems[i]
+                            if item then
+                                local itemLower = string.lower(item)
+                                if string.find(textLower, itemLower, 1, true) then
+                                    hasMatch = true
+                                    break
+                                end
                             end
                         end
                         if hasMatch then break end
@@ -1984,8 +1999,11 @@ end
 
 function VGuideQuestTooltip:AddNPCQuestLines(quests, added)
     local questsAdded = false
+    if not quests or type(quests) ~= "table" then return added end
     
-    for _, questInfo in ipairs(quests) do
+    for i = 1, table.getn(quests) do
+        local questInfo = quests[i]
+        if not questInfo then break end
         local questName = questInfo.name
         local questType = questInfo.type
         
@@ -2033,9 +2051,11 @@ end
 
 function VGuideQuestTooltip:AddMobDropLines(drops, added)
     local dropsAdded = false
+    if not drops or type(drops) ~= "table" then return added end
     
-    for _, dropInfo in ipairs(drops) do
-        if self:IsQuestInLog(dropInfo.quest) then
+    for i = 1, table.getn(drops) do
+        local dropInfo = drops[i]
+        if dropInfo and self:IsQuestInLog(dropInfo.quest) then
             if not dropsAdded then
                 if not added then
                     GameTooltip:AddLine(" ")
