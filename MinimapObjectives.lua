@@ -150,12 +150,16 @@ function VGuideMinimapObjectives:UpdateDots()
     if not objectives then return end
     
     local dotIndex = 1
+    local numObjectives = table.getn(objectives) or 0
     
-    for _, objData in ipairs(objectives) do
+    for i = 1, numObjectives do
+        local objData = objectives[i]
         local objective = objData and objData.objective
         
         if objective and objective.spawns then
-            for _, spawn in ipairs(objective.spawns) do
+            local numSpawns = table.getn(objective.spawns) or 0
+            for j = 1, numSpawns do
+                local spawn = objective.spawns[j]
                 if dotIndex <= self.maxDots and spawn and spawn[1] and spawn[2] then
                     -- Convert spawn coords to world coords
                     local spawnX = (spawn[1] / 100) * zoneSize.w

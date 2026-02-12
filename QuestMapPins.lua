@@ -153,12 +153,16 @@ function VGuideQuestMapPins:RefreshPins()
     if not objectives then return end
     
     local pinIndex = 1
+    local numObjectives = table.getn(objectives) or 0
     
-    for _, objData in ipairs(objectives) do
+    for i = 1, numObjectives do
+        local objData = objectives[i]
         local objective = objData and objData.objective
         
         if objective and objective.spawns then
-            for _, spawn in ipairs(objective.spawns) do
+            local numSpawns = table.getn(objective.spawns) or 0
+            for j = 1, numSpawns do
+                local spawn = objective.spawns[j]
                 if pinIndex <= self.maxPins and spawn and spawn[1] and spawn[2] then
                     local pin = self.pins[pinIndex]
                     if not pin then break end
@@ -223,9 +227,11 @@ function VGuideQuestMapPins:RefreshPins()
     
     -- Also show available quests (quest givers with "!" icon)
     local availableQuests = VGuideQuestObjectives:GetAvailableQuestsForZone(currentZone)
+    local numAvailable = (availableQuests and table.getn(availableQuests)) or 0
     
-    for _, questData in ipairs(availableQuests) do
-        if pinIndex <= self.maxPins and questData.x and questData.y then
+    for i = 1, numAvailable do
+        local questData = availableQuests[i]
+        if questData and pinIndex <= self.maxPins and questData.x and questData.y then
             local pin = self.pins[pinIndex]
             
             local x = questData.x / 100

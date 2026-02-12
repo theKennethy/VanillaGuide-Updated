@@ -1761,29 +1761,35 @@ function VGuideQuestTooltip:BuildDatabase()
     if self.databaseBuilt then return end
     
     -- Convert KnownNPCs to NPCQuests format
-    for npcName, quests in pairs(self.KnownNPCs) do
-        if type(quests) == "table" then
-            self.NPCQuests[npcName] = { quests = {} }
-            for i = 1, table.getn(quests) do
-                local questName = quests[i]
-                if questName then
-                    table.insert(self.NPCQuests[npcName].quests, { name = questName, type = "both" })
-                    self.AllQuests[questName] = true
+    if type(self.KnownNPCs) == "table" then
+        for npcName, quests in pairs(self.KnownNPCs) do
+            if type(quests) == "table" then
+                self.NPCQuests[npcName] = { quests = {} }
+                local numQuests = table.getn(quests) or 0
+                for i = 1, numQuests do
+                    local questName = quests[i]
+                    if questName then
+                        table.insert(self.NPCQuests[npcName].quests, { name = questName, type = "both" })
+                        self.AllQuests[questName] = true
+                    end
                 end
             end
         end
     end
     
     -- Build MobDrops from patterns
-    for i = 1, table.getn(self.QuestMobPatterns) do
-        local patternData = self.QuestMobPatterns[i]
-        if patternData then
-            local pattern, questName, dropName = patternData[1], patternData[2], patternData[3]
-            if pattern and questName and dropName then
-                if not self.MobDrops[pattern] then
-                    self.MobDrops[pattern] = {}
+    if type(self.QuestMobPatterns) == "table" then
+        local numPatterns = table.getn(self.QuestMobPatterns) or 0
+        for i = 1, numPatterns do
+            local patternData = self.QuestMobPatterns[i]
+            if patternData then
+                local pattern, questName, dropName = patternData[1], patternData[2], patternData[3]
+                if pattern and questName and dropName then
+                    if not self.MobDrops[pattern] then
+                        self.MobDrops[pattern] = {}
+                    end
+                    table.insert(self.MobDrops[pattern], { item = dropName, quest = questName })
                 end
-                table.insert(self.MobDrops[pattern], { item = dropName, quest = questName })
             end
         end
     end
@@ -1844,10 +1850,10 @@ function VGuideQuestTooltip:AddQuestInfo()
     end
     
     -- Check if this mob drops quest items (exact match first)
-    local mobDrops = self.MobDrops[name]
+    local mobDrops = self.MobDrops and self.MobDrops[name]
     if mobDrops then
         added = self:AddMobDropLines(mobDrops, added)
-    else
+    elseif self.MobDrops and type(self.MobDrops) == "table" then
         -- Try pattern matching for mobs
         for pattern, drops in pairs(self.MobDrops) do
             if string.find(name, pattern) then
@@ -1973,6 +1979,10 @@ end
 
 -- Get items that a mob can drop (checks exact name and pattern matching)
 function VGuideQuestTooltip:GetMobDropItems(mobName)
+    if not mobName or not self.MobItemDrops or type(self.MobItemDrops) ~= "table" then
+        return nil
+    end
+    
     -- First check exact match
     local items = self.MobItemDrops[mobName]
     if items then

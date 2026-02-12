@@ -30302,11 +30302,14 @@ end
 function VGuideQuestObjectives:GetActiveObjectivesForZone(zoneName)
     local results = {}
     if not zoneName then return results end
+    if not self.Data or type(self.Data) ~= "table" then return results end
     for questId, data in pairs(self.Data) do
         if data and data.zone == zoneName and data.name then
             if self:PlayerHasQuest(data.name) then
                 if data.objectives then
-                    for _, obj in ipairs(data.objectives) do
+                    local numObjs = table.getn(data.objectives) or 0
+                    for i = 1, numObjs do
+                        local obj = data.objectives[i]
                         -- Skip "start" types for active quests (we already have it)
                         if obj and obj.type ~= "start" then
                             table.insert(results, {
@@ -30327,6 +30330,7 @@ end
 function VGuideQuestObjectives:GetAvailableQuestsForZone(zoneName)
     local results = {}
     if not zoneName then return results end
+    if not self.Data or type(self.Data) ~= "table" then return results end
     for questId, data in pairs(self.Data) do
         if data and data.zone == zoneName and data.name then
             -- Only show if we don't have the quest
