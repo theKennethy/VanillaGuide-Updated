@@ -201,10 +201,16 @@ function VGuideQuestMapPins:RefreshPins()
                         pin:SetHeight(12)
                     elseif objective.type == "talk" then
                         -- Question mark for turn-in
-                        pin.texture:SetTexture("Interface\\Minimap\\ObjectIcons")
-                        pin.texture:SetTexCoord(0, 0.125, 0.25, 0.5)
+                        pin.texture:SetTexture("Interface\\GossipFrame\\ActiveQuestIcon")
+                        pin.texture:SetTexCoord(0, 1, 0, 1)
                         pin:SetWidth(14)
                         pin:SetHeight(14)
+                    elseif objective.type == "start" then
+                        -- Exclamation mark for quest pickup
+                        pin.texture:SetTexture("Interface\\GossipFrame\\AvailableQuestIcon")
+                        pin.texture:SetTexCoord(0, 1, 0, 1)
+                        pin:SetWidth(16)
+                        pin:SetHeight(16)
                     end
                     
                     pin:Show()
@@ -239,11 +245,11 @@ function VGuideQuestMapPins:RefreshPins()
             pin.zone = currentZone
             
             -- Yellow exclamation mark for available quests
-            pin.texture:SetTexture("Interface\\Minimap\\ObjectIcons")
-            pin.texture:SetTexCoord(0.125, 0.25, 0.25, 0.5)  -- Yellow "!" icon
+            pin.texture:SetTexture("Interface\\GossipFrame\\AvailableQuestIcon")
+            pin.texture:SetTexCoord(0, 1, 0, 1)
             pin.texture:SetVertexColor(1, 1, 0)  -- Bright yellow
-            pin:SetWidth(16)
-            pin:SetHeight(16)
+            pin:SetWidth(18)
+            pin:SetHeight(18)
             
             pin:Show()
             pinIndex = pinIndex + 1

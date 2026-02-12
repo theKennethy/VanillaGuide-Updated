@@ -128,13 +128,13 @@ function VGuideMapPins:CreatePins()
         
         -- Set texture based on pin type
         if i == 1 then
-            -- Current objective - bright yellow/gold
-            tex:SetTexture("Interface\\Minimap\\ObjectIcons")
-            tex:SetTexCoord(0.5, 0.75, 0, 0.25)  -- Quest exclamation mark
+            -- Current objective - yellow exclamation mark (!)
+            tex:SetTexture("Interface\\GossipFrame\\AvailableQuestIcon")
+            tex:SetTexCoord(0, 1, 0, 1)
         else
-            -- Upcoming objectives - smaller gray dots
-            tex:SetTexture("Interface\\Minimap\\ObjectIcons")
-            tex:SetTexCoord(0.75, 1, 0, 0.25)  -- Quest question mark
+            -- Upcoming objectives - gray question mark
+            tex:SetTexture("Interface\\GossipFrame\\ActiveQuestIcon")
+            tex:SetTexCoord(0, 1, 0, 1)
             tex:SetVertexColor(0.6, 0.6, 0.6, 0.8)  -- Dimmed
         end
         
@@ -351,12 +351,14 @@ function VGuideMapPins:PlacePin(pinIndex, mapX, mapY, stepInfo)
     if stepInfo.isCurrent then
         pin:SetWidth(24)
         pin:SetHeight(24)
-        pin.texture:SetTexCoord(0.5, 0.75, 0, 0.25)  -- Exclamation
+        pin.texture:SetTexture("Interface\\GossipFrame\\AvailableQuestIcon")
+        pin.texture:SetTexCoord(0, 1, 0, 1)
         pin.texture:SetVertexColor(1, 0.82, 0, 1)  -- Gold
     else
         pin:SetWidth(16)
         pin:SetHeight(16)
-        pin.texture:SetTexCoord(0.75, 1, 0, 0.25)  -- Question mark
+        pin.texture:SetTexture("Interface\\GossipFrame\\ActiveQuestIcon")
+        pin.texture:SetTexCoord(0, 1, 0, 1)
         pin.texture:SetVertexColor(0.7, 0.7, 0.7, 0.8)  -- Gray
     end
     
