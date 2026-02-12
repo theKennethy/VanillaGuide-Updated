@@ -129,6 +129,13 @@ local options = {
 				get = "IsQuestTooltipsEnabled",
 				set = "ToggleQuestTooltips"
 			},
+			tracker = {
+				type = 'toggle',
+				name = 'tracker',
+				desc = 'Toggle quest tracker/overview panel (like pfQuest)',
+				get = "IsQuestTrackerVisible",
+				set = "ToggleQuestTracker"
+			},
 			minimapmobs = {
 				type = 'toggle',
 				name = 'minimapmobs',
@@ -291,6 +298,21 @@ function VGuide:ToggleQuestTooltips()
         VGuideQuestTooltip:Toggle()
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Quest tooltips not initialized")
+    end
+end
+
+function VGuide:IsQuestTrackerVisible()
+    if VGuideQuestOverview then
+        return VGuideQuestOverview.enabled
+    end
+    return false
+end
+
+function VGuide:ToggleQuestTracker()
+    if VGuideQuestOverview then
+        VGuideQuestOverview:Toggle()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Quest tracker not initialized")
     end
 end
 

@@ -66,6 +66,7 @@ QuestList.lua
 MapPins.lua
 QuestMapPins.lua
 QuestTooltip.lua
+QuestOverview.lua
 MinimapObjectives.lua
 NPCDatabase.lua
 NPCModelViewer.lua
