@@ -1041,20 +1041,23 @@ end
 
 function VGuideQuestTooltip:HookTooltip()
     -- Pure OnUpdate approach - 100% compatible with WoW 1.12
-    local lastUnit = nil
     local lastTooltipName = nil
     local hookFrame = CreateFrame("Frame")
     
     hookFrame:SetScript("OnUpdate", function()
         if not GameTooltip:IsVisible() then
-            lastUnit = nil
             lastTooltipName = nil
             return
         end
         
-        local name, unit = GameTooltip:GetUnit()
-        if name and (name ~= lastTooltipName or unit ~= lastUnit) then
-            lastUnit = unit
+        -- WoW 1.12: Use UnitName("mouseover") instead of GetUnit()
+        if not UnitExists("mouseover") then
+            lastTooltipName = nil
+            return
+        end
+        
+        local name = UnitName("mouseover")
+        if name and name ~= lastTooltipName then
             lastTooltipName = name
             if VGuideQuestTooltip.enabled then
                 VGuideQuestTooltip:AddQuestInfo()
@@ -1064,8 +1067,10 @@ function VGuideQuestTooltip:HookTooltip()
 end
 
 function VGuideQuestTooltip:AddQuestInfo()
-    local name, unit = GameTooltip:GetUnit()
-    if not name or not unit then return end
+    -- WoW 1.12: Use UnitName("mouseover") instead of GetUnit()
+    if not UnitExists("mouseover") then return end
+    local name = UnitName("mouseover")
+    if not name then return end
     
     local added = false
     
