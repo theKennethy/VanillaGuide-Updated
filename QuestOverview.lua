@@ -32,10 +32,21 @@ VGuideQuestOverview.config = {
 function VGuideQuestOverview:Initialize()
     if self.frame then return end
     
-    -- Hide the default WoW quest tracker
+    -- Hide the default WoW quest tracker permanently
     if QuestWatchFrame then
         QuestWatchFrame:Hide()
         QuestWatchFrame:UnregisterAllEvents()
+        -- Override Show to prevent it from ever appearing
+        QuestWatchFrame.Show = function() end
+        -- Also hide the quest watch header if it exists
+        if QuestWatchFrameHeader then
+            QuestWatchFrameHeader:Hide()
+        end
+    end
+    
+    -- Also disable the built-in quest tracking functions
+    if QuestWatch_Update then
+        QuestWatch_Update = function() end
     end
     
     -- Create main frame
