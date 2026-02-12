@@ -856,6 +856,755 @@ VGuideQuestTooltip.QuestMobPatterns = {
     {"Dragonmaw", "War Banners", "Dragonmaw War Banner"},
 }
 
+-- Comprehensive Mob -> Item Drop mapping for pfQuest-style matching
+-- Maps mob name patterns to items they can drop (for matching against quest objectives)
+VGuideQuestTooltip.MobItemDrops = {
+    -----------------------------------------
+    -- Dun Morogh (1-12)
+    -----------------------------------------
+    ["Rockjaw Trogg"] = {"Trogg Stone Tooth", "Trogg Stone"},
+    ["Burly Rockjaw Trogg"] = {"Trogg Stone Tooth", "Trogg Stone"},
+    ["Rockjaw Skullthumper"] = {"Trogg Stone Tooth", "Trogg Stone"},
+    ["Rockjaw Bonesnapper"] = {"Trogg Stone Tooth", "Trogg Stone"},
+    ["Frostmane Troll Whelp"] = {"Troll Charm", "Crude Flint", "Troll Ritual Totem"},
+    ["Frostmane Troll"] = {"Troll Charm", "Troll Bead", "Troll Ritual Totem"},
+    ["Frostmane Novice"] = {"Troll Charm", "Troll Bead"},
+    ["Frostmane Shadowcaster"] = {"Troll Charm", "Frostmane Scepter"},
+    ["Frostmane Headhunter"] = {"Troll Charm", "Troll Throwing Axe"},
+    ["Frostmane Snowstrider"] = {"Troll Charm", "Troll Bead"},
+    ["Frostmane Hideskinner"] = {"Troll Charm", "Animal Skin"},
+    ["Crag Boar"] = {"Tough Boar Meat", "Boar Meat", "Crag Boar Rib"},
+    ["Large Crag Boar"] = {"Crag Boar Rib", "Boar Meat"},
+    ["Snow Tracker Wolf"] = {"Tough Wolf Meat", "Wolf Pelt"},
+    ["Timber Wolf"] = {"Wolf Meat", "Wolf Pelt"},
+    ["Elder Crag Boar"] = {"Crag Boar Rib"},
+    ["Ice Claw Bear"] = {"Bear Meat", "Ice Claw Bear Pelt", "Bear Flank"},
+    ["Wendigo"] = {"Wendigo Mane", "Wendigo Blood"},
+    ["Young Wendigo"] = {"Wendigo Mane"},
+    ["Leper Gnome"] = {"Gyromechanic Gear", "Restabilization Cog", "Constructer Gear"},
+    ["Infected Squirrel"] = {"Gyromechanic Gear"},
+    
+    -----------------------------------------
+    -- Elwynn Forest (1-12)
+    -----------------------------------------
+    ["Kobold Vermin"] = {"Gold Dust", "Kobold Candle", "Large Candle"},
+    ["Kobold Worker"] = {"Gold Dust", "Kobold Candle", "Large Candle"},
+    ["Kobold Laborer"] = {"Gold Dust", "Large Candle"},
+    ["Kobold Tunneler"] = {"Gold Dust"},
+    ["Kobold Geomancer"] = {"Gold Dust"},
+    ["Kobold Miner"] = {"Gold Dust", "Large Candle"},
+    ["Defias Cutpurse"] = {"Red Bandana", "Defias Loot"},
+    ["Defias Dockworker"] = {"Red Bandana"},
+    ["Defias Smuggler"] = {"Red Bandana"},
+    ["Defias Thug"] = {"Red Bandana"},
+    ["Defias Bandit"] = {"Red Bandana"},
+    ["Defias Looter"] = {"Red Bandana", "Defias Loot"},
+    ["Gray Wolf"] = {"Tough Wolf Meat"},
+    ["Prowler"] = {"Wolf Meat"},
+    ["Young Forest Bear"] = {"Bear Meat"},
+    ["Forest Spider"] = {"Spider Venom", "Spider Ichor"},
+    ["Young Wolf"] = {"Wolf Meat"},
+    ["Murloc Lurker"] = {"Murloc Fin"},
+    ["Murloc Streamrunner"] = {"Murloc Fin"},
+    ["Murloc Minor Tidecaller"] = {"Murloc Fin"},
+    ["Murloc Forager"] = {"Murloc Fin"},
+    ["Stonetusk Boar"] = {"Boar Meat"},
+    ["Riverpaw Gnoll"] = {"Painted Gnoll Armband", "Gnoll Paw"},
+    ["Riverpaw Scout"] = {"Painted Gnoll Armband", "Gnoll Paw"},
+    ["Riverpaw Outrunner"] = {"Painted Gnoll Armband", "Gnoll Paw"},
+    ["Riverpaw Runt"] = {"Painted Gnoll Armband"},
+    ["Princess"] = {"Princess Collar"},
+    
+    -----------------------------------------
+    -- Teldrassil (1-12)
+    -----------------------------------------
+    ["Young Nightsaber"] = {"Nightsaber Fang"},
+    ["Nightsaber"] = {"Nightsaber Fang"},
+    ["Webwood Spider"] = {"Webwood Venom Sac", "Webwood Ichor"},
+    ["Webwood Lurker"] = {"Webwood Venom Sac"},
+    ["Webwood Venomfang"] = {"Webwood Venom Sac"},
+    ["Webwood Silkspinner"] = {"Webwood Venom Sac", "Webwood Egg"},
+    ["Timberling"] = {"Timberling Seed", "Timberling Sprout", "Living Wood"},
+    ["Timberling Bark Ripper"] = {"Timberling Seed", "Living Wood"},
+    ["Timberling Mire Beast"] = {"Timberling Seed"},
+    ["Gnarlpine Ursa"] = {"Gnarlpine Fang", "Relic of Wakening"},
+    ["Gnarlpine Mystic"] = {"Gnarlpine Fang"},
+    ["Gnarlpine Defender"] = {"Gnarlpine Fang"},
+    ["Gnarlpine Warrior"] = {"Gnarlpine Fang"},
+    ["Gnarlpine Shaman"] = {"Gnarlpine Fang"},
+    ["Gnarlpine Gardener"] = {"Gnarlpine Fang"},
+    ["Grell"] = {"Grell Earring", "Grell Tongue"},
+    ["Grellkin"] = {"Grell Earring"},
+    ["Strigid Owl"] = {"Strigid Owl Feather"},
+    ["Strigid Screecher"] = {"Strigid Owl Feather"},
+    ["Strigid Hunter"] = {"Strigid Owl Feather"},
+    
+    -----------------------------------------
+    -- Durotar (1-12)
+    -----------------------------------------
+    ["Mottled Boar"] = {"Boar Meat", "Boar Ribs"},
+    ["Dire Mottled Boar"] = {"Boar Meat"},
+    ["Scorpid Worker"] = {"Scorpid Stinger", "Scorpid Tail"},
+    ["Scorpid"] = {"Scorpid Stinger", "Scorpid Tail"},
+    ["Scorpid Tail Lasher"] = {"Scorpid Stinger"},
+    ["Corrupted Scorpid"] = {"Scorpid Stinger"},
+    ["Vile Familiar"] = {"Vile Familiar Head"},
+    ["Felstalker"] = {"Felstalker Hoof"},
+    ["Burning Blade Thug"] = {"Burning Blade Medallion"},
+    ["Burning Blade Cultist"] = {"Burning Blade Medallion"},
+    ["Burning Blade Neophyte"] = {"Burning Blade Medallion"},
+    ["Burning Blade Acolyte"] = {"Burning Blade Medallion"},
+    ["Burning Blade Apprentice"] = {"Burning Blade Medallion"},
+    ["Kolkar Drudge"] = {"Centaur Ear", "Kolkar Booty"},
+    ["Kolkar Outrunner"] = {"Centaur Ear"},
+    ["Kolkar Stormer"] = {"Centaur Ear"},
+    ["Kolkar Wrangler"] = {"Centaur Ear"},
+    ["Durotar Tiger"] = {"Tiger Fur", "Durotar Tiger Fur"},
+    ["Dustwind Harpy"] = {"Harpy Feather"},
+    ["Dustwind Storm Witch"] = {"Harpy Feather"},
+    ["Dustwind Savage"] = {"Harpy Feather"},
+    ["Makrura Shellhide"] = {"Makrura Eye"},
+    ["Makrura Snapper"] = {"Makrura Eye"},
+    ["Makrura Clacker"] = {"Makrura Eye"},
+    ["Pygmy Surf Crawler"] = {"Crawler Leg"},
+    ["Encrusted Surf Crawler"] = {"Crawler Leg", "Crawler Mucus"},
+    
+    -----------------------------------------
+    -- Mulgore (1-12)
+    -----------------------------------------
+    ["Plainstrider"] = {"Plainstrider Feather", "Plainstrider Meat"},
+    ["Adult Plainstrider"] = {"Plainstrider Feather"},
+    ["Elder Plainstrider"] = {"Plainstrider Feather"},
+    ["Ornery Plainstrider"] = {"Plainstrider Feather"},
+    ["Battleboar"] = {"Battleboar Snout", "Battleboar Flank"},
+    ["Bristleback Quilback"] = {"Bristleback Belt"},
+    ["Bristleback Shaman"] = {"Bristleback Belt"},
+    ["Bristleback Hunter"] = {"Bristleback Belt"},
+    ["Bristleback Water Seeker"] = {"Bristleback Belt"},
+    ["Bristleback Thornweaver"] = {"Bristleback Belt"},
+    ["Prairie Wolf"] = {"Prairie Wolf Paw", "Wolf Meat"},
+    ["Prairie Wolf Alpha"] = {"Prairie Wolf Paw"},
+    ["Prairie Stalker"] = {"Prairie Wolf Paw"},
+    ["Mountain Cougar"] = {"Mountain Cougar Pelt"},
+    ["Swoop"] = {"Swoop Talon"},
+    ["Wiry Swoop"] = {"Swoop Talon"},
+    ["Taloned Swoop"] = {"Swoop Talon"},
+    ["Windfury Harpy"] = {"Harpy Feather", "Harpy Lieutenant Ring"},
+    ["Windfury Wind Witch"] = {"Harpy Feather"},
+    ["Windfury Matriarch"] = {"Harpy Feather"},
+    ["Venture Co. Laborer"] = {"Venture Co. Documents"},
+    ["Venture Co. Worker"] = {"Venture Co. Documents"},
+    ["Venture Co. Supervisor"] = {"Venture Co. Documents"},
+    
+    -----------------------------------------
+    -- Tirisfal Glades (1-12)
+    -----------------------------------------
+    ["Mindless Zombie"] = {"Embalming Ichor", "Tattered Cloth"},
+    ["Wretched Zombie"] = {"Embalming Ichor"},
+    ["Rotting Dead"] = {"Putrid Claw"},
+    ["Ravaged Corpse"] = {"Putrid Claw"},
+    ["Duskbat"] = {"Duskbat Wing", "Duskbat Pelt"},
+    ["Greater Duskbat"] = {"Duskbat Wing"},
+    ["Night Web Spider"] = {"Spider Ichor"},
+    ["Young Night Web Spider"] = {"Spider Ichor"},
+    ["Scarlet Warrior"] = {"Scarlet Insignia", "Scarlet Armband"},
+    ["Scarlet Missionary"] = {"Scarlet Insignia"},
+    ["Scarlet Zealot"] = {"Scarlet Insignia"},
+    ["Scarlet Vanguard"] = {"Scarlet Insignia"},
+    ["Scarlet Initiate"] = {"Scarlet Insignia"},
+    ["Scarlet Convert"] = {"Scarlet Insignia"},
+    ["Young Scavenger"] = {"Scavenger Paw"},
+    ["Scavenger"] = {"Scavenger Paw"},
+    ["Darkhound"] = {"Darkhound Blood"},
+    ["Vicious Darkhound"] = {"Darkhound Blood"},
+    ["Gnoll"] = {"Gnoll Paw"},
+    ["Murloc Coastrunner"] = {"Shiny Bauble"},
+    
+    -----------------------------------------
+    -- Westfall (10-20)
+    -----------------------------------------
+    ["Harvest Golem"] = {"Harvest Golem Part", "Harvest Watcher Heart"},
+    ["Harvest Watcher"] = {"Harvest Watcher Heart"},
+    ["Defias Knuckleduster"] = {"Red Bandana", "Red Leather Bandana"},
+    ["Defias Highwayman"] = {"Red Bandana", "Red Leather Bandana"},
+    ["Defias Pathstalker"] = {"Red Bandana", "Red Leather Bandana"},
+    ["Defias Pillager"] = {"Red Bandana"},
+    ["Defias Trapper"] = {"Red Bandana"},
+    ["Defias Watchman"] = {"Red Bandana"},
+    ["Defias Messenger"] = {"Red Bandana"},
+    ["Defias Rogue Wizard"] = {"Red Bandana"},
+    ["Goretusk"] = {"Goretusk Liver", "Goretusk Snout"},
+    ["Young Goretusk"] = {"Goretusk Liver"},
+    ["Great Goretusk"] = {"Goretusk Liver"},
+    ["Shore Crawler"] = {"Crawler Mucus"},
+    ["Shore Crab"] = {"Crawler Mucus"},
+    ["Murloc Warrior"] = {"Murloc Fin"},
+    ["Murloc Shorestriker"] = {"Murloc Fin"},
+    ["Murloc Hunter"] = {"Murloc Fin"},
+    ["Murloc Coastrunner"] = {"Murloc Fin"},
+    ["Murloc Oracle"] = {"Murloc Fin"},
+    ["Gnoll Brute"] = {"Gnoll Paw"},
+    ["Riverpaw Mongrel"] = {"Gnoll Paw", "Painted Gnoll Armband"},
+    ["Riverpaw Taskmaster"] = {"Painted Gnoll Armband"},
+    ["Riverpaw Bandit"] = {"Painted Gnoll Armband"},
+    ["Fleshripping Vulture"] = {"Vulture Gizzard", "Vulture Bone"},
+    ["Barn Owl"] = {"Stringy Vulture Meat"},
+    
+    -----------------------------------------
+    -- Loch Modan (10-20)
+    -----------------------------------------
+    ["Stonesplinter Trogg"] = {"Trogg Stone Tooth"},
+    ["Stonesplinter Skullthumper"] = {"Trogg Stone Tooth"},
+    ["Stonesplinter Scout"] = {"Trogg Stone Tooth"},
+    ["Stonesplinter Bonesnapper"] = {"Trogg Stone Tooth"},
+    ["Stonesplinter Shaman"] = {"Trogg Stone Tooth"},
+    ["Stonesplinter Seer"] = {"Trogg Stone Tooth"},
+    ["Stonesplinter Digger"] = {"Trogg Stone Tooth"},
+    ["Mo'grosh Brute"] = {"Trogg Stone Tooth", "Mo'grosh Crystal"},
+    ["Mo'grosh Enforcer"] = {"Mo'grosh Crystal"},
+    ["Mo'grosh Ogre"] = {"Mo'grosh Crystal"},
+    ["Mo'grosh Mystic"] = {"Mo'grosh Crystal"},
+    ["Dark Iron Dwarf"] = {"Dark Iron Ore", "Dark Iron Skull"},
+    ["Dark Iron Insurgent"] = {"Dark Iron Ore"},
+    ["Dark Iron Saboteur"] = {"Dark Iron Ore"},
+    ["Tunnel Rat Digger"] = {"Rat Ear"},
+    ["Tunnel Rat Forager"] = {"Rat Ear"},
+    ["Tunnel Rat Vermin"] = {"Rat Ear"},
+    ["Tunnel Rat Scout"] = {"Rat Ear"},
+    ["Tunnel Rat Geomancer"] = {"Rat Ear"},
+    ["Tunnel Rat Surveyor"] = {"Rat Ear"},
+    ["Forest Lurker"] = {"Spider Leg"},
+    ["Mountain Buzzard"] = {"Buzzard Wing", "Tough Condor Meat"},
+    ["Elder Mountain Boar"] = {"Bear Meat", "Boar Ribs"},
+    ["Bear"] = {"Bear Meat", "Bear Flank"},
+    ["Grizzled Bear"] = {"Bear Meat"},
+    ["Mangy Mountain Boar"] = {"Boar Meat"},
+    
+    -----------------------------------------
+    -- Darkshore (10-20)
+    -----------------------------------------
+    ["Moonstalker"] = {"Moonstalker Fang", "Moonstalker Pelt"},
+    ["Moonstalker Runt"] = {"Moonstalker Fang"},
+    ["Moonstalker Matriarch"] = {"Moonstalker Fang"},
+    ["Thistle Bear"] = {"Bear Meat", "Thistle Bear Fur"},
+    ["Elder Thistle Bear"] = {"Thistle Bear Fur"},
+    ["Ashvale Bear"] = {"Thistle Bear Fur"},
+    ["Encrusted Tide Crawler"] = {"Encrusted Tail Fin"},
+    ["Young Reef Crawler"] = {"Crawler Leg"},
+    ["Reef Crawler"] = {"Crawler Leg"},
+    ["Pygmy Tide Crawler"] = {"Crawler Leg"},
+    ["Rabid Thistle Bear"] = {"Rabid Thistle Bear Sample"},
+    ["Grizzled Thistle Bear"] = {"Thistle Bear Fur"},
+    ["Foreststrider"] = {"Foreststrider Wing"},
+    ["Foreststrider Fledgling"] = {"Foreststrider Wing"},
+    ["Greymist Murloc"] = {"Murloc Fin", "Greymist Parchment"},
+    ["Greymist Coastrunner"] = {"Murloc Fin", "Greymist Smock"},
+    ["Greymist Tidehunter"] = {"Murloc Fin"},
+    ["Greymist Oracle"] = {"Murloc Fin", "Greymist Oracle Scroll"},
+    ["Greymist Warrior"] = {"Murloc Fin"},
+    ["Blackwood Ursa"] = {"Blackwood War Club", "Blackwood Fruit Sample"},
+    ["Blackwood Warrior"] = {"Blackwood War Club"},
+    ["Blackwood Pathfinder"] = {"Blackwood War Club"},
+    ["Blackwood Windtalker"] = {"Blackwood War Club"},
+    ["Blackwood Shaman"] = {"Blackwood War Club"},
+    
+    -----------------------------------------
+    -- The Barrens (10-30)
+    -----------------------------------------
+    ["Zhevra"] = {"Zhevra Hoof", "Zhevra Cougar"},
+    ["Zhevra Runner"] = {"Zhevra Hoof"},
+    ["Zhevra Charger"] = {"Zhevra Hoof"},
+    ["Prowler"] = {"Prowler Claws"},
+    ["Greater Plainstrider"] = {"Plainstrider Feather"},
+    ["Savannah Patriarch"] = {"Lion Claw"},
+    ["Savannah Prowler"] = {"Lion Claw"},
+    ["Savannah Highmane"] = {"Lion Claw"},
+    ["Razormane Quilboar"] = {"Quilboar Ear", "Quilboar Tusk"},
+    ["Razormane Scout"] = {"Quilboar Ear"},
+    ["Razormane Dustrunner"] = {"Quilboar Ear"},
+    ["Razormane Water Seeker"] = {"Quilboar Ear"},
+    ["Razormane Defender"] = {"Quilboar Ear"},
+    ["Razormane Geomancer"] = {"Quilboar Ear"},
+    ["Razormane Stalker"] = {"Quilboar Ear"},
+    ["Razorback"] = {"Plainstrider Meat", "Raptor Egg"},
+    ["Sunscale Raptor"] = {"Sunscale Feather", "Raptor Egg"},
+    ["Sunscale Screecher"] = {"Sunscale Feather"},
+    ["Sunscale Scytheclaw"] = {"Sunscale Feather"},
+    ["Centaur"] = {"Centaur Ear"},
+    ["Galak Outrunner"] = {"Centaur Ear"},
+    ["Galak Wrangler"] = {"Centaur Ear"},
+    ["Galak Scout"] = {"Centaur Ear"},
+    ["Galak Marauder"] = {"Centaur Ear"},
+    ["Wailing Wind"] = {"Harpy Feather"},
+    ["Witchwing Harpy"] = {"Harpy Wing Clipper"},
+    ["Witchwing Roguefeather"] = {"Harpy Wing Clipper"},
+    ["Witchwing Slayer"] = {"Harpy Wing Clipper"},
+    ["Witchwing Ambusher"] = {"Harpy Wing Clipper"},
+    ["Witchwing Windcaller"] = {"Harpy Wing Clipper"},
+    ["Silithid Creeper"] = {"Silithid Egg"},
+    ["Silithid Grub"] = {"Silithid Egg"},
+    ["Kolkar Centaur"] = {"Centaur Ear", "Kolkar Ear"},
+    ["Northwatch Soldier"] = {"Theramore Medal"},
+    ["Northwatch Marine"] = {"Theramore Medal"},
+    ["Northwatch Sharpshooter"] = {"Theramore Medal"},
+    ["Northwatch Reaver"] = {"Theramore Medal"},
+    ["Harpies"] = {"Harpy Feather"},
+    ["Silithid Swarmer"] = {"Silithid Goo"},
+    
+    -----------------------------------------
+    -- Silverpine Forest (10-20)
+    -----------------------------------------
+    ["Rot Hide Mongrel"] = {"Rot Hide Ichor"},
+    ["Rot Hide Gladerunner"] = {"Rot Hide Ichor"},
+    ["Rot Hide Mystic"] = {"Rot Hide Ichor"},
+    ["Rot Hide Brute"] = {"Rot Hide Ichor"},
+    ["Rot Hide Gnoll"] = {"Rot Hide Ichor"},
+    ["Worg"] = {"Worg Heart"},
+    ["Ferocious Worg"] = {"Worg Heart"},
+    ["Dalaran Mage"] = {"Dalaran Pendant"},
+    ["Dalaran Apprentice"] = {"Dalaran Pendant"},
+    ["Dalaran Wizard"] = {"Dalaran Pendant"},
+    ["Dalaran Warder"] = {"Dalaran Pendant"},
+    ["Dalaran Conjuror"] = {"Dalaran Pendant"},
+    ["Dalaran Protector"] = {"Dalaran Pendant"},
+    ["Moss Stalker"] = {"Moss Stalker Fang"},
+    ["Son of Arugal"] = {"Arugal's Favor"},
+    ["Moonrage Whitescalp"] = {"Wolf Heart"},
+    ["Moonrage Darkrunner"] = {"Wolf Heart"},
+    ["Moonrage Glutton"] = {"Wolf Heart"},
+    ["Moonrage Darksoul"] = {"Wolf Heart"},
+    
+    -----------------------------------------
+    -- Stonetalon Mountains (15-27)
+    -----------------------------------------
+    ["Venture Co. Logger"] = {"Venture Co. Documents"},
+    ["Venture Co. Deforester"] = {"Venture Co. Documents"},
+    ["Venture Co. Operator"] = {"Venture Co. Documents"},
+    ["Bloodfury Harpy"] = {"Bloodfury Harpy Feather"},
+    ["Bloodfury Roguefeather"] = {"Bloodfury Harpy Feather"},
+    ["Bloodfury Slayer"] = {"Bloodfury Harpy Feather"},
+    ["Bloodfury Ambusher"] = {"Bloodfury Harpy Feather"},
+    ["Bloodfury Windcaller"] = {"Bloodfury Harpy Feather"},
+    ["Deepmoss Creeper"] = {"Deepmoss Creeper Egg"},
+    ["Deepmoss Matriarch"] = {"Deepmoss Creeper Egg"},
+    ["Deepmoss Webguard"] = {"Deepmoss Creeper Egg"},
+    ["Pridewing Wyvern"] = {"Pridewing Stinger"},
+    ["Pridewing Consort"] = {"Pridewing Stinger"},
+    ["Pridewing Patriarch"] = {"Pridewing Stinger"},
+    ["Charred Ancient"] = {"Charred Glyph"},
+    ["Gor'tesh"] = {"Gor'tesh's Lopped Off Head"},
+    
+    -----------------------------------------
+    -- Ashenvale (18-30)
+    -----------------------------------------
+    ["Ashenvale Bear"] = {"Ashenvale Bear Heart"},
+    ["Shadowhorn Stag"] = {"Stag Meat"},
+    ["Wildthorn Stalker"] = {"Wildthorn Fang"},
+    ["Thistlefur Avenger"] = {"Thistlefur Ear"},
+    ["Thistlefur Pathfinder"] = {"Thistlefur Ear"},
+    ["Thistlefur Shaman"] = {"Thistlefur Ear"},
+    ["Thistlefur Ursa"] = {"Thistlefur Ear"},
+    ["Laughing Sister"] = {"Dryad Essence"},
+    ["Befouled Water Elemental"] = {"Befouled Water Globe"},
+    ["Wrathtail Sorceress"] = {"Wrathtail Head"},
+    ["Wrathtail Sea Witch"] = {"Wrathtail Head"},
+    ["Wrathtail Priestess"] = {"Wrathtail Head"},
+    ["Satyr"] = {"Satyr Horn"},
+    ["Xavian Satyr"] = {"Satyr Horn"},
+    ["Xavian Felsworn"] = {"Satyr Horn"},
+    ["Xavian Rogue"] = {"Satyr Horn"},
+    ["Xavian Hellcaller"] = {"Satyr Horn"},
+    ["Keeper of the Grove"] = {"Living Wood", "Keeper's Cloak"},
+    
+    -----------------------------------------
+    -- Hillsbrad Foothills (20-30)
+    -----------------------------------------
+    ["Syndicate"] = {"Syndicate Emblem"},
+    ["Syndicate Spy"] = {"Syndicate Emblem"},
+    ["Syndicate Footpad"] = {"Syndicate Emblem"},
+    ["Syndicate Thief"] = {"Syndicate Emblem"},
+    ["Syndicate Assassin"] = {"Syndicate Emblem"},
+    ["Syndicate Shadow Mage"] = {"Syndicate Emblem"},
+    ["Syndicate Prowler"] = {"Syndicate Emblem"},
+    ["Syndicate Conjuror"] = {"Syndicate Emblem"},
+    ["Syndicate Magician"] = {"Syndicate Emblem"},
+    ["Hillsbrad Farmer"] = {"Hillsbrad Human Skull"},
+    ["Hillsbrad Peasant"] = {"Hillsbrad Human Skull"},
+    ["Hillsbrad Farmhand"] = {"Hillsbrad Human Skull"},
+    ["Hillsbrad Apprentice Blacksmith"] = {"Hillsbrad Human Skull"},
+    ["Hillsbrad Councilman"] = {"Hillsbrad Human Skull"},
+    ["Mountain Lion"] = {"Mountain Lion Blood"},
+    ["Starving Mountain Lion"] = {"Mountain Lion Blood"},
+    ["Hulking Mountain Lion"] = {"Mountain Lion Blood"},
+    ["Gray Bear"] = {"Gray Bear Tongue"},
+    ["Elder Gray Bear"] = {"Gray Bear Tongue"},
+    ["Mudsnout Gnoll"] = {"Mudsnout Blaster"},
+    ["Mudsnout Shaman"] = {"Mudsnout Blaster"},
+    ["Mud Gnoll"] = {"Mudsnout Composite"},
+    ["Dun Garok Rifleman"] = {"Dun Garok Insignia"},
+    ["Dun Garok Mountaineer"] = {"Dun Garok Insignia"},
+    ["Dun Garok Soldier"] = {"Dun Garok Insignia"},
+    
+    -----------------------------------------
+    -- Wetlands (20-30)
+    -----------------------------------------
+    ["Fen Creeper"] = {"Fen Creepy Tentacle"},
+    ["Mosshide Gnoll"] = {"Gnoll Paw", "Mosshide Ear"},
+    ["Mosshide Mongrel"] = {"Mosshide Ear"},
+    ["Mosshide Brute"] = {"Mosshide Ear"},
+    ["Mosshide Trapper"] = {"Mosshide Ear"},
+    ["Mosshide Alpha"] = {"Mosshide Ear"},
+    ["Mosshide Mistweaver"] = {"Mosshide Ear"},
+    ["Dark Iron Dwarf"] = {"Dark Iron Dwarf Skull"},
+    ["Dark Iron Tunneller"] = {"Dark Iron Dwarf Skull"},
+    ["Dark Iron Demolisher"] = {"Dark Iron Dwarf Skull"},
+    ["Dark Iron Supplier"] = {"Dark Iron Dwarf Skull"},
+    ["Dragonmaw Orc"] = {"Dragonmaw War Banner"},
+    ["Dragonmaw Veteran"] = {"Dragonmaw War Banner"},
+    ["Dragonmaw Swamprunner"] = {"Dragonmaw War Banner"},
+    ["Dragonmaw Centurion"] = {"Dragonmaw War Banner"},
+    ["Dragonmaw Bonewarder"] = {"Dragonmaw War Banner"},
+    ["Dragonmaw Raider"] = {"Dragonmaw War Banner"},
+    ["Dragonmaw Whelp"] = {"Whelp Scale"},
+    ["Raptor"] = {"Raptor Egg"},
+    ["Wetlands Crocolisk"] = {"Crocolisk Skin"},
+    ["Monstrous Wetlands Crocolisk"] = {"Crocolisk Skin"},
+    ["Young Wetlands Crocolisk"] = {"Crocolisk Skin"},
+    ["Bluegill Murloc"] = {"Murloc Fin"},
+    ["Bluegill Puddlejumper"] = {"Murloc Fin"},
+    ["Bluegill Forager"] = {"Murloc Fin"},
+    ["Bluegill Warrior"] = {"Murloc Fin"},
+    ["Bluegill Oracle"] = {"Murloc Fin"},
+    
+    -----------------------------------------
+    -- Stranglethorn Vale (30-45)
+    -----------------------------------------
+    ["Bloodscalp Troll"] = {"Bloodscalp Ear", "Bloodscalp Tusk"},
+    ["Bloodscalp Hunter"] = {"Bloodscalp Ear"},
+    ["Bloodscalp Scout"] = {"Bloodscalp Ear"},
+    ["Bloodscalp Warrior"] = {"Bloodscalp Ear"},
+    ["Bloodscalp Witch Doctor"] = {"Bloodscalp Ear"},
+    ["Bloodscalp Mystic"] = {"Bloodscalp Ear"},
+    ["Bloodscalp Headhunter"] = {"Bloodscalp Ear"},
+    ["Bloodscalp Axe Thrower"] = {"Bloodscalp Ear"},
+    ["Bloodscalp Berserker"] = {"Bloodscalp Ear"},
+    ["Skullsplitter Troll"] = {"Skullsplitter Ear", "Skullsplitter Tusk"},
+    ["Skullsplitter Hunter"] = {"Skullsplitter Ear"},
+    ["Skullsplitter Scout"] = {"Skullsplitter Ear"},
+    ["Skullsplitter Warrior"] = {"Skullsplitter Ear"},
+    ["Skullsplitter Headhunter"] = {"Skullsplitter Ear"},
+    ["Skullsplitter Axe Thrower"] = {"Skullsplitter Ear"},
+    ["Skullsplitter Mystic"] = {"Skullsplitter Ear"},
+    ["Skullsplitter Berserker"] = {"Skullsplitter Ear"},
+    ["Skullsplitter Witch Doctor"] = {"Skullsplitter Ear"},
+    ["Lashtail Raptor"] = {"Raptor Feather"},
+    ["Stranglethorn Raptor"] = {"Raptor Egg"},
+    ["Jungle Stalker"] = {"Raptor Egg"},
+    ["Stranglethorn Tiger"] = {"Tiger Fang"},
+    ["Young Stranglethorn Tiger"] = {"Tiger Fang"},
+    ["Elder Stranglethorn Tiger"] = {"Tiger Fang"},
+    ["Shadowmaw Panther"] = {"Shadowmaw Claw"},
+    ["Young Panther"] = {"Panther Fang"},
+    ["Panther"] = {"Panther Fang"},
+    ["Elder Shadowmaw Panther"] = {"Shadowmaw Claw"},
+    ["Kurzen Commando"] = {"Kurzen Ear"},
+    ["Kurzen Elite"] = {"Kurzen Ear"},
+    ["Kurzen Jungle Fighter"] = {"Kurzen Ear"},
+    ["Kurzen Medicine Man"] = {"Kurzen Ear"},
+    ["Kurzen Watcher"] = {"Kurzen Ear"},
+    ["Kurzen Shadow Hunter"] = {"Kurzen Ear"},
+    ["Naga Explorer"] = {"Blue Pearl"},
+    ["Naga"] = {"Blue Pearl"},
+    ["Mosh'Ogg Brute"] = {"Balia'mah Trophy"},
+    ["Mosh'Ogg Mauler"] = {"Balia'mah Trophy"},
+    ["Mosh'Ogg Witch Doctor"] = {"Balia'mah Trophy"},
+    ["Venture Co. Miner"] = {"Singing Blue Crystal"},
+    ["Venture Co. Geologist"] = {"Singing Blue Crystal"},
+    ["Venture Co. Foreman"] = {"Singing Blue Crystal"},
+    ["Gorilla"] = {"Gorilla Fang"},
+    ["Elder Mistvale Gorilla"] = {"Gorilla Fang"},
+    ["Mistvale Gorilla"] = {"Gorilla Fang"},
+    
+    -----------------------------------------
+    -- Tanaris (40-50)
+    -----------------------------------------
+    ["Southsea Pirate"] = {"Southsea Pirate Hat", "Pirate Parrot"},
+    ["Southsea Freebooter"] = {"Pirate Hat"},
+    ["Southsea Dock Worker"] = {"Pirate Hat"},
+    ["Southsea Swashbuckler"] = {"Southsea Pirate Hat"},
+    ["Southsea Privateer"] = {"Southsea Pirate Hat"},
+    ["Southsea Cutthroat"] = {"Southsea Pirate Hat"},
+    ["Wastewander Bandit"] = {"Wastewander Water Pouch"},
+    ["Wastewander Thief"] = {"Wastewander Water Pouch"},
+    ["Wastewander Shadow Mage"] = {"Wastewander Water Pouch"},
+    ["Wastewander Rogue"] = {"Wastewander Water Pouch"},
+    ["Wastewander Assassin"] = {"Wastewander Water Pouch"},
+    ["Wastewander Scofflaw"] = {"Wastewander Water Pouch"},
+    ["Sandfury Troll"] = {"Sandfury Troll Head"},
+    ["Sandfury Hideskinner"] = {"Sandfury Troll Head"},
+    ["Sandfury Axe Thrower"] = {"Sandfury Troll Head"},
+    ["Sandfury Shadowcaster"] = {"Sandfury Troll Head"},
+    ["Sandfury Blood Drinker"] = {"Sandfury Troll Head"},
+    ["Sandfury Witch Doctor"] = {"Sandfury Troll Head"},
+    ["Sandfury Shadowhunter"] = {"Sandfury Troll Head"},
+    ["Dunemaul Ogre"] = {"Dunemaul Compound Key"},
+    ["Dunemaul Brute"] = {"Dunemaul Compound Key"},
+    ["Dunemaul Enforcer"] = {"Dunemaul Compound Key"},
+    ["Dunemaul Ogre Mage"] = {"Dunemaul Compound Key"},
+    ["Dunemaul Warlock"] = {"Dunemaul Compound Key"},
+    ["Basilisk"] = {"Basilisk Brain"},
+    ["Stone Basilisk"] = {"Basilisk Brain"},
+    ["Glasshive Basilisk"] = {"Basilisk Brain"},
+    ["Gnarled Basilisk"] = {"Basilisk Brain"},
+    ["Hyena"] = {"Hyena Meat"},
+    ["Starving Hyena"] = {"Hyena Meat"},
+    ["Scorpid Reaver"] = {"Scorpid Scale"},
+    ["Scorpid Terror"] = {"Scorpid Scale"},
+    
+    -----------------------------------------
+    -- Feralas (40-50)
+    -----------------------------------------
+    ["Feral Scar Yeti"] = {"Pristine Yeti Hide"},
+    ["Elder Feral Scar Yeti"] = {"Pristine Yeti Hide"},
+    ["Rage Scar Yeti"] = {"Pristine Yeti Hide"},
+    ["Ferocious Rage Scar"] = {"Pristine Yeti Hide"},
+    ["Sprite Darter"] = {"Sprite Darter Egg"},
+    ["Sprite Darter Hatchling"] = {"Sprite Darter Egg"},
+    ["Woodpaw Mongrel"] = {"Woodpaw Gnoll Mane"},
+    ["Woodpaw Trapper"] = {"Woodpaw Gnoll Mane"},
+    ["Woodpaw Brute"] = {"Woodpaw Gnoll Mane"},
+    ["Woodpaw Mystic"] = {"Woodpaw Gnoll Mane"},
+    ["Woodpaw Reaver"] = {"Woodpaw Gnoll Mane"},
+    ["Woodpaw Alpha"] = {"Woodpaw Gnoll Mane"},
+    ["Gordunni Ogre"] = {"Gordunni Scroll"},
+    ["Gordunni Ogre Mage"] = {"Gordunni Scroll"},
+    ["Gordunni Brute"] = {"Gordunni Scroll"},
+    ["Gordunni Warlock"] = {"Gordunni Scroll"},
+    ["Gordunni Mauler"] = {"Gordunni Scroll"},
+    ["Gordunni Shaman"] = {"Gordunni Scroll"},
+    ["Gordunni Warlord"] = {"Gordunni Scroll"},
+    ["Hippogryph"] = {"Hippogryph Egg", "Hippogryph Feather"},
+    ["Frayfeather Hippogryph"] = {"Hippogryph Egg"},
+    ["Frayfeather Patriarch"] = {"Hippogryph Egg"},
+    ["Frayfeather Stagwing"] = {"Hippogryph Egg"},
+    ["Ironfur Bear"] = {"Bear Flank"},
+    ["Ironfur Patriarch"] = {"Bear Flank"},
+    
+    -----------------------------------------
+    -- Un'Goro Crater (48-55)
+    -----------------------------------------
+    ["Devilsaur"] = {"Devilsaur Tooth", "Devilsaur Leather"},
+    ["King Mosh"] = {"Devilsaur Tooth"},
+    ["Tyrant Devilsaur"] = {"Devilsaur Tooth"},
+    ["Ravasaur"] = {"Ravasaur Pheromone", "Raptor Egg"},
+    ["Ravasaur Runner"] = {"Ravasaur Pheromone"},
+    ["Ravasaur Hunter"] = {"Ravasaur Pheromone"},
+    ["Venomhide Ravasaur"] = {"Ravasaur Pheromone"},
+    ["Gorishi Tunneler"] = {"Silithid Goo"},
+    ["Gorishi Worker"] = {"Silithid Goo"},
+    ["Gorishi Wasp"] = {"Silithid Goo"},
+    ["Gorishi Stinger"] = {"Silithid Goo"},
+    ["Gorishi Reaver"] = {"Silithid Goo"},
+    ["Gorishi Hatchling"] = {"Silithid Goo"},
+    ["Pterrordax"] = {"Pterrordax Bone"},
+    ["Frenzied Pterrordax"] = {"Pterrordax Bone"},
+    ["Bloodpetal Lasher"] = {"Bloodpetal Sprout", "Un'Goro Soil"},
+    ["Bloodpetal Trapper"] = {"Bloodpetal Sprout"},
+    ["Bloodpetal Flayer"] = {"Bloodpetal Sprout"},
+    ["Bloodpetal Pest"] = {"Bloodpetal Sprout"},
+    ["Un'Goro Gorilla"] = {"Un'Goro Gorilla Pelt"},
+    ["U'cha"] = {"Un'Goro Gorilla Pelt"},
+    ["Tar Beast"] = {"Un'Goro Tar"},
+    ["Tar Lurker"] = {"Un'Goro Tar"},
+    ["Tar Creeper"] = {"Un'Goro Tar"},
+    ["Living Blaze"] = {"Essence of Fire"},
+    ["Scorching Elemental"] = {"Elemental Fire"},
+    ["Diemetradon"] = {"Dinosaur Bone"},
+    
+    -----------------------------------------
+    -- Felwood (48-55)
+    -----------------------------------------
+    ["Deadwood Warrior"] = {"Deadwood Headdress Feather"},
+    ["Deadwood Pathfinder"] = {"Deadwood Headdress Feather"},
+    ["Deadwood Shaman"] = {"Deadwood Headdress Feather"},
+    ["Deadwood Gardener"] = {"Deadwood Headdress Feather"},
+    ["Deadwood Den Watcher"] = {"Deadwood Headdress Feather"},
+    ["Deadwood Avenger"] = {"Deadwood Headdress Feather"},
+    ["Jadefire Satyr"] = {"Jadefire Felbind"},
+    ["Jadefire Rogue"] = {"Jadefire Felbind"},
+    ["Jadefire Trickster"] = {"Jadefire Felbind"},
+    ["Jadefire Hellcaller"] = {"Jadefire Felbind"},
+    ["Jadefire Betrayer"] = {"Jadefire Felbind"},
+    ["Jadefire Felsworn"] = {"Jadefire Felbind"},
+    ["Jadefire Shadowstalker"] = {"Jadefire Felbind"},
+    ["Diseased Wolf"] = {"Diseased Wolf Heart"},
+    ["Angerclaw Mauler"] = {"Angerclaw Mauler Claw"},
+    ["Angerclaw Grizzly"] = {"Angerclaw Mauler Claw"},
+    ["Irontree Wanderer"] = {"Irontree Heart"},
+    ["Irontree Stomper"] = {"Irontree Heart"},
+    ["Warpwood Moss Flayer"] = {"Warpwood Moss"},
+    ["Warpwood Shredder"] = {"Warpwood Moss"},
+    ["Warpwood Tangler"] = {"Warpwood Moss"},
+    
+    -----------------------------------------
+    -- Winterspring (53-60)
+    -----------------------------------------
+    ["Winterfall Ursa"] = {"Winterfall Spirit Beads"},
+    ["Winterfall Shaman"] = {"Winterfall Spirit Beads"},
+    ["Winterfall Den Watcher"] = {"Winterfall Spirit Beads"},
+    ["Winterfall Pathfinder"] = {"Winterfall Spirit Beads"},
+    ["Winterfall Runner"] = {"Winterfall Spirit Beads"},
+    ["High Chief Winterfall"] = {"Winterfall Spirit Beads"},
+    ["Winterfall Elder"] = {"Winterfall Spirit Beads"},
+    ["Frostsaber Pride Watcher"] = {"Frostsaber Meat"},
+    ["Frostsaber Stalker"] = {"Frostsaber Meat"},
+    ["Frostsaber Huntress"] = {"Frostsaber Meat"},
+    ["Ice Thistle Patriarch"] = {"Pristine Yeti Horn"},
+    ["Ice Thistle Yeti"] = {"Pristine Yeti Horn"},
+    ["Ice Thistle Matriarch"] = {"Pristine Yeti Horn"},
+    ["Frostmaul Giant"] = {"Frostmaul Shards"},
+    ["Frostmaul Tumbler"] = {"Frostmaul Shards"},
+    ["Shardtooth Mauler"] = {"Shardtooth Meat"},
+    ["Shardtooth Bear"] = {"Shardtooth Meat"},
+    ["Elder Shardtooth"] = {"Shardtooth Meat"},
+    ["Chillwind Chimaera"] = {"Chimaera Leather"},
+    ["Cobalt Wyrmkin"] = {"Cobalt Scales"},
+    ["Greater Cobalt Serpent"] = {"Cobalt Scales"},
+    ["Blue Dragonspawn"] = {"Blue Pristine Scale"},
+    ["Cobalt Scalebane"] = {"Blue Pristine Scale"},
+    ["Cobalt Mageweaver"] = {"Blue Pristine Scale"},
+    
+    -----------------------------------------
+    -- Eastern Plaguelands (53-60)
+    -----------------------------------------
+    ["Plaguehound Runt"] = {"Plaguehound Blood"},
+    ["Plaguehound"] = {"Plaguehound Blood"},
+    ["Frenzied Plaguehound"] = {"Plaguehound Blood"},
+    ["Skeletal Sorcerer"] = {"Skeletal Fragments"},
+    ["Skeletal Executioner"] = {"Skeletal Fragments"},
+    ["Skeletal Warlord"] = {"Skeletal Fragments"},
+    ["Skeletal Flayer"] = {"Skeletal Fragments"},
+    ["Carrion Grub"] = {"Carrion Grub"},
+    ["Carrion Devourer"] = {"Carrion Grub"},
+    ["Mossflayer Scout"] = {"Mossflayer Remains"},
+    ["Mossflayer Shadowhunter"] = {"Mossflayer Remains"},
+    ["Mossflayer Cannibal"] = {"Mossflayer Remains"},
+    ["Mossflayer Zombie"] = {"Mossflayer Remains"},
+    ["Plaguebat"] = {"Plaguebat Lung"},
+    ["Noxious Plaguebat"] = {"Plaguebat Lung"},
+    ["Monstrous Plaguebat"] = {"Plaguebat Lung"},
+    ["Plague Lurker"] = {"Plague Lurker Cyst"},
+    ["Cannibal Ghoul"] = {"Ghoul Rib"},
+    ["Gibbering Ghoul"] = {"Ghoul Rib"},
+    ["Diseased Flayer"] = {"Diseased Claw"},
+    ["Cursed Mage"] = {"Cursed Mage Eye"},
+    
+    -----------------------------------------
+    -- Western Plaguelands (51-58)
+    -----------------------------------------
+    ["Slavering Ghoul"] = {"Ghoul Rib"},
+    ["Rotting Ghoul"] = {"Ghoul Rib"},
+    ["Decaying Ghoul"] = {"Ghoul Rib"},
+    ["Blighted Zombie"] = {"Torn Flesh"},
+    ["Scarlet Avenger"] = {"Scarlet Insignia Ring"},
+    ["Scarlet Mage"] = {"Scarlet Insignia Ring"},
+    ["Scarlet Priest"] = {"Scarlet Insignia Ring"},
+    ["Scarlet Invoker"] = {"Scarlet Insignia Ring"},
+    ["Scarlet Sorcerer"] = {"Scarlet Insignia Ring"},
+    ["Scarlet Hunter"] = {"Scarlet Insignia Ring"},
+    ["Scarlet Cleric"] = {"Scarlet Insignia Ring"},
+    ["Scarlet Cavalier"] = {"Scarlet Insignia Ring"},
+    ["Scarlet Spellbinder"] = {"Scarlet Insignia Ring"},
+    
+    -----------------------------------------
+    -- Silithus (55-60)
+    -----------------------------------------
+    ["Twilight Avenger"] = {"Twilight Pendant"},
+    ["Twilight Geolord"] = {"Twilight Pendant"},
+    ["Twilight Stonecaller"] = {"Twilight Pendant"},
+    ["Twilight Master"] = {"Twilight Pendant"},
+    ["Twilight Overlord"] = {"Twilight Pendant"},
+    ["Twilight Keeper"] = {"Twilight Pendant"},
+    ["Twilight Prophet"] = {"Twilight Pendant"},
+    ["Twilight Marauder"] = {"Twilight Pendant"},
+    ["Twilight Flamereaver"] = {"Twilight Pendant"},
+    ["Twilight Elementalist"] = {"Twilight Pendant"},
+    ["Twilight Lord"] = {"Twilight Pendant"},
+    ["Cultist"] = {"Cultist Medallion"},
+    ["Silithid Swarmer"] = {"Silithid Venom"},
+    ["Hive'Ashi Worker"] = {"Silithid Chitin"},
+    ["Hive'Ashi Sandstalker"] = {"Silithid Chitin"},
+    ["Hive'Ashi Stinger"] = {"Silithid Chitin"},
+    ["Hive'Ashi Drone"] = {"Silithid Chitin"},
+    ["Hive'Zora Tunneler"] = {"Silithid Chitin"},
+    ["Hive'Zora Wasp"] = {"Silithid Chitin"},
+    ["Hive'Zora Hive Sister"] = {"Silithid Chitin"},
+    ["Hive'Regal Ambusher"] = {"Silithid Chitin"},
+    ["Hive'Regal Slavemaker"] = {"Silithid Chitin"},
+    ["Hive'Regal Spitfire"] = {"Silithid Chitin"},
+    ["Sand Worm"] = {"Sand Worm Meat"},
+    ["Desert Rumbler"] = {"Essence of Earth"},
+    ["Dust Stormer"] = {"Essence of Air"},
+    
+    -----------------------------------------
+    -- Blasted Lands (45-55)
+    -----------------------------------------
+    ["Dreadmaul Ogre"] = {"Dreadmaul Earring"},
+    ["Dreadmaul Brute"] = {"Dreadmaul Earring"},
+    ["Dreadmaul Mauler"] = {"Dreadmaul Earring"},
+    ["Dreadmaul Warlock"] = {"Dreadmaul Earring"},
+    ["Dreadmaul Ogre Mage"] = {"Dreadmaul Earring"},
+    ["Shadowsworn Cultist"] = {"Shadowsworn Amulet"},
+    ["Shadowsworn Adept"] = {"Shadowsworn Amulet"},
+    ["Shadowsworn Thug"] = {"Shadowsworn Amulet"},
+    ["Shadowsworn Warlock"] = {"Shadowsworn Amulet"},
+    ["Shadowsworn Dreadweaver"] = {"Shadowsworn Amulet"},
+    ["Helboar"] = {"Helboar Meat"},
+    ["Feral Helboar"] = {"Helboar Meat"},
+    ["Ashmane Boar"] = {"Ashmane Boar Meat"},
+    ["Scorpok"] = {"Scorpok Pincer"},
+    ["Redstone Scorpok"] = {"Scorpok Pincer"},
+    ["Redstone Basilisk"] = {"Basilisk Scale"},
+    
+    -----------------------------------------
+    -- Burning Steppes (50-58)
+    -----------------------------------------
+    ["Blackrock Soldier"] = {"Blackrock Medallion"},
+    ["Blackrock Slayer"] = {"Blackrock Medallion"},
+    ["Blackrock Sorcerer"] = {"Blackrock Medallion"},
+    ["Blackrock Warlock"] = {"Blackrock Medallion"},
+    ["Black Dragonspawn"] = {"Black Dragonspawn Eye"},
+    ["Black Drake"] = {"Black Drake Scale"},
+    ["Black Dragon Whelp"] = {"Black Whelp Scale"},
+    ["Black Broodling"] = {"Black Broodling Scale"},
+    ["Scalding Whelp"] = {"Whelp Scale"},
+    ["Firebrand Grunt"] = {"Firegut Brute Ear"},
+    ["Firebrand Invoker"] = {"Firegut Brute Ear"},
+    ["Firebrand Dreadweaver"] = {"Firegut Brute Ear"},
+    ["Firebrand Pyromancer"] = {"Firegut Brute Ear"},
+    ["Firebrand Legionnaire"] = {"Firegut Brute Ear"},
+    ["Blackrock Battlemaster"] = {"Blackrock Medallion"},
+    
+    -----------------------------------------
+    -- Searing Gorge (43-50)
+    -----------------------------------------
+    ["Dark Iron Slaver"] = {"Dark Iron Frag Bomb"},
+    ["Dark Iron Taskmaster"] = {"Dark Iron Frag Bomb"},
+    ["Dark Iron Lookout"] = {"Dark Iron Frag Bomb"},
+    ["Dark Iron Sentry"] = {"Dark Iron Frag Bomb"},
+    ["Dark Iron Warsmith"] = {"Dark Iron Frag Bomb"},
+    ["Dark Iron Geologist"] = {"Dark Iron Frag Bomb"},
+    ["Dark Iron Steamsmith"] = {"Dark Iron Frag Bomb"},
+    ["Heavy War Golem"] = {"Golem Plate"},
+    ["Inferno Elemental"] = {"Elemental Core"},
+    ["Magma Elemental"] = {"Elemental Core"},
+    ["Magma Lord"] = {"Elemental Core"},
+    ["Incendosaur"] = {"Incendosaur Scale"},
+    ["Greater Lava Spider"] = {"Spider Silk"},
+    ["Lava Spider"] = {"Spider Silk"},
+    ["Blazing Elemental"] = {"Elemental Fire"},
+}
+
 function VGuideQuestTooltip:Initialize()
     if self.initialized then return end
     
@@ -1116,6 +1865,9 @@ function VGuideQuestTooltip:AddQuestObjectives(mobName, added)
         end
     end
     
+    -- Get items this mob can drop from our database
+    local mobItems = self:GetMobDropItems(mobName)
+    
     for questIndex = 1, numEntries do
         local title, _, _, isHeader = GetQuestLogTitle(questIndex)
         
@@ -1157,6 +1909,19 @@ function VGuideQuestTooltip:AddQuestObjectives(mobName, added)
                         hasMatch = true
                         break
                     end
+                    
+                    -- Method 4: Check if mob drops items mentioned in objective (pfQuest-style)
+                    -- e.g., hovering "Rockjaw Trogg" shows "Trogg Stone Tooth: 0/8" objectives
+                    if mobItems then
+                        for _, item in ipairs(mobItems) do
+                            local itemLower = string.lower(item)
+                            if string.find(textLower, itemLower, 1, true) then
+                                hasMatch = true
+                                break
+                            end
+                        end
+                        if hasMatch then break end
+                    end
                 end
             end
             
@@ -1189,6 +1954,32 @@ function VGuideQuestTooltip:AddQuestObjectives(mobName, added)
     end
     
     return added
+end
+
+-- Get items that a mob can drop (checks exact name and pattern matching)
+function VGuideQuestTooltip:GetMobDropItems(mobName)
+    -- First check exact match
+    local items = self.MobItemDrops[mobName]
+    if items then
+        return items
+    end
+    
+    -- Then check if mob name contains any of our database keys
+    local mobNameLower = string.lower(mobName)
+    for dbMobName, dbItems in pairs(self.MobItemDrops) do
+        local dbMobLower = string.lower(dbMobName)
+        -- Check if the database mob name is contained in the current mob name
+        -- e.g., "Rockjaw Trogg" in "Rockjaw Trogg Skullthumper"
+        if string.find(mobNameLower, dbMobLower, 1, true) then
+            return dbItems
+        end
+        -- Also check the reverse
+        if string.find(dbMobLower, mobNameLower, 1, true) then
+            return dbItems
+        end
+    end
+    
+    return nil
 end
 
 function VGuideQuestTooltip:AddNPCQuestLines(quests, added)
