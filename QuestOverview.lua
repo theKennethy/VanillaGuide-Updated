@@ -6,8 +6,9 @@ Authors: VanillaGuide Contributors
 Version: 1.10.0
 ------------------------------------------------------
 Description: 
-    Moveable quest tracker showing all active quests
-    with objectives and progress.
+    Moveable, scrollable quest tracker showing all 
+    active quests with objectives and progress.
+    Lua 5.0 compatible for WoW 1.12.
 ------------------------------------------------------
 ]]--
 
@@ -15,18 +16,24 @@ Dv(" VGuide QuestOverview.lua Start")
 
 VGuideQuestOverview = {}
 VGuideQuestOverview.frame = nil
+VGuideQuestOverview.scrollFrame = nil
+VGuideQuestOverview.scrollChild = nil
 VGuideQuestOverview.enabled = true
-VGuideQuestOverview.collapsed = {}  -- Track collapsed quests
+VGuideQuestOverview.questLines = {}  -- Reusable font strings
 
 -- Configuration
 VGuideQuestOverview.config = {
-    width = 220,
-    fontSize = 10,
-    titleFontSize = 11,
-    bgAlpha = 0.6,
+    width = 240,
+    height = 300,
+    maxHeight = 400,
+    minHeight = 60,
+    lineHeight = 14,
+    objLineHeight = 13,
+    questSpacing = 6,
+    bgAlpha = 0.75,
     anchorPoint = "TOPRIGHT",
-    offsetX = -20,
-    offsetY = -200,
+    offsetX = -25,
+    offsetY = -180,
 }
 
 function VGuideQuestOverview:Initialize()
@@ -36,44 +43,41 @@ function VGuideQuestOverview:Initialize()
     if QuestWatchFrame then
         QuestWatchFrame:Hide()
         QuestWatchFrame:UnregisterAllEvents()
-        -- Override Show to prevent it from ever appearing
         QuestWatchFrame.Show = function() end
-        -- Also hide the quest watch header if it exists
         if QuestWatchFrameHeader then
             QuestWatchFrameHeader:Hide()
         end
     end
-    
-    -- Also disable the built-in quest tracking functions
     if QuestWatch_Update then
         QuestWatch_Update = function() end
     end
     
-    -- Create main frame
+    -- Main frame
     self.frame = CreateFrame("Frame", "VGuideQuestOverviewFrame", UIParent)
     self.frame:SetWidth(self.config.width)
-    self.frame:SetHeight(50)
+    self.frame:SetHeight(self.config.height)
     self.frame:SetPoint(self.config.anchorPoint, UIParent, self.config.anchorPoint, self.config.offsetX, self.config.offsetY)
     self.frame:SetMovable(true)
     self.frame:EnableMouse(true)
     self.frame:SetClampedToScreen(true)
     self.frame:SetFrameStrata("MEDIUM")
+    self.frame:SetFrameLevel(10)
     
     -- Background
     self.frame:SetBackdrop({
         bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
         edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-        tile = true, tileSize = 16, edgeSize = 12,
-        insets = { left = 2, right = 2, top = 2, bottom = 2 }
+        tile = true, tileSize = 16, edgeSize = 14,
+        insets = { left = 3, right = 3, top = 3, bottom = 3 }
     })
-    self.frame:SetBackdropColor(0, 0, 0, self.config.bgAlpha)
-    self.frame:SetBackdropBorderColor(0.4, 0.4, 0.4, 0.8)
+    self.frame:SetBackdropColor(0.05, 0.05, 0.08, self.config.bgAlpha)
+    self.frame:SetBackdropBorderColor(0.3, 0.3, 0.35, 0.9)
     
-    -- Title bar for dragging
+    -- Title bar (draggable)
     local titleBar = CreateFrame("Frame", nil, self.frame)
-    titleBar:SetHeight(16)
-    titleBar:SetPoint("TOPLEFT", self.frame, "TOPLEFT", 4, -4)
-    titleBar:SetPoint("TOPRIGHT", self.frame, "TOPRIGHT", -4, -4)
+    titleBar:SetHeight(20)
+    titleBar:SetPoint("TOPLEFT", self.frame, "TOPLEFT", 0, 0)
+    titleBar:SetPoint("TOPRIGHT", self.frame, "TOPRIGHT", 0, 0)
     titleBar:EnableMouse(true)
     titleBar:RegisterForDrag("LeftButton")
     titleBar:SetScript("OnDragStart", function()
@@ -84,26 +88,69 @@ function VGuideQuestOverview:Initialize()
     end)
     
     -- Title text
-    local title = titleBar:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-    title:SetPoint("LEFT", titleBar, "LEFT", 0, 0)
+    local title = self.frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    title:SetPoint("TOPLEFT", self.frame, "TOPLEFT", 10, -6)
     title:SetText("|cFFFFD100Quest Tracker|r")
+    title:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
     
     -- Close button
-    local closeBtn = CreateFrame("Button", nil, self.frame)
-    closeBtn:SetWidth(12)
-    closeBtn:SetHeight(12)
-    closeBtn:SetPoint("TOPRIGHT", self.frame, "TOPRIGHT", -6, -6)
-    closeBtn:SetNormalTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Up")
-    closeBtn:SetPushedTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Down")
-    closeBtn:SetHighlightTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight")
+    local closeBtn = CreateFrame("Button", nil, self.frame, "UIPanelCloseButton")
+    closeBtn:SetWidth(20)
+    closeBtn:SetHeight(20)
+    closeBtn:SetPoint("TOPRIGHT", self.frame, "TOPRIGHT", -2, -2)
     closeBtn:SetScript("OnClick", function()
         VGuideQuestOverview:Toggle()
     end)
     
-    -- Content frame (scrollable area for quests)
-    self.content = CreateFrame("Frame", nil, self.frame)
-    self.content:SetPoint("TOPLEFT", self.frame, "TOPLEFT", 6, -22)
-    self.content:SetPoint("BOTTOMRIGHT", self.frame, "BOTTOMRIGHT", -6, 6)
+    -- Scroll frame
+    self.scrollFrame = CreateFrame("ScrollFrame", "VGuideQuestOverviewScrollFrame", self.frame, "UIPanelScrollFrameTemplate")
+    self.scrollFrame:SetPoint("TOPLEFT", self.frame, "TOPLEFT", 8, -26)
+    self.scrollFrame:SetPoint("BOTTOMRIGHT", self.frame, "BOTTOMRIGHT", -28, 8)
+    
+    -- Scroll child (content holder)
+    self.scrollChild = CreateFrame("Frame", nil, self.scrollFrame)
+    self.scrollChild:SetWidth(self.config.width - 36)
+    self.scrollChild:SetHeight(1)  -- Will be adjusted dynamically
+    self.scrollFrame:SetScrollChild(self.scrollChild)
+    
+    -- Mouse wheel scrolling
+    self.frame:EnableMouseWheel(true)
+    self.frame:SetScript("OnMouseWheel", function()
+        local scrollBar = getglobal("VGuideQuestOverviewScrollFrameScrollBar")
+        if scrollBar then
+            local current = scrollBar:GetValue()
+            local min, max = scrollBar:GetMinMaxValues()
+            local step = 40
+            if arg1 > 0 then
+                scrollBar:SetValue(math.max(current - step, min))
+            else
+                scrollBar:SetValue(math.min(current + step, max))
+            end
+        end
+    end)
+    
+    -- Resize handle
+    local resizeHandle = CreateFrame("Frame", nil, self.frame)
+    resizeHandle:SetWidth(16)
+    resizeHandle:SetHeight(16)
+    resizeHandle:SetPoint("BOTTOMRIGHT", self.frame, "BOTTOMRIGHT", -2, 2)
+    resizeHandle:EnableMouse(true)
+    
+    local resizeTexture = resizeHandle:CreateTexture(nil, "OVERLAY")
+    resizeTexture:SetTexture("Interface\\ChatFrame\\UI-ChatIM-SizeGrabber-Up")
+    resizeTexture:SetAllPoints(resizeHandle)
+    
+    resizeHandle:SetScript("OnMouseDown", function()
+        VGuideQuestOverview.frame:StartSizing("BOTTOMRIGHT")
+    end)
+    resizeHandle:SetScript("OnMouseUp", function()
+        VGuideQuestOverview.frame:StopMovingOrSizing()
+        VGuideQuestOverview:Update()
+    end)
+    
+    self.frame:SetResizable(true)
+    self.frame:SetMinResize(180, self.config.minHeight)
+    self.frame:SetMaxResize(400, self.config.maxHeight)
     
     -- Register events
     self.frame:RegisterEvent("QUEST_LOG_UPDATE")
@@ -119,102 +166,129 @@ function VGuideQuestOverview:Initialize()
         self.frame:Hide()
     end
     
-    Di("      - Quest Tracker initialized")
+    Di("      - Quest Tracker initialized (scrollable)")
+end
+
+function VGuideQuestOverview:GetOrCreateLine(index, lineType)
+    local key = lineType .. index
+    if not self.questLines[key] then
+        local fontString = self.scrollChild:CreateFontString(nil, "OVERLAY")
+        fontString:SetFont("Fonts\\FRIZQT__.TTF", 11, "")
+        fontString:SetJustifyH("LEFT")
+        fontString:SetWordWrap(true)
+        self.questLines[key] = fontString
+    end
+    return self.questLines[key]
+end
+
+function VGuideQuestOverview:HideAllLines()
+    for key, line in pairs(self.questLines) do
+        if line and line.Hide then
+            line:Hide()
+        end
+    end
 end
 
 function VGuideQuestOverview:Update()
-    if not self.frame or not self.content then return end
+    if not self.frame or not self.scrollChild then return end
     if not self.enabled then return end
     
-    -- Clear existing content
-    local children = { self.content:GetChildren() }
-    for i = 1, table.getn(children) do
-        if children[i] then
-            children[i]:Hide()
-            children[i]:SetParent(nil)
-        end
-    end
+    self:HideAllLines()
     
     local yOffset = 0
+    local lineIndex = 0
     local numEntries = GetNumQuestLogEntries()
     local questCount = 0
+    local contentWidth = self.scrollChild:GetWidth()
     
     for questIndex = 1, numEntries do
         local title, level, _, isHeader, _, isComplete = GetQuestLogTitle(questIndex)
         
         if not isHeader and title then
             questCount = questCount + 1
+            lineIndex = lineIndex + 1
             
-            -- Quest title line
-            local questLine = self.content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-            questLine:SetPoint("TOPLEFT", self.content, "TOPLEFT", 0, yOffset)
-            questLine:SetWidth(self.config.width - 16)
-            questLine:SetJustifyH("LEFT")
+            -- Quest title
+            local questLine = self:GetOrCreateLine(lineIndex, "quest")
+            questLine:ClearAllPoints()
+            questLine:SetPoint("TOPLEFT", self.scrollChild, "TOPLEFT", 0, yOffset)
+            questLine:SetWidth(contentWidth)
+            questLine:SetFont("Fonts\\FRIZQT__.TTF", 11, "")
             
             -- Color by difficulty
             local playerLevel = UnitLevel("player")
             local levelDiff = level - playerLevel
             local r, g, b = 1, 0.82, 0
             if levelDiff >= 5 then
-                r, g, b = 1, 0.1, 0.1  -- Red
+                r, g, b = 1, 0.1, 0.1  -- Red (impossible)
             elseif levelDiff >= 3 then
-                r, g, b = 1, 0.5, 0.25  -- Orange
+                r, g, b = 1, 0.5, 0.2  -- Orange (very hard)
             elseif levelDiff >= -2 then
-                r, g, b = 1, 1, 0  -- Yellow
+                r, g, b = 1, 1, 0  -- Yellow (normal)
             elseif levelDiff >= -8 then
-                r, g, b = 0.25, 1, 0.25  -- Green
+                r, g, b = 0.2, 0.9, 0.2  -- Green (easy)
             else
-                r, g, b = 0.5, 0.5, 0.5  -- Gray
+                r, g, b = 0.6, 0.6, 0.6  -- Gray (trivial)
             end
             
-            local prefix = isComplete and "|cFF00FF00[Done]|r " or ""
-            questLine:SetText(prefix .. "[" .. level .. "] " .. title)
+            local questText = ""
+            if isComplete then
+                questText = "|cFF00FF00[Done]|r "
+            end
+            questText = questText .. "|cFFFFFFFF[" .. level .. "]|r " .. title
+            
+            questLine:SetText(questText)
             questLine:SetTextColor(r, g, b)
+            questLine:Show()
             
-            yOffset = yOffset - 12
+            yOffset = yOffset - self.config.lineHeight
             
-            -- Show objectives if not collapsed
-            if not self.collapsed[questIndex] then
-                local numObjectives = GetNumQuestLeaderBoards(questIndex)
-                for objIndex = 1, numObjectives do
-                    local text, objType, finished = GetQuestLogLeaderBoard(objIndex, questIndex)
-                    if text then
-                        local objLine = self.content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-                        objLine:SetPoint("TOPLEFT", self.content, "TOPLEFT", 10, yOffset)
-                        objLine:SetWidth(self.config.width - 26)
-                        objLine:SetJustifyH("LEFT")
-                        
-                        if finished then
-                            objLine:SetText("- " .. text)
-                            objLine:SetTextColor(0.2, 1, 0.2)
-                        else
-                            objLine:SetText("- " .. text)
-                            objLine:SetTextColor(0.7, 0.7, 0.7)
-                        end
-                        
-                        yOffset = yOffset - 11
+            -- Objectives
+            local numObjectives = GetNumQuestLeaderBoards(questIndex)
+            for objIndex = 1, numObjectives do
+                local text, objType, finished = GetQuestLogLeaderBoard(objIndex, questIndex)
+                if text then
+                    lineIndex = lineIndex + 1
+                    local objLine = self:GetOrCreateLine(lineIndex, "obj")
+                    objLine:ClearAllPoints()
+                    objLine:SetPoint("TOPLEFT", self.scrollChild, "TOPLEFT", 12, yOffset)
+                    objLine:SetWidth(contentWidth - 14)
+                    objLine:SetFont("Fonts\\FRIZQT__.TTF", 10, "")
+                    
+                    local prefix = "  - "
+                    if finished then
+                        objLine:SetText(prefix .. text)
+                        objLine:SetTextColor(0.3, 1, 0.3)  -- Bright green
+                    else
+                        objLine:SetText(prefix .. text)
+                        objLine:SetTextColor(0.85, 0.85, 0.85)  -- Light gray
                     end
+                    objLine:Show()
+                    
+                    yOffset = yOffset - self.config.objLineHeight
                 end
             end
             
-            yOffset = yOffset - 3  -- Space between quests
+            yOffset = yOffset - self.config.questSpacing
         end
     end
     
-    -- Update frame height based on content
-    local contentHeight = math.abs(yOffset) + 28
-    contentHeight = math.max(contentHeight, 40)
-    contentHeight = math.min(contentHeight, 400)  -- Max height
-    self.frame:SetHeight(contentHeight)
-    
-    -- Show "No quests" if empty
+    -- Empty state
     if questCount == 0 then
-        local emptyText = self.content:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-        emptyText:SetPoint("TOPLEFT", self.content, "TOPLEFT", 0, 0)
-        emptyText:SetText("No active quests")
-        emptyText:SetTextColor(0.5, 0.5, 0.5)
-        self.frame:SetHeight(45)
+        lineIndex = lineIndex + 1
+        local emptyLine = self:GetOrCreateLine(lineIndex, "empty")
+        emptyLine:ClearAllPoints()
+        emptyLine:SetPoint("TOPLEFT", self.scrollChild, "TOPLEFT", 0, 0)
+        emptyLine:SetFont("Fonts\\FRIZQT__.TTF", 11, "")
+        emptyLine:SetText("No active quests")
+        emptyLine:SetTextColor(0.6, 0.6, 0.6)
+        emptyLine:Show()
+        yOffset = -20
     end
+    
+    -- Update scroll child height
+    local totalHeight = math.abs(yOffset) + 10
+    self.scrollChild:SetHeight(totalHeight)
 end
 
 function VGuideQuestOverview:Toggle()
