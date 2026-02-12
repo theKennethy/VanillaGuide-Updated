@@ -144,7 +144,17 @@ function VGuideMapPins:CreatePins()
         -- Tooltip
         pin:SetScript("OnEnter", function()
             if this.stepInfo then
-                GameTooltip:SetOwner(this, "ANCHOR_RIGHT")
+                -- Smart anchor based on position
+                local anchor = "ANCHOR_RIGHT"
+                if this.stepInfo.x and this.stepInfo.x > 70 then
+                    anchor = "ANCHOR_LEFT"
+                end
+                if this.stepInfo.y and this.stepInfo.y > 80 then
+                    anchor = "ANCHOR_TOP"
+                elseif this.stepInfo.y and this.stepInfo.y < 20 then
+                    anchor = "ANCHOR_BOTTOM"
+                end
+                GameTooltip:SetOwner(this, anchor)
                 GameTooltip:AddLine("VanillaGuide", 1, 0.82, 0)
                 GameTooltip:AddLine(this.stepInfo.text or "Step " .. this.stepInfo.step, 1, 1, 1)
                 if this.stepInfo.step then

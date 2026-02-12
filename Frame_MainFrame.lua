@@ -602,8 +602,28 @@ function objMainFrame:new(fParent, tTexture, oSettings, oDisplay)
 			obj:RefreshData()
 		end)
 	-- DropDown Menu
+		-- Hook to force submenus to open RIGHT instead of LEFT
+		if not obj.dropdownHooked then
+			obj.dropdownHooked = true
+			local origToggle = ToggleDropDownMenu
+			ToggleDropDownMenu = function(level, value, dropDownFrame, anchorName, xOffset, yOffset, menuList)
+				origToggle(level, value, dropDownFrame, anchorName, xOffset, yOffset, menuList)
+				-- After opening, reposition submenus (level 2+) to the right
+				if level and level >= 2 then
+					local listFrame = getglobal("DropDownList"..level)
+					if listFrame and listFrame:IsShown() then
+						local parentList = getglobal("DropDownList"..(level-1))
+						if parentList then
+							listFrame:ClearAllPoints()
+							listFrame:SetPoint("TOPLEFT", parentList, "TOPRIGHT", 0, 0)
+						end
+					end
+				end
+			end
+		end
+		
 		obj.tWidgets.button_DropDownMenu:SetScript("OnClick", function()
-			ToggleDropDownMenu(1, nil, obj.tWidgets.frame_DropDownMenu, obj.tWidgets.button_DropDownMenu, 0, 0);
+			ToggleDropDownMenu(1, nil, obj.tWidgets.frame_DropDownMenu, obj.tWidgets.button_DropDownMenu, 0, 0)
 		end)
 	end
 
