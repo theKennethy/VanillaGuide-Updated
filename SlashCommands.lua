@@ -122,6 +122,13 @@ local options = {
 				get = "IsQuestPinsVisible",
 				set = "ToggleQuestPins"
 			},
+			questtips = {
+				type = 'toggle',
+				name = 'questtips',
+				desc = 'Toggle quest info in NPC/mob tooltips',
+				get = "IsQuestTooltipsEnabled",
+				set = "ToggleQuestTooltips"
+			},
 			minimapmobs = {
 				type = 'toggle',
 				name = 'minimapmobs',
@@ -269,6 +276,21 @@ function VGuide:ToggleQuestPins()
         VGuideQuestMapPins:Toggle()
     else
         DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Quest pins not initialized")
+    end
+end
+
+function VGuide:IsQuestTooltipsEnabled()
+    if VGuideQuestTooltip then
+        return VGuideQuestTooltip.enabled
+    end
+    return false
+end
+
+function VGuide:ToggleQuestTooltips()
+    if VGuideQuestTooltip then
+        VGuideQuestTooltip:Toggle()
+    else
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00VanillaGuide:|r Quest tooltips not initialized")
     end
 end
 

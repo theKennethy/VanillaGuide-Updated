@@ -58,17 +58,8 @@ function VGuideQuestMapPins:CreatePins()
         -- Tooltip
         pin:SetScript("OnEnter", function()
             if this.questName then
-                -- Smart anchor: position tooltip away from pin based on map position
-                local anchor = "ANCHOR_RIGHT"
-                if this.x and this.x > 70 then
-                    anchor = "ANCHOR_LEFT"
-                end
-                if this.y and this.y > 80 then
-                    anchor = "ANCHOR_TOP"
-                elseif this.y and this.y < 20 then
-                    anchor = "ANCHOR_BOTTOM"
-                end
-                GameTooltip:SetOwner(this, anchor)
+                -- Use cursor anchor to avoid overlapping other pins
+                GameTooltip:SetOwner(this, "ANCHOR_CURSOR")
                 if this.objectiveType == "start" then
                     -- Quest giver tooltip
                     GameTooltip:AddLine("|cFFFFCC00!|r " .. this.questName, 1, 0.82, 0)
