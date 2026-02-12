@@ -1074,6 +1074,9 @@ function VGuideQuestTooltip:AddQuestInfo()
     
     local added = false
     
+    -- First: Check quest log objectives for this mob (most useful!)
+    added = self:AddQuestObjectives(name, added)
+    
     -- Check if this NPC gives/accepts quests (exact match)
     local npcQuests = self.NPCQuests[name]
     if npcQuests and npcQuests.quests then
@@ -1097,6 +1100,95 @@ function VGuideQuestTooltip:AddQuestInfo()
     if added then
         GameTooltip:Show()
     end
+end
+
+-- NEW: Show quest objectives for mobs in your quest log (pfQuest style)
+function VGuideQuestTooltip:AddQuestObjectives(mobName, added)
+    local numEntries = GetNumQuestLogEntries()
+    local questsShown = {}
+    local mobNameLower = string.lower(mobName)
+    
+    -- Extract individual words from mob name for fuzzy matching
+    local mobWords = {}
+    for word in string.gfind(mobNameLower, "(%w+)") do
+        if string.len(word) > 2 then  -- Skip short words like "a", "the"
+            table.insert(mobWords, word)
+        end
+    end
+    
+    for questIndex = 1, numEntries do
+        local title, _, _, isHeader = GetQuestLogTitle(questIndex)
+        
+        if not isHeader and title then
+            local numObjectives = GetNumQuestLeaderBoards(questIndex)
+            local hasMatch = false
+            
+            -- Check all objectives for this quest
+            for objIndex = 1, numObjectives do
+                local text, objType, finished = GetQuestLogLeaderBoard(objIndex, questIndex)
+                if text then
+                    local textLower = string.lower(text)
+                    
+                    -- Method 1: Exact mob name match
+                    if string.find(textLower, mobNameLower, 1, true) then
+                        hasMatch = true
+                        break
+                    end
+                    
+                    -- Method 2: Check if objective contains significant words from mob name
+                    -- e.g., "Frostmane Troll Whelp" matches "Frostmane Troll" 
+                    local wordMatches = 0
+                    for _, word in ipairs(mobWords) do
+                        if string.find(textLower, word, 1, true) then
+                            wordMatches = wordMatches + 1
+                        end
+                    end
+                    -- If 2+ significant words match, consider it a match
+                    if wordMatches >= 2 or (wordMatches >= 1 and table.getn(mobWords) == 1) then
+                        hasMatch = true
+                        break
+                    end
+                    
+                    -- Method 3: Check if mob name is substring of objective target
+                    -- Extract mob name from "X slain: 0/6" format
+                    local objMob = string.gsub(textLower, " slain.*", "")
+                    objMob = string.gsub(objMob, " killed.*", "")
+                    if string.find(mobNameLower, objMob, 1, true) or string.find(objMob, mobNameLower, 1, true) then
+                        hasMatch = true
+                        break
+                    end
+                end
+            end
+            
+            -- If we found matching objectives, show ALL objectives for this quest
+            if hasMatch and not questsShown[title] then
+                questsShown[title] = true
+                
+                if not added then
+                    GameTooltip:AddLine(" ")
+                end
+                
+                -- Quest title in gold
+                GameTooltip:AddLine(title, 1, 0.82, 0)
+                
+                -- Show ALL objectives for this quest
+                for objIndex = 1, numObjectives do
+                    local text, objType, finished = GetQuestLogLeaderBoard(objIndex, questIndex)
+                    if text then
+                        local r, g, b = 0.8, 0.8, 0.8
+                        if finished then
+                            r, g, b = 0.2, 1, 0.2  -- Green for complete
+                        end
+                        GameTooltip:AddLine("  - " .. text, r, g, b)
+                    end
+                end
+                
+                added = true
+            end
+        end
+    end
+    
+    return added
 end
 
 function VGuideQuestTooltip:AddNPCQuestLines(quests, added)
