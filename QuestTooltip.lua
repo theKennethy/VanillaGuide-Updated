@@ -1040,15 +1040,25 @@ function VGuideQuestTooltip:CountNPCs()
 end
 
 function VGuideQuestTooltip:HookTooltip()
-    local originalOnTooltipSetUnit = GameTooltip:GetScript("OnTooltipSetUnit")
+    -- Pure OnUpdate approach - 100% compatible with WoW 1.12
+    local lastUnit = nil
+    local lastTooltipName = nil
+    local hookFrame = CreateFrame("Frame")
     
-    GameTooltip:SetScript("OnTooltipSetUnit", function()
-        if originalOnTooltipSetUnit then
-            originalOnTooltipSetUnit()
+    hookFrame:SetScript("OnUpdate", function()
+        if not GameTooltip:IsVisible() then
+            lastUnit = nil
+            lastTooltipName = nil
+            return
         end
         
-        if VGuideQuestTooltip.enabled then
-            VGuideQuestTooltip:AddQuestInfo()
+        local name, unit = GameTooltip:GetUnit()
+        if name and (name ~= lastTooltipName or unit ~= lastUnit) then
+            lastUnit = unit
+            lastTooltipName = name
+            if VGuideQuestTooltip.enabled then
+                VGuideQuestTooltip:AddQuestInfo()
+            end
         end
     end)
 end
