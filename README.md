@@ -2,7 +2,7 @@
 
 A powerful in-game leveling guide addon for World of Warcraft 1.12.1 (Vanilla) with modern features like built-in waypoint arrows, quest log tracking, and auto-advance.
 
-![Version](https://img.shields.io/badge/version-1.06.0-blue)
+![Version](https://img.shields.io/badge/version-1.10.0-blue)
 ![WoW Version](https://img.shields.io/badge/WoW-1.12.1-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -13,6 +13,25 @@ A powerful in-game leveling guide addon for World of Warcraft 1.12.1 (Vanilla) w
 - **Quest Database** - Built-in quest/NPC ID lookup for enhanced functionality
 - **Coordinate System** - Automatic coordinate parsing from guide text
 - **FuBar Support** - Optional FuBar plugin for quick access
+
+### pfQuest-Style Quest Tracker (NEW)
+- **Quest Overview Panel** - Shows all active quests grouped by zone
+- **Live Objectives** - See all objectives with progress (e.g., "Rockjaw Trogg: 3/6")
+- **Difficulty Colors** - Quest levels colored by difficulty (red/orange/yellow/green/gray)
+- **Completion Icons** - `?` icon shows quests ready to turn in
+- **Collapsible** - Click any quest to collapse/expand its objectives
+- **Draggable** - Position the tracker anywhere on screen
+- **Auto-Updates** - Refreshes automatically on quest progress
+- **Toggle** - Use `/vguide tracker` to show/hide
+
+### pfQuest-Style Mob Tooltips (NEW)
+- **Quest Info on Hover** - Hover over any mob to see related quests
+- **Kill Quest Progress** - Shows "A New Threat: Rockjaw Trogg slain: 3/6"
+- **Item Drop Quests** - Shows item collection progress for mobs that drop quest items
+- **400+ Mob Database** - Comprehensive mob→item drop mapping for all zones 1-60
+- **Smart Matching** - Matches mob variants (e.g., "Frostmane Troll Whelp" shows "Frostmane" quests)
+- **NPC Quest Givers** - Shows `!` for available quests, `?` for turn-ins
+- **Toggle** - Use `/vguide questtips` to enable/disable
 
 ### Built-in Waypoint Arrow
 - **TomTom-style Arrow** - Direction arrow points toward your current objective
@@ -60,6 +79,14 @@ Each trigger can be individually enabled/disabled in settings.
 - **Click to Navigate** - Click any pin to jump to that step
 - **Zone-Aware** - Pins only show when viewing the correct zone
 - **Toggle** - Use `/vguide mappins` or `/vguide route` to customize
+
+### Quest Objective Map Pins (NEW)
+- **pfQuest-Style Icons** - Proper exclamation marks (`!`) and question marks (`?`) on map
+- **Quest Giver Pins** - Shows where to pick up quests
+- **Turn-in Pins** - Shows where to complete quests
+- **Objective Areas** - Shows zones for kill/collect objectives
+- **Proper Tooltips** - Hover for quest names, follows cursor for better visibility
+- **Toggle** - Use `/vguide questpins` to show/hide
 
 ### NPC Model Viewer
 - **3D Preview** - See what quest NPCs look like before finding them
@@ -158,6 +185,10 @@ These addons enhance VanillaGuide but are **not required**:
 | `/vguide arrow` | Toggle waypoint arrow |
 | `/vguide autoquest` | Toggle auto accept/turn-in |
 | `/vguide mappins` | Toggle world map pins |
+| `/vguide questpins` | Toggle quest objective pins on map |
+| `/vguide questtips` | Toggle quest info in mob tooltips |
+| `/vguide tracker` | Toggle quest tracker panel |
+| `/vguide minimapmobs` | Toggle minimap objective dots |
 | `/vguide route` | Toggle route preview on map |
 | `/vguide npcviewer` | Toggle NPC model viewer |
 | `/vguide minimap` | Toggle minimap button visibility |
@@ -393,6 +424,9 @@ VGuide_QuestDB = {
 | Travel suggestions | ✅ | ✅ | ❌ |
 | Dungeon auto-detect | ✅ | ✅ | ❌ |
 | Progress persistence | ✅ | ✅ | ❌ |
+| Quest tooltips on mobs | ✅ | ❌ | ❌ |
+| Quest overview panel | ✅ | ✅ | ❌ |
+| Mob item drops DB | ✅ | ❌ | ❌ |
 | Free & open source | ✅ | ❌ | ❌ |
 | 1.12.1 compatible | ✅ | ❌ | ✅ |
 
@@ -415,6 +449,29 @@ VGuide_QuestDB = {
 **"UI looks wrong with pfUI"**
 - Enable pfUI skinning in settings
 - Reload UI with `/reload`
+
+## Changelog
+
+### Version 1.10.0 (February 2026)
+
+#### New Features
+- **pfQuest-Style Quest Tracker** - New draggable panel showing all active quests with objectives and progress
+- **Quest Tooltips on Mobs** - Hover over any mob to see related quests and objectives
+- **Quest Map Pins** - Proper exclamation (`!`) and question mark (`?`) icons on world map
+- **Mob Item Database** - 400+ mobs with item drop info for collection quests
+
+#### Improvements
+- Fixed "banana-shaped" quest markers - Now uses proper GossipFrame icons
+- Fixed tooltip overlapping issues - Tooltips now anchor to cursor
+- Fixed dropdown menu overlapping - Submenus now properly position to the right
+- Improved quest objective matching with fuzzy/word matching
+- Added comprehensive NPC database (250+ quest NPCs from all zones)
+
+#### Technical Fixes
+- Fixed `OnTooltipSetUnit` error for WoW 1.12 compatibility
+- Fixed `GetUnit()` error - Now uses `UnitName("mouseover")`
+- Fixed `ipairs` nil index errors with safer `table.getn` loops
+- Improved tooltip hook using OnUpdate frame approach
 
 ## Credits
 
