@@ -2275,7 +2275,7 @@ VGuideQuestObjectives.Data = {
     [47] = { -- Gold Dust Exchange
         name = "Gold Dust Exchange",
         zone = "Elwynn Forest",
-        start = { npc = "Remy "Two Times"", x = 42.1, y = 67.1 },
+        start = { npc = "Remy 'Two Times'", x = 42.1, y = 67.1 },
         objectives = {
             { type = "item", name = "Gold Dust", spawns = {
                 {39.8, 82.1}, {41.2, 80.5}, {38.5, 84.2}, {42.1, 81.8}
@@ -2286,7 +2286,7 @@ VGuideQuestObjectives.Data = {
     [40] = { -- A Fishy Peril
         name = "A Fishy Peril",
         zone = "Elwynn Forest",
-        start = { npc = "Remy "Two Times"", x = 42.1, y = 67.1 },
+        start = { npc = "Remy 'Two Times'", x = 42.1, y = 67.1 },
         objectives = {
             { type = "talk", name = "Marshal Dughan", spawns = {{42.1, 65.9}} },
         }
