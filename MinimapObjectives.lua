@@ -147,15 +147,16 @@ function VGuideMinimapObjectives:UpdateDots()
     
     -- Get active objectives
     local objectives = VGuideQuestObjectives:GetActiveObjectivesForZone(currentZone)
+    if not objectives then return end
     
     local dotIndex = 1
     
     for _, objData in ipairs(objectives) do
-        local objective = objData.objective
+        local objective = objData and objData.objective
         
-        if objective.spawns then
+        if objective and objective.spawns then
             for _, spawn in ipairs(objective.spawns) do
-                if dotIndex <= self.maxDots then
+                if dotIndex <= self.maxDots and spawn and spawn[1] and spawn[2] then
                     -- Convert spawn coords to world coords
                     local spawnX = (spawn[1] / 100) * zoneSize.w
                     local spawnY = (spawn[2] / 100) * zoneSize.h
@@ -168,6 +169,7 @@ function VGuideMinimapObjectives:UpdateDots()
                     -- Only show if within minimap range
                     if distance < minimapYards then
                         local dot = self.dots[dotIndex]
+                        if not dot then break end
                         
                         -- Calculate position on minimap
                         local minimapRadius = Minimap:GetWidth() / 2
@@ -187,9 +189,9 @@ function VGuideMinimapObjectives:UpdateDots()
                             dot.texture:SetVertexColor(color[1], color[2], color[3], color[4])
                             
                             -- Store data for tooltip
-                            dot.questName = objData.questName
-                            dot.objectiveName = objective.name
-                            dot.objectiveType = objective.type
+                            dot.questName = objData.questName or "Unknown Quest"
+                            dot.objectiveName = objective.name or "Objective"
+                            dot.objectiveType = objective.type or "kill"
                             
                             dot:Show()
                             dotIndex = dotIndex + 1

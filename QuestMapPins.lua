@@ -142,22 +142,25 @@ function VGuideQuestMapPins:RefreshPins()
     
     -- Get current zone from map
     local currentZone = GetZoneText()
+    if not currentZone then return end
     
     -- Check if quest objective DB exists
     if not VGuideQuestObjectives then return end
     
     -- Get active objectives for this zone
     local objectives = VGuideQuestObjectives:GetActiveObjectivesForZone(currentZone)
+    if not objectives then return end
     
     local pinIndex = 1
     
     for _, objData in ipairs(objectives) do
-        local objective = objData.objective
+        local objective = objData and objData.objective
         
-        if objective.spawns then
+        if objective and objective.spawns then
             for _, spawn in ipairs(objective.spawns) do
-                if pinIndex <= self.maxPins then
+                if pinIndex <= self.maxPins and spawn and spawn[1] and spawn[2] then
                     local pin = self.pins[pinIndex]
+                    if not pin then break end
                     
                     -- Position the pin on the map
                     local x = spawn[1] / 100
@@ -171,10 +174,10 @@ function VGuideQuestMapPins:RefreshPins()
                     pin:SetPoint("CENTER", WorldMapButton, "TOPLEFT", x * mapWidth, -y * mapHeight)
                     
                     -- Set pin data
-                    pin.questName = objData.questName
+                    pin.questName = objData.questName or "Unknown Quest"
                     pin.questId = objData.questId
-                    pin.objectiveName = objective.name
-                    pin.objectiveType = objective.type
+                    pin.objectiveName = objective.name or "Objective"
+                    pin.objectiveType = objective.type or "kill"
                     pin.x = spawn[1]
                     pin.y = spawn[2]
                     pin.zone = currentZone

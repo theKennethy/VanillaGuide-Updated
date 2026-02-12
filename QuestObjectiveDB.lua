@@ -14382,23 +14382,12480 @@ VGuideQuestObjectives.Data = {
             { type = "talk", name = "Commander Gor'shak", spawns = {{0, 0}} },
         }
     },
+    
+    -----------------------------------------
+    -- CLASS QUESTS
+    -----------------------------------------
+    
+    -----------------------------------------
+    -- WARRIOR CLASS QUESTS
+    -----------------------------------------
+    
+    [1638] = { -- The Warrior's Charge (Human)
+        name = "The Warrior's Charge",
+        zone = "Elwynn Forest",
+        start = { npc = "Lyria Du Lac", x = 49.5, y = 87.5 },
+        objectives = {
+            { type = "talk", name = "Harry Burlguard", spawns = {{48.8, 39.6}} },
+        }
+    },
+    
+    [1639] = { -- Elanaria (Night Elf)
+        name = "Elanaria",
+        zone = "Darnassus",
+        start = { npc = "Alyissia", x = 57.2, y = 60.8 },
+        objectives = {
+            { type = "talk", name = "Elanaria", spawns = {{59.4, 45.2}} },
+        }
+    },
+    
+    [1640] = { -- Thun'grim Firegaze (Orc)
+        name = "Thun'grim Firegaze",
+        zone = "The Barrens",
+        start = { npc = "Sorek", x = 80.1, y = 31.2 },
+        objectives = {
+            { type = "talk", name = "Thun'grim Firegaze", spawns = {{57.3, 30.2}} },
+        }
+    },
+    
+    [1505] = { -- Veteran Uzzek (Orc)
+        name = "Veteran Uzzek",
+        zone = "The Barrens",
+        start = { npc = "Karg Skullgore", x = 51.3, y = 30.4 },
+        objectives = {
+            { type = "talk", name = "Veteran Uzzek", spawns = {{62.0, 33.0}} },
+        }
+    },
+    
+    [1498] = { -- Defensive Stance (Orc/Troll)
+        name = "Defensive Stance",
+        zone = "The Barrens",
+        start = { npc = "Veteran Uzzek", x = 62.0, y = 33.0 },
+        objectives = {
+            { type = "kill", name = "Bristleback Interloper", spawns = {
+                {50.5, 29.8}, {49.2, 30.5}, {51.8, 28.7}
+            }},
+        }
+    },
+    
+    [1684] = { -- Speak with Sevren (Undead)
+        name = "Speak with Sevren",
+        zone = "Tirisfal Glades",
+        start = { npc = "Dannal Stern", x = 52.6, y = 54.2 },
+        objectives = {
+            { type = "talk", name = "Shadow Priest Sarvis", spawns = {{31.6, 66.2}} },
+        }
+    },
+    
+    [1842] = { -- The Islander (Dwarf)
+        name = "The Islander",
+        zone = "Loch Modan",
+        start = { npc = "Kelstrum Stonebreaker", x = 37.5, y = 46.7 },
+        objectives = {
+            { type = "talk", name = "Fjol Ironwing", spawns = {{83.5, 65.5}} },
+        }
+    },
+    
+    [1665] = { -- Mura Runetotem (Tauren)
+        name = "Mura Runetotem",
+        zone = "Mulgore",
+        start = { npc = "Ansekhwa", x = 47.0, y = 56.3 },
+        objectives = {
+            { type = "talk", name = "Mura Runetotem", spawns = {{47.5, 62.5}} },
+        }
+    },
+    
+    [1818] = { -- The Battleboars (Tauren)
+        name = "The Battleboars",
+        zone = "Mulgore",
+        start = { npc = "Mura Runetotem", x = 47.5, y = 62.5 },
+        objectives = {
+            { type = "kill", name = "Bristleback Battleboar", spawns = {
+                {61.2, 78.5}, {60.4, 80.2}, {59.8, 77.9}
+            }},
+        }
+    },
+    
+    [1819] = { -- Armored Battleboars (Tauren)
+        name = "Armored Battleboars",
+        zone = "Mulgore",
+        start = { npc = "Mura Runetotem", x = 47.5, y = 62.5 },
+        objectives = {
+            { type = "kill", name = "Bristleback Geomancer", spawns = {
+                {68.5, 88.5}, {67.2, 87.8}, {69.1, 89.2}
+            }},
+        }
+    },
+    
+    [1502] = { -- Berserker Stance (Horde)
+        name = "Berserker Stance",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Aturk the Anvil", x = 32.3, y = 27.7 },
+        objectives = {
+            { type = "talk", name = "Aturk the Anvil", spawns = {{32.3, 27.7}} },
+        }
+    },
+    
+    [1503] = { -- The Affray (Horde)
+        name = "The Affray",
+        zone = "The Barrens",
+        start = { npc = "Klannoc Macleod", x = 62.5, y = 33.5 },
+        objectives = {
+            { type = "kill", name = "Big Will", spawns = {{62.7, 32.8}} },
+        }
+    },
+    
+    [1719] = { -- The Legend of Dorik (Alliance)
+        name = "The Legend of Dorik",
+        zone = "Wetlands",
+        start = { npc = "Wu Shen", x = 47.3, y = 58.2 },
+        objectives = {
+            { type = "talk", name = "Klanna Macleod", spawns = {{9.5, 57.5}} },
+        }
+    },
+    
+    [1724] = { -- The Affray (Alliance)
+        name = "The Affray",
+        zone = "Wetlands",
+        start = { npc = "Klanna Macleod", x = 9.5, y = 57.5 },
+        objectives = {
+            { type = "kill", name = "Big Will", spawns = {{9.8, 58.2}} },
+        }
+    },
+    
+    [1792] = { -- Whirlwind Weapon
+        name = "Whirlwind Weapon",
+        zone = "Alterac Mountains",
+        start = { npc = "Bath'rah the Windwatcher", x = 80.4, y = 67.0 },
+        objectives = {
+            { type = "item", name = "Liferoot", spawns = {{0, 0}} },
+            { type = "item", name = "Refreshing Spring Water", spawns = {{0, 0}} },
+            { type = "item", name = "Bloodscalp Tusk", spawns = {
+                {33.5, 8.2}, {34.2, 9.5}, {35.8, 7.8}
+            }},
+        }
+    },
+    
+    [1793] = { -- Cyclonian
+        name = "Cyclonian",
+        zone = "Alterac Mountains",
+        start = { npc = "Bath'rah the Windwatcher", x = 80.4, y = 67.0 },
+        objectives = {
+            { type = "kill", name = "Cyclonian", spawns = {{80.5, 66.8}} },
+        }
+    },
+    
+    [1789] = { -- The Windwatcher
+        name = "The Windwatcher",
+        zone = "Alterac Mountains",
+        start = { npc = "Herod's Shoulder", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Bath'rah the Windwatcher", spawns = {{80.4, 67.0}} },
+        }
+    },
+    
+    [6166] = { -- Brutal Armor
+        name = "Brutal Armor",
+        zone = "Alterac Mountains",
+        start = { npc = "Thun'grim Firegaze", x = 57.3, y = 30.2 },
+        objectives = {
+            { type = "item", name = "Burning Pitch", spawns = {{0, 0}} },
+            { type = "item", name = "Charred Horn", spawns = {{0, 0}} },
+            { type = "item", name = "Tusker Hide", spawns = {{0, 0}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- PALADIN CLASS QUESTS
+    -----------------------------------------
+    
+    [1641] = { -- Tome of Divinity (Human)
+        name = "Tome of Divinity",
+        zone = "Stormwind City",
+        start = { npc = "Brother Wilhelm", x = 49.8, y = 31.2 },
+        objectives = {
+            { type = "talk", name = "Duthorian Rall", spawns = {{39.8, 29.8}} },
+        }
+    },
+    
+    [1642] = { -- Tome of Divinity (Human Part 2)
+        name = "Tome of Divinity",
+        zone = "Elwynn Forest",
+        start = { npc = "Duthorian Rall", x = 39.8, y = 29.8 },
+        objectives = {
+            { type = "talk", name = "Gazin Tenorm", spawns = {{57.2, 42.3}} },
+        }
+    },
+    
+    [1643] = { -- The Tome of Divinity (Human Part 3)
+        name = "The Tome of Divinity",
+        zone = "Stormwind City",
+        start = { npc = "Gazin Tenorm", x = 57.2, y = 42.3 },
+        objectives = {
+            { type = "item", name = "Tome of Divinity", spawns = {{39.8, 29.8}} },
+        }
+    },
+    
+    [1644] = { -- The Tome of Divinity (Human Part 4)
+        name = "The Tome of Divinity",
+        zone = "Stormwind City",
+        start = { npc = "Duthorian Rall", x = 39.8, y = 29.8 },
+        objectives = {
+            { type = "talk", name = "Stephanie Turner", spawns = {{42.5, 67.8}} },
+        }
+    },
+    
+    [1780] = { -- Tome of Divinity (Dwarf)
+        name = "Tome of Divinity",
+        zone = "Ironforge",
+        start = { npc = "Brandur Ironhammer", x = 23.5, y = 6.1 },
+        objectives = {
+            { type = "talk", name = "Vargus", spawns = {{77.3, 7.5}} },
+        }
+    },
+    
+    [1645] = { -- Tome of Valor
+        name = "Tome of Valor",
+        zone = "Stormwind City",
+        start = { npc = "Duthorian Rall", x = 39.8, y = 29.8 },
+        objectives = {
+            { type = "talk", name = "Daphne Stilwell", spawns = {{47.8, 85.2}} },
+        }
+    },
+    
+    [1646] = { -- Test of Righteousness
+        name = "Test of Righteousness",
+        zone = "Stormwind City",
+        start = { npc = "Duthorian Rall", x = 39.8, y = 29.8 },
+        objectives = {
+            { type = "item", name = "Whitestone Oak Lumber", spawns = {{0, 0}} },
+            { type = "item", name = "Refined Ore", spawns = {{0, 0}} },
+            { type = "item", name = "Kor Gem", spawns = {{0, 0}} },
+            { type = "item", name = "Jordan's Hammer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1649] = { -- The Tome of Valor (Westfall)
+        name = "The Tome of Valor",
+        zone = "Westfall",
+        start = { npc = "Daphne Stilwell", x = 47.8, y = 85.2 },
+        objectives = {
+            { type = "kill", name = "Defias Renegade", spawns = {
+                {46.8, 84.2}, {48.2, 85.8}, {47.5, 86.5}
+            }},
+        }
+    },
+    
+    [1650] = { -- The Test of Righteousness
+        name = "The Test of Righteousness",
+        zone = "Stormwind City",
+        start = { npc = "Jordan Stilwell", x = 52.6, y = 36.5 },
+        objectives = {
+            { type = "talk", name = "Duthorian Rall", spawns = {{39.8, 29.8}} },
+        }
+    },
+    
+    [1651] = { -- Sense Undead
+        name = "Sense Undead",
+        zone = "Stormwind City",
+        start = { npc = "Duthorian Rall", x = 39.8, y = 29.8 },
+        objectives = {
+            { type = "talk", name = "Lord Grayson Shadowbreaker", spawns = {{37.5, 32.2}} },
+        }
+    },
+    
+    [1653] = { -- The First Test
+        name = "The First Test",
+        zone = "Stormwind City",
+        start = { npc = "Lord Grayson Shadowbreaker", x = 37.5, y = 32.2 },
+        objectives = {
+            { type = "talk", name = "Duthorian Rall", spawns = {{39.8, 29.8}} },
+        }
+    },
+    
+    [1654] = { -- Redemption
+        name = "Redemption",
+        zone = "Elwynn Forest",
+        start = { npc = "Duthorian Rall", x = 39.8, y = 29.8 },
+        objectives = {
+            { type = "item", name = "Symbol of Life", spawns = {{69.5, 82.3}} },
+        }
+    },
+    
+    [1783] = { -- Redemption (Dwarf)
+        name = "Redemption",
+        zone = "Dun Morogh",
+        start = { npc = "Tiza Battleforge", x = 51.5, y = 37.8 },
+        objectives = {
+            { type = "item", name = "Symbol of Life", spawns = {{35.2, 47.8}} },
+        }
+    },
+    
+    [1786] = { -- Verigan's Fist
+        name = "Verigan's Fist",
+        zone = "Ironforge",
+        start = { npc = "Jordan Stilwell", x = 52.6, y = 36.5 },
+        objectives = {
+            { type = "item", name = "Whitestone Oak Lumber", spawns = {{0, 0}} },
+            { type = "item", name = "Purified Kor Gem", spawns = {{0, 0}} },
+            { type = "item", name = "Jordan's Smithing Hammer", spawns = {{0, 0}} },
+            { type = "item", name = "Refined Ore", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5501] = { -- The Tome of Nobility
+        name = "The Tome of Nobility",
+        zone = "Stormwind City",
+        start = { npc = "Brother Wilhelm", x = 49.8, y = 31.2 },
+        objectives = {
+            { type = "talk", name = "Duthorian Rall", spawns = {{39.8, 29.8}} },
+        }
+    },
+    
+    [5502] = { -- The Tome of Nobility (Part 2)
+        name = "The Tome of Nobility",
+        zone = "Stormwind City",
+        start = { npc = "Duthorian Rall", x = 39.8, y = 29.8 },
+        objectives = {
+            { type = "talk", name = "Katherine the Pure", spawns = {{52.5, 36.8}} },
+        }
+    },
+    
+    [5503] = { -- The Tome of Nobility (Part 3)
+        name = "The Tome of Nobility",
+        zone = "Westfall",
+        start = { npc = "Katherine the Pure", x = 52.5, y = 36.8 },
+        objectives = {
+            { type = "kill", name = "Defias Highwaymen", spawns = {
+                {55.2, 69.5}, {54.8, 70.2}, {56.1, 68.8}
+            }},
+        }
+    },
+    
+    [7638] = { -- The Great Fras Siabi
+        name = "The Great Fras Siabi",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Lord Grayson Shadowbreaker", x = 37.5, y = 32.2 },
+        objectives = {
+            { type = "item", name = "Fras Siabi's Cigar Cutter", spawns = {{30.4, 69.5}} },
+        }
+    },
+    
+    [7637] = { -- Collection of Souls
+        name = "Collection of Souls",
+        zone = "Stratholme",
+        start = { npc = "Lord Grayson Shadowbreaker", x = 37.5, y = 32.2 },
+        objectives = {
+            { type = "item", name = "Exorcism Censer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7647] = { -- The Work of Grimand Elmore
+        name = "The Work of Grimand Elmore",
+        zone = "Stormwind City",
+        start = { npc = "Lord Grayson Shadowbreaker", x = 37.5, y = 32.2 },
+        objectives = {
+            { type = "talk", name = "Grimand Elmore", spawns = {{51.2, 12.5}} },
+        }
+    },
+    
+    [7648] = { -- Grimand's Finest Work
+        name = "Grimand's Finest Work",
+        zone = "Stormwind City",
+        start = { npc = "Grimand Elmore", x = 51.2, y = 12.5 },
+        objectives = {
+            { type = "item", name = "Arcanite Champion", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7649] = { -- Ancient Equine Spirit
+        name = "Ancient Equine Spirit",
+        zone = "Dire Maul",
+        start = { npc = "Lord Grayson Shadowbreaker", x = 37.5, y = 32.2 },
+        objectives = {
+            { type = "talk", name = "Ancient Equine Spirit", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7650] = { -- Blessed Arcanite Barding
+        name = "Blessed Arcanite Barding",
+        zone = "Stormwind City",
+        start = { npc = "Lord Grayson Shadowbreaker", x = 37.5, y = 32.2 },
+        objectives = {
+            { type = "item", name = "Arcanite Barding", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7651] = { -- The Charger's Reins
+        name = "The Charger's Reins",
+        zone = "Stormwind City",
+        start = { npc = "Lord Grayson Shadowbreaker", x = 37.5, y = 32.2 },
+        objectives = {
+            { type = "item", name = "Charger's Lost Soul", spawns = {{0, 0}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- HUNTER CLASS QUESTS
+    -----------------------------------------
+    
+    [6063] = { -- The Hunter's Path (Orc)
+        name = "The Hunter's Path",
+        zone = "Durotar",
+        start = { npc = "Thotar", x = 52.1, y = 43.2 },
+        objectives = {
+            { type = "talk", name = "Thotar", spawns = {{52.1, 43.2}} },
+        }
+    },
+    
+    [6064] = { -- The Hunter's Path (Troll)
+        name = "The Hunter's Path",
+        zone = "Durotar",
+        start = { npc = "Thotar", x = 52.1, y = 43.2 },
+        objectives = {
+            { type = "talk", name = "Thotar", spawns = {{52.1, 43.2}} },
+        }
+    },
+    
+    [6068] = { -- Taming the Beast (Orc 1)
+        name = "Taming the Beast",
+        zone = "Durotar",
+        start = { npc = "Thotar", x = 52.1, y = 43.2 },
+        objectives = {
+            { type = "kill", name = "Dire Mottled Boar", spawns = {
+                {50.2, 38.5}, {49.5, 40.2}, {51.8, 37.8}
+            }},
+        }
+    },
+    
+    [6069] = { -- Taming the Beast (Orc 2)
+        name = "Taming the Beast",
+        zone = "Durotar",
+        start = { npc = "Thotar", x = 52.1, y = 43.2 },
+        objectives = {
+            { type = "kill", name = "Surf Crawler", spawns = {
+                {59.2, 46.8}, {58.5, 48.2}, {60.1, 45.5}
+            }},
+        }
+    },
+    
+    [6070] = { -- Taming the Beast (Orc 3)
+        name = "Taming the Beast",
+        zone = "Durotar",
+        start = { npc = "Thotar", x = 52.1, y = 43.2 },
+        objectives = {
+            { type = "kill", name = "Armored Scorpid", spawns = {
+                {45.5, 19.2}, {46.8, 18.5}, {44.2, 20.8}
+            }},
+        }
+    },
+    
+    [6071] = { -- Training the Beast (Orc)
+        name = "Training the Beast",
+        zone = "Durotar",
+        start = { npc = "Thotar", x = 52.1, y = 43.2 },
+        objectives = {
+            { type = "talk", name = "Thotar", spawns = {{52.1, 43.2}} },
+        }
+    },
+    
+    [6061] = { -- The Hunter's Path (Tauren)
+        name = "The Hunter's Path",
+        zone = "Mulgore",
+        start = { npc = "Yaw Sharpmane", x = 48.5, y = 58.8 },
+        objectives = {
+            { type = "talk", name = "Yaw Sharpmane", spawns = {{48.5, 58.8}} },
+        }
+    },
+    
+    [6065] = { -- Taming the Beast (Tauren 1)
+        name = "Taming the Beast",
+        zone = "Mulgore",
+        start = { npc = "Yaw Sharpmane", x = 48.5, y = 58.8 },
+        objectives = {
+            { type = "kill", name = "Adult Plainstrider", spawns = {
+                {52.4, 62.5}, {54.2, 61.8}, {53.1, 64.2}
+            }},
+        }
+    },
+    
+    [6066] = { -- Taming the Beast (Tauren 2)
+        name = "Taming the Beast",
+        zone = "Mulgore",
+        start = { npc = "Yaw Sharpmane", x = 48.5, y = 58.8 },
+        objectives = {
+            { type = "kill", name = "Prairie Stalker", spawns = {
+                {55.2, 68.5}, {56.8, 67.2}, {54.5, 70.1}
+            }},
+        }
+    },
+    
+    [6067] = { -- Taming the Beast (Tauren 3)
+        name = "Taming the Beast",
+        zone = "Mulgore",
+        start = { npc = "Yaw Sharpmane", x = 48.5, y = 58.8 },
+        objectives = {
+            { type = "kill", name = "Swoop", spawns = {
+                {50.5, 55.8}, {52.2, 54.5}, {49.8, 57.2}
+            }},
+        }
+    },
+    
+    [6072] = { -- Training the Beast (Tauren)
+        name = "Training the Beast",
+        zone = "Mulgore",
+        start = { npc = "Yaw Sharpmane", x = 48.5, y = 58.8 },
+        objectives = {
+            { type = "talk", name = "Melor Stonehoof", spawns = {{51.5, 31.2}} },
+        }
+    },
+    
+    [6073] = { -- The Hunter's Path (Night Elf)
+        name = "The Hunter's Path",
+        zone = "Teldrassil",
+        start = { npc = "Dazalar", x = 56.8, y = 59.8 },
+        objectives = {
+            { type = "talk", name = "Dazalar", spawns = {{56.8, 59.8}} },
+        }
+    },
+    
+    [6074] = { -- Taming the Beast (Night Elf 1)
+        name = "Taming the Beast",
+        zone = "Teldrassil",
+        start = { npc = "Dazalar", x = 56.8, y = 59.8 },
+        objectives = {
+            { type = "kill", name = "Webwood Lurker", spawns = {
+                {56.2, 52.5}, {55.5, 54.8}, {57.8, 51.2}
+            }},
+        }
+    },
+    
+    [6075] = { -- Taming the Beast (Night Elf 2)
+        name = "Taming the Beast",
+        zone = "Teldrassil",
+        start = { npc = "Dazalar", x = 56.8, y = 59.8 },
+        objectives = {
+            { type = "kill", name = "Nightsaber Stalker", spawns = {
+                {52.2, 41.5}, {50.8, 43.2}, {53.5, 40.8}
+            }},
+        }
+    },
+    
+    [6076] = { -- Taming the Beast (Night Elf 3)
+        name = "Taming the Beast",
+        zone = "Teldrassil",
+        start = { npc = "Dazalar", x = 56.8, y = 59.8 },
+        objectives = {
+            { type = "kill", name = "Strigid Screecher", spawns = {
+                {60.5, 42.8}, {59.2, 44.5}, {61.8, 41.2}
+            }},
+        }
+    },
+    
+    [6077] = { -- Training the Beast (Night Elf)
+        name = "Training the Beast",
+        zone = "Teldrassil",
+        start = { npc = "Dazalar", x = 56.8, y = 59.8 },
+        objectives = {
+            { type = "talk", name = "Dazalar", spawns = {{56.8, 59.8}} },
+        }
+    },
+    
+    [6078] = { -- The Hunter's Path (Dwarf)
+        name = "The Hunter's Path",
+        zone = "Dun Morogh",
+        start = { npc = "Grif Wildheart", x = 46.2, y = 53.5 },
+        objectives = {
+            { type = "talk", name = "Grif Wildheart", spawns = {{46.2, 53.5}} },
+        }
+    },
+    
+    [6079] = { -- Taming the Beast (Dwarf 1)
+        name = "Taming the Beast",
+        zone = "Dun Morogh",
+        start = { npc = "Grif Wildheart", x = 46.2, y = 53.5 },
+        objectives = {
+            { type = "kill", name = "Large Crag Boar", spawns = {
+                {43.5, 48.2}, {45.2, 47.5}, {42.8, 49.8}
+            }},
+        }
+    },
+    
+    [6080] = { -- Taming the Beast (Dwarf 2)
+        name = "Taming the Beast",
+        zone = "Dun Morogh",
+        start = { npc = "Grif Wildheart", x = 46.2, y = 53.5 },
+        objectives = {
+            { type = "kill", name = "Snow Leopard", spawns = {
+                {50.5, 46.8}, {52.2, 45.5}, {49.8, 48.2}
+            }},
+        }
+    },
+    
+    [6081] = { -- Taming the Beast (Dwarf 3)
+        name = "Taming the Beast",
+        zone = "Dun Morogh",
+        start = { npc = "Grif Wildheart", x = 46.2, y = 53.5 },
+        objectives = {
+            { type = "kill", name = "Ice Claw Bear", spawns = {
+                {40.5, 52.8}, {38.2, 54.5}, {42.8, 51.2}
+            }},
+        }
+    },
+    
+    [6082] = { -- Training the Beast (Dwarf)
+        name = "Training the Beast",
+        zone = "Dun Morogh",
+        start = { npc = "Grif Wildheart", x = 46.2, y = 53.5 },
+        objectives = {
+            { type = "talk", name = "Grif Wildheart", spawns = {{46.2, 53.5}} },
+        }
+    },
+    
+    [7636] = { -- Ancient Petrified Leaf
+        name = "Ancient Petrified Leaf",
+        zone = "Molten Core",
+        start = { npc = "Ancient Petrified Leaf", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Vartrus the Ancient", spawns = {{49.2, 24.8}} },
+        }
+    },
+    
+    [7634] = { -- Stave of the Ancients (Rhok'delar)
+        name = "Stave of the Ancients",
+        zone = "Silithus",
+        start = { npc = "Vartrus the Ancient", x = 49.2, y = 24.8 },
+        objectives = {
+            { type = "kill", name = "Artorius the Doombringer", spawns = {{54.5, 25.8}} },
+            { type = "kill", name = "Simone the Seductress", spawns = {{34.5, 79.2}} },
+            { type = "kill", name = "Klinfran the Crazed", spawns = {{58.2, 13.5}} },
+            { type = "kill", name = "Solenor the Slayer", spawns = {{60.5, 18.8}} },
+        }
+    },
+    
+    [7635] = { -- A Proper String (Rhok'delar)
+        name = "A Proper String",
+        zone = "Felwood",
+        start = { npc = "Vartrus the Ancient", x = 49.2, y = 24.8 },
+        objectives = {
+            { type = "item", name = "Mature Sinew", spawns = {{0, 0}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- ROGUE CLASS QUESTS
+    -----------------------------------------
+    
+    [2205] = { -- Encrypted Letter (Human)
+        name = "Encrypted Letter",
+        zone = "Elwynn Forest",
+        start = { npc = "Willem", x = 49.0, y = 42.5 },
+        objectives = {
+            { type = "talk", name = "Keryn Sylvius", spawns = {{45.5, 85.8}} },
+        }
+    },
+    
+    [2206] = { -- Encrypted Letter (Night Elf)
+        name = "Encrypted Letter",
+        zone = "Teldrassil",
+        start = { npc = "Glynda Nal'Shea", x = 57.5, y = 61.2 },
+        objectives = {
+            { type = "talk", name = "Syurna", spawns = {{49.2, 36.5}} },
+        }
+    },
+    
+    [2207] = { -- Encrypted Letter (Dwarf)
+        name = "Encrypted Letter",
+        zone = "Dun Morogh",
+        start = { npc = "Sten Stoutarm", x = 29.8, y = 71.5 },
+        objectives = {
+            { type = "talk", name = "Solm Hansen", spawns = {{47.2, 63.8}} },
+        }
+    },
+    
+    [2208] = { -- Encrypted Letter (Undead)
+        name = "Encrypted Letter",
+        zone = "Tirisfal Glades",
+        start = { npc = "David Trias", x = 31.5, y = 65.8 },
+        objectives = {
+            { type = "talk", name = "Marion Call", spawns = {{61.5, 51.2}} },
+        }
+    },
+    
+    [2209] = { -- Encrypted Letter (Orc)
+        name = "Encrypted Letter",
+        zone = "Durotar",
+        start = { npc = "Kaltunk", x = 42.8, y = 69.2 },
+        objectives = {
+            { type = "talk", name = "Rwag", spawns = {{44.2, 68.5}} },
+        }
+    },
+    
+    [2218] = { -- Road to Salvation
+        name = "Road to Salvation",
+        zone = "Stormwind City",
+        start = { npc = "Keryn Sylvius", x = 45.5, y = 85.8 },
+        objectives = {
+            { type = "talk", name = "Lucius", spawns = {{75.2, 59.5}} },
+        }
+    },
+    
+    [2241] = { -- Mathias and the Defias
+        name = "Mathias and the Defias",
+        zone = "Stormwind City",
+        start = { npc = "Renzik 'The Shiv'", x = 75.5, y = 59.2 },
+        objectives = {
+            { type = "talk", name = "Master Mathias Shaw", spawns = {{76.8, 60.8}} },
+        }
+    },
+    
+    [2242] = { -- Klaven's Tower
+        name = "Klaven's Tower",
+        zone = "Westfall",
+        start = { npc = "Master Mathias Shaw", x = 76.8, y = 60.8 },
+        objectives = {
+            { type = "item", name = "Klaven's Journal", spawns = {{69.2, 71.5}} },
+        }
+    },
+    
+    [2261] = { -- The Manor, Pair of Scimitars
+        name = "The Manor, Pair of Scimitars",
+        zone = "Westfall",
+        start = { npc = "Darington", x = 56.2, y = 52.8 },
+        objectives = {
+            { type = "item", name = "VanCleef's Scimitar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2479] = { -- The Touch of Zanzil
+        name = "The Touch of Zanzil",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Lord Jorach Ravenholdt", x = 85.2, y = 79.5 },
+        objectives = {
+            { type = "item", name = "Venom of Venoxis", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2480] = { -- The Touch of Zanzil (Part 2)
+        name = "The Touch of Zanzil",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Serge Hinott", x = 27.2, y = 77.5 },
+        objectives = {
+            { type = "item", name = "Simple Antidote", spawns = {{27.2, 77.5}} },
+        }
+    },
+    
+    [8233] = { -- The Doors of the Depths
+        name = "The Doors of the Depths",
+        zone = "Alterac Mountains",
+        start = { npc = "Lord Jorach Ravenholdt", x = 85.2, y = 79.5 },
+        objectives = {
+            { type = "item", name = "Key to Blackrock", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6681] = { -- Mission: Possible But Not Probable
+        name = "Mission: Possible But Not Probable",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Lord Jorach Ravenholdt", x = 85.2, y = 79.5 },
+        objectives = {
+            { type = "item", name = "Head of Helcular", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2478] = { -- Syndicate Assassins
+        name = "Syndicate Assassins",
+        zone = "Alterac Mountains",
+        start = { npc = "Lord Jorach Ravenholdt", x = 85.2, y = 79.5 },
+        objectives = {
+            { type = "kill", name = "Syndicate Highwayman", spawns = {
+                {50.2, 85.5}, {52.8, 83.2}, {48.5, 87.8}
+            }},
+        }
+    },
+    
+    [2259] = { -- Deep Cover
+        name = "Deep Cover",
+        zone = "Alterac Mountains",
+        start = { npc = "Lord Jorach Ravenholdt", x = 85.2, y = 79.5 },
+        objectives = {
+            { type = "talk", name = "Fahrad", spawns = {{85.5, 79.2}} },
+        }
+    },
+    
+    [2381] = { -- Poisons -- Thistle Tea
+        name = "Thistle Tea",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Smudge Thunderwood", x = 85.0, y = 79.8 },
+        objectives = {
+            { type = "item", name = "Recipe: Thistle Tea", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2359] = { -- Blackwater Raiders (Rogues Only)
+        name = "Rogues of the Syndicate",
+        zone = "Alterac Mountains",
+        start = { npc = "Lord Jorach Ravenholdt", x = 85.2, y = 79.5 },
+        objectives = {
+            { type = "kill", name = "Syndicate Highwayman", spawns = {
+                {50.2, 85.5}, {52.8, 83.2}, {48.5, 87.8}
+            }},
+        }
+    },
+    
+    -----------------------------------------
+    -- PRIEST CLASS QUESTS
+    -----------------------------------------
+    
+    [5621] = { -- In Favor of the Light (Human)
+        name = "In Favor of the Light",
+        zone = "Stormwind City",
+        start = { npc = "High Priestess Laurena", x = 39.5, y = 27.5 },
+        objectives = {
+            { type = "talk", name = "Archbishop Benedictus", spawns = {{39.8, 27.8}} },
+        }
+    },
+    
+    [5622] = { -- In Favor of the Light (Human Part 2)
+        name = "Garments of the Light",
+        zone = "Elwynn Forest",
+        start = { npc = "High Priestess Laurena", x = 39.5, y = 27.5 },
+        objectives = {
+            { type = "talk", name = "Guard Roberts", spawns = {{47.5, 85.2}} },
+        }
+    },
+    
+    [5623] = { -- Garments of Spirituality (Dwarf)
+        name = "Garments of Spirituality",
+        zone = "Dun Morogh",
+        start = { npc = "Maxan Anvol", x = 47.2, y = 52.1 },
+        objectives = {
+            { type = "talk", name = "Mountaineer Dunmore", spawns = {{33.5, 72.8}} },
+        }
+    },
+    
+    [5624] = { -- Garments of the Moon (Night Elf)
+        name = "Garments of the Moon",
+        zone = "Teldrassil",
+        start = { npc = "Priestess Alathea", x = 55.5, y = 56.8 },
+        objectives = {
+            { type = "talk", name = "Sentinel Shaya", spawns = {{58.8, 40.2}} },
+        }
+    },
+    
+    [5625] = { -- Garments of Darkness (Undead)
+        name = "Garments of Darkness",
+        zone = "Tirisfal Glades",
+        start = { npc = "Dark Cleric Duesten", x = 31.2, y = 66.5 },
+        objectives = {
+            { type = "talk", name = "Deathguard Saltain", spawns = {{61.5, 52.8}} },
+        }
+    },
+    
+    [5626] = { -- Garments of the Oracle (Troll)
+        name = "Garments of the Oracle",
+        zone = "Durotar",
+        start = { npc = "Tai'jin", x = 55.2, y = 73.8 },
+        objectives = {
+            { type = "talk", name = "Grunt Gor'lok", spawns = {{52.5, 43.2}} },
+        }
+    },
+    
+    [5627] = { -- Ministrations (Human)
+        name = "Ministrations",
+        zone = "Stormwind City",
+        start = { npc = "High Priestess Laurena", x = 39.5, y = 27.5 },
+        objectives = {
+            { type = "talk", name = "Brother Gerard", spawns = {{42.5, 32.8}} },
+        }
+    },
+    
+    [5628] = { -- The Powers Below
+        name = "The Powers Below",
+        zone = "Tirisfal Glades",
+        start = { npc = "Dark Cleric Duesten", x = 31.2, y = 66.5 },
+        objectives = {
+            { type = "item", name = "Scarlet Insignia", spawns = {
+                {82.5, 31.2}, {84.2, 33.5}, {80.8, 29.8}
+            }},
+        }
+    },
+    
+    [7622] = { -- The Balance of Light and Shadow (Benediction)
+        name = "The Balance of Light and Shadow",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Eris Havenfire", x = 18.2, y = 14.5 },
+        objectives = {
+            { type = "talk", name = "Eris Havenfire", spawns = {{18.2, 14.5}} },
+        }
+    },
+    
+    [7625] = { -- Benediction (Final)
+        name = "Benediction",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Priest Guild Master", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Splinter of Nordrassil", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5638] = { -- Desperate Prayer (Human)
+        name = "Desperate Prayer",
+        zone = "Stormwind City",
+        start = { npc = "High Priestess Laurena", x = 39.5, y = 27.5 },
+        objectives = {
+            { type = "talk", name = "High Priestess Laurena", spawns = {{39.5, 27.5}} },
+        }
+    },
+    
+    [5637] = { -- Desperate Prayer (Dwarf)
+        name = "Desperate Prayer",
+        zone = "Ironforge",
+        start = { npc = "High Priest Rohan", x = 25.2, y = 8.5 },
+        objectives = {
+            { type = "talk", name = "High Priest Rohan", spawns = {{25.2, 8.5}} },
+        }
+    },
+    
+    [5639] = { -- Starshards (Night Elf)
+        name = "Starshards",
+        zone = "Darnassus",
+        start = { npc = "Priestess A'moora", x = 39.5, y = 80.5 },
+        objectives = {
+            { type = "talk", name = "Priestess A'moora", spawns = {{39.5, 80.5}} },
+        }
+    },
+    
+    [5642] = { -- Touch of Weakness (Undead)
+        name = "Touch of Weakness",
+        zone = "Undercity",
+        start = { npc = "Dark Cleric Beryl", x = 49.8, y = 18.5 },
+        objectives = {
+            { type = "talk", name = "Dark Cleric Beryl", spawns = {{49.8, 18.5}} },
+        }
+    },
+    
+    [5643] = { -- Hex of Weakness (Troll)
+        name = "Hex of Weakness",
+        zone = "Orgrimmar",
+        start = { npc = "Ur'kyo", x = 35.5, y = 87.2 },
+        objectives = {
+            { type = "talk", name = "Ur'kyo", spawns = {{35.5, 87.2}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- SHAMAN CLASS QUESTS
+    -----------------------------------------
+    
+    [1516] = { -- Call of Earth (Orc)
+        name = "Call of Earth",
+        zone = "Durotar",
+        start = { npc = "Canaga Earthcaller", x = 38.5, y = 58.8 },
+        objectives = {
+            { type = "item", name = "Felstalker Hoof", spawns = {
+                {62.2, 35.5}, {60.8, 38.2}, {63.5, 33.8}
+            }},
+        }
+    },
+    
+    [1517] = { -- Call of Earth (Orc Part 2)
+        name = "Call of Earth",
+        zone = "Durotar",
+        start = { npc = "Canaga Earthcaller", x = 38.5, y = 58.8 },
+        objectives = {
+            { type = "item", name = "Rough Quartz", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1518] = { -- Call of Earth (Orc Part 3)
+        name = "Call of Earth",
+        zone = "Durotar",
+        start = { npc = "Canaga Earthcaller", x = 38.5, y = 58.8 },
+        objectives = {
+            { type = "talk", name = "Canaga Earthcaller", spawns = {{38.5, 58.8}} },
+        }
+    },
+    
+    [1519] = { -- Call of Earth (Tauren)
+        name = "Call of Earth",
+        zone = "Mulgore",
+        start = { npc = "Seer Ravenfeather", x = 31.8, y = 27.2 },
+        objectives = {
+            { type = "item", name = "Severed Paw", spawns = {
+                {59.2, 59.5}, {58.5, 61.2}, {60.8, 57.8}
+            }},
+        }
+    },
+    
+    [1520] = { -- Call of Earth (Tauren Part 2)
+        name = "Call of Earth",
+        zone = "Mulgore",
+        start = { npc = "Seer Ravenfeather", x = 31.8, y = 27.2 },
+        objectives = {
+            { type = "talk", name = "Minor Manifestation of Earth", spawns = {{37.2, 50.8}} },
+        }
+    },
+    
+    [1521] = { -- Call of Earth (Tauren Part 3)
+        name = "Call of Earth",
+        zone = "Mulgore",
+        start = { npc = "Seer Ravenfeather", x = 31.8, y = 27.2 },
+        objectives = {
+            { type = "talk", name = "Seer Ravenfeather", spawns = {{31.8, 27.2}} },
+        }
+    },
+    
+    [1523] = { -- Call of Fire (Orc)
+        name = "Call of Fire",
+        zone = "Durotar",
+        start = { npc = "Kranal Fiss", x = 51.2, y = 30.5 },
+        objectives = {
+            { type = "talk", name = "Telf Jansen", spawns = {{56.2, 8.5}} },
+        }
+    },
+    
+    [1524] = { -- Call of Fire (Orc Part 2)
+        name = "Call of Fire",
+        zone = "The Barrens",
+        start = { npc = "Telf Jansen", x = 56.2, y = 8.5 },
+        objectives = {
+            { type = "item", name = "Fire Tar", spawns = {
+                {62.5, 34.2}, {64.2, 32.8}, {60.8, 36.5}
+            }},
+        }
+    },
+    
+    [1525] = { -- Call of Fire (Orc Part 3)
+        name = "Call of Fire",
+        zone = "The Barrens",
+        start = { npc = "Telf Jansen", x = 56.2, y = 8.5 },
+        objectives = {
+            { type = "item", name = "Reagent Pouch", spawns = {{56.5, 8.2}} },
+            { type = "item", name = "Fire Sapta", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1526] = { -- Call of Fire (Tauren)
+        name = "Call of Fire",
+        zone = "Mulgore",
+        start = { npc = "Xanis Flameweaver", x = 46.5, y = 58.2 },
+        objectives = {
+            { type = "talk", name = "Kranal Fiss", spawns = {{51.2, 30.5}} },
+        }
+    },
+    
+    [1527] = { -- Call of Water (Orc)
+        name = "Call of Water",
+        zone = "The Barrens",
+        start = { npc = "Islen Waterseer", x = 55.8, y = 26.5 },
+        objectives = {
+            { type = "talk", name = "Brine", spawns = {{56.5, 8.2}} },
+        }
+    },
+    
+    [1528] = { -- Call of Water (Orc Part 2)
+        name = "Call of Water",
+        zone = "Silverpine Forest",
+        start = { npc = "Brine", x = 56.5, y = 8.2 },
+        objectives = {
+            { type = "item", name = "Shard of Water", spawns = {{38.2, 44.5}} },
+        }
+    },
+    
+    [1529] = { -- Call of Water (Orc Part 3)
+        name = "Call of Water",
+        zone = "Ashenvale",
+        start = { npc = "Islen Waterseer", x = 55.8, y = 26.5 },
+        objectives = {
+            { type = "item", name = "Dew Glade Grass", spawns = {{58.2, 55.5}} },
+        }
+    },
+    
+    [1530] = { -- Call of Water (Tauren)
+        name = "Call of Water",
+        zone = "Mulgore",
+        start = { npc = "Islen Waterseer", x = 55.8, y = 26.5 },
+        objectives = {
+            { type = "talk", name = "Islen Waterseer", spawns = {{55.8, 26.5}} },
+        }
+    },
+    
+    [1535] = { -- Call of Air (Orc)
+        name = "Call of Air",
+        zone = "Thousand Needles",
+        start = { npc = "Prate Cloudseer", x = 53.5, y = 47.2 },
+        objectives = {
+            { type = "talk", name = "Prate Cloudseer", spawns = {{53.5, 47.2}} },
+        }
+    },
+    
+    [1536] = { -- Call of Air (Orc Part 2)
+        name = "Call of Air",
+        zone = "Thousand Needles",
+        start = { npc = "Prate Cloudseer", x = 53.5, y = 47.2 },
+        objectives = {
+            { type = "item", name = "Whirlwind Bracers", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1537] = { -- Call of Air (Orc Part 3)
+        name = "Call of Air",
+        zone = "Thousand Needles",
+        start = { npc = "Prate Cloudseer", x = 53.5, y = 47.2 },
+        objectives = {
+            { type = "kill", name = "Arikara", spawns = {{44.2, 36.5}} },
+        }
+    },
+    
+    [1538] = { -- Call of Air (Tauren)
+        name = "Call of Air",
+        zone = "Thousand Needles",
+        start = { npc = "Prate Cloudseer", x = 53.5, y = 47.2 },
+        objectives = {
+            { type = "talk", name = "Prate Cloudseer", spawns = {{53.5, 47.2}} },
+        }
+    },
+    
+    [1075] = { -- Call of Fire (Final)
+        name = "Call of Fire",
+        zone = "The Barrens",
+        start = { npc = "Telf Jansen", x = 56.2, y = 8.5 },
+        objectives = {
+            { type = "kill", name = "Minor Manifestation of Fire", spawns = {{37.2, 41.5}} },
+        }
+    },
+    
+    [974] = { -- Elemental Allies
+        name = "Elemental Mastery",
+        zone = "Un'Goro Crater",
+        start = { npc = "Bath'rah the Windwatcher", x = 80.4, y = 67.0 },
+        objectives = {
+            { type = "item", name = "Earth Elemental Totem", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1536] = { -- Spiritual Awakening
+        name = "Spiritual Awakening",
+        zone = "Thousand Needles",
+        start = { npc = "Prate Cloudseer", x = 53.5, y = 47.2 },
+        objectives = {
+            { type = "talk", name = "Prate Cloudseer", spawns = {{53.5, 47.2}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- MAGE CLASS QUESTS
+    -----------------------------------------
+    
+    [1879] = { -- Speak with Bink (Gnome)
+        name = "Speak with Bink",
+        zone = "Ironforge",
+        start = { npc = "Marryk Nurribit", x = 27.2, y = 8.5 },
+        objectives = {
+            { type = "talk", name = "Bink", spawns = {{27.5, 8.2}} },
+        }
+    },
+    
+    [1880] = { -- Mage-tastic Gizmonitor
+        name = "Mage-tastic Gizmonitor",
+        zone = "Dun Morogh",
+        start = { npc = "Bink", x = 27.5, y = 8.2 },
+        objectives = {
+            { type = "item", name = "Mage-tastic Gizmonitor", spawns = {{74.5, 52.8}} },
+        }
+    },
+    
+    [1881] = { -- Investigate the Blue Recluse
+        name = "Investigate the Blue Recluse",
+        zone = "Stormwind City",
+        start = { npc = "Maginor Dumas", x = 38.5, y = 79.8 },
+        objectives = {
+            { type = "talk", name = "Jennea Cannon", spawns = {{38.2, 79.5}} },
+        }
+    },
+    
+    [1882] = { -- Journey to the Marsh
+        name = "Journey to the Marsh",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Maginor Dumas", x = 38.5, y = 79.8 },
+        objectives = {
+            { type = "talk", name = "Tabetha", spawns = {{46.2, 57.5}} },
+        }
+    },
+    
+    [1883] = { -- Hidden Secrets (Mage)
+        name = "Hidden Secrets",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Tabetha", x = 46.2, y = 57.5 },
+        objectives = {
+            { type = "item", name = "Tabetha's Instructions", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1920] = { -- Get the Scoop
+        name = "Get the Scoop",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Tabetha", x = 46.2, y = 57.5 },
+        objectives = {
+            { type = "talk", name = "Nat Pagle", spawns = {{58.5, 60.2}} },
+        }
+    },
+    
+    [1921] = { -- Retrieval for Mauren
+        name = "Retrieval for Mauren",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Tabetha", x = 46.2, y = 57.5 },
+        objectives = {
+            { type = "item", name = "Mauren's Wisps", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3116] = { -- Arcane Refreshment
+        name = "Arcane Refreshment",
+        zone = "The Barrens",
+        start = { npc = "Sanath Lim-yo", x = 64.2, y = 20.5 },
+        objectives = {
+            { type = "talk", name = "Sanath Lim-yo", spawns = {{64.2, 20.5}} },
+        }
+    },
+    
+    [3117] = { -- Arcane Refreshment (Alliance)
+        name = "Arcane Refreshment",
+        zone = "Stormwind City",
+        start = { npc = "Maginor Dumas", x = 38.5, y = 79.8 },
+        objectives = {
+            { type = "talk", name = "Maginor Dumas", spawns = {{38.5, 79.8}} },
+        }
+    },
+    
+    [2879] = { -- Teleport Stormwind
+        name = "Teleport: Stormwind",
+        zone = "Stormwind City",
+        start = { npc = "Elsharin", x = 37.8, y = 81.2 },
+        objectives = {
+            { type = "talk", name = "Elsharin", spawns = {{37.8, 81.2}} },
+        }
+    },
+    
+    [2880] = { -- Teleport Ironforge
+        name = "Teleport: Ironforge",
+        zone = "Ironforge",
+        start = { npc = "Milstaff Stormeye", x = 27.5, y = 8.5 },
+        objectives = {
+            { type = "talk", name = "Milstaff Stormeye", spawns = {{27.5, 8.5}} },
+        }
+    },
+    
+    [2873] = { -- Portal Stormwind
+        name = "Portal: Stormwind",
+        zone = "Stormwind City",
+        start = { npc = "Elsharin", x = 37.8, y = 81.2 },
+        objectives = {
+            { type = "talk", name = "Elsharin", spawns = {{37.8, 81.2}} },
+        }
+    },
+    
+    [2868] = { -- Portal Orgrimmar
+        name = "Portal: Orgrimmar",
+        zone = "Orgrimmar",
+        start = { npc = "Deino", x = 38.5, y = 85.2 },
+        objectives = {
+            { type = "talk", name = "Deino", spawns = {{38.5, 85.2}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- WARLOCK CLASS QUESTS
+    -----------------------------------------
+    
+    [1685] = { -- Tainted Memorandum (Undead)
+        name = "Tainted Memorandum",
+        zone = "Tirisfal Glades",
+        start = { npc = "Isabella", x = 30.8, y = 65.5 },
+        objectives = {
+            { type = "talk", name = "Ruuzel", spawns = {{66.2, 41.5}} },
+        }
+    },
+    
+    [1688] = { -- Tainted Memorandum (Orc)
+        name = "Tainted Memorandum",
+        zone = "Durotar",
+        start = { npc = "Ophillia Damonjahr", x = 42.5, y = 69.2 },
+        objectives = {
+            { type = "talk", name = "Zureetha Fargaze", spawns = {{42.6, 69.1}} },
+        }
+    },
+    
+    [1689] = { -- Tainted Memorandum (Gnome)
+        name = "Tainted Memorandum",
+        zone = "Dun Morogh",
+        start = { npc = "Alamar Grimm", x = 28.8, y = 66.2 },
+        objectives = {
+            { type = "talk", name = "Alamar Grimm", spawns = {{28.8, 66.2}} },
+        }
+    },
+    
+    [1715] = { -- Summoning Imp
+        name = "Piercing the Veil",
+        zone = "Tirisfal Glades",
+        start = { npc = "Ruuzel", x = 66.2, y = 41.5 },
+        objectives = {
+            { type = "kill", name = "Vile Familiar", spawns = {
+                {65.5, 39.2}, {67.8, 42.5}, {64.2, 44.8}
+            }},
+        }
+    },
+    
+    [1716] = { -- The Binding (Imp)
+        name = "The Binding",
+        zone = "Orgrimmar",
+        start = { npc = "Ruuzel", x = 66.2, y = 41.5 },
+        objectives = {
+            { type = "talk", name = "Ruuzel", spawns = {{66.2, 41.5}} },
+        }
+    },
+    
+    [1471] = { -- Creature of the Void (Voidwalker)
+        name = "Creature of the Void",
+        zone = "Orgrimmar",
+        start = { npc = "Gan'rul Bloodeye", x = 47.8, y = 46.5 },
+        objectives = {
+            { type = "item", name = "Tablet of Verga", spawns = {{52.5, 30.2}} },
+        }
+    },
+    
+    [1472] = { -- The Binding (Voidwalker)
+        name = "The Binding",
+        zone = "Orgrimmar",
+        start = { npc = "Gan'rul Bloodeye", x = 47.8, y = 46.5 },
+        objectives = {
+            { type = "kill", name = "Summoned Voidwalker", spawns = {{47.5, 46.2}} },
+        }
+    },
+    
+    [1473] = { -- Seeking Strahad
+        name = "Seeking Strahad",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Gan'rul Bloodeye", x = 47.8, y = 46.5 },
+        objectives = {
+            { type = "talk", name = "Strahad Farsan", spawns = {{74.5, 56.2}} },
+        }
+    },
+    
+    [1474] = { -- Strahad's Request (Succubus)
+        name = "Strahad's Request",
+        zone = "Ashenvale",
+        start = { npc = "Strahad Farsan", x = 74.5, y = 56.2 },
+        objectives = {
+            { type = "item", name = "Heart of Satyrnaar", spawns = {{65.2, 32.5}} },
+        }
+    },
+    
+    [1508] = { -- The Binding (Succubus)
+        name = "The Binding",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Strahad Farsan", x = 74.5, y = 56.2 },
+        objectives = {
+            { type = "kill", name = "Summoned Succubus", spawns = {{74.2, 56.5}} },
+        }
+    },
+    
+    [1507] = { -- Hearts of the Pure (Succubus Alliance)
+        name = "Hearts of the Pure",
+        zone = "Redridge Mountains",
+        start = { npc = "Gakin the Darkbinder", x = 25.5, y = 78.5 },
+        objectives = {
+            { type = "kill", name = "Dalin Forgewright", spawns = {{30.2, 59.5}} },
+        }
+    },
+    
+    [1796] = { -- Felhunter Quest
+        name = "Tome of the Cabal",
+        zone = "The Barrens",
+        start = { npc = "Strahad Farsan", x = 74.5, y = 56.2 },
+        objectives = {
+            { type = "item", name = "Tome of the Cabal", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1797] = { -- The Binding (Felhunter)
+        name = "The Binding",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Strahad Farsan", x = 74.5, y = 56.2 },
+        objectives = {
+            { type = "kill", name = "Summoned Felhunter", spawns = {{74.2, 56.5}} },
+        }
+    },
+    
+    [4962] = { -- The Completed Tome (Felhunter)
+        name = "The Completed Tome",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Strahad Farsan", x = 74.5, y = 56.2 },
+        objectives = {
+            { type = "talk", name = "Strahad Farsan", spawns = {{74.5, 56.2}} },
+        }
+    },
+    
+    [4963] = { -- Felsteed
+        name = "Summon Felsteed",
+        zone = "Orgrimmar",
+        start = { npc = "Gan'rul Bloodeye", x = 47.8, y = 46.5 },
+        objectives = {
+            { type = "talk", name = "Gan'rul Bloodeye", spawns = {{47.8, 46.5}} },
+        }
+    },
+    
+    [4964] = { -- Summon Felsteed (Alliance)
+        name = "Summon Felsteed",
+        zone = "Stormwind City",
+        start = { npc = "Gakin the Darkbinder", x = 25.5, y = 78.5 },
+        objectives = {
+            { type = "talk", name = "Gakin the Darkbinder", spawns = {{25.5, 78.5}} },
+        }
+    },
+    
+    [7562] = { -- Mor'zul Bloodbringer (Dreadsteed)
+        name = "Mor'zul Bloodbringer",
+        zone = "Burning Steppes",
+        start = { npc = "Gorzeeki Wildeyes", x = 12.5, y = 31.5 },
+        objectives = {
+            { type = "talk", name = "Mor'zul Bloodbringer", spawns = {{12.8, 31.2}} },
+        }
+    },
+    
+    [7563] = { -- Lord Banehollow (Dreadsteed)
+        name = "Lord Banehollow",
+        zone = "Felwood",
+        start = { npc = "Mor'zul Bloodbringer", x = 12.8, y = 31.2 },
+        objectives = {
+            { type = "talk", name = "Lord Banehollow", spawns = {{35.2, 58.8}} },
+        }
+    },
+    
+    [7564] = { -- Acquiring the Arcanite
+        name = "Acquiring the Arcanite",
+        zone = "Burning Steppes",
+        start = { npc = "Gorzeeki Wildeyes", x = 12.5, y = 31.5 },
+        objectives = {
+            { type = "item", name = "Arcanite Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7581] = { -- Components of Importance
+        name = "Components of Importance",
+        zone = "Burning Steppes",
+        start = { npc = "Gorzeeki Wildeyes", x = 12.5, y = 31.5 },
+        objectives = {
+            { type = "item", name = "Black Dragonscale", spawns = {{0, 0}} },
+            { type = "item", name = "Dark Iron Bar", spawns = {{0, 0}} },
+            { type = "item", name = "Elixir of Shadow Power", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7629] = { -- Imp Delivery (Dreadsteed)
+        name = "Imp Delivery",
+        zone = "Burning Steppes",
+        start = { npc = "Gorzeeki Wildeyes", x = 12.5, y = 31.5 },
+        objectives = {
+            { type = "item", name = "J'eevee's Jar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7630] = { -- Ritual of Doom (Dreadsteed)
+        name = "Ritual of Doom",
+        zone = "Dire Maul",
+        start = { npc = "Gorzeeki Wildeyes", x = 12.5, y = 31.5 },
+        objectives = {
+            { type = "kill", name = "Lord Hel'nurath", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7631] = { -- Purify the Soul
+        name = "Dreadsteed of Xoroth",
+        zone = "Dire Maul",
+        start = { npc = "Mor'zul Bloodbringer", x = 12.8, y = 31.2 },
+        objectives = {
+            { type = "item", name = "Xorothian Glyphs", spawns = {{0, 0}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- DRUID CLASS QUESTS
+    -----------------------------------------
+    
+    [5921] = { -- A Lesson to Learn (Night Elf)
+        name = "A Lesson to Learn",
+        zone = "Moonglade",
+        start = { npc = "Mathrengyl Bearwalker", x = 39.5, y = 43.5 },
+        objectives = {
+            { type = "talk", name = "Dendrite Starblaze", spawns = {{56.2, 30.5}} },
+        }
+    },
+    
+    [5922] = { -- A Lesson to Learn (Tauren)
+        name = "A Lesson to Learn",
+        zone = "Moonglade",
+        start = { npc = "Turak Runetotem", x = 76.5, y = 27.8 },
+        objectives = {
+            { type = "talk", name = "Dendrite Starblaze", spawns = {{56.2, 30.5}} },
+        }
+    },
+    
+    [5923] = { -- Trial of the Lake
+        name = "Trial of the Lake",
+        zone = "Moonglade",
+        start = { npc = "Dendrite Starblaze", x = 56.2, y = 30.5 },
+        objectives = {
+            { type = "item", name = "Pendant of Aquatic Form", spawns = {{36.2, 41.5}} },
+        }
+    },
+    
+    [5924] = { -- Trial of the Seamist
+        name = "Trial of the Seamist",
+        zone = "Darkshore",
+        start = { npc = "Tajarri", x = 46.5, y = 48.2 },
+        objectives = {
+            { type = "item", name = "Half Pendant of Aquatic Agility", spawns = {{56.2, 28.5}} },
+        }
+    },
+    
+    [5925] = { -- Trial of the Seaspray
+        name = "Trial of the Seaspray",
+        zone = "Silverpine Forest",
+        start = { npc = "Tajarri", x = 46.5, y = 48.2 },
+        objectives = {
+            { type = "item", name = "Half Pendant of Aquatic Endurance", spawns = {{30.2, 38.5}} },
+        }
+    },
+    
+    [5926] = { -- Aquatic Form
+        name = "Aquatic Form",
+        zone = "Moonglade",
+        start = { npc = "Dendrite Starblaze", x = 56.2, y = 30.5 },
+        objectives = {
+            { type = "talk", name = "Dendrite Starblaze", spawns = {{56.2, 30.5}} },
+        }
+    },
+    
+    [5928] = { -- Bear Form (Night Elf)
+        name = "Body and Heart",
+        zone = "Teldrassil",
+        start = { npc = "Mathrengyl Bearwalker", x = 39.5, y = 43.5 },
+        objectives = {
+            { type = "talk", name = "Great Bear Spirit", spawns = {{44.2, 73.5}} },
+        }
+    },
+    
+    [5929] = { -- Bear Form (Tauren)
+        name = "Body and Heart",
+        zone = "Mulgore",
+        start = { npc = "Turak Runetotem", x = 76.5, y = 27.8 },
+        objectives = {
+            { type = "talk", name = "Great Bear Spirit", spawns = {{44.2, 63.8}} },
+        }
+    },
+    
+    [5930] = { -- Heeding the Call (Night Elf)
+        name = "Heeding the Call",
+        zone = "Darnassus",
+        start = { npc = "Mathrengyl Bearwalker", x = 39.5, y = 43.5 },
+        objectives = {
+            { type = "talk", name = "Mathrengyl Bearwalker", spawns = {{39.5, 43.5}} },
+        }
+    },
+    
+    [5931] = { -- Heeding the Call (Tauren)
+        name = "Heeding the Call",
+        zone = "Thunder Bluff",
+        start = { npc = "Turak Runetotem", x = 76.5, y = 27.8 },
+        objectives = {
+            { type = "talk", name = "Turak Runetotem", spawns = {{76.5, 27.8}} },
+        }
+    },
+    
+    [5932] = { -- Great Bear Spirit
+        name = "Great Bear Spirit",
+        zone = "Moonglade",
+        start = { npc = "Mathrengyl Bearwalker", x = 39.5, y = 43.5 },
+        objectives = {
+            { type = "kill", name = "Lunaclaw", spawns = {{43.5, 72.8}} },
+        }
+    },
+    
+    [5933] = { -- The Hunter's Charm
+        name = "The Hunter's Charm",
+        zone = "Ashenvale",
+        start = { npc = "Mathrengyl Bearwalker", x = 39.5, y = 43.5 },
+        objectives = {
+            { type = "talk", name = "Thalanaar", spawns = {{48.2, 24.5}} },
+        }
+    },
+    
+    [5942] = { -- Cure Poison (Druid)
+        name = "Cure Poison",
+        zone = "Moonglade",
+        start = { npc = "Dendrite Starblaze", x = 56.2, y = 30.5 },
+        objectives = {
+            { type = "talk", name = "Alanndarian Nightsong", spawns = {{50.2, 45.5}} },
+        }
+    },
+    
+    [5943] = { -- Cure Poison (Tauren)
+        name = "Cure Poison",
+        zone = "Thunder Bluff",
+        start = { npc = "Turak Runetotem", x = 76.5, y = 27.8 },
+        objectives = {
+            { type = "talk", name = "Tonga Runetotem", spawns = {{52.5, 29.8}} },
+        }
+    },
+    
+    [5944] = { -- Travel Form (Alliance)
+        name = "Journeys End",
+        zone = "Moonglade",
+        start = { npc = "Dendrite Starblaze", x = 56.2, y = 30.5 },
+        objectives = {
+            { type = "talk", name = "Dendrite Starblaze", spawns = {{56.2, 30.5}} },
+        }
+    },
+    
+    [5945] = { -- Travel Form (Horde)
+        name = "Journeys End",
+        zone = "Thunder Bluff",
+        start = { npc = "Turak Runetotem", x = 76.5, y = 27.8 },
+        objectives = {
+            { type = "talk", name = "Turak Runetotem", spawns = {{76.5, 27.8}} },
+        }
+    },
+    
+    [27] = { -- Cat Form (Night Elf)
+        name = "Trial of the Sea Lion",
+        zone = "Moonglade",
+        start = { npc = "Dendrite Starblaze", x = 56.2, y = 30.5 },
+        objectives = {
+            { type = "item", name = "Pendant of Aquatic Form", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6001] = { -- Flight Form
+        name = "Flight Form",
+        zone = "Moonglade",
+        start = { npc = "Loganaar", x = 52.5, y = 40.5 },
+        objectives = {
+            { type = "talk", name = "Loganaar", spawns = {{52.5, 40.5}} },
+        }
+    },
+    
+    [6002] = { -- Swift Flight Form
+        name = "Swift Flight Form",
+        zone = "Moonglade",
+        start = { npc = "Loganaar", x = 52.5, y = 40.5 },
+        objectives = {
+            { type = "item", name = "Anzu's Wing Feather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6141] = { -- Power over Poison
+        name = "Power over Poison",
+        zone = "Darnassus",
+        start = { npc = "Mathrengyl Bearwalker", x = 39.5, y = 43.5 },
+        objectives = {
+            { type = "talk", name = "Alanndarian Nightsong", spawns = {{50.2, 45.5}} },
+        }
+    },
+    
+    [6142] = { -- Power over Poison (Tauren)
+        name = "Power over Poison",
+        zone = "Thunder Bluff",
+        start = { npc = "Turak Runetotem", x = 76.5, y = 27.8 },
+        objectives = {
+            { type = "talk", name = "Tonga Runetotem", spawns = {{52.5, 29.8}} },
+        }
+    },
+    
+    [6143] = { -- The Principal Source
+        name = "The Principal Source",
+        zone = "Darkshore",
+        start = { npc = "Alanndarian Nightsong", x = 50.2, y = 45.5 },
+        objectives = {
+            { type = "item", name = "Moonpetal Lily", spawns = {{55.5, 24.8}} },
+        }
+    },
+    
+    [6144] = { -- Gathering the Cure
+        name = "Gathering the Cure",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Tonga Runetotem", x = 52.5, y = 29.8 },
+        objectives = {
+            { type = "item", name = "Earthroot", spawns = {{0, 0}} },
+            { type = "item", name = "Kodo Horn", spawns = {
+                {62.5, 63.8}, {64.2, 62.5}, {61.8, 65.2}
+            }},
+        }
+    },
+    
+    [6145] = { -- Moonkin Form Research
+        name = "Moonkin Form Research",
+        zone = "Feralas",
+        start = { npc = "Dendrite Starblaze", x = 56.2, y = 30.5 },
+        objectives = {
+            { type = "item", name = "Emerald Dragonflight Scales", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ============================================
+    -- PROFESSION QUESTS
+    -- ============================================
+    
+    -- BLACKSMITHING QUESTS
+    
+    [2756] = { -- The Art of the Armorsmith
+        name = "The Art of the Armorsmith",
+        zone = "Stormwind City",
+        start = { npc = "Grumnus Steelshaper", x = 63.8, y = 37.5 },
+        objectives = {
+            { type = "item", name = "Ornate Mithril Helm", spawns = {{0, 0}} },
+            { type = "item", name = "Ornate Mithril Boots", spawns = {{0, 0}} },
+            { type = "item", name = "Ornate Mithril Breastplate", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2757] = { -- The Art of the Armorsmith (Horde)
+        name = "The Art of the Armorsmith",
+        zone = "Orgrimmar",
+        start = { npc = "Okothos Ironrager", x = 79.5, y = 23.5 },
+        objectives = {
+            { type = "item", name = "Ornate Mithril Helm", spawns = {{0, 0}} },
+            { type = "item", name = "Ornate Mithril Boots", spawns = {{0, 0}} },
+            { type = "item", name = "Ornate Mithril Breastplate", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2758] = { -- The Way of the Weaponsmith
+        name = "The Way of the Weaponsmith",
+        zone = "Stormwind City",
+        start = { npc = "Ironus Coldsteel", x = 63.5, y = 37.0 },
+        objectives = {
+            { type = "item", name = "Moonsteel Broadsword", spawns = {{0, 0}} },
+            { type = "item", name = "Massive Iron Axe", spawns = {{0, 0}} },
+            { type = "item", name = "Heavy Mithril Axe", spawns = {{0, 0}} },
+            { type = "item", name = "Big Black Mace", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2759] = { -- The Way of the Weaponsmith (Horde)
+        name = "The Way of the Weaponsmith",
+        zone = "Orgrimmar",
+        start = { npc = "Borgosh Corebender", x = 80.5, y = 23.2 },
+        objectives = {
+            { type = "item", name = "Moonsteel Broadsword", spawns = {{0, 0}} },
+            { type = "item", name = "Massive Iron Axe", spawns = {{0, 0}} },
+            { type = "item", name = "Heavy Mithril Axe", spawns = {{0, 0}} },
+            { type = "item", name = "Big Black Mace", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5283] = { -- Mithril Order Insignia
+        name = "Mithril Order Insignia",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Galvan the Ancient", x = 50.6, y = 20.5 },
+        objectives = {
+            { type = "item", name = "Ornate Mithril Shoulder", spawns = {{0, 0}} },
+            { type = "item", name = "Ornate Mithril Gloves", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5124] = { -- Galvan's Finest Pupil
+        name = "Galvan's Finest Pupil",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Galvan the Ancient", x = 50.6, y = 20.5 },
+        objectives = {
+            { type = "talk", name = "Trenton Lighthammer", spawns = {{51.5, 30.2}} },
+        }
+    },
+    
+    [7604] = { -- The World At Your Feet
+        name = "The World At Your Feet",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Trenton Lighthammer", x = 51.5, y = 30.2 },
+        objectives = {
+            { type = "item", name = "Ornate Mithril Pants", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7605] = { -- The Mithril Kid
+        name = "The Mithril Kid",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Trenton Lighthammer", x = 51.5, y = 30.2 },
+        objectives = {
+            { type = "item", name = "Heavy Mithril Breastplate", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3321] = { -- Sweet Serenity
+        name = "Sweet Serenity",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Trenton Lighthammer", x = 51.5, y = 30.2 },
+        objectives = {
+            { type = "talk", name = "Serenity", spawns = {{28.5, 77.8}} },
+        }
+    },
+    
+    [7649] = { -- The Old Ways (Swordsmith)
+        name = "The Old Ways",
+        zone = "Winterspring",
+        start = { npc = "Seril Scourgebane", x = 62.5, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Volcanic Hammer", spawns = {{0, 0}} },
+            { type = "item", name = "Dense Grinding Stone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7653] = { -- The Old Ways (Axesmith)
+        name = "The Old Ways",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Kilram", x = 50.5, y = 20.5 },
+        objectives = {
+            { type = "item", name = "Volcanic Hammer", spawns = {{0, 0}} },
+            { type = "item", name = "Dense Grinding Stone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7654] = { -- The Old Ways (Hammersmith)
+        name = "The Old Ways",
+        zone = "The Hinterlands",
+        start = { npc = "Lilith the Lithe", x = 14.5, y = 44.5 },
+        objectives = {
+            { type = "item", name = "Volcanic Hammer", spawns = {{0, 0}} },
+            { type = "item", name = "Dense Grinding Stone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3802] = { -- The Spectral Chalice
+        name = "The Spectral Chalice",
+        zone = "Blackrock Depths",
+        start = { npc = "Gloom'rel", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Star Ruby", spawns = {{0, 0}} },
+            { type = "item", name = "Truesilver Bar", spawns = {{0, 0}} },
+            { type = "item", name = "Dark Iron Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- LEATHERWORKING QUESTS
+    
+    [5141] = { -- Tribal Leatherworking
+        name = "Tribal Leatherworking",
+        zone = "Feralas",
+        start = { npc = "Caryssia Moonhunter", x = 89.5, y = 46.5 },
+        objectives = {
+            { type = "item", name = "Wild Leather Vest", spawns = {{0, 0}} },
+            { type = "item", name = "Wild Leather Helmet", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5143] = { -- Elemental Leatherworking
+        name = "Elemental Leatherworking",
+        zone = "Arathi Highlands",
+        start = { npc = "Sarah Tanner", x = 28.2, y = 45.0 },
+        objectives = {
+            { type = "item", name = "Turtle Scale Breastplate", spawns = {{0, 0}} },
+            { type = "item", name = "Turtle Scale Gloves", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5144] = { -- Dragonscale Leatherworking
+        name = "Dragonscale Leatherworking",
+        zone = "Azshara",
+        start = { npc = "Peter Galen", x = 37.5, y = 65.2 },
+        objectives = {
+            { type = "item", name = "Tough Scorpid Breastplate", spawns = {{0, 0}} },
+            { type = "item", name = "Tough Scorpid Gloves", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5145] = { -- Tribal Leatherworking (Horde)
+        name = "Tribal Leatherworking",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Se'Jib", x = 36.5, y = 34.2 },
+        objectives = {
+            { type = "item", name = "Wild Leather Vest", spawns = {{0, 0}} },
+            { type = "item", name = "Wild Leather Helmet", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5146] = { -- Elemental Leatherworking (Horde)
+        name = "Elemental Leatherworking",
+        zone = "Arathi Highlands",
+        start = { npc = "Brumn Winterhoof", x = 73.5, y = 36.5 },
+        objectives = {
+            { type = "item", name = "Turtle Scale Breastplate", spawns = {{0, 0}} },
+            { type = "item", name = "Turtle Scale Gloves", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5147] = { -- Dragonscale Leatherworking (Horde)
+        name = "Dragonscale Leatherworking",
+        zone = "Badlands",
+        start = { npc = "Thorkaf Dragoneye", x = 62.5, y = 57.5 },
+        objectives = {
+            { type = "item", name = "Tough Scorpid Breastplate", spawns = {{0, 0}} },
+            { type = "item", name = "Tough Scorpid Gloves", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2847] = { -- Wild Leather Armor
+        name = "Wild Leather Armor",
+        zone = "Feralas",
+        start = { npc = "Pratt McGrubben", x = 30.5, y = 42.8 },
+        objectives = {
+            { type = "item", name = "Wild Leather Shoulders", spawns = {{0, 0}} },
+            { type = "item", name = "Wild Leather Leggings", spawns = {{0, 0}} },
+            { type = "item", name = "Wild Leather Boots", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2848] = { -- Wild Leather Armor (Horde)
+        name = "Wild Leather Armor",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Jangdor Swiftstrider", x = 30.5, y = 42.8 },
+        objectives = {
+            { type = "item", name = "Wild Leather Shoulders", spawns = {{0, 0}} },
+            { type = "item", name = "Wild Leather Leggings", spawns = {{0, 0}} },
+            { type = "item", name = "Wild Leather Boots", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2854] = { -- Wild Leather Helmet
+        name = "Wild Leather Helmet",
+        zone = "Feralas",
+        start = { npc = "Pratt McGrubben", x = 30.5, y = 42.8 },
+        objectives = {
+            { type = "item", name = "Wild Leather Helmet", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2855] = { -- Wild Leather Vest
+        name = "Wild Leather Vest",
+        zone = "Feralas",
+        start = { npc = "Pratt McGrubben", x = 30.5, y = 42.8 },
+        objectives = {
+            { type = "item", name = "Wild Leather Vest", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- TAILORING QUESTS
+    
+    [6032] = { -- Mooncloth
+        name = "Mooncloth",
+        zone = "Moonglade",
+        start = { npc = "Najena", x = 51.5, y = 33.2 },
+        objectives = {
+            { type = "item", name = "Felcloth", spawns = {{0, 0}} },
+            { type = "item", name = "Mooncloth", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9626] = { -- Becoming a Mooncloth Tailor
+        name = "Becoming a Mooncloth Tailor",
+        zone = "Silithus",
+        start = { npc = "Nasmara Moonsong", x = 29.5, y = 70.2 },
+        objectives = {
+            { type = "item", name = "Mooncloth", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9627] = { -- Becoming a Shadoweave Tailor
+        name = "Becoming a Shadoweave Tailor",
+        zone = "Shadowmoon Valley",
+        start = { npc = "Andrion Darkspinner", x = 55.5, y = 24.5 },
+        objectives = {
+            { type = "item", name = "Shadowcloth", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6031] = { -- The Undermarket
+        name = "The Undermarket",
+        zone = "Undercity",
+        start = { npc = "Josef Gregorian", x = 70.5, y = 30.2 },
+        objectives = {
+            { type = "item", name = "Bolt of Runecloth", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6034] = { -- A Grim Discovery
+        name = "A Grim Discovery",
+        zone = "The Hinterlands",
+        start = { npc = "Aurora Skycaller", x = 13.5, y = 44.5 },
+        objectives = {
+            { type = "item", name = "Bolt of Mageweave", spawns = {{0, 0}} },
+            { type = "item", name = "Heavy Silken Thread", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6035] = { -- Fabric of Reality
+        name = "Fabric of Reality",
+        zone = "Scholomance",
+        start = { npc = "Spectral Tutor", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Bolt of Runecloth", spawns = {{0, 0}} },
+            { type = "item", name = "Felcloth", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6036] = { -- Shadoweave
+        name = "Shadoweave",
+        zone = "Undercity",
+        start = { npc = "Josephine Lister", x = 86.5, y = 22.5 },
+        objectives = {
+            { type = "item", name = "Felcloth", spawns = {{0, 0}} },
+            { type = "item", name = "Soul Shard", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5963] = { -- Arcane Runes
+        name = "Arcane Runes",
+        zone = "Azshara",
+        start = { npc = "Loremaster Lydros", x = 45.5, y = 55.2 },
+        objectives = {
+            { type = "item", name = "Runed Arcanite Rod", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5964] = { -- Return to the Highlands
+        name = "Return to the Highlands",
+        zone = "The Hinterlands",
+        start = { npc = "Loremaster Lydros", x = 45.5, y = 55.2 },
+        objectives = {
+            { type = "talk", name = "Aurora Skycaller", spawns = {{13.5, 44.5}} },
+        }
+    },
+    
+    -- ENCHANTING QUESTS
+    
+    [4463] = { -- Enchanting the Black Dragonflight
+        name = "Enchanting the Black Dragonflight",
+        zone = "Blackrock Mountain",
+        start = { npc = "Lothos Riftwaker", x = 29.5, y = 43.5 },
+        objectives = {
+            { type = "item", name = "Large Brilliant Shard", spawns = {{0, 0}} },
+            { type = "item", name = "Essence of Fire", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4464] = { -- Sigil of Trollbane
+        name = "Sigil of Trollbane",
+        zone = "Arathi Highlands",
+        start = { npc = "Trelane", x = 46.5, y = 47.2 },
+        objectives = {
+            { type = "item", name = "Sigil of Trollbane", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4500] = { -- Scrolls of Blinding Light
+        name = "Scrolls of Blinding Light",
+        zone = "Dire Maul",
+        start = { npc = "Shen'dralar Ancient", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Frayed Abomination Stitching", spawns = {{0, 0}} },
+            { type = "item", name = "Large Brilliant Shard", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4501] = { -- The Enchanted Leather
+        name = "The Enchanted Leather",
+        zone = "Dire Maul",
+        start = { npc = "Shen'dralar Ancient", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Rugged Leather", spawns = {{0, 0}} },
+            { type = "item", name = "Ghost Mushroom", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7650] = { -- Smoking Heart of the Mountain
+        name = "Smoking Heart of the Mountain",
+        zone = "Blackrock Depths",
+        start = { npc = "Gloom'rel", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Heart of Fire", spawns = {{0, 0}} },
+            { type = "item", name = "Star Ruby", spawns = {{0, 0}} },
+            { type = "item", name = "Black Diamond", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4466] = { -- Artisan Enchanting
+        name = "Artisan Enchanting",
+        zone = "Uldaman",
+        start = { npc = "Annora", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Greater Mystic Wand", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3517] = { -- Enchanted Thorium
+        name = "Enchanted Thorium",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Leonid Barthalomew the Revered", x = 81.5, y = 58.0 },
+        objectives = {
+            { type = "item", name = "Enchanted Thorium Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3518] = { -- Enchanted Elementium
+        name = "Enchanted Elementium",
+        zone = "Blackwing Lair",
+        start = { npc = "Blackwing Technician", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Enchanted Elementium Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ALCHEMY QUESTS
+    
+    [2500] = { -- Troll Temper
+        name = "Troll Temper",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Trenton Lighthammer", x = 51.5, y = 30.2 },
+        objectives = {
+            { type = "kill", name = "Jungle Troll", spawns = {
+                {36.5, 35.5}, {37.2, 34.8}, {38.5, 36.2}
+            }},
+            { type = "item", name = "Troll Temper", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2501] = { -- Artisan Alchemy
+        name = "Artisan Alchemy",
+        zone = "Tanaris",
+        start = { npc = "Alchemist Pestlezugg", x = 50.5, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Elixir of Detect Undead", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2502] = { -- Artisan Alchemy (Horde)
+        name = "Artisan Alchemy",
+        zone = "The Hinterlands",
+        start = { npc = "Apothecary Zinge", x = 66.5, y = 19.2 },
+        objectives = {
+            { type = "item", name = "Elixir of Detect Undead", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4142] = { -- Badlands Reagent Run
+        name = "Badlands Reagent Run",
+        zone = "Badlands",
+        start = { npc = "Jarkal Mossmeld", x = 42.5, y = 52.5 },
+        objectives = {
+            { type = "item", name = "Buzzard Gizzard", spawns = {{0, 0}} },
+            { type = "item", name = "Coyote Jawbone", spawns = {{0, 0}} },
+            { type = "item", name = "Rock Elemental Shard", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4143] = { -- Badlands Reagent Run II
+        name = "Badlands Reagent Run II",
+        zone = "Badlands",
+        start = { npc = "Jarkal Mossmeld", x = 42.5, y = 52.5 },
+        objectives = {
+            { type = "item", name = "Elder Coyote Hide", spawns = {{0, 0}} },
+            { type = "item", name = "Pitted Rock", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4144] = { -- Uldaman Reagent Run
+        name = "Uldaman Reagent Run",
+        zone = "Uldaman",
+        start = { npc = "Jarkal Mossmeld", x = 42.5, y = 52.5 },
+        objectives = {
+            { type = "item", name = "Magenta Fungus Cap", spawns = {{0, 0}} },
+            { type = "item", name = "Grimy Metal Scrap", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8586] = { -- Transmute: Arcanite
+        name = "Transmute: Arcanite",
+        zone = "Tanaris",
+        start = { npc = "Alchemist Pestlezugg", x = 50.5, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Thorium Bar", spawns = {{0, 0}} },
+            { type = "item", name = "Arcane Crystal", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8587] = { -- The Philosopher's Stone
+        name = "The Philosopher's Stone",
+        zone = "Tanaris",
+        start = { npc = "Alchemist Pestlezugg", x = 50.5, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Iron Bar", spawns = {{0, 0}} },
+            { type = "item", name = "Black Vitriol", spawns = {{0, 0}} },
+            { type = "item", name = "Purple Lotus", spawns = {{0, 0}} },
+            { type = "item", name = "Firebloom", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4621] = { -- Wildcrafting
+        name = "Wildcrafting",
+        zone = "Arathi Highlands",
+        start = { npc = "Apprentice Kryten", x = 41.5, y = 49.2 },
+        objectives = {
+            { type = "item", name = "Wildvine", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ENGINEERING QUESTS
+    
+    [3630] = { -- Gnomish Engineering
+        name = "Gnomish Engineering",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Tinkmaster Overspark", x = 51.5, y = 29.8 },
+        objectives = {
+            { type = "item", name = "Mithril Tube", spawns = {{0, 0}} },
+            { type = "item", name = "Accurate Scope", spawns = {{0, 0}} },
+            { type = "item", name = "Advanced Target Dummy", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3631] = { -- Gnomish Engineering (Alliance)
+        name = "Gnomish Engineering",
+        zone = "Ironforge",
+        start = { npc = "Springspindle Fizzlegear", x = 69.5, y = 50.2 },
+        objectives = {
+            { type = "item", name = "Mithril Tube", spawns = {{0, 0}} },
+            { type = "item", name = "Accurate Scope", spawns = {{0, 0}} },
+            { type = "item", name = "Advanced Target Dummy", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3632] = { -- Goblin Engineering
+        name = "Goblin Engineering",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Nixx Sprocketspring", x = 28.5, y = 76.5 },
+        objectives = {
+            { type = "item", name = "Big Iron Bomb", spawns = {{0, 0}} },
+            { type = "item", name = "Solid Dynamite", spawns = {{0, 0}} },
+            { type = "item", name = "Explosive Sheep", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3633] = { -- Goblin Engineering (Horde)
+        name = "Goblin Engineering",
+        zone = "Orgrimmar",
+        start = { npc = "Vazario Linkgrease", x = 75.2, y = 24.5 },
+        objectives = {
+            { type = "item", name = "Big Iron Bomb", spawns = {{0, 0}} },
+            { type = "item", name = "Solid Dynamite", spawns = {{0, 0}} },
+            { type = "item", name = "Explosive Sheep", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3635] = { -- Show Your Work
+        name = "Show Your Work",
+        zone = "Ironforge",
+        start = { npc = "Springspindle Fizzlegear", x = 69.5, y = 50.2 },
+        objectives = {
+            { type = "item", name = "Gnomish Cloaking Device", spawns = {{0, 0}} },
+            { type = "item", name = "Gnomish Shrink Ray", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3637] = { -- Show Your Work (Goblin)
+        name = "Show Your Work",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Nixx Sprocketspring", x = 28.5, y = 76.5 },
+        objectives = {
+            { type = "item", name = "Goblin Jumper Cables", spawns = {{0, 0}} },
+            { type = "item", name = "Goblin Mortar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3638] = { -- The Gnomish Blink Device
+        name = "The Gnomish Blink Device",
+        zone = "Tanaris",
+        start = { npc = "Buzzek Bracketswing", x = 52.5, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Gnomish Cloaking Device", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3639] = { -- The Goblin Rocket Helmet
+        name = "The Goblin Rocket Helmet",
+        zone = "Tanaris",
+        start = { npc = "Jhordy Lapforge", x = 52.5, y = 27.5 },
+        objectives = {
+            { type = "item", name = "Mithril Tube", spawns = {{0, 0}} },
+            { type = "item", name = "Star Ruby", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3640] = { -- The Big Payoff
+        name = "The Big Payoff",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Nixx Sprocketspring", x = 28.5, y = 76.5 },
+        objectives = {
+            { type = "item", name = "Gold Bar", spawns = {{0, 0}} },
+            { type = "item", name = "Mithril Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3641] = { -- Artisan Engineering
+        name = "Artisan Engineering",
+        zone = "Tanaris",
+        start = { npc = "Buzzek Bracketswing", x = 52.5, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Gyrochronatom", spawns = {{0, 0}} },
+            { type = "item", name = "Hi-Explosive Bomb", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3642] = { -- The Seaforium Necklace
+        name = "The Seaforium Necklace",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Nixx Sprocketspring", x = 28.5, y = 76.5 },
+        objectives = {
+            { type = "item", name = "Deepdive Helmet", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- COOKING QUESTS
+    
+    [6610] = { -- Artisan Cooking
+        name = "Artisan Cooking",
+        zone = "Tanaris",
+        start = { npc = "Dirge Quikcleave", x = 52.5, y = 29.2 },
+        objectives = {
+            { type = "item", name = "Tender Wolf Meat", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6612] = { -- Clamlette Surprise
+        name = "Clamlette Surprise",
+        zone = "Tanaris",
+        start = { npc = "Dirge Quikcleave", x = 52.5, y = 29.2 },
+        objectives = {
+            { type = "item", name = "Giant Egg", spawns = {{0, 0}} },
+            { type = "item", name = "Zesty Clam Meat", spawns = {{0, 0}} },
+            { type = "item", name = "Alterac Swiss", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8317] = { -- The Culinary Arts
+        name = "The Culinary Arts",
+        zone = "Silithus",
+        start = { npc = "Calandrath", x = 55.5, y = 37.5 },
+        objectives = {
+            { type = "item", name = "Sandworm Meat", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8586] = { -- Desert Recipe (Goblin)
+        name = "Desert Recipe",
+        zone = "Tanaris",
+        start = { npc = "Dirge Quikcleave", x = 52.5, y = 29.2 },
+        objectives = {
+            { type = "item", name = "Tender Wolf Meat", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8307] = { -- Sharing the Knowledge
+        name = "Sharing the Knowledge",
+        zone = "Silithus",
+        start = { npc = "Calandrath", x = 55.5, y = 37.5 },
+        objectives = {
+            { type = "item", name = "Smoked Desert Dumplings", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6611] = { -- I Know A Guy...
+        name = "I Know A Guy...",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Mudcrush Durtyfeet", x = 35.5, y = 30.2 },
+        objectives = {
+            { type = "talk", name = "Dirge Quikcleave", spawns = {{52.5, 29.2}} },
+        }
+    },
+    
+    [8584] = { -- Dirge's Kickin' Chimaerok Chops
+        name = "Dirge's Kickin' Chimaerok Chops",
+        zone = "Feralas",
+        start = { npc = "Dirge Quikcleave", x = 52.5, y = 29.2 },
+        objectives = {
+            { type = "item", name = "Chimaerok Tenderloin", spawns = {
+                {52.5, 21.5}, {51.8, 23.2}, {53.2, 22.5}
+            }},
+        }
+    },
+    
+    [6622] = { -- Keepin' the Haggis Flowin'
+        name = "Keepin' the Haggis Flowin'",
+        zone = "Alterac Mountains",
+        start = { npc = "Daryl the Youngling", x = 35.5, y = 80.2 },
+        objectives = {
+            { type = "item", name = "Mystery Meat", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1699] = { -- Stocking Up
+        name = "Stocking Up",
+        zone = "The Hinterlands",
+        start = { npc = "Gammerita", x = 77.5, y = 12.5 },
+        objectives = {
+            { type = "item", name = "Turtle Meat", spawns = {{0, 0}} },
+        }
+    },
+    
+    [555] = { -- Soothing Spices
+        name = "Soothing Spices",
+        zone = "Elwynn Forest",
+        start = { npc = "Tyler", x = 84.5, y = 69.2 },
+        objectives = {
+            { type = "item", name = "Soothing Spices", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8313] = { -- Kitchen Assistance
+        name = "Kitchen Assistance",
+        zone = "Silithus",
+        start = { npc = "Calandrath", x = 55.5, y = 37.5 },
+        objectives = {
+            { type = "item", name = "Rugged Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4161] = { -- Hot Righteous Fury
+        name = "Hot Righteous Fury",
+        zone = "The Barrens",
+        start = { npc = "Auld Stonespire", x = 52.5, y = 58.5 },
+        objectives = {
+            { type = "item", name = "Hot Wolf Ribs", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6164] = { -- Recipe of the Kaldorei
+        name = "Recipe of the Kaldorei",
+        zone = "Teldrassil",
+        start = { npc = "Zarrin", x = 57.0, y = 61.2 },
+        objectives = {
+            { type = "item", name = "Webwood Eggs", spawns = {
+                {57.5, 76.5}, {58.2, 75.8}, {59.5, 77.2}
+            }},
+            { type = "item", name = "Small Spider Leg", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- FISHING QUESTS
+    
+    [6607] = { -- Artisan Fishing - The Way of the Lure
+        name = "Artisan Fishing - The Way of the Lure",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Nat Pagle", x = 58.5, y = 60.0 },
+        objectives = {
+            { type = "item", name = "Feralas Ahi", spawns = {{0, 0}} },
+            { type = "item", name = "Misty Reed Mahi Mahi", spawns = {{0, 0}} },
+            { type = "item", name = "Sar'theris Striker", spawns = {{0, 0}} },
+            { type = "item", name = "Savage Coast Blue Sailfin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6608] = { -- Nat Pagle, Angler Extreme
+        name = "Nat Pagle, Angler Extreme",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Nat Pagle", x = 58.5, y = 60.0 },
+        objectives = {
+            { type = "item", name = "Dezian Queenfish", spawns = {{0, 0}} },
+            { type = "item", name = "Brownell's Blue Striped Racer", spawns = {{0, 0}} },
+            { type = "item", name = "Keefer's Angelfish", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8194] = { -- The Stranglethorn Fishing Extravaganza
+        name = "The Stranglethorn Fishing Extravaganza",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Riggle Bassbait", x = 27.5, y = 77.2 },
+        objectives = {
+            { type = "item", name = "Speckled Tastyfish", spawns = {
+                {28.5, 78.5}, {32.5, 45.5}, {34.2, 80.2}
+            }},
+        }
+    },
+    
+    [8193] = { -- Rare Fish - Brownell's Blue Striped Racer
+        name = "Rare Fish - Brownell's Blue Striped Racer",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Jang", x = 27.5, y = 77.5 },
+        objectives = {
+            { type = "item", name = "Brownell's Blue Striped Racer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8192] = { -- Rare Fish - Keefer's Angelfish
+        name = "Rare Fish - Keefer's Angelfish",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Jang", x = 27.5, y = 77.5 },
+        objectives = {
+            { type = "item", name = "Keefer's Angelfish", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8191] = { -- Rare Fish - Dezian Queenfish
+        name = "Rare Fish - Dezian Queenfish",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Jang", x = 27.5, y = 77.5 },
+        objectives = {
+            { type = "item", name = "Dezian Queenfish", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6609] = { -- The Lurker Above
+        name = "The Lurker Above",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Nat Pagle", x = 58.5, y = 60.0 },
+        objectives = {
+            { type = "kill", name = "The Lurker Below", spawns = {{59.5, 60.5}} },
+        }
+    },
+    
+    [6588] = { -- The Great Sambino
+        name = "The Great Sambino",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Katoom the Angler", x = 28.2, y = 77.5 },
+        objectives = {
+            { type = "item", name = "Glow-Whisker", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1580] = { -- Snapjaws, Mon!
+        name = "Snapjaws, Mon!",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Katoom the Angler", x = 28.2, y = 77.5 },
+        objectives = {
+            { type = "item", name = "Snapjaw Crocolisk Skin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8224] = { -- Apprentice Angler
+        name = "Apprentice Angler",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Fishbot 5000", x = 27.5, y = 77.2 },
+        objectives = {
+            { type = "item", name = "Baby Crocolisk", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8225] = { -- At Last!
+        name = "At Last!",
+        zone = "Orgrimmar",
+        start = { npc = "Lumak", x = 68.5, y = 43.2 },
+        objectives = {
+            { type = "item", name = "Big-mouth Clam", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- FIRST AID QUESTS
+    
+    [6622] = { -- Alliance Trauma
+        name = "Alliance Trauma",
+        zone = "Stormwind City",
+        start = { npc = "Nissa Firestone", x = 43.5, y = 82.8 },
+        objectives = {
+            { type = "talk", name = "Doctor Gustaf VanHowzen", spawns = {{68.5, 44.2}} },
+        }
+    },
+    
+    [6623] = { -- Horde Trauma
+        name = "Horde Trauma",
+        zone = "Orgrimmar",
+        start = { npc = "Arnok", x = 33.5, y = 30.8 },
+        objectives = {
+            { type = "talk", name = "Doctor Gregory Victor", spawns = {{75.5, 34.2}} },
+        }
+    },
+    
+    [6624] = { -- Triage (Alliance)
+        name = "Triage",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Doctor Gustaf VanHowzen", x = 68.5, y = 44.2 },
+        objectives = {
+            { type = "save", name = "Injured Soldier", spawns = {{68.5, 44.5}} },
+        }
+    },
+    
+    [6625] = { -- Triage (Horde)
+        name = "Triage",
+        zone = "Arathi Highlands",
+        start = { npc = "Doctor Gregory Victor", x = 75.5, y = 34.2 },
+        objectives = {
+            { type = "save", name = "Injured Soldier", spawns = {{75.5, 34.5}} },
+        }
+    },
+    
+    [6626] = { -- Binding Wounds (Alliance)
+        name = "Binding Wounds",
+        zone = "Theramore Isle",
+        start = { npc = "Doctor Gustaf VanHowzen", x = 68.5, y = 44.2 },
+        objectives = {
+            { type = "item", name = "Heavy Runecloth Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6627] = { -- Binding Wounds (Horde)
+        name = "Binding Wounds",
+        zone = "Hammerfall",
+        start = { npc = "Doctor Gregory Victor", x = 75.5, y = 34.2 },
+        objectives = {
+            { type = "item", name = "Heavy Runecloth Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- MINING QUESTS
+    
+    [2757] = { -- The Mithril Order (Mining)
+        name = "The Mithril Order",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Galvan the Ancient", x = 50.6, y = 20.5 },
+        objectives = {
+            { type = "item", name = "Mithril Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2758] = { -- Incendite
+        name = "Incendite",
+        zone = "Searing Gorge",
+        start = { npc = "Hansel Heavyhands", x = 38.5, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Incendite Ore", spawns = {
+                {41.5, 29.5}, {43.2, 31.8}, {39.8, 33.5}
+            }},
+        }
+    },
+    
+    [2759] = { -- Dark Iron Ore Collection
+        name = "Dark Iron Ore Collection",
+        zone = "Blackrock Depths",
+        start = { npc = "Hansel Heavyhands", x = 38.5, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Dark Iron Ore", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3802] = { -- Smelt Dark Iron
+        name = "Smelt Dark Iron",
+        zone = "Blackrock Depths",
+        start = { npc = "Gloom'rel", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Dark Iron Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3843] = { -- Elemental Fusion
+        name = "Elemental Fusion",
+        zone = "Blackrock Depths",
+        start = { npc = "Doom'rel", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Essence of Water", spawns = {{0, 0}} },
+            { type = "item", name = "Essence of Air", spawns = {{0, 0}} },
+            { type = "item", name = "Essence of Earth", spawns = {{0, 0}} },
+            { type = "item", name = "Essence of Fire", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- HERBALISM QUESTS
+    
+    [3784] = { -- Gathering the Herbs
+        name = "Gathering the Herbs",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Sanath Lim-yo", x = 27.5, y = 77.5 },
+        objectives = {
+            { type = "item", name = "Purple Lotus", spawns = {{0, 0}} },
+            { type = "item", name = "Wildvine", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3785] = { -- The Videre Elixir
+        name = "The Videre Elixir",
+        zone = "Moonglade",
+        start = { npc = "Rabine Saturna", x = 51.5, y = 44.8 },
+        objectives = {
+            { type = "item", name = "Balnir Snapvine", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3786] = { -- Recipe for Maneweave
+        name = "Recipe for Maneweave",
+        zone = "The Barrens",
+        start = { npc = "Shenthul", x = 73.5, y = 45.8 },
+        objectives = {
+            { type = "item", name = "Silverleaf", spawns = {{0, 0}} },
+            { type = "item", name = "Earthroot", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3787] = { -- Dreamfoil for the Cenarion Circle
+        name = "Dreamfoil for the Cenarion Circle",
+        zone = "Silithus",
+        start = { npc = "Windcaller Proudhorn", x = 51.5, y = 38.5 },
+        objectives = {
+            { type = "item", name = "Dreamfoil", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3788] = { -- Morrowgrain Research
+        name = "Morrowgrain Research",
+        zone = "Moonglade",
+        start = { npc = "Arch Druid Fandral Staghelm", x = 39.5, y = 85.8 },
+        objectives = {
+            { type = "item", name = "Morrowgrain", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- SKINNING QUESTS
+    
+    [2500] = { -- Skinning Badlands Beasts
+        name = "Skinning Badlands Beasts",
+        zone = "Badlands",
+        start = { npc = "Flaernn", x = 42.5, y = 52.5 },
+        objectives = {
+            { type = "item", name = "Coyote Hide", spawns = {{0, 0}} },
+            { type = "item", name = "Buzzard Wing", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2501] = { -- Wild Leather Leggings
+        name = "Wild Leather Leggings",
+        zone = "Feralas",
+        start = { npc = "Pratt McGrubben", x = 30.5, y = 42.8 },
+        objectives = {
+            { type = "item", name = "Thick Leather", spawns = {{0, 0}} },
+            { type = "item", name = "Wildvine", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2502] = { -- Devilsaur Leather
+        name = "Devilsaur Leather",
+        zone = "Un'Goro Crater",
+        start = { npc = "Torwa Pathfinder", x = 71.5, y = 76.2 },
+        objectives = {
+            { type = "kill", name = "Devilsaur", spawns = {
+                {62.5, 62.5}, {70.2, 50.8}, {49.5, 55.2}
+            }},
+            { type = "item", name = "Devilsaur Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2503] = { -- The Mighty U'cha
+        name = "The Mighty U'cha",
+        zone = "Un'Goro Crater",
+        start = { npc = "Torwa Pathfinder", x = 71.5, y = 76.2 },
+        objectives = {
+            { type = "kill", name = "U'cha", spawns = {{68.5, 56.5}} },
+            { type = "item", name = "U'cha's Pelt", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2504] = { -- Winterfall Skinning
+        name = "Winterfall Skinning",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 62.5, y = 37.5 },
+        objectives = {
+            { type = "item", name = "Winterfall Frozen Tissue", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ============================================
+    -- REPUTATION FACTION QUESTS
+    -- ============================================
+    
+    -- ========== ARGENT DAWN ==========
+    
+    [5501] = { -- Argent Dawn Commission
+        name = "Argent Dawn Commission",
+        zone = "Western Plaguelands",
+        start = { npc = "Argent Officer Pureheart", x = 43.0, y = 83.5 },
+        objectives = {
+            { type = "talk", name = "Argent Officer Pureheart", spawns = {{43.0, 83.5}} },
+        }
+    },
+    
+    [5002] = { -- Minion's Scourgestones
+        name = "Minion's Scourgestones",
+        zone = "Western Plaguelands",
+        start = { npc = "Argent Officer Pureheart", x = 43.0, y = 83.5 },
+        objectives = {
+            { type = "item", name = "Minion's Scourgestone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5003] = { -- Invader's Scourgestones
+        name = "Invader's Scourgestones",
+        zone = "Western Plaguelands",
+        start = { npc = "Argent Officer Pureheart", x = 43.0, y = 83.5 },
+        objectives = {
+            { type = "item", name = "Invader's Scourgestone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5004] = { -- Corruptor's Scourgestones
+        name = "Corruptor's Scourgestones",
+        zone = "Western Plaguelands",
+        start = { npc = "Argent Officer Pureheart", x = 43.0, y = 83.5 },
+        objectives = {
+            { type = "item", name = "Corruptor's Scourgestone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5508] = { -- The Restless Souls
+        name = "The Restless Souls",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Caretaker Alen", x = 79.5, y = 63.2 },
+        objectives = {
+            { type = "talk", name = "Ghost of Uther Lightbringer", spawns = {{52.2, 83.4}} },
+        }
+    },
+    
+    [5801] = { -- Skeletal Fragments
+        name = "Skeletal Fragments",
+        zone = "Western Plaguelands",
+        start = { npc = "Argent Quartermaster Hasana", x = 43.0, y = 84.5 },
+        objectives = {
+            { type = "item", name = "Skeletal Fragments", spawns = {
+                {54.5, 23.5}, {52.8, 35.2}, {48.5, 42.1}, {61.2, 52.5}
+            }},
+        }
+    },
+    
+    [5509] = { -- Scholomance
+        name = "Scholomance",
+        zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.8, y = 84.0 },
+        objectives = {
+            { type = "kill", name = "Darkmaster Gandling", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5511] = { -- Araj's Scarab
+        name = "Araj's Scarab",
+        zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.8, y = 84.0 },
+        objectives = {
+            { type = "kill", name = "Araj the Summoner", spawns = {{45.5, 69.2}} },
+            { type = "item", name = "Araj's Scarab", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5512] = { -- The Key to Scholomance
+        name = "The Key to Scholomance",
+        zone = "Western Plaguelands",
+        start = { npc = "Alchemist Arbington", x = 42.5, y = 83.8 },
+        objectives = {
+            { type = "item", name = "Skeleton Key", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5213] = { -- The So-Called Mark of the Lightbringer
+        name = "The So-Called Mark of the Lightbringer",
+        zone = "Western Plaguelands",
+        start = { npc = "Lord Raymond George", x = 42.5, y = 84.0 },
+        objectives = {
+            { type = "item", name = "Mark of the Lightbringer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5282] = { -- Zaeldarr the Outcast
+        name = "Zaeldarr the Outcast",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Caretaker Alen", x = 79.5, y = 63.2 },
+        objectives = {
+            { type = "kill", name = "Zaeldarr the Outcast", spawns = {{27.5, 85.2}} },
+            { type = "item", name = "Zaeldarr's Head", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5241] = { -- Dispelling Evil
+        name = "Dispelling Evil",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Caretaker Alen", x = 79.5, y = 63.2 },
+        objectives = {
+            { type = "use", name = "Holy Water", spawns = {{27.5, 85.2}} },
+        }
+    },
+    
+    [5240] = { -- Annals of the Silver Hand
+        name = "Annals of the Silver Hand",
+        zone = "Stratholme",
+        start = { npc = "Caretaker Alen", x = 79.5, y = 63.2 },
+        objectives = {
+            { type = "item", name = "Annals of the Silver Hand", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5251] = { -- The Battle of Darrowshire
+        name = "The Battle of Darrowshire",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Carlin Redpath", x = 81.5, y = 59.8 },
+        objectives = {
+            { type = "use", name = "Relic Bundle", spawns = {{35.0, 84.0}} },
+        }
+    },
+    
+    [5742] = { -- Demon Dogs
+        name = "Demon Dogs",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.5 },
+        objectives = {
+            { type = "kill", name = "Plaguehound Runt", spawns = {
+                {17.5, 32.5}, {19.2, 35.8}, {22.5, 30.2}
+            }},
+        }
+    },
+    
+    [5743] = { -- Carrion Grubbage
+        name = "Carrion Grubbage",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.5 },
+        objectives = {
+            { type = "item", name = "Slab of Carrion Worm Meat", spawns = {
+                {21.5, 68.2}, {25.8, 72.5}, {28.2, 65.8}
+            }},
+        }
+    },
+    
+    [5944] = { -- Of Forgotten Memories
+        name = "Of Forgotten Memories",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.5 },
+        objectives = {
+            { type = "item", name = "Taelan's Hammer", spawns = {{28.5, 86.5}} },
+        }
+    },
+    
+    [5862] = { -- Redemption
+        name = "Redemption",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.5 },
+        objectives = {
+            { type = "talk", name = "Highlord Taelan Fordring", spawns = {{43.5, 14.8}} },
+        }
+    },
+    
+    [5066] = { -- Plagued Hatchlings
+        name = "Plagued Hatchlings",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Betina Bigglezink", x = 81.5, y = 59.5 },
+        objectives = {
+            { type = "kill", name = "Plagued Hatchling", spawns = {
+                {58.5, 72.5}, {61.2, 70.8}, {63.5, 75.2}
+            }},
+        }
+    },
+    
+    [5542] = { -- The Marris Stead
+        name = "The Marris Stead",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Nathanos Blightcaller", x = 26.8, y = 74.5 },
+        objectives = {
+            { type = "talk", name = "Marin Noggenfogger", spawns = {{52.5, 29.2}} },
+        }
+    },
+    
+    [5544] = { -- Augustus' Receipt Book
+        name = "Augustus' Receipt Book",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Egan", x = 12.5, y = 34.0 },
+        objectives = {
+            { type = "item", name = "Augustus' Receipt Book", spawns = {{28.5, 79.5}} },
+        }
+    },
+    
+    [6021] = { -- A Plague Upon Thee
+        name = "A Plague Upon Thee",
+        zone = "Western Plaguelands",
+        start = { npc = "Flint Shadowmore", x = 53.0, y = 64.5 },
+        objectives = {
+            { type = "item", name = "Termite Mound", spawns = {
+                {56.5, 35.5}, {54.2, 38.8}, {58.5, 32.2}
+            }},
+        }
+    },
+    
+    [6022] = { -- A Plague Upon Thee
+        name = "A Plague Upon Thee",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Flint Shadowmore", x = 53.0, y = 64.5 },
+        objectives = {
+            { type = "use", name = "Crate of Termites", spawns = {{64.5, 43.5}} },
+        }
+    },
+    
+    [5529] = { -- Villains of Darrowshire
+        name = "Villains of Darrowshire",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Carlin Redpath", x = 81.5, y = 59.8 },
+        objectives = {
+            { type = "item", name = "Skull of Horgus", spawns = {{32.5, 45.5}} },
+            { type = "item", name = "Shattered Sword of Marduk", spawns = {{55.5, 65.5}} },
+        }
+    },
+    
+    [5181] = { -- Target: Dalson's Tears
+        name = "Target: Dalson's Tears",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 43.0, y = 84.5 },
+        objectives = {
+            { type = "kill", name = "Cauldron Lord Malvinious", spawns = {{47.2, 50.8}} },
+        }
+    },
+    
+    [5219] = { -- Target: Felstone Field
+        name = "Target: Felstone Field",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 43.0, y = 84.5 },
+        objectives = {
+            { type = "kill", name = "Cauldron Lord Bilemaw", spawns = {{37.8, 56.5}} },
+        }
+    },
+    
+    [5220] = { -- Target: Writhing Haunt
+        name = "Target: Writhing Haunt",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 43.0, y = 84.5 },
+        objectives = {
+            { type = "kill", name = "Cauldron Lord Razarch", spawns = {{52.5, 66.2}} },
+        }
+    },
+    
+    [5221] = { -- Target: Gahrron's Withering
+        name = "Target: Gahrron's Withering",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 43.0, y = 84.5 },
+        objectives = {
+            { type = "kill", name = "Cauldron Lord Soulwrath", spawns = {{62.8, 58.2}} },
+        }
+    },
+    
+    -- ========== CENARION CIRCLE ==========
+    
+    [8279] = { -- Desert Survival Kits
+        name = "Desert Survival Kits",
+        zone = "Silithus",
+        start = { npc = "Logistics Officer Silverstone", x = 52.5, y = 39.5 },
+        objectives = {
+            { type = "item", name = "Runecloth", spawns = {{0, 0}} },
+            { type = "item", name = "Rugged Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8281] = { -- Cenarion Logistics
+        name = "Cenarion Logistics",
+        zone = "Silithus",
+        start = { npc = "Windcaller Proudhorn", x = 51.5, y = 38.5 },
+        objectives = {
+            { type = "talk", name = "Logistics Officer Silverstone", spawns = {{52.5, 39.5}} },
+        }
+    },
+    
+    [8282] = { -- Twilight Cultists
+        name = "Twilight Cultists",
+        zone = "Silithus",
+        start = { npc = "Hermit Ortell", x = 68.5, y = 62.5 },
+        objectives = {
+            { type = "item", name = "Twilight Cultist Mantle", spawns = {{0, 0}} },
+            { type = "item", name = "Twilight Cultist Cowl", spawns = {{0, 0}} },
+            { type = "item", name = "Twilight Cultist Robe", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8283] = { -- Encrypted Twilight Texts
+        name = "Encrypted Twilight Texts",
+        zone = "Silithus",
+        start = { npc = "Hermit Ortell", x = 68.5, y = 62.5 },
+        objectives = {
+            { type = "item", name = "Encrypted Twilight Text", spawns = {
+                {22.5, 15.8}, {25.2, 18.5}, {28.8, 12.2}, {35.5, 25.5}
+            }},
+        }
+    },
+    
+    [8284] = { -- Hive'Ashi Rubbing
+        name = "Hive'Ashi Rubbing",
+        zone = "Silithus",
+        start = { npc = "Rutgar Glyphshaper", x = 54.5, y = 36.2 },
+        objectives = {
+            { type = "use", name = "Hive'Ashi Silithid Idol", spawns = {{56.5, 18.5}} },
+        }
+    },
+    
+    [8285] = { -- Hive'Zora Rubbing
+        name = "Hive'Zora Rubbing",
+        zone = "Silithus",
+        start = { npc = "Rutgar Glyphshaper", x = 54.5, y = 36.2 },
+        objectives = {
+            { type = "use", name = "Hive'Zora Silithid Idol", spawns = {{31.5, 42.5}} },
+        }
+    },
+    
+    [8286] = { -- Hive'Regal Rubbing
+        name = "Hive'Regal Rubbing",
+        zone = "Silithus",
+        start = { npc = "Rutgar Glyphshaper", x = 54.5, y = 36.2 },
+        objectives = {
+            { type = "use", name = "Hive'Regal Silithid Idol", spawns = {{60.5, 55.5}} },
+        }
+    },
+    
+    [8287] = { -- The Twilight Lexicon
+        name = "The Twilight Lexicon",
+        zone = "Silithus",
+        start = { npc = "Hermit Ortell", x = 68.5, y = 62.5 },
+        objectives = {
+            { type = "item", name = "Twilight Lexicon - Chapter 1", spawns = {{23.5, 16.5}} },
+            { type = "item", name = "Twilight Lexicon - Chapter 2", spawns = {{28.5, 20.2}} },
+            { type = "item", name = "Twilight Lexicon - Chapter 3", spawns = {{35.5, 28.8}} },
+        }
+    },
+    
+    [8288] = { -- Twilight Geolords
+        name = "Twilight Geolords",
+        zone = "Silithus",
+        start = { npc = "Huum Wildmane", x = 49.5, y = 36.8 },
+        objectives = {
+            { type = "kill", name = "Twilight Geolord", spawns = {
+                {25.5, 14.5}, {28.2, 18.8}, {32.5, 22.5}
+            }},
+        }
+    },
+    
+    [8289] = { -- Twilight Marauders
+        name = "Twilight Marauders",
+        zone = "Silithus",
+        start = { npc = "Huum Wildmane", x = 49.5, y = 36.8 },
+        objectives = {
+            { type = "kill", name = "Twilight Marauder", spawns = {
+                {38.5, 48.5}, {42.2, 52.8}, {35.5, 55.5}
+            }},
+            { type = "item", name = "Twilight Marauder's Supplies", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8290] = { -- Return to Huum
+        name = "Return to Huum",
+        zone = "Silithus",
+        start = { npc = "Frankal Stonebridge", x = 64.5, y = 50.2 },
+        objectives = {
+            { type = "talk", name = "Huum Wildmane", spawns = {{49.5, 36.8}} },
+        }
+    },
+    
+    [8291] = { -- Abyssal Scepters
+        name = "Abyssal Scepters",
+        zone = "Silithus",
+        start = { npc = "Bor Wildmane", x = 51.5, y = 37.8 },
+        objectives = {
+            { type = "item", name = "Abyssal Scepter", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8292] = { -- Abyssal Crests
+        name = "Abyssal Crests",
+        zone = "Silithus",
+        start = { npc = "Bor Wildmane", x = 51.5, y = 37.8 },
+        objectives = {
+            { type = "item", name = "Abyssal Crest", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8293] = { -- Abyssal Signets
+        name = "Abyssal Signets",
+        zone = "Silithus",
+        start = { npc = "Bor Wildmane", x = 51.5, y = 37.8 },
+        objectives = {
+            { type = "item", name = "Abyssal Signet", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8294] = { -- Field Duty
+        name = "Field Duty",
+        zone = "Silithus",
+        start = { npc = "Windcaller Proudhorn", x = 51.5, y = 38.5 },
+        objectives = {
+            { type = "talk", name = "Cenarion Scout", spawns = {{38.5, 42.5}} },
+        }
+    },
+    
+    [8295] = { -- Report to the High Commander
+        name = "Report to the High Commander",
+        zone = "Silithus",
+        start = { npc = "Cenarion Scout", x = 38.5, y = 42.5 },
+        objectives = {
+            { type = "talk", name = "High Commander Dorana", spawns = {{50.5, 38.2}} },
+        }
+    },
+    
+    [8296] = { -- The Perfect Poison
+        name = "The Perfect Poison",
+        zone = "Silithus",
+        start = { npc = "Dirge Quikcleave", x = 52.5, y = 29.2 },
+        objectives = {
+            { type = "item", name = "Silithid Venom Sample", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8297] = { -- True Believers
+        name = "True Believers",
+        zone = "Silithus",
+        start = { npc = "Geologist Larksbane", x = 53.5, y = 35.5 },
+        objectives = {
+            { type = "kill", name = "Twilight Prophet", spawns = {
+                {25.5, 16.5}, {28.8, 14.2}, {32.5, 18.8}
+            }},
+        }
+    },
+    
+    [8298] = { -- Still Believing
+        name = "Still Believing",
+        zone = "Silithus",
+        start = { npc = "Geologist Larksbane", x = 53.5, y = 35.5 },
+        objectives = {
+            { type = "item", name = "Twilight Cultist Medal of Station", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8299] = { -- Mortal Champions
+        name = "Mortal Champions",
+        zone = "Silithus",
+        start = { npc = "Windcaller Proudhorn", x = 51.5, y = 38.5 },
+        objectives = {
+            { type = "talk", name = "High Commander Dorana", spawns = {{50.5, 38.2}} },
+        }
+    },
+    
+    [8301] = { -- Dearest Natalia
+        name = "Dearest Natalia",
+        zone = "Silithus",
+        start = { npc = "Commander Mar'alith", x = 49.5, y = 37.5 },
+        objectives = {
+            { type = "item", name = "Natalia's Belongings", spawns = {{29.5, 88.5}} },
+        }
+    },
+    
+    -- ========== TIMBERMAW HOLD ==========
+    
+    [8460] = { -- Feathers for Nafien
+        name = "Feathers for Nafien",
+        zone = "Felwood",
+        start = { npc = "Nafien", x = 64.8, y = 8.2 },
+        objectives = {
+            { type = "item", name = "Deadwood Headdress Feather", spawns = {
+                {62.5, 10.5}, {60.8, 14.2}, {58.5, 12.8}
+            }},
+        }
+    },
+    
+    [8461] = { -- Feathers for Grazle
+        name = "Feathers for Grazle",
+        zone = "Felwood",
+        start = { npc = "Grazle", x = 51.5, y = 85.2 },
+        objectives = {
+            { type = "item", name = "Deadwood Headdress Feather", spawns = {
+                {48.5, 88.5}, {46.2, 90.2}, {50.5, 92.8}
+            }},
+        }
+    },
+    
+    [8462] = { -- Beads for Salfa
+        name = "Beads for Salfa",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 27.8, y = 34.5 },
+        objectives = {
+            { type = "item", name = "Winterfall Spirit Beads", spawns = {
+                {66.5, 38.5}, {68.2, 35.8}, {64.8, 40.2}
+            }},
+        }
+    },
+    
+    [8464] = { -- Timbermaw Ally
+        name = "Timbermaw Ally",
+        zone = "Felwood",
+        start = { npc = "Gorn One Eye", x = 64.5, y = 10.2 },
+        objectives = {
+            { type = "talk", name = "Salfa", spawns = {{27.8, 34.5}} },
+        }
+    },
+    
+    [8465] = { -- Speak to Nafien
+        name = "Speak to Nafien",
+        zone = "Felwood",
+        start = { npc = "Grazle", x = 51.5, y = 85.2 },
+        objectives = {
+            { type = "talk", name = "Nafien", spawns = {{64.8, 8.2}} },
+        }
+    },
+    
+    [8466] = { -- Runecloth
+        name = "Runecloth",
+        zone = "Felwood",
+        start = { npc = "Meilosh", x = 65.5, y = 2.5 },
+        objectives = {
+            { type = "item", name = "Runecloth", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8467] = { -- Sacred Cloth
+        name = "Sacred Cloth",
+        zone = "Felwood",
+        start = { npc = "Meilosh", x = 65.5, y = 2.5 },
+        objectives = {
+            { type = "item", name = "Mooncloth", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8468] = { -- Deadwood of the North
+        name = "Deadwood of the North",
+        zone = "Felwood",
+        start = { npc = "Nafien", x = 64.8, y = 8.2 },
+        objectives = {
+            { type = "kill", name = "Deadwood Shaman", spawns = {
+                {62.5, 12.5}, {60.8, 15.2}, {58.5, 18.8}
+            }},
+            { type = "kill", name = "Deadwood Gardener", spawns = {
+                {61.5, 14.5}, {59.2, 16.8}, {63.5, 10.5}
+            }},
+        }
+    },
+    
+    [8469] = { -- Deadwood of the South
+        name = "Deadwood of the South",
+        zone = "Felwood",
+        start = { npc = "Grazle", x = 51.5, y = 85.2 },
+        objectives = {
+            { type = "kill", name = "Deadwood Avenger", spawns = {
+                {48.5, 90.5}, {45.2, 88.8}, {50.5, 92.2}
+            }},
+            { type = "kill", name = "Deadwood Den Watcher", spawns = {
+                {47.5, 91.5}, {49.2, 89.8}, {51.5, 93.5}
+            }},
+        }
+    },
+    
+    [8470] = { -- Winterfall Intrusion
+        name = "Winterfall Intrusion",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 27.8, y = 34.5 },
+        objectives = {
+            { type = "kill", name = "Winterfall Ursa", spawns = {
+                {64.5, 40.5}, {66.2, 38.8}, {68.5, 35.5}
+            }},
+            { type = "kill", name = "Winterfall Shaman", spawns = {
+                {65.5, 42.5}, {67.8, 36.2}, {63.5, 38.8}
+            }},
+        }
+    },
+    
+    [8471] = { -- Winterfall Activity
+        name = "Winterfall Activity",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 27.8, y = 34.5 },
+        objectives = {
+            { type = "item", name = "Winterfall Crate", spawns = {{67.5, 37.5}} },
+        }
+    },
+    
+    [8472] = { -- High Chief Winterfall
+        name = "High Chief Winterfall",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 27.8, y = 34.5 },
+        objectives = {
+            { type = "kill", name = "High Chief Winterfall", spawns = {{68.5, 37.2}} },
+            { type = "item", name = "Head of High Chief Winterfall", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8473] = { -- Winterfall Firewater
+        name = "Winterfall Firewater",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 27.8, y = 34.5 },
+        objectives = {
+            { type = "item", name = "Empty Firewater Flask", spawns = {{65.5, 38.5}} },
+        }
+    },
+    
+    [8474] = { -- Falling to Corruption
+        name = "Falling to Corruption",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 27.8, y = 34.5 },
+        objectives = {
+            { type = "item", name = "Winterfall Ritual Totem", spawns = {{67.2, 36.8}} },
+        }
+    },
+    
+    -- ========== THORIUM BROTHERHOOD ==========
+    
+    [7604] = { -- Dark Iron Ore
+        name = "Dark Iron Ore",
+        zone = "Searing Gorge",
+        start = { npc = "Lokhtos Darkbargainer", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Dark Iron Ore", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7605] = { -- Fiery Core
+        name = "Fiery Core",
+        zone = "Searing Gorge",
+        start = { npc = "Lokhtos Darkbargainer", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Fiery Core", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7607] = { -- Lava Core
+        name = "Lava Core",
+        zone = "Searing Gorge",
+        start = { npc = "Lokhtos Darkbargainer", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Lava Core", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7608] = { -- Core Leather
+        name = "Core Leather",
+        zone = "Searing Gorge",
+        start = { npc = "Lokhtos Darkbargainer", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Core Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7609] = { -- Blood of the Mountain
+        name = "Blood of the Mountain",
+        zone = "Searing Gorge",
+        start = { npc = "Lokhtos Darkbargainer", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Blood of the Mountain", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7610] = { -- Iron Bars
+        name = "Iron Bars",
+        zone = "Searing Gorge",
+        start = { npc = "Master Smith Burninate", x = 38.2, y = 28.5 },
+        objectives = {
+            { type = "item", name = "Iron Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7611] = { -- Heavy Leather
+        name = "Heavy Leather",
+        zone = "Searing Gorge",
+        start = { npc = "Master Smith Burninate", x = 38.2, y = 28.5 },
+        objectives = {
+            { type = "item", name = "Heavy Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7612] = { -- Kingsblood
+        name = "Kingsblood",
+        zone = "Searing Gorge",
+        start = { npc = "Master Smith Burninate", x = 38.2, y = 28.5 },
+        objectives = {
+            { type = "item", name = "Kingsblood", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7613] = { -- Incendosaur Scales
+        name = "Incendosaur Scales",
+        zone = "Searing Gorge",
+        start = { npc = "Master Smith Burninate", x = 38.2, y = 28.5 },
+        objectives = {
+            { type = "item", name = "Incendosaur Scale", spawns = {
+                {48.5, 75.5}, {52.2, 78.8}, {46.8, 72.5}
+            }},
+        }
+    },
+    
+    [7614] = { -- Coal
+        name = "Coal",
+        zone = "Searing Gorge",
+        start = { npc = "Master Smith Burninate", x = 38.2, y = 28.5 },
+        objectives = {
+            { type = "item", name = "Coal", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ========== HYDRAXIAN WATERLORDS ==========
+    
+    [6804] = { -- Poisoned Water
+        name = "Poisoned Water",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Duke Hydraxis", x = 79.5, y = 73.5 },
+        objectives = {
+            { type = "item", name = "Discordant Bracers", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6805] = { -- Stormers and Rumblers
+        name = "Stormers and Rumblers",
+        zone = "Silithus",
+        start = { npc = "Duke Hydraxis", x = 79.5, y = 73.5 },
+        objectives = {
+            { type = "kill", name = "Desert Rumbler", spawns = {
+                {28.5, 72.5}, {32.2, 68.8}, {35.5, 75.2}
+            }},
+            { type = "kill", name = "Desert Stormer", spawns = {
+                {30.5, 70.5}, {34.2, 66.8}, {37.5, 73.2}
+            }},
+        }
+    },
+    
+    [6806] = { -- Eye of the Emberseer
+        name = "Eye of the Emberseer",
+        zone = "Azshara",
+        start = { npc = "Duke Hydraxis", x = 79.5, y = 73.5 },
+        objectives = {
+            { type = "item", name = "Eye of the Emberseer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6807] = { -- The Molten Core
+        name = "The Molten Core",
+        zone = "Azshara",
+        start = { npc = "Duke Hydraxis", x = 79.5, y = 73.5 },
+        objectives = {
+            { type = "kill", name = "Firelord", spawns = {{0, 0}} },
+            { type = "kill", name = "Molten Giant", spawns = {{0, 0}} },
+            { type = "kill", name = "Ancient Core Hound", spawns = {{0, 0}} },
+            { type = "kill", name = "Lava Surger", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6808] = { -- Agent of Hydraxis
+        name = "Agent of Hydraxis",
+        zone = "Azshara",
+        start = { npc = "Duke Hydraxis", x = 79.5, y = 73.5 },
+        objectives = {
+            { type = "talk", name = "Duke Hydraxis", spawns = {{79.5, 73.5}} },
+        }
+    },
+    
+    [6821] = { -- Hands of the Enemy
+        name = "Hands of the Enemy",
+        zone = "Azshara",
+        start = { npc = "Duke Hydraxis", x = 79.5, y = 73.5 },
+        objectives = {
+            { type = "item", name = "Hands of Lucifron", spawns = {{0, 0}} },
+            { type = "item", name = "Hands of Sulfuron", spawns = {{0, 0}} },
+            { type = "item", name = "Hands of Gehennas", spawns = {{0, 0}} },
+            { type = "item", name = "Hands of Shazzrah", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6822] = { -- A Hero's Reward
+        name = "A Hero's Reward",
+        zone = "Azshara",
+        start = { npc = "Duke Hydraxis", x = 79.5, y = 73.5 },
+        objectives = {
+            { type = "talk", name = "Duke Hydraxis", spawns = {{79.5, 73.5}} },
+        }
+    },
+    
+    [6823] = { -- Aqual Quintessence
+        name = "Aqual Quintessence",
+        zone = "Azshara",
+        start = { npc = "Duke Hydraxis", x = 79.5, y = 73.5 },
+        objectives = {
+            { type = "item", name = "Aqual Quintessence", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ========== WINTERSABER TRAINERS ==========
+    
+    [4970] = { -- Frostsaber Provisions
+        name = "Frostsaber Provisions",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.5, y = 9.5 },
+        objectives = {
+            { type = "item", name = "Shardtooth Meat", spawns = {
+                {58.5, 52.5}, {55.2, 48.8}, {62.5, 55.2}
+            }},
+            { type = "item", name = "Chillwind Meat", spawns = {
+                {52.5, 62.5}, {48.8, 58.2}, {55.5, 66.8}
+            }},
+        }
+    },
+    
+    [4971] = { -- Winterfall Intrusion (Wintersaber)
+        name = "Winterfall Intrusion",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.5, y = 9.5 },
+        objectives = {
+            { type = "kill", name = "Winterfall Shaman", spawns = {
+                {66.5, 40.5}, {68.2, 38.8}, {64.8, 42.2}
+            }},
+            { type = "kill", name = "Winterfall Ursa", spawns = {
+                {65.5, 42.5}, {67.8, 36.2}, {63.5, 38.8}
+            }},
+            { type = "kill", name = "Winterfall Den Watcher", spawns = {
+                {67.5, 37.5}, {64.2, 40.2}, {69.5, 35.5}
+            }},
+        }
+    },
+    
+    [4972] = { -- Rampaging Giants
+        name = "Rampaging Giants",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.5, y = 9.5 },
+        objectives = {
+            { type = "kill", name = "Frostmaul Giant", spawns = {
+                {64.5, 72.5}, {67.2, 68.8}, {62.5, 75.2}
+            }},
+            { type = "kill", name = "Frostmaul Preserver", spawns = {
+                {66.5, 70.5}, {63.8, 74.2}, {68.5, 66.8}
+            }},
+        }
+    },
+    
+    [4973] = { -- Frostsaber Trainers
+        name = "Frostsaber Trainers",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.5, y = 9.5 },
+        objectives = {
+            { type = "talk", name = "Rivern Frostwind", spawns = {{49.5, 9.5}} },
+        }
+    },
+    
+    [4974] = { -- The Winterspring Frostsaber
+        name = "The Winterspring Frostsaber",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.5, y = 9.5 },
+        objectives = {
+            { type = "talk", name = "Rivern Frostwind", spawns = {{49.5, 9.5}} },
+        }
+    },
+    
+    -- ========== ZANDALAR TRIBE ==========
+    
+    [8147] = { -- A Collection of Heads
+        name = "A Collection of Heads",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Exzhal", x = 15.5, y = 15.2 },
+        objectives = {
+            { type = "item", name = "Channeler's Head", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8148] = { -- Nat's Measuring Tape
+        name = "Nat's Measuring Tape",
+        zone = "Zul'Gurub",
+        start = { npc = "Nat Pagle", x = 58.5, y = 60.0 },
+        objectives = {
+            { type = "item", name = "Nat's Measuring Tape", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8150] = { -- Animist's Caress
+        name = "Animist's Caress",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Vinchaxa", x = 15.2, y = 15.5 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Idol", spawns = {{0, 0}} },
+            { type = "item", name = "Punctured Voodoo Doll", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8151] = { -- Paragons of Power: The Augur's Belt
+        name = "Paragons of Power: The Augur's Belt",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Vinchaxa", x = 15.2, y = 15.5 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Girdle", spawns = {{0, 0}} },
+            { type = "item", name = "Zulian Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Razzashi Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Hakkari Coin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8152] = { -- Paragons of Power: The Augur's Bracers
+        name = "Paragons of Power: The Augur's Bracers",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Vinchaxa", x = 15.2, y = 15.5 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Bindings", spawns = {{0, 0}} },
+            { type = "item", name = "Gurubashi Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Vilebranch Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Witherbark Coin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8153] = { -- Paragons of Power: The Augur's Hauberk
+        name = "Paragons of Power: The Augur's Hauberk",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Vinchaxa", x = 15.2, y = 15.5 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Aegis", spawns = {{0, 0}} },
+            { type = "item", name = "Sandfury Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Skullsplitter Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Bloodscalp Coin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8154] = { -- Paragons of Power: The Confessor's Bindings
+        name = "Paragons of Power: The Confessor's Bindings",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Al'tabim the All-Seeing", x = 14.8, y = 15.8 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Bindings", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8155] = { -- Paragons of Power: The Confessor's Mantle
+        name = "Paragons of Power: The Confessor's Mantle",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Al'tabim the All-Seeing", x = 14.8, y = 15.8 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Shawl", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8156] = { -- Paragons of Power: The Confessor's Wraps
+        name = "Paragons of Power: The Confessor's Wraps",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Al'tabim the All-Seeing", x = 14.8, y = 15.8 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Stanchion", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8157] = { -- Paragons of Power: The Demoniac's Mantle
+        name = "Paragons of Power: The Demoniac's Mantle",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Jin'rokh the Breaker", x = 15.5, y = 16.2 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Shawl", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8158] = { -- Paragons of Power: The Demoniac's Robes
+        name = "Paragons of Power: The Demoniac's Robes",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Jin'rokh the Breaker", x = 15.5, y = 16.2 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Tabard", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8159] = { -- Paragons of Power: The Demoniac's Wraps
+        name = "Paragons of Power: The Demoniac's Wraps",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Jin'rokh the Breaker", x = 15.5, y = 16.2 },
+        objectives = {
+            { type = "item", name = "Primal Hakkari Stanchion", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8160] = { -- The Madness of the High Priest
+        name = "The Madness of the High Priest",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Exzhal", x = 15.5, y = 15.2 },
+        objectives = {
+            { type = "kill", name = "High Priest Thekal", spawns = {{0, 0}} },
+            { type = "item", name = "Thekal's Grasp", spawns = {{0, 0}} },
+            { type = "item", name = "Arlokk's Grasp", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8183] = { -- Zulian, Razzashi, and Hakkari Coins
+        name = "Zulian, Razzashi, and Hakkari Coins",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Vinchaxa", x = 15.2, y = 15.5 },
+        objectives = {
+            { type = "item", name = "Zulian Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Razzashi Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Hakkari Coin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8184] = { -- Gurubashi, Vilebranch, and Witherbark Coins
+        name = "Gurubashi, Vilebranch, and Witherbark Coins",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Vinchaxa", x = 15.2, y = 15.5 },
+        objectives = {
+            { type = "item", name = "Gurubashi Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Vilebranch Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Witherbark Coin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8185] = { -- Sandfury, Skullsplitter, and Bloodscalp Coins
+        name = "Sandfury, Skullsplitter, and Bloodscalp Coins",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Vinchaxa", x = 15.2, y = 15.5 },
+        objectives = {
+            { type = "item", name = "Sandfury Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Skullsplitter Coin", spawns = {{0, 0}} },
+            { type = "item", name = "Bloodscalp Coin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8186] = { -- A Bijou for Zanza
+        name = "A Bijou for Zanza",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Vinchaxa", x = 15.2, y = 15.5 },
+        objectives = {
+            { type = "item", name = "Zandalar Honor Token", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ========== BROOD OF NOZDORMU ==========
+    
+    [8286] = { -- The Path of the Righteous
+        name = "The Path of the Righteous",
+        zone = "Silithus",
+        start = { npc = "Baristolth of the Shifting Sands", x = 52.5, y = 35.8 },
+        objectives = {
+            { type = "item", name = "Silithid Carapace Fragment", spawns = {
+                {40.5, 42.5}, {45.2, 48.8}, {38.5, 55.2}
+            }},
+        }
+    },
+    
+    [8288] = { -- The Hand of the Righteous
+        name = "The Hand of the Righteous",
+        zone = "Silithus",
+        start = { npc = "Baristolth of the Shifting Sands", x = 52.5, y = 35.8 },
+        objectives = {
+            { type = "item", name = "Silithid Chitin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8301] = { -- Anachronos
+        name = "Anachronos",
+        zone = "Tanaris",
+        start = { npc = "Baristolth of the Shifting Sands", x = 52.5, y = 35.8 },
+        objectives = {
+            { type = "talk", name = "Anachronos", spawns = {{65.5, 49.5}} },
+        }
+    },
+    
+    [8302] = { -- Long Forgotten Memories
+        name = "Long Forgotten Memories",
+        zone = "Tanaris",
+        start = { npc = "Anachronos", x = 65.5, y = 49.5 },
+        objectives = {
+            { type = "use", name = "Crystalline Tear", spawns = {{51.5, 39.5}} },
+        }
+    },
+    
+    [8303] = { -- A Pawn on the Eternal Board
+        name = "A Pawn on the Eternal Board",
+        zone = "Tanaris",
+        start = { npc = "Anachronos", x = 65.5, y = 49.5 },
+        objectives = {
+            { type = "item", name = "Proxy of Nozdormu", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8304] = { -- The Charge of the Dragonflights
+        name = "The Charge of the Dragonflights",
+        zone = "Tanaris",
+        start = { npc = "Anachronos", x = 65.5, y = 49.5 },
+        objectives = {
+            { type = "item", name = "Red Shard of the Scepter", spawns = {{0, 0}} },
+            { type = "item", name = "Green Shard of the Scepter", spawns = {{0, 0}} },
+            { type = "item", name = "Blue Shard of the Scepter", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8305] = { -- Eranikus, Tyrant of the Dream
+        name = "Eranikus, Tyrant of the Dream",
+        zone = "Moonglade",
+        start = { npc = "Malfurion Stormrage", x = 52.5, y = 40.5 },
+        objectives = {
+            { type = "kill", name = "Eranikus", spawns = {{45.5, 55.5}} },
+        }
+    },
+    
+    [8306] = { -- Vaelastrasz's Quest
+        name = "Vaelastrasz's Quest",
+        zone = "Blackrock Mountain",
+        start = { npc = "Vaelastrasz", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Baristolth of the Shifting Sands", spawns = {{52.5, 35.8}} },
+        }
+    },
+    
+    [8308] = { -- Nefarius's Corruption
+        name = "Nefarius's Corruption",
+        zone = "Blackrock Mountain",
+        start = { npc = "Vaelastrasz", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Red Scepter Shard", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8309] = { -- Azuregos's Magical Ledger
+        name = "Azuregos's Magical Ledger",
+        zone = "Azshara",
+        start = { npc = "Spirit of Azuregos", x = 54.5, y = 64.5 },
+        objectives = {
+            { type = "item", name = "Magical Ledger", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8310] = { -- Translating the Ledger
+        name = "Translating the Ledger",
+        zone = "Azshara",
+        start = { npc = "Narain Soothfancy", x = 66.5, y = 10.5 },
+        objectives = {
+            { type = "item", name = "Translated Ledger", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8311] = { -- The Good News and The Bad News
+        name = "The Good News and The Bad News",
+        zone = "Tanaris",
+        start = { npc = "Narain Soothfancy", x = 66.5, y = 10.5 },
+        objectives = {
+            { type = "talk", name = "Maws", spawns = {{70.5, 85.5}} },
+        }
+    },
+    
+    [8312] = { -- Draconic For Dummies
+        name = "Draconic For Dummies",
+        zone = "Tanaris",
+        start = { npc = "Narain Soothfancy", x = 66.5, y = 10.5 },
+        objectives = {
+            { type = "item", name = "Draconic For Dummies: Volume II", spawns = {{0, 0}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- DUNGEON QUESTS
+    -----------------------------------------
+    
+    -- ===== THE DEADMINES =====
+    
+    [166] = { -- The Defias Brotherhood
+        name = "The Defias Brotherhood",
+        zone = "Westfall",
+        start = { npc = "Gryan Stoutmantle", x = 56.3, y = 47.5 },
+        objectives = {
+            { type = "talk", name = "The Defias Traitor", spawns = {{56.5, 52.6}} },
+        }
+    },
+    
+    [168] = { -- The Defias Brotherhood (Final)
+        name = "The Defias Brotherhood",
+        zone = "The Deadmines",
+        start = { npc = "Gryan Stoutmantle", x = 56.3, y = 47.5 },
+        objectives = {
+            { type = "kill", name = "Edwin VanCleef", spawns = {{0, 0}} },
+        }
+    },
+    
+    [214] = { -- Red Silk Bandanas
+        name = "Red Silk Bandanas",
+        zone = "The Deadmines",
+        start = { npc = "Scout Riell", x = 56.5, y = 47.1 },
+        objectives = {
+            { type = "item", name = "Red Silk Bandana", spawns = {{0, 0}} },
+        }
+    },
+    
+    [167] = { -- Collecting Memories
+        name = "Collecting Memories",
+        zone = "The Deadmines",
+        start = { npc = "Wilder Thistlenettle", x = 29.8, y = 54.4 },
+        objectives = {
+            { type = "item", name = "Miners' Union Card", spawns = {{0, 0}} },
+        }
+    },
+    
+    [373] = { -- The Unsent Letter
+        name = "The Unsent Letter",
+        zone = "Stormwind City",
+        start = { npc = "Edwin VanCleef", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Baros Alexston", spawns = {{57.6, 47.8}} },
+        }
+    },
+    
+    -- ===== WAILING CAVERNS =====
+    
+    [914] = { -- Deviate Eradication
+        name = "Deviate Eradication",
+        zone = "Wailing Caverns",
+        start = { npc = "Ebru", x = 46.7, y = 36.8 },
+        objectives = {
+            { type = "kill", name = "Deviate Ravager", spawns = {{0, 0}} },
+            { type = "kill", name = "Deviate Viper", spawns = {{0, 0}} },
+            { type = "kill", name = "Deviate Shambler", spawns = {{0, 0}} },
+            { type = "kill", name = "Deviate Dreadfang", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1487] = { -- Deviate Hides
+        name = "Deviate Hides",
+        zone = "Wailing Caverns",
+        start = { npc = "Nalpak", x = 47.1, y = 36.6 },
+        objectives = {
+            { type = "item", name = "Deviate Hide", spawns = {{0, 0}} },
+        }
+    },
+    
+    [962] = { -- Serpentbloom
+        name = "Serpentbloom",
+        zone = "Wailing Caverns",
+        start = { npc = "Apothecary Zamah", x = 22.4, y = 20.8 },
+        objectives = {
+            { type = "item", name = "Serpentbloom", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1486] = { -- Leaders of the Fang
+        name = "Leaders of the Fang",
+        zone = "Wailing Caverns",
+        start = { npc = "Nara Wildmane", x = 75.1, y = 31.1 },
+        objectives = {
+            { type = "kill", name = "Lord Cobrahn", spawns = {{0, 0}} },
+            { type = "kill", name = "Lord Pythas", spawns = {{0, 0}} },
+            { type = "kill", name = "Lord Anacondra", spawns = {{0, 0}} },
+            { type = "kill", name = "Lord Serpentis", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3370] = { -- The Glowing Shard
+        name = "The Glowing Shard",
+        zone = "The Barrens",
+        start = { npc = "Mutanus the Devourer", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Falla Sagewind", spawns = {{46.8, 36.0}} },
+        }
+    },
+    
+    -- ===== STOCKADES =====
+    
+    [377] = { -- Crime and Punishment
+        name = "Crime and Punishment",
+        zone = "Stormwind Stockade",
+        start = { npc = "Councilman Millstipe", x = 34.8, y = 64.1 },
+        objectives = {
+            { type = "item", name = "Hand of Dextren Ward", spawns = {{0, 0}} },
+        }
+    },
+    
+    [378] = { -- The Fury Runs Deep
+        name = "The Fury Runs Deep",
+        zone = "Stormwind Stockade",
+        start = { npc = "Motley Garmason", x = 70.9, y = 47.6 },
+        objectives = {
+            { type = "kill", name = "Kam Deepfury", spawns = {{0, 0}} },
+        }
+    },
+    
+    [386] = { -- The Color of Blood
+        name = "The Color of Blood",
+        zone = "Stormwind Stockade",
+        start = { npc = "Nikova Raskol", x = 72.2, y = 58.5 },
+        objectives = {
+            { type = "item", name = "Red Wool Bandana", spawns = {{0, 0}} },
+        }
+    },
+    
+    [387] = { -- Quell The Uprising
+        name = "Quell The Uprising",
+        zone = "Stormwind Stockade",
+        start = { npc = "Warden Thelwater", x = 41.0, y = 57.9 },
+        objectives = {
+            { type = "kill", name = "Defias Prisoner", spawns = {{0, 0}} },
+            { type = "kill", name = "Defias Convict", spawns = {{0, 0}} },
+            { type = "kill", name = "Defias Insurgent", spawns = {{0, 0}} },
+            { type = "kill", name = "Defias Inmate", spawns = {{0, 0}} },
+        }
+    },
+    
+    [388] = { -- What Comes Around...
+        name = "What Comes Around...",
+        zone = "Stormwind Stockade",
+        start = { npc = "Guard Berton", x = 26.8, y = 17.6 },
+        objectives = {
+            { type = "item", name = "Head of Targorr the Dread", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== SHADOWFANG KEEP =====
+    
+    [1013] = { -- Deathstalkers in Shadowfang
+        name = "Deathstalkers in Shadowfang",
+        zone = "Shadowfang Keep",
+        start = { npc = "High Executor Hadrec", x = 43.4, y = 40.9 },
+        objectives = {
+            { type = "talk", name = "Deathstalker Adamant", spawns = {{0, 0}} },
+            { type = "talk", name = "Deathstalker Vincent", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1014] = { -- The Book of Ur
+        name = "The Book of Ur",
+        zone = "Shadowfang Keep",
+        start = { npc = "Keeper Bel'dugur", x = 53.8, y = 54.5 },
+        objectives = {
+            { type = "item", name = "The Book of Ur", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1098] = { -- Arugal Must Die
+        name = "Arugal Must Die",
+        zone = "Shadowfang Keep",
+        start = { npc = "Dalar Dawnweaver", x = 44.9, y = 39.3 },
+        objectives = {
+            { type = "kill", name = "Archmage Arugal", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1740] = { -- The Orb of Soran'ruk (Warlock)
+        name = "The Orb of Soran'ruk",
+        zone = "Shadowfang Keep",
+        start = { npc = "Doan Karhan", x = 49.0, y = 57.1 },
+        objectives = {
+            { type = "item", name = "Soran'ruk Fragment", spawns = {{0, 0}} },
+            { type = "item", name = "Large Soran'ruk Fragment", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1919] = { -- Arugal's Folly (Final)
+        name = "Arugal's Folly",
+        zone = "Silverpine Forest",
+        start = { npc = "Dalar Dawnweaver", x = 44.9, y = 39.3 },
+        objectives = {
+            { type = "item", name = "Arugal's Head", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== BLACKFATHOM DEEPS =====
+    
+    [971] = { -- Blackfathom Villainy (Alliance)
+        name = "Blackfathom Villainy",
+        zone = "Blackfathom Deeps",
+        start = { npc = "Argent Guard Thaelrid", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Head of Kelris", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1199] = { -- Researching the Corruption
+        name = "Researching the Corruption",
+        zone = "Blackfathom Deeps",
+        start = { npc = "Gershala Nightwhisper", x = 38.3, y = 43.0 },
+        objectives = {
+            { type = "item", name = "Corrupted Brain Stem", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1200] = { -- Twilight Falls
+        name = "Twilight Falls",
+        zone = "Blackfathom Deeps",
+        start = { npc = "Argent Guard Manados", x = 38.7, y = 41.6 },
+        objectives = {
+            { type = "item", name = "Twilight Pendant", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6563] = { -- Baron Aquanis
+        name = "Baron Aquanis",
+        zone = "The Barrens",
+        start = { npc = "Baron Aquanis", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Je'neu Sancrea", spawns = {{11.6, 34.3}} },
+        }
+    },
+    
+    [6921] = { -- Amongst the Ruins
+        name = "Amongst the Ruins",
+        zone = "Blackfathom Deeps",
+        start = { npc = "Je'neu Sancrea", x = 11.6, y = 34.3 },
+        objectives = {
+            { type = "item", name = "Fathom Core", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6922] = { -- The Essence of Aku'Mai
+        name = "The Essence of Aku'Mai",
+        zone = "Blackfathom Deeps",
+        start = { npc = "Je'neu Sancrea", x = 11.6, y = 34.3 },
+        objectives = {
+            { type = "item", name = "Sapphire of Aku'Mai", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== GNOMEREGAN =====
+    
+    [2904] = { -- Gnogaine
+        name = "Gnogaine",
+        zone = "Gnomeregan",
+        start = { npc = "Ozzie Togglevolt", x = 46.0, y = 52.6 },
+        objectives = {
+            { type = "item", name = "Irradiated Brain Stem", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2922] = { -- The Day After
+        name = "The Day After",
+        zone = "Gnomeregan",
+        start = { npc = "High Tinker Mekkatorque", x = 68.6, y = 10.2 },
+        objectives = {
+            { type = "item", name = "Emitter Switch", spawns = {{0, 0}} },
+            { type = "item", name = "Emitter Fluid", spawns = {{0, 0}} },
+            { type = "item", name = "Pressure Valve", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2924] = { -- Save Techbot's Brain!
+        name = "Save Techbot's Brain!",
+        zone = "Gnomeregan",
+        start = { npc = "Tinkmaster Overspark", x = 69.4, y = 50.1 },
+        objectives = {
+            { type = "item", name = "Techbot's Memory Core", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2928] = { -- The Sparklematic 5200!
+        name = "The Sparklematic 5200!",
+        zone = "Gnomeregan",
+        start = { npc = "The Sparklematic 5200", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Grime-Encrusted Object", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2929] = { -- Gyrodrillmatic Excavationators
+        name = "Gyrodrillmatic Excavationators",
+        zone = "Gnomeregan",
+        start = { npc = "Shoni the Shilent", x = 55.5, y = 12.5 },
+        objectives = {
+            { type = "item", name = "Robo-mechanical Guts", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2930] = { -- A Fine Mess
+        name = "A Fine Mess",
+        zone = "Gnomeregan",
+        start = { npc = "Kernobee", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Scooty", spawns = {{27.1, 77.5}} },
+        }
+    },
+    
+    [2945] = { -- The Grand Betrayal
+        name = "The Grand Betrayal",
+        zone = "Gnomeregan",
+        start = { npc = "High Tinker Mekkatorque", x = 68.6, y = 10.2 },
+        objectives = {
+            { type = "kill", name = "Mekgineer Thermaplugg", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2951] = { -- Data Rescue
+        name = "Data Rescue",
+        zone = "Gnomeregan",
+        start = { npc = "Master Mechanic Castpipe", x = 67.3, y = 10.4 },
+        objectives = {
+            { type = "item", name = "White Punch Card", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== RAZORFEN KRAUL =====
+    
+    [1101] = { -- Willix the Importer
+        name = "Willix the Importer",
+        zone = "Razorfen Kraul",
+        start = { npc = "Willix the Importer", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Willix the Importer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1142] = { -- Mortality Wanes
+        name = "Mortality Wanes",
+        zone = "Razorfen Kraul",
+        start = { npc = "Heralath Fallowbrook", x = 35.4, y = 52.1 },
+        objectives = {
+            { type = "item", name = "Heart of Agamaggan", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1144] = { -- Blueleaf Tubers
+        name = "Blueleaf Tubers",
+        zone = "Razorfen Kraul",
+        start = { npc = "Mebok Mizzyrix", x = 45.6, y = 58.6 },
+        objectives = {
+            { type = "item", name = "Blueleaf Tuber", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6522] = { -- The Crone of the Kraul
+        name = "The Crone of the Kraul",
+        zone = "Razorfen Kraul",
+        start = { npc = "Falfindel Waywarder", x = 36.9, y = 72.8 },
+        objectives = {
+            { type = "kill", name = "Charlga Razorflank", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1221] = { -- A Vengeful Fate
+        name = "A Vengeful Fate",
+        zone = "Razorfen Kraul",
+        start = { npc = "Auld Stonespire", x = 44.8, y = 59.2 },
+        objectives = {
+            { type = "kill", name = "Overlord Ramtusk", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== SCARLET MONASTERY =====
+    
+    [1048] = { -- Into The Scarlet Monastery
+        name = "Into The Scarlet Monastery",
+        zone = "Scarlet Monastery",
+        start = { npc = "Dark Cleric Duesten", x = 66.8, y = 17.6 },
+        objectives = {
+            { type = "item", name = "High Inquisitor Whitemane's Head", spawns = {{0, 0}} },
+            { type = "item", name = "Scarlet Commander Mograine's Head", spawns = {{0, 0}} },
+            { type = "item", name = "Herod's Head", spawns = {{0, 0}} },
+            { type = "item", name = "Houndmaster Loksey's Head", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1049] = { -- Compendium of the Fallen
+        name = "Compendium of the Fallen",
+        zone = "Scarlet Monastery",
+        start = { npc = "Sage Truthseeker", x = 35.6, y = 34.1 },
+        objectives = {
+            { type = "item", name = "Compendium of the Fallen", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1050] = { -- Mythology of the Titans
+        name = "Mythology of the Titans",
+        zone = "Scarlet Monastery",
+        start = { npc = "Librarian Mae Paledust", x = 74.5, y = 11.3 },
+        objectives = {
+            { type = "item", name = "Mythology of the Titans", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1051] = { -- Rituals of Power
+        name = "Rituals of Power",
+        zone = "Scarlet Monastery",
+        start = { npc = "Tabetha", x = 46.0, y = 57.0 },
+        objectives = {
+            { type = "item", name = "Rituals of Power", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1053] = { -- Hearts of Zeal
+        name = "Hearts of Zeal",
+        zone = "Scarlet Monastery",
+        start = { npc = "Master Apothecary Faranell", x = 50.5, y = 68.0 },
+        objectives = {
+            { type = "item", name = "Heart of Zeal", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1113] = { -- Down the Scarlet Path
+        name = "Down the Scarlet Path",
+        zone = "Scarlet Monastery",
+        start = { npc = "Brother Anton", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Ravager's Head", spawns = {{0, 0}} },
+            { type = "item", name = "Firebrand Legion's Head", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1160] = { -- Test of Lore (Final, Library)
+        name = "Test of Lore",
+        zone = "Scarlet Monastery",
+        start = { npc = "Parqual Fintallas", x = 62.1, y = 21.2 },
+        objectives = {
+            { type = "item", name = "Beginnings of the Undead Threat", spawns = {{0, 0}} },
+        }
+    },
+    
+    [1222] = { -- Vorrel's Revenge
+        name = "Vorrel's Revenge",
+        zone = "Scarlet Monastery",
+        start = { npc = "Vorrel Sengutz", x = 0, y = 0 },
+        objectives = {
+            { type = "kill", name = "Nancy Vishas", spawns = {{31.2, 32.2}} },
+        }
+    },
+    
+    [3525] = { -- In the Name of the Light
+        name = "In the Name of the Light",
+        zone = "Scarlet Monastery",
+        start = { npc = "Raleigh the Devout", x = 51.3, y = 31.3 },
+        objectives = {
+            { type = "kill", name = "High Inquisitor Whitemane", spawns = {{0, 0}} },
+            { type = "kill", name = "Scarlet Commander Mograine", spawns = {{0, 0}} },
+            { type = "kill", name = "Herod", spawns = {{0, 0}} },
+            { type = "kill", name = "Houndmaster Loksey", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== RAZORFEN DOWNS =====
+    
+    [3341] = { -- Bring the Light
+        name = "Bring the Light",
+        zone = "Razorfen Downs",
+        start = { npc = "Archbishop Benedictus", x = 39.8, y = 27.4 },
+        objectives = {
+            { type = "kill", name = "Amnennar the Coldbringer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3523] = { -- Bring the End
+        name = "Bring the End",
+        zone = "Razorfen Downs",
+        start = { npc = "Andrew Brownell", x = 69.5, y = 42.9 },
+        objectives = {
+            { type = "kill", name = "Amnennar the Coldbringer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3525] = { -- A Host of Evil
+        name = "A Host of Evil",
+        zone = "Razorfen Downs",
+        start = { npc = "Myriam Moonsinger", x = 49.6, y = 94.4 },
+        objectives = {
+            { type = "kill", name = "Razorfen Battleguard", spawns = {{0, 0}} },
+            { type = "kill", name = "Razorfen Thornweaver", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3636] = { -- Scourge of the Downs
+        name = "Scourge of the Downs",
+        zone = "Razorfen Downs",
+        start = { npc = "Belnistrasz", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Belnistrasz", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6626] = { -- An Unholy Alliance
+        name = "An Unholy Alliance",
+        zone = "Razorfen Downs",
+        start = { npc = "Varimathras", x = 56.3, y = 92.0 },
+        objectives = {
+            { type = "item", name = "Ambassador Malcin's Head", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== ULDAMAN =====
+    
+    [704] = { -- Agmond's Fate
+        name = "Agmond's Fate",
+        zone = "Uldaman",
+        start = { npc = "Prospector Ironband", x = 21.9, y = 77.4 },
+        objectives = {
+            { type = "item", name = "Agmond's Journal", spawns = {{0, 0}} },
+        }
+    },
+    
+    [709] = { -- A Sign of Hope
+        name = "A Sign of Hope",
+        zone = "Uldaman",
+        start = { npc = "Prospector Ryedol", x = 53.9, y = 43.5 },
+        objectives = {
+            { type = "talk", name = "Prospector Ryedol", spawns = {{53.9, 43.5}} },
+        }
+    },
+    
+    [721] = { -- Solution to Doom
+        name = "Solution to Doom",
+        zone = "Uldaman",
+        start = { npc = "Tablet of Will", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Theldurin the Lost", spawns = {{51.4, 76.5}} },
+        }
+    },
+    
+    [2198] = { -- Indurium
+        name = "Indurium",
+        zone = "Uldaman",
+        start = { npc = "Martek the Exiled", x = 42.4, y = 52.8 },
+        objectives = {
+            { type = "item", name = "Indurium Ore", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2199] = { -- The Lost Dwarves
+        name = "The Lost Dwarves",
+        zone = "Uldaman",
+        start = { npc = "Prospector Stormpike", x = 75.6, y = 11.8 },
+        objectives = {
+            { type = "talk", name = "Baelog", spawns = {{0, 0}} },
+            { type = "talk", name = "Eric 'The Swift'", spawns = {{0, 0}} },
+            { type = "talk", name = "Olaf", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2200] = { -- Uldaman Reagent Run
+        name = "Uldaman Reagent Run",
+        zone = "Uldaman",
+        start = { npc = "Jarkal Mossmeld", x = 4.0, y = 74.0 },
+        objectives = {
+            { type = "item", name = "Magenta Fungus Cap", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2201] = { -- A Dark Threat Looms
+        name = "A Dark Threat Looms",
+        zone = "Uldaman",
+        start = { npc = "Advisor Belgrum", x = 77.0, y = 10.2 },
+        objectives = {
+            { type = "item", name = "Obsidian Power Source", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2418] = { -- Power Stones
+        name = "Power Stones",
+        zone = "Uldaman",
+        start = { npc = "Rigglefuzz", x = 42.4, y = 52.8 },
+        objectives = {
+            { type = "item", name = "Dentrium Power Stone", spawns = {{0, 0}} },
+            { type = "item", name = "An'Alleum Power Stone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2278] = { -- The Platinum Discs
+        name = "The Platinum Discs",
+        zone = "Uldaman",
+        start = { npc = "Norgannon", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "High Explorer Magellas", spawns = {{69.8, 18.6}} },
+        }
+    },
+    
+    [2398] = { -- The Shattered Necklace
+        name = "The Shattered Necklace",
+        zone = "Uldaman",
+        start = { npc = "Shattered Necklace", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Talvash del Kissel", spawns = {{36.0, 3.0}} },
+        }
+    },
+    
+    -- ===== ZUL'FARRAK =====
+    
+    [2768] = { -- Troll Temper
+        name = "Troll Temper",
+        zone = "Zul'Farrak",
+        start = { npc = "Trenton Lighthammer", x = 51.4, y = 28.8 },
+        objectives = {
+            { type = "item", name = "Troll Temper", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2770] = { -- Divino-matic Rod
+        name = "Divino-matic Rod",
+        zone = "Zul'Farrak",
+        start = { npc = "Chief Engineer Bilgewhizzle", x = 52.4, y = 28.4 },
+        objectives = {
+            { type = "item", name = "Divino-matic Rod", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2846] = { -- Scarab Shells
+        name = "Scarab Shells",
+        zone = "Zul'Farrak",
+        start = { npc = "Tran'rek", x = 51.6, y = 26.8 },
+        objectives = {
+            { type = "item", name = "Uncracked Scarab Shell", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2936] = { -- The Prophecy of Mosh'aru
+        name = "The Prophecy of Mosh'aru",
+        zone = "Zul'Farrak",
+        start = { npc = "Yeh'kinya", x = 67.0, y = 22.4 },
+        objectives = {
+            { type = "item", name = "First Mosh'aru Tablet", spawns = {{0, 0}} },
+            { type = "item", name = "Second Mosh'aru Tablet", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2865] = { -- Tiara of the Deep
+        name = "Tiara of the Deep",
+        zone = "Zul'Farrak",
+        start = { npc = "Tabetha", x = 46.0, y = 57.0 },
+        objectives = {
+            { type = "kill", name = "Hydromancer Velratha", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2991] = { -- Gahz'rilla
+        name = "Gahz'rilla",
+        zone = "Zul'Farrak",
+        start = { npc = "Wizzle Brassbolts", x = 77.1, y = 77.2 },
+        objectives = {
+            { type = "kill", name = "Gahz'rilla", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3042] = { -- Nekrum's Medallion
+        name = "Nekrum's Medallion",
+        zone = "Zul'Farrak",
+        start = { npc = "Thadius Grimshade", x = 66.1, y = 20.2 },
+        objectives = {
+            { type = "kill", name = "Nekrum Gutchewer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [2977] = { -- Prisoners of the Great Pyramid
+        name = "Prisoners of the Great Pyramid",
+        zone = "Zul'Farrak",
+        start = { npc = "Sergeant Bly", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Sergeant Bly", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== MARAUDON =====
+    
+    [7044] = { -- Shadowshard Fragments
+        name = "Shadowshard Fragments",
+        zone = "Maraudon",
+        start = { npc = "Archmage Xylem", x = 29.5, y = 40.5 },
+        objectives = {
+            { type = "item", name = "Shadowshard Fragment", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7028] = { -- Twisted Evils
+        name = "Twisted Evils",
+        zone = "Maraudon",
+        start = { npc = "Willow", x = 29.1, y = 62.6 },
+        objectives = {
+            { type = "item", name = "Theradric Crystal Carving", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7029] = { -- Vyletongue Corruption
+        name = "Vyletongue Corruption",
+        zone = "Maraudon",
+        start = { npc = "Talendria", x = 27.8, y = 62.8 },
+        objectives = {
+            { type = "item", name = "Corrupt Seed", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7070] = { -- Legends of Maraudon
+        name = "Legends of Maraudon",
+        zone = "Maraudon",
+        start = { npc = "Cavindra", x = 29.3, y = 62.6 },
+        objectives = {
+            { type = "item", name = "Celebrian Rod", spawns = {{0, 0}} },
+            { type = "item", name = "Celebrian Diamond", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7041] = { -- The Corruption of the Earth
+        name = "The Corruption of the Earth",
+        zone = "Maraudon",
+        start = { npc = "Keeper Marandis", x = 29.3, y = 62.4 },
+        objectives = {
+            { type = "kill", name = "Princess Theradras", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7046] = { -- The Pariah's Instructions
+        name = "The Pariah's Instructions",
+        zone = "Maraudon",
+        start = { npc = "Centaur Pariah", x = 44.5, y = 86.0 },
+        objectives = {
+            { type = "item", name = "Amulet of Union", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== SUNKEN TEMPLE =====
+    
+    [3373] = { -- Into the Temple of Atal'Hakkar
+        name = "Into the Temple of Atal'Hakkar",
+        zone = "Temple of Atal'Hakkar",
+        start = { npc = "Atal'ai Exile", x = 61.8, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Secret of the Circle", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3380] = { -- The Temple of Atal'Hakkar
+        name = "The Temple of Atal'Hakkar",
+        zone = "Temple of Atal'Hakkar",
+        start = { npc = "Brohann Caskbelly", x = 64.4, y = 20.8 },
+        objectives = {
+            { type = "item", name = "Atal'ai Stone Circle", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3445] = { -- Zapper Fuel
+        name = "Zapper Fuel",
+        zone = "Temple of Atal'Hakkar",
+        start = { npc = "Larion", x = 52.8, y = 47.6 },
+        objectives = {
+            { type = "item", name = "Zapper Fuel", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3446] = { -- Venom Bottle
+        name = "Venom Bottle",
+        zone = "Temple of Atal'Hakkar",
+        start = { npc = "Larion", x = 52.8, y = 47.6 },
+        objectives = {
+            { type = "item", name = "Venom Bottle", spawns = {{0, 0}} },
+        }
+    },
+    
+    [3447] = { -- The God Hakkar
+        name = "The God Hakkar",
+        zone = "Temple of Atal'Hakkar",
+        start = { npc = "Yeh'kinya", x = 67.0, y = 22.4 },
+        objectives = {
+            { type = "kill", name = "Avatar of Hakkar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4143] = { -- The Sunken Temple
+        name = "The Sunken Temple",
+        zone = "Temple of Atal'Hakkar",
+        start = { npc = "Marvon Rivetseeker", x = 52.5, y = 45.3 },
+        objectives = {
+            { type = "talk", name = "Atal'ai Defender", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8422] = { -- Jammal'an the Prophet
+        name = "Jammal'an the Prophet",
+        zone = "Temple of Atal'Hakkar",
+        start = { npc = "Atal'ai Exile", x = 61.8, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Head of Jammal'an", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9053] = { -- The Essence of Eranikus
+        name = "The Essence of Eranikus",
+        zone = "Temple of Atal'Hakkar",
+        start = { npc = "Essence of Eranikus", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Itharius", spawns = {{13.4, 54.1}} },
+        }
+    },
+    
+    -- ===== BLACKROCK DEPTHS =====
+    
+    [4001] = { -- Dark Iron Legacy
+        name = "Dark Iron Legacy",
+        zone = "Blackrock Depths",
+        start = { npc = "Franclorn Forgewright", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Ironfel", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4123] = { -- Ribbly Screwspigot
+        name = "Ribbly Screwspigot",
+        zone = "Blackrock Depths",
+        start = { npc = "Yuka Screwspigot", x = 66.0, y = 22.4 },
+        objectives = {
+            { type = "kill", name = "Ribbly Screwspigot", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4134] = { -- Hurley Blackbreath
+        name = "Hurley Blackbreath",
+        zone = "Blackrock Depths",
+        start = { npc = "Ragnar Thunderbrew", x = 49.2, y = 38.9 },
+        objectives = {
+            { type = "item", name = "Lost Thunderbrew Recipe", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4136] = { -- The Love Potion
+        name = "The Love Potion",
+        zone = "Blackrock Depths",
+        start = { npc = "Mistress Nagmara", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Nagmara's Filled Vial", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4201] = { -- A Taste of Flame
+        name = "A Taste of Flame",
+        zone = "Blackrock Depths",
+        start = { npc = "Cyrus Therepentous", x = 95.0, y = 31.5 },
+        objectives = {
+            { type = "kill", name = "Bael'Gar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4263] = { -- A Binding Contract
+        name = "A Binding Contract",
+        zone = "Blackrock Depths",
+        start = { npc = "Lokhtos Darkbargainer", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Thorium Brotherhood Contract", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4324] = { -- The Challenge
+        name = "The Challenge",
+        zone = "Blackrock Depths",
+        start = { npc = "Theldren", x = 0, y = 0 },
+        objectives = {
+            { type = "kill", name = "Theldren", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4362] = { -- Disharmony of Flame
+        name = "Disharmony of Flame",
+        zone = "Blackrock Depths",
+        start = { npc = "Thunderheart", x = 53.4, y = 41.8 },
+        objectives = {
+            { type = "item", name = "Incendosaur Scale", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4241] = { -- The Heart of the Mountain
+        name = "The Heart of the Mountain",
+        zone = "Blackrock Depths",
+        start = { npc = "Maxwort Uberglint", x = 65.2, y = 23.6 },
+        objectives = {
+            { type = "item", name = "Heart of the Mountain", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4242] = { -- Overmaster Pyron
+        name = "Overmaster Pyron",
+        zone = "Blackrock Depths",
+        start = { npc = "Jalinda Sprig", x = 65.2, y = 23.6 },
+        objectives = {
+            { type = "kill", name = "Overmaster Pyron", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4264] = { -- General Angerforge
+        name = "General Angerforge",
+        zone = "Blackrock Depths",
+        start = { npc = "Warlord Goretooth", x = 2.8, y = 47.6 },
+        objectives = {
+            { type = "kill", name = "General Angerforge", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4282] = { -- Emperor Dagran Thaurissan
+        name = "Emperor Dagran Thaurissan",
+        zone = "Blackrock Depths",
+        start = { npc = "King Magni Bronzebeard", x = 39.4, y = 55.6 },
+        objectives = {
+            { type = "kill", name = "Emperor Dagran Thaurissan", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4024] = { -- The Princess Saved?
+        name = "The Princess Saved?",
+        zone = "Blackrock Depths",
+        start = { npc = "Princess Moira Bronzebeard", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "King Magni Bronzebeard", spawns = {{39.4, 55.6}} },
+        }
+    },
+    
+    [4302] = { -- The Last Element
+        name = "The Last Element",
+        zone = "Blackrock Depths",
+        start = { npc = "Vivian Lagrave", x = 2.6, y = 24.6 },
+        objectives = {
+            { type = "item", name = "Essence of the Elements", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4341] = { -- Operation: Death to Angerforge
+        name = "Operation: Death to Angerforge",
+        zone = "Blackrock Depths",
+        start = { npc = "Lexlort", x = 66.0, y = 22.4 },
+        objectives = {
+            { type = "kill", name = "General Angerforge", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== LOWER BLACKROCK SPIRE (LBRS) =====
+    
+    [4701] = { -- The Pack Mistress
+        name = "The Pack Mistress",
+        zone = "Blackrock Spire",
+        start = { npc = "Shadow Hunter Vosh'gajin", x = 0, y = 0 },
+        objectives = {
+            { type = "kill", name = "Halycon", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4724] = { -- Bijou's Belongings
+        name = "Bijou's Belongings",
+        zone = "Blackrock Spire",
+        start = { npc = "Bijou", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Bijou's Belongings", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4862] = { -- Warlord's Command
+        name = "Warlord's Command",
+        zone = "Blackrock Spire",
+        start = { npc = "Warlord Goretooth", x = 2.8, y = 47.6 },
+        objectives = {
+            { type = "kill", name = "Highlord Omokk", spawns = {{0, 0}} },
+            { type = "kill", name = "War Master Voone", spawns = {{0, 0}} },
+            { type = "kill", name = "Overlord Wyrmthalak", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4866] = { -- Urok Doomhowl
+        name = "Urok Doomhowl",
+        zone = "Blackrock Spire",
+        start = { npc = "Warosh", x = 0, y = 0 },
+        objectives = {
+            { type = "kill", name = "Urok Doomhowl", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4867] = { -- Mother's Milk
+        name = "Mother's Milk",
+        zone = "Blackrock Spire",
+        start = { npc = "Bijou", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Mother's Milk", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4903] = { -- Maxwell's Mission
+        name = "Maxwell's Mission",
+        zone = "Blackrock Spire",
+        start = { npc = "Marshal Maxwell", x = 84.3, y = 68.6 },
+        objectives = {
+            { type = "kill", name = "Highlord Omokk", spawns = {{0, 0}} },
+            { type = "kill", name = "War Master Voone", spawns = {{0, 0}} },
+            { type = "kill", name = "Overlord Wyrmthalak", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== UPPER BLACKROCK SPIRE (UBRS) =====
+    
+    [4735] = { -- Seal of Ascension (UBRS Key)
+        name = "Seal of Ascension",
+        zone = "Blackrock Spire",
+        start = { npc = "Vaelan", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Unadorned Seal of Ascension", spawns = {{0, 0}} },
+            { type = "item", name = "Gemstone of Spirestone", spawns = {{0, 0}} },
+            { type = "item", name = "Gemstone of Smolderthorn", spawns = {{0, 0}} },
+            { type = "item", name = "Gemstone of Bloodaxe", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4768] = { -- En-Ay-Es-Tee-Why
+        name = "En-Ay-Es-Tee-Why",
+        zone = "Blackrock Spire",
+        start = { npc = "Kibler", x = 66.0, y = 22.4 },
+        objectives = {
+            { type = "item", name = "Doomrigger's Coffer", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5001] = { -- For The Horde!
+        name = "For The Horde!",
+        zone = "Blackrock Spire",
+        start = { npc = "Thrall", x = 32.0, y = 37.8 },
+        objectives = {
+            { type = "kill", name = "Rend Blackhand", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4974] = { -- Blackhand's Command (BWL Attunement Start)
+        name = "Blackhand's Command",
+        zone = "Blackrock Spire",
+        start = { npc = "Scarshield Quartermaster", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Drakkisath's Brand", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5102] = { -- General Drakkisath's Demise
+        name = "General Drakkisath's Demise",
+        zone = "Blackrock Spire",
+        start = { npc = "Warlord Goretooth", x = 2.8, y = 47.6 },
+        objectives = {
+            { type = "kill", name = "General Drakkisath", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5581] = { -- General Drakkisath's Command
+        name = "General Drakkisath's Command",
+        zone = "Blackrock Spire",
+        start = { npc = "Marshal Maxwell", x = 84.3, y = 68.6 },
+        objectives = {
+            { type = "kill", name = "General Drakkisath", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== DIRE MAUL =====
+    
+    -- Dire Maul North
+    [5518] = { -- The Gordok Ogre Suit
+        name = "The Gordok Ogre Suit",
+        zone = "Dire Maul",
+        start = { npc = "Knot Thimblejack", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Bolt of Runecloth", spawns = {{0, 0}} },
+            { type = "item", name = "Rugged Leather", spawns = {{0, 0}} },
+            { type = "item", name = "Ogre Tannin", spawns = {{0, 0}} },
+            { type = "item", name = "Rune Thread", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5526] = { -- Free Knot!
+        name = "Free Knot!",
+        zone = "Dire Maul",
+        start = { npc = "Knot Thimblejack", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Gordok Shackle Key", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5527] = { -- King of the Gordok
+        name = "King of the Gordok",
+        zone = "Dire Maul",
+        start = { npc = "Mizzle the Crafty", x = 0, y = 0 },
+        objectives = {
+            { type = "kill", name = "King Gordok", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7481] = { -- The Gordok Taste Test
+        name = "The Gordok Taste Test",
+        zone = "Dire Maul",
+        start = { npc = "Stomper Kreeg", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Ogre Malt Reserve", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- Dire Maul East
+    [5526] = { -- Lethtendris's Web
+        name = "Lethtendris's Web",
+        zone = "Dire Maul",
+        start = { npc = "Latronicus Moonspear", x = 37.8, y = 81.4 },
+        objectives = {
+            { type = "item", name = "Lethtendris's Web", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7488] = { -- Pusillin and the Elder Azj'Tordin
+        name = "Pusillin and the Elder Azj'Tordin",
+        zone = "Dire Maul",
+        start = { npc = "Azj'Tordin", x = 59.5, y = 94.8 },
+        objectives = {
+            { type = "item", name = "Book of Incantations", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7441] = { -- Shards of the Felvine
+        name = "Shards of the Felvine",
+        zone = "Dire Maul",
+        start = { npc = "Rabine Saturna", x = 51.5, y = 45.0 },
+        objectives = {
+            { type = "item", name = "Felvine Shard", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- Dire Maul West
+    [7461] = { -- The Madness Within
+        name = "The Madness Within",
+        zone = "Dire Maul",
+        start = { npc = "Shen'dralar Ancient", x = 0, y = 0 },
+        objectives = {
+            { type = "kill", name = "Immol'thar", spawns = {{0, 0}} },
+            { type = "kill", name = "Prince Tortheldrin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7462] = { -- The Treasure of the Shen'dralar
+        name = "The Treasure of the Shen'dralar",
+        zone = "Dire Maul",
+        start = { npc = "Shen'dralar Ancient", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Treasure of the Shen'dralar", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- Dire Maul Class/Book Quests
+    [7484] = { -- Foror's Compendium
+        name = "Foror's Compendium",
+        zone = "Dire Maul",
+        start = { npc = "Foror's Compendium", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Unfired Ancient Blade", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7506] = { -- The Forging of Quel'Serrar
+        name = "The Forging of Quel'Serrar",
+        zone = "Dire Maul",
+        start = { npc = "Lorekeeper Lydros", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Treated Ancient Blade", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7507] = { -- Arcane Refreshment (Mage)
+        name = "Arcane Refreshment",
+        zone = "Dire Maul",
+        start = { npc = "Lorekeeper Lydros", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Libram of Refreshment", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7508] = { -- Holy Bologna: What the Light Won't Tell You (Priest)
+        name = "Holy Bologna: What the Light Won't Tell You",
+        zone = "Dire Maul",
+        start = { npc = "Lorekeeper Lydros", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Libram of Divinity", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7509] = { -- The Greatest Race of Hunters (Hunter)
+        name = "The Greatest Race of Hunters",
+        zone = "Dire Maul",
+        start = { npc = "Lorekeeper Lydros", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Libram of Rapidity", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== SCHOLOMANCE =====
+    
+    [5501] = { -- Scholomance (Key Chain Start)
+        name = "Scholomance",
+        zone = "Western Plaguelands",
+        start = { npc = "Alchemist Arbington", x = 42.8, y = 83.8 },
+        objectives = {
+            { type = "item", name = "Skeletal Fragments", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5503] = { -- Araj's Phylactery
+        name = "Araj's Phylactery",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 42.8, y = 83.8 },
+        objectives = {
+            { type = "item", name = "Araj's Phylactery Shard", spawns = {{45.4, 69.2}} },
+        }
+    },
+    
+    [5505] = { -- Plagued Hatchlings
+        name = "Plagued Hatchlings",
+        zone = "Scholomance",
+        start = { npc = "Betina Bigglezink", x = 42.8, y = 83.8 },
+        objectives = {
+            { type = "kill", name = "Plagued Hatchling", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5509] = { -- The Lich Ras Frostwhisper
+        name = "The Lich, Ras Frostwhisper",
+        zone = "Scholomance",
+        start = { npc = "Magistrate Marduke", x = 70.3, y = 73.6 },
+        objectives = {
+            { type = "kill", name = "Ras Frostwhisper", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5511] = { -- Doctor Theolen Krastinov, the Butcher
+        name = "Doctor Theolen Krastinov, the Butcher",
+        zone = "Scholomance",
+        start = { npc = "Eva Sarkhoff", x = 70.3, y = 73.6 },
+        objectives = {
+            { type = "kill", name = "Doctor Theolen Krastinov", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5513] = { -- Lorekeeper Polkelt
+        name = "Lorekeeper Polkelt",
+        zone = "Scholomance",
+        start = { npc = "Eva Sarkhoff", x = 70.3, y = 73.6 },
+        objectives = {
+            { type = "kill", name = "Lorekeeper Polkelt", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5514] = { -- Kirtonos the Herald
+        name = "Kirtonos the Herald",
+        zone = "Scholomance",
+        start = { npc = "Eva Sarkhoff", x = 70.3, y = 73.6 },
+        objectives = {
+            { type = "kill", name = "Kirtonos the Herald", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5382] = { -- The Key to Scholomance
+        name = "The Key to Scholomance",
+        zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.8, y = 84.6 },
+        objectives = {
+            { type = "item", name = "Skeleton Key", spawns = {{70.2, 73.6}} },
+        }
+    },
+    
+    [5538] = { -- Dawn's Gambit
+        name = "Dawn's Gambit",
+        zone = "Scholomance",
+        start = { npc = "Betina Bigglezink", x = 42.8, y = 83.8 },
+        objectives = {
+            { type = "item", name = "Dawn's Gambit", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5344] = { -- Barov Family Fortune (Alliance)
+        name = "Barov Family Fortune",
+        zone = "Scholomance",
+        start = { npc = "Alexi Barov", x = 43.4, y = 83.6 },
+        objectives = {
+            { type = "item", name = "The Deed to Brill", spawns = {{0, 0}} },
+            { type = "item", name = "The Deed to Caer Darrow", spawns = {{0, 0}} },
+            { type = "item", name = "The Deed to Southshore", spawns = {{0, 0}} },
+            { type = "item", name = "The Deed to Tarren Mill", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5343] = { -- Barov Family Fortune (Horde)
+        name = "Barov Family Fortune",
+        zone = "Scholomance",
+        start = { npc = "Weldon Barov", x = 80.4, y = 56.8 },
+        objectives = {
+            { type = "item", name = "The Deed to Brill", spawns = {{0, 0}} },
+            { type = "item", name = "The Deed to Caer Darrow", spawns = {{0, 0}} },
+            { type = "item", name = "The Deed to Southshore", spawns = {{0, 0}} },
+            { type = "item", name = "The Deed to Tarren Mill", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== STRATHOLME =====
+    
+    [5212] = { -- The Restless Souls
+        name = "The Restless Souls",
+        zone = "Stratholme",
+        start = { npc = "Egan", x = 14.0, y = 34.0 },
+        objectives = {
+            { type = "item", name = "Egan's Blaster", spawns = {{14.0, 34.0}} },
+        }
+    },
+    
+    [5214] = { -- Of Love and Family
+        name = "Of Love and Family",
+        zone = "Stratholme",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
+        objectives = {
+            { type = "item", name = "Of Love and Family", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5217] = { -- Houses of the Holy
+        name = "Houses of the Holy",
+        zone = "Stratholme",
+        start = { npc = "Duke Nicholas Zverenhoff", x = 81.5, y = 59.4 },
+        objectives = {
+            { type = "item", name = "Holy Water of Northshire", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5263] = { -- The Archivist
+        name = "The Archivist",
+        zone = "Stratholme",
+        start = { npc = "Duke Nicholas Zverenhoff", x = 81.5, y = 59.4 },
+        objectives = {
+            { type = "kill", name = "Archivist Galford", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5281] = { -- The Truth Comes Crashing Down
+        name = "The Truth Comes Crashing Down",
+        zone = "Stratholme",
+        start = { npc = "Duke Nicholas Zverenhoff", x = 81.5, y = 59.4 },
+        objectives = {
+            { type = "item", name = "Balnazzar's Head", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5282] = { -- Above and Beyond
+        name = "Above and Beyond",
+        zone = "Stratholme",
+        start = { npc = "Highlord Bolvar Fordragon", x = 78.0, y = 18.0 },
+        objectives = {
+            { type = "kill", name = "Baron Rivendare", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5305] = { -- The Flesh Does Not Lie
+        name = "The Flesh Does Not Lie",
+        zone = "Stratholme",
+        start = { npc = "Betina Bigglezink", x = 42.8, y = 83.8 },
+        objectives = {
+            { type = "item", name = "Plagued Flesh Sample", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5306] = { -- The Active Agent
+        name = "The Active Agent",
+        zone = "Stratholme",
+        start = { npc = "Betina Bigglezink", x = 42.8, y = 83.8 },
+        objectives = {
+            { type = "item", name = "Scourge Data", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5251] = { -- The Key to the City (Service Entrance)
+        name = "Key to the City",
+        zone = "Stratholme",
+        start = { npc = "Magistrate Barthilas", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Key to the City", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6163] = { -- The Postmaster (Requires All Mail)
+        name = "The Postmaster",
+        zone = "Stratholme",
+        start = { npc = "Archmage Angela Dosantos", x = 81.6, y = 59.6 },
+        objectives = {
+            { type = "item", name = "Undead Postman's Badge", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5848] = { -- Ramstein
+        name = "Ramstein",
+        zone = "Stratholme",
+        start = { npc = "Nathanos Blightcaller", x = 26.4, y = 74.3 },
+        objectives = {
+            { type = "item", name = "Ramstein's Lightning Bolts", spawns = {{0, 0}} },
+        }
+    },
+    
+    [5125] = { -- Aurius' Reckoning
+        name = "Aurius' Reckoning",
+        zone = "Stratholme",
+        start = { npc = "Aurius", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Aurius", spawns = {{0, 0}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- RAID ATTUNEMENTS
+    -----------------------------------------
+    
+    -- ===== ONYXIA ATTUNEMENT (ALLIANCE) =====
+    
+    [4182] = { -- Dragonkin Menace
+        name = "Dragonkin Menace",
+        zone = "Burning Steppes",
+        start = { npc = "Helendis Riverhorn", x = 84.3, y = 68.6 },
+        objectives = {
+            { type = "kill", name = "Black Broodling", spawns = {{0, 0}} },
+            { type = "kill", name = "Black Dragonspawn", spawns = {{0, 0}} },
+            { type = "kill", name = "Black Drake", spawns = {{0, 0}} },
+            { type = "kill", name = "Black Wyrmkin", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4183] = { -- The True Masters (Part 1)
+        name = "The True Masters",
+        zone = "Stormwind City",
+        start = { npc = "Magistrate Solomon", x = 28.4, y = 41.0 },
+        objectives = {
+            { type = "talk", name = "Highlord Bolvar Fordragon", spawns = {{78.0, 18.0}} },
+        }
+    },
+    
+    [4184] = { -- The True Masters (Part 2)
+        name = "The True Masters",
+        zone = "Stormwind City",
+        start = { npc = "Highlord Bolvar Fordragon", x = 78.0, y = 18.0 },
+        objectives = {
+            { type = "talk", name = "Lady Prestor", spawns = {{78.4, 17.6}} },
+        }
+    },
+    
+    [4185] = { -- The True Masters (Part 3)
+        name = "The True Masters",
+        zone = "Redridge Mountains",
+        start = { npc = "Highlord Bolvar Fordragon", x = 78.0, y = 18.0 },
+        objectives = {
+            { type = "talk", name = "Magistrate Solomon", spawns = {{28.4, 41.0}} },
+        }
+    },
+    
+    [4186] = { -- Marshal Windsor
+        name = "Marshal Windsor",
+        zone = "Blackrock Depths",
+        start = { npc = "Magistrate Solomon", x = 28.4, y = 41.0 },
+        objectives = {
+            { type = "talk", name = "Marshal Windsor", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4264] = { -- Abandoned Hope
+        name = "Abandoned Hope",
+        zone = "Blackrock Depths",
+        start = { npc = "Marshal Windsor", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Magistrate Solomon", spawns = {{28.4, 41.0}} },
+        }
+    },
+    
+    [4282] = { -- A Crumpled Up Note
+        name = "A Crumpled Up Note",
+        zone = "Blackrock Depths",
+        start = { npc = "A Crumpled Up Note", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Marshal Windsor", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4322] = { -- The Great Masquerade
+        name = "The Great Masquerade",
+        zone = "Stormwind City",
+        start = { npc = "Reginald Windsor", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Highlord Bolvar Fordragon", spawns = {{78.0, 18.0}} },
+        }
+    },
+    
+    [6502] = { -- Drakefire Amulet (Alliance Final)
+        name = "Drakefire Amulet",
+        zone = "Burning Steppes",
+        start = { npc = "Haleh", x = 54.4, y = 51.0 },
+        objectives = {
+            { type = "item", name = "Blood of the Black Dragon Champion", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== ONYXIA ATTUNEMENT (HORDE) =====
+    
+    [4485] = { -- Warlord's Command
+        name = "Warlord's Command",
+        zone = "Burning Steppes",
+        start = { npc = "Warchief's Command Board", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Warlord Goretooth", spawns = {{2.8, 47.6}} },
+        }
+    },
+    
+    [4494] = { -- Eitrigg's Wisdom
+        name = "Eitrigg's Wisdom",
+        zone = "Orgrimmar",
+        start = { npc = "Warlord Goretooth", x = 2.8, y = 47.6 },
+        objectives = {
+            { type = "talk", name = "Eitrigg", spawns = {{32.0, 38.0}} },
+        }
+    },
+    
+    [4503] = { -- For The Horde! (Onyxia Chain)
+        name = "For The Horde!",
+        zone = "Orgrimmar",
+        start = { npc = "Thrall", x = 32.0, y = 37.8 },
+        objectives = {
+            { type = "kill", name = "Rend Blackhand", spawns = {{0, 0}} },
+        }
+    },
+    
+    [4511] = { -- What The Wind Carries
+        name = "What The Wind Carries",
+        zone = "Orgrimmar",
+        start = { npc = "Thrall", x = 32.0, y = 37.8 },
+        objectives = {
+            { type = "talk", name = "Thrall", spawns = {{32.0, 37.8}} },
+        }
+    },
+    
+    [6566] = { -- The Test of Skulls (Horde)
+        name = "The Test of Skulls",
+        zone = "Burning Steppes",
+        start = { npc = "Rokaro", x = 65.2, y = 23.6 },
+        objectives = {
+            { type = "item", name = "Skull of Chronalis", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6601] = { -- Blood of the Black Dragon Champion (Horde Final)
+        name = "Blood of the Black Dragon Champion",
+        zone = "Blackrock Spire",
+        start = { npc = "Rexxar", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Blood of the Black Dragon Champion", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== MOLTEN CORE ATTUNEMENT =====
+    
+    [7487] = { -- Attunement to the Core
+        name = "Attunement to the Core",
+        zone = "Blackrock Depths",
+        start = { npc = "Lothos Riftwaker", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Core Fragment", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7848] = { -- The Molten Core
+        name = "The Molten Core",
+        zone = "Molten Core",
+        start = { npc = "Duke Hydraxis", x = 79.2, y = 73.4 },
+        objectives = {
+            { type = "talk", name = "Duke Hydraxis", spawns = {{79.2, 73.4}} },
+        }
+    },
+    
+    [6822] = { -- Hands of the Enemy
+        name = "Hands of the Enemy",
+        zone = "Molten Core",
+        start = { npc = "Duke Hydraxis", x = 79.2, y = 73.4 },
+        objectives = {
+            { type = "item", name = "Hands of Lucifron", spawns = {{0, 0}} },
+            { type = "item", name = "Hands of Sulfuron", spawns = {{0, 0}} },
+            { type = "item", name = "Hands of Gehennas", spawns = {{0, 0}} },
+            { type = "item", name = "Hands of Shazzrah", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== BLACKWING LAIR ATTUNEMENT =====
+    
+    [7761] = { -- Blackhand's Command (BWL Orb Attunement)
+        name = "Blackhand's Command",
+        zone = "Blackrock Spire",
+        start = { npc = "Letter from the Scarshield Quartermaster", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Drakkisath's Brand", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7781] = { -- Nefarius's Corruption (BWL Quest)
+        name = "Nefarius's Corruption",
+        zone = "Blackwing Lair",
+        start = { npc = "Vaelastrasz the Corrupt", x = 0, y = 0 },
+        objectives = {
+            { type = "item", name = "Red Scepter Shard", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== NAXXRAMAS ATTUNEMENT =====
+    
+    [9033] = { -- The Dread Citadel - Naxxramas
+        name = "The Dread Citadel - Naxxramas",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Archmage Angela Dosantos", x = 81.6, y = 59.6 },
+        objectives = {
+            { type = "talk", name = "Archmage Angela Dosantos", spawns = {{81.6, 59.6}} },
+        }
+    },
+    
+    [9121] = { -- Echoes of War
+        name = "Echoes of War",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Commander Eligor Dawnbringer", x = 81.5, y = 59.8 },
+        objectives = {
+            { type = "item", name = "Wartorn Chain Scrap", spawns = {{0, 0}} },
+            { type = "item", name = "Wartorn Leather Scrap", spawns = {{0, 0}} },
+            { type = "item", name = "Wartorn Cloth Scrap", spawns = {{0, 0}} },
+            { type = "item", name = "Wartorn Plate Scrap", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9122] = { -- Naxxramas Attunement
+        name = "The Naxxramas Attunement",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Archmage Angela Dosantos", x = 81.6, y = 59.6 },
+        objectives = {
+            { type = "item", name = "Arcane Crystal", spawns = {{0, 0}} },
+            { type = "item", name = "Nexus Crystal", spawns = {{0, 0}} },
+            { type = "item", name = "Righteous Orb", spawns = {{0, 0}} },
+        }
+    },
+    
+    -----------------------------------------
+    -- HOLIDAY & WORLD EVENT QUESTS
+    -----------------------------------------
+    
+    -- ===== DARKMOON FAIRE =====
+    
+    [7905] = { -- Darkmoon Faire Prize
+        name = "Your Fortune Awaits You...",
+        zone = "Elwynn Forest",
+        start = { npc = "Sayge", x = 42.2, y = 69.4 },
+        objectives = {
+            { type = "talk", name = "Sayge", spawns = {{42.2, 69.4}} },
+        }
+    },
+    
+    [7892] = { -- Darkmoon Faire (Elwynn Forest)
+        name = "Darkmoon Faire",
+        zone = "Elwynn Forest",
+        start = { npc = "Darkmoon Faire Barker", x = 42.8, y = 69.2 },
+        objectives = {
+            { type = "talk", name = "Gelvas Grimegate", spawns = {{42.0, 70.6}} },
+        }
+    },
+    
+    [7903] = { -- Darkmoon Faire (Mulgore)
+        name = "Darkmoon Faire",
+        zone = "Mulgore",
+        start = { npc = "Darkmoon Faire Barker", x = 36.8, y = 37.6 },
+        objectives = {
+            { type = "talk", name = "Gelvas Grimegate", spawns = {{36.4, 35.8}} },
+        }
+    },
+    
+    -- Ticket Turn-in Quests
+    [7907] = { -- 5 Tickets
+        name = "5 Tickets - Last Month's Mutton",
+        zone = "Elwynn Forest",
+        start = { npc = "Gelvas Grimegate", x = 42.0, y = 70.6 },
+        objectives = {
+            { type = "item", name = "Darkmoon Faire Prize Ticket", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7908] = { -- 5 Tickets - Coarse Dynamite
+        name = "5 Tickets - Coarse Dynamite",
+        zone = "Elwynn Forest",
+        start = { npc = "Gelvas Grimegate", x = 42.0, y = 70.6 },
+        objectives = {
+            { type = "item", name = "Darkmoon Faire Prize Ticket", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7909] = { -- 10 Tickets - Darkmoon Storage Box
+        name = "10 Tickets - Darkmoon Storage Box",
+        zone = "Elwynn Forest",
+        start = { npc = "Gelvas Grimegate", x = 42.0, y = 70.6 },
+        objectives = {
+            { type = "item", name = "Darkmoon Faire Prize Ticket", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7910] = { -- 12 Tickets - Minor Darkmoon Prize
+        name = "12 Tickets - Minor Darkmoon Prize",
+        zone = "Elwynn Forest",
+        start = { npc = "Gelvas Grimegate", x = 42.0, y = 70.6 },
+        objectives = {
+            { type = "item", name = "Darkmoon Faire Prize Ticket", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7911] = { -- 40 Tickets - Lesser Darkmoon Prize
+        name = "40 Tickets - Lesser Darkmoon Prize",
+        zone = "Elwynn Forest",
+        start = { npc = "Gelvas Grimegate", x = 42.0, y = 70.6 },
+        objectives = {
+            { type = "item", name = "Darkmoon Faire Prize Ticket", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7912] = { -- 100 Tickets - Greater Darkmoon Prize
+        name = "100 Tickets - Greater Darkmoon Prize",
+        zone = "Elwynn Forest",
+        start = { npc = "Gelvas Grimegate", x = 42.0, y = 70.6 },
+        objectives = {
+            { type = "item", name = "Darkmoon Faire Prize Ticket", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7913] = { -- 1200 Tickets - Amulet of the Darkmoon
+        name = "1200 Tickets - Amulet of the Darkmoon",
+        zone = "Elwynn Forest",
+        start = { npc = "Gelvas Grimegate", x = 42.0, y = 70.6 },
+        objectives = {
+            { type = "item", name = "Darkmoon Faire Prize Ticket", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- Deck Turn-in Quests
+    [7927] = { -- Beasts Deck
+        name = "Beasts Deck",
+        zone = "Elwynn Forest",
+        start = { npc = "Professor Thaddeus Paleo", x = 40.4, y = 68.8 },
+        objectives = {
+            { type = "item", name = "Beasts Deck", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7928] = { -- Portals Deck
+        name = "Portals Deck",
+        zone = "Elwynn Forest",
+        start = { npc = "Professor Thaddeus Paleo", x = 40.4, y = 68.8 },
+        objectives = {
+            { type = "item", name = "Portals Deck", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7929] = { -- Warlords Deck
+        name = "Warlords Deck",
+        zone = "Elwynn Forest",
+        start = { npc = "Professor Thaddeus Paleo", x = 40.4, y = 68.8 },
+        objectives = {
+            { type = "item", name = "Warlords Deck", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7930] = { -- Elementals Deck
+        name = "Elementals Deck",
+        zone = "Elwynn Forest",
+        start = { npc = "Professor Thaddeus Paleo", x = 40.4, y = 68.8 },
+        objectives = {
+            { type = "item", name = "Elementals Deck", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- Darkmoon Material Turn-ins
+    [7881] = { -- Copper Modulator
+        name = "Copper Modulator",
+        zone = "Elwynn Forest",
+        start = { npc = "Rinling", x = 39.8, y = 69.4 },
+        objectives = {
+            { type = "item", name = "Copper Modulator", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7882] = { -- Whirring Bronze Gizmo
+        name = "Whirring Bronze Gizmo",
+        zone = "Elwynn Forest",
+        start = { npc = "Rinling", x = 39.8, y = 69.4 },
+        objectives = {
+            { type = "item", name = "Whirring Bronze Gizmo", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7883] = { -- Green Iron Bracers
+        name = "Green Iron Bracers",
+        zone = "Elwynn Forest",
+        start = { npc = "Kerri Hicks", x = 41.2, y = 71.2 },
+        objectives = {
+            { type = "item", name = "Green Iron Bracers", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7889] = { -- Coarse Weightstone
+        name = "Coarse Weightstone",
+        zone = "Elwynn Forest",
+        start = { npc = "Kerri Hicks", x = 41.2, y = 71.2 },
+        objectives = {
+            { type = "item", name = "Coarse Weightstone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7890] = { -- Heavy Grinding Stone
+        name = "Heavy Grinding Stone",
+        zone = "Elwynn Forest",
+        start = { npc = "Kerri Hicks", x = 41.2, y = 71.2 },
+        objectives = {
+            { type = "item", name = "Heavy Grinding Stone", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7891] = { -- Small Furry Paws
+        name = "Small Furry Paws",
+        zone = "Elwynn Forest",
+        start = { npc = "Chronos", x = 43.2, y = 70.8 },
+        objectives = {
+            { type = "item", name = "Small Furry Paws", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7896] = { -- Torn Bear Pelt
+        name = "Torn Bear Pelt",
+        zone = "Elwynn Forest",
+        start = { npc = "Chronos", x = 43.2, y = 70.8 },
+        objectives = {
+            { type = "item", name = "Torn Bear Pelt", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7897] = { -- Soft Bushy Tail
+        name = "Soft Bushy Tail",
+        zone = "Elwynn Forest",
+        start = { npc = "Chronos", x = 43.2, y = 70.8 },
+        objectives = {
+            { type = "item", name = "Soft Bushy Tail", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7898] = { -- Vibrant Plumes
+        name = "Vibrant Plumes",
+        zone = "Elwynn Forest",
+        start = { npc = "Chronos", x = 43.2, y = 70.8 },
+        objectives = {
+            { type = "item", name = "Vibrant Plumes", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== LUNAR FESTIVAL =====
+    
+    [8863] = { -- The Lunar Festival
+        name = "The Lunar Festival",
+        zone = "Darnassus",
+        start = { npc = "Lunar Festival Harbinger", x = 33.8, y = 13.2 },
+        objectives = {
+            { type = "talk", name = "Valadar Starsong", spawns = {{35.5, 8.9}} },
+        }
+    },
+    
+    [8867] = { -- The Lunar Festival (Alliance)
+        name = "The Lunar Festival",
+        zone = "Ironforge",
+        start = { npc = "Lunar Festival Harbinger", x = 29.4, y = 15.8 },
+        objectives = {
+            { type = "talk", name = "Valadar Starsong", spawns = {{55.6, 35.4}} },
+        }
+    },
+    
+    [8870] = { -- The Lunar Festival (Horde)
+        name = "The Lunar Festival",
+        zone = "Thunder Bluff",
+        start = { npc = "Lunar Festival Harbinger", x = 34.2, y = 27.8 },
+        objectives = {
+            { type = "talk", name = "Valadar Starsong", spawns = {{55.6, 35.4}} },
+        }
+    },
+    
+    [8868] = { -- Lunar Festival (Orgrimmar)
+        name = "The Lunar Festival",
+        zone = "Orgrimmar",
+        start = { npc = "Lunar Festival Harbinger", x = 52.4, y = 54.8 },
+        objectives = {
+            { type = "talk", name = "Valadar Starsong", spawns = {{55.6, 35.4}} },
+        }
+    },
+    
+    [8710] = { -- Coin of Ancestry
+        name = "Coin of Ancestry",
+        zone = "Moonglade",
+        start = { npc = "Valadar Starsong", x = 55.6, y = 35.4 },
+        objectives = {
+            { type = "item", name = "Coin of Ancestry", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8714] = { -- Elune's Blessing
+        name = "Elune's Blessing",
+        zone = "Moonglade",
+        start = { npc = "Valadar Starsong", x = 55.6, y = 35.4 },
+        objectives = {
+            { type = "kill", name = "Omen", spawns = {{63.8, 62.6}} },
+        }
+    },
+    
+    -- Elder Quests (Coins of Ancestry)
+    [8676] = { -- Elder Bladeswift of Darnassus
+        name = "Elder Bladeswift of Darnassus",
+        zone = "Darnassus",
+        start = { npc = "Elder Bladeswift", x = 39.2, y = 31.8 },
+        objectives = {
+            { type = "talk", name = "Elder Bladeswift", spawns = {{39.2, 31.8}} },
+        }
+    },
+    
+    [8683] = { -- Elder Bronzebeard of Ironforge
+        name = "Elder Bronzebeard of Ironforge",
+        zone = "Ironforge",
+        start = { npc = "Elder Bronzebeard", x = 29.4, y = 17.0 },
+        objectives = {
+            { type = "talk", name = "Elder Bronzebeard", spawns = {{29.4, 17.0}} },
+        }
+    },
+    
+    [8684] = { -- Elder Hammerstone of Orgrimmar
+        name = "Elder Darkhorn of Orgrimmar",
+        zone = "Orgrimmar",
+        start = { npc = "Elder Darkhorn", x = 52.4, y = 59.8 },
+        objectives = {
+            { type = "talk", name = "Elder Darkhorn", spawns = {{52.4, 59.8}} },
+        }
+    },
+    
+    [8685] = { -- Elder Runetotem of Thunder Bluff
+        name = "Elder Runetotem of Thunder Bluff",
+        zone = "Thunder Bluff",
+        start = { npc = "Elder Runetotem", x = 72.8, y = 23.4 },
+        objectives = {
+            { type = "talk", name = "Elder Runetotem", spawns = {{72.8, 23.4}} },
+        }
+    },
+    
+    [8686] = { -- Elder Graveborn of Brill
+        name = "Elder Graveborn of Brill",
+        zone = "Tirisfal Glades",
+        start = { npc = "Elder Graveborn", x = 61.8, y = 53.8 },
+        objectives = {
+            { type = "talk", name = "Elder Graveborn", spawns = {{61.8, 53.8}} },
+        }
+    },
+    
+    [8673] = { -- Elder Stormbrow of Goldshire
+        name = "Elder Stormbrow of Goldshire",
+        zone = "Elwynn Forest",
+        start = { npc = "Elder Stormbrow", x = 39.8, y = 63.6 },
+        objectives = {
+            { type = "talk", name = "Elder Stormbrow", spawns = {{39.8, 63.6}} },
+        }
+    },
+    
+    [8674] = { -- Elder Skychaser of Sentinel Hill
+        name = "Elder Skychaser of Sentinel Hill",
+        zone = "Westfall",
+        start = { npc = "Elder Skychaser", x = 56.6, y = 47.2 },
+        objectives = {
+            { type = "talk", name = "Elder Skychaser", spawns = {{56.6, 47.2}} },
+        }
+    },
+    
+    [8675] = { -- Elder Rumblerock of Burning Steppes
+        name = "Elder Rumblerock of Burning Steppes",
+        zone = "Burning Steppes",
+        start = { npc = "Elder Rumblerock", x = 70.2, y = 45.4 },
+        objectives = {
+            { type = "talk", name = "Elder Rumblerock", spawns = {{70.2, 45.4}} },
+        }
+    },
+    
+    [8680] = { -- Elder Silvervein of Thelsamar
+        name = "Elder Silvervein of Thelsamar",
+        zone = "Loch Modan",
+        start = { npc = "Elder Silvervein", x = 33.4, y = 46.6 },
+        objectives = {
+            { type = "talk", name = "Elder Silvervein", spawns = {{33.4, 46.6}} },
+        }
+    },
+    
+    [8713] = { -- Valadar Starsong (quest completation)
+        name = "Festive Lunar Dresses",
+        zone = "Moonglade",
+        start = { npc = "Valadar Starsong", x = 55.6, y = 35.4 },
+        objectives = {
+            { type = "item", name = "Coin of Ancestry", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== LOVE IS IN THE AIR =====
+    
+    [8903] = { -- Dangerous Love
+        name = "Dangerous Love",
+        zone = "Stormwind City",
+        start = { npc = "Archivist Randore", x = 49.8, y = 30.4 },
+        objectives = {
+            { type = "talk", name = "Detective Snap Snagglebolt", spawns = {{62.4, 75.2}} },
+        }
+    },
+    
+    [8904] = { -- Dangerous Love (Horde)
+        name = "Dangerous Love",
+        zone = "Undercity",
+        start = { npc = "Fenstad Argyle", x = 52.6, y = 72.8 },
+        objectives = {
+            { type = "talk", name = "Junior Detective Wooldridge", spawns = {{66.4, 44.8}} },
+        }
+    },
+    
+    [8897] = { -- Pledge of Adoration: Stormwind
+        name = "Pledge of Adoration: Stormwind",
+        zone = "Stormwind City",
+        start = { npc = "Kwee Q. Peddlefeet", x = 61.6, y = 74.4 },
+        objectives = {
+            { type = "item", name = "Pledge of Adoration: Stormwind", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8898] = { -- Pledge of Adoration: Ironforge
+        name = "Pledge of Adoration: Ironforge",
+        zone = "Ironforge",
+        start = { npc = "Kwee Q. Peddlefeet", x = 32.4, y = 60.8 },
+        objectives = {
+            { type = "item", name = "Pledge of Adoration: Ironforge", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8899] = { -- Pledge of Adoration: Darnassus
+        name = "Pledge of Adoration: Darnassus",
+        zone = "Darnassus",
+        start = { npc = "Kwee Q. Peddlefeet", x = 56.4, y = 92.6 },
+        objectives = {
+            { type = "item", name = "Pledge of Adoration: Darnassus", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8900] = { -- Pledge of Adoration: Orgrimmar
+        name = "Pledge of Adoration: Orgrimmar",
+        zone = "Orgrimmar",
+        start = { npc = "Kwee Q. Peddlefeet", x = 52.8, y = 68.4 },
+        objectives = {
+            { type = "item", name = "Pledge of Adoration: Orgrimmar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8901] = { -- Pledge of Adoration: Thunder Bluff
+        name = "Pledge of Adoration: Thunder Bluff",
+        zone = "Thunder Bluff",
+        start = { npc = "Kwee Q. Peddlefeet", x = 45.8, y = 56.2 },
+        objectives = {
+            { type = "item", name = "Pledge of Adoration: Thunder Bluff", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8902] = { -- Pledge of Adoration: Undercity
+        name = "Pledge of Adoration: Undercity",
+        zone = "Undercity",
+        start = { npc = "Kwee Q. Peddlefeet", x = 67.8, y = 38.4 },
+        objectives = {
+            { type = "item", name = "Pledge of Adoration: Undercity", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8906] = { -- Fenstad Argyle Quest
+        name = "The Truesilver Shafted Arrow",
+        zone = "Undercity",
+        start = { npc = "Kwee Q. Peddlefeet", x = 67.8, y = 38.4 },
+        objectives = {
+            { type = "item", name = "Truesilver Shafted Arrow", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8979] = { -- Gift Giving (Alliance)
+        name = "Gift Giving",
+        zone = "Stormwind City",
+        start = { npc = "Kwee Q. Peddlefeet", x = 61.6, y = 74.4 },
+        objectives = {
+            { type = "item", name = "Love Token", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8980] = { -- Gift Giving (Horde)
+        name = "Gift Giving",
+        zone = "Orgrimmar",
+        start = { npc = "Kwee Q. Peddlefeet", x = 52.8, y = 68.4 },
+        objectives = {
+            { type = "item", name = "Love Token", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== MIDSUMMER FIRE FESTIVAL =====
+    
+    [9319] = { -- The Festival of Fire (Alliance)
+        name = "The Festival of Fire",
+        zone = "Ironforge",
+        start = { npc = "Festival Loremaster", x = 65.0, y = 23.8 },
+        objectives = {
+            { type = "talk", name = "Festival Loremaster", spawns = {{65.0, 23.8}} },
+        }
+    },
+    
+    [9386] = { -- The Festival of Fire (Horde)
+        name = "The Festival of Fire",
+        zone = "Orgrimmar",
+        start = { npc = "Festival Loremaster", x = 46.6, y = 38.2 },
+        objectives = {
+            { type = "talk", name = "Festival Loremaster", spawns = {{46.6, 38.2}} },
+        }
+    },
+    
+    [9324] = { -- Wild Fires in Kalimdor (Alliance)
+        name = "Wild Fires in Kalimdor",
+        zone = "Teldrassil",
+        start = { npc = "Festival Flamekeeper", x = 56.8, y = 92.0 },
+        objectives = {
+            { type = "talk", name = "Flame of Kalimdor", spawns = {{56.8, 92.0}} },
+        }
+    },
+    
+    [9325] = { -- Wild Fires in Eastern Kingdoms (Alliance)
+        name = "Wild Fires in Eastern Kingdoms",
+        zone = "Elwynn Forest",
+        start = { npc = "Festival Flamekeeper", x = 43.6, y = 62.4 },
+        objectives = {
+            { type = "talk", name = "Flame of Eastern Kingdoms", spawns = {{43.6, 62.4}} },
+        }
+    },
+    
+    [9326] = { -- A Thief's Reward (Alliance)
+        name = "A Thief's Reward",
+        zone = "Ironforge",
+        start = { npc = "Festival Loremaster", x = 65.0, y = 23.8 },
+        objectives = {
+            { type = "item", name = "Flame of Orgrimmar", spawns = {{0, 0}} },
+            { type = "item", name = "Flame of Thunder Bluff", spawns = {{0, 0}} },
+            { type = "item", name = "Flame of Undercity", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9365] = { -- A Thief's Reward (Horde)
+        name = "A Thief's Reward",
+        zone = "Orgrimmar",
+        start = { npc = "Festival Loremaster", x = 46.6, y = 38.2 },
+        objectives = {
+            { type = "item", name = "Flame of Stormwind", spawns = {{0, 0}} },
+            { type = "item", name = "Flame of Ironforge", spawns = {{0, 0}} },
+            { type = "item", name = "Flame of Darnassus", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9339] = { -- Torch Catching (Alliance)
+        name = "Torch Catching",
+        zone = "Ironforge",
+        start = { npc = "Master Fire Eater", x = 64.6, y = 25.4 },
+        objectives = {
+            { type = "item", name = "Juggling Torch", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9340] = { -- Torch Catching (Horde)
+        name = "Torch Catching",
+        zone = "Orgrimmar",
+        start = { npc = "Master Fire Eater", x = 47.2, y = 37.8 },
+        objectives = {
+            { type = "item", name = "Juggling Torch", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9322] = { -- Incense for the Summer Scorchlings
+        name = "Incense for the Summer Scorchlings",
+        zone = "Durotar",
+        start = { npc = "Festival Talespinner", x = 51.8, y = 47.2 },
+        objectives = {
+            { type = "item", name = "Summer Incense", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9323] = { -- Incense for the Festival Scorchlings
+        name = "Incense for the Festival Scorchlings",
+        zone = "Elwynn Forest",
+        start = { npc = "Festival Talespinner", x = 43.8, y = 62.2 },
+        objectives = {
+            { type = "item", name = "Summer Incense", spawns = {{0, 0}} },
+        }
+    },
+    
+    [9388] = { -- Unusual Activity (Horde)
+        name = "Unusual Activity",
+        zone = "Orgrimmar",
+        start = { npc = "Earthen Ring Elder", x = 47.0, y = 37.4 },
+        objectives = {
+            { type = "talk", name = "Earthen Ring Guide", spawns = {{47.2, 36.8}} },
+        }
+    },
+    
+    [9389] = { -- Unusual Activity (Alliance)
+        name = "Unusual Activity",
+        zone = "Ironforge",
+        start = { npc = "Earthen Ring Elder", x = 64.8, y = 24.2 },
+        objectives = {
+            { type = "talk", name = "Earthen Ring Guide", spawns = {{64.6, 24.8}} },
+        }
+    },
+    
+    -- ===== HARVEST FESTIVAL =====
+    
+    [8149] = { -- Honoring a Hero (Alliance)
+        name = "Honoring a Hero",
+        zone = "Ashenvale",
+        start = { npc = "Wagner Hammerstrike", x = 27.6, y = 40.6 },
+        objectives = {
+            { type = "talk", name = "Uther's Tomb", spawns = {{52.2, 83.6}} },
+        }
+    },
+    
+    [8150] = { -- Honoring a Hero (Horde)
+        name = "Honoring a Hero",
+        zone = "The Barrens",
+        start = { npc = "Javnir Nashak", x = 52.4, y = 29.0 },
+        objectives = {
+            { type = "talk", name = "Grom Hellscream Monument", spawns = {{83.6, 79.2}} },
+        }
+    },
+    
+    [8647] = { -- Bounty of the Harvest
+        name = "Bounty of the Harvest",
+        zone = "Ashenvale",
+        start = { npc = "Harvest Festival Table", x = 27.4, y = 40.2 },
+        objectives = {
+            { type = "item", name = "Harvest Boar", spawns = {{0, 0}} },
+            { type = "item", name = "Harvest Fish", spawns = {{0, 0}} },
+            { type = "item", name = "Harvest Fruit", spawns = {{0, 0}} },
+            { type = "item", name = "Harvest Nectar", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== CHILDREN'S WEEK =====
+    
+    [1468] = { -- Children's Week (Alliance)
+        name = "Children's Week",
+        zone = "Stormwind City",
+        start = { npc = "Orphan Matron Nightingale", x = 53.2, y = 51.8 },
+        objectives = {
+            { type = "talk", name = "Orphan Matron Nightingale", spawns = {{53.2, 51.8}} },
+        }
+    },
+    
+    [171] = { -- A Warden of the Alliance (Stonehearth)
+        name = "A Warden of the Alliance",
+        zone = "The Hinterlands",
+        start = { npc = "Human Orphan", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "High Thane Falstad Wildhammer", spawns = {{14.2, 42.4}} },
+        }
+    },
+    
+    [558] = { -- Jaina's Autograph
+        name = "Jaina's Autograph",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Human Orphan", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Lady Jaina Proudmoore", spawns = {{66.2, 49.2}} },
+        }
+    },
+    
+    [1479] = { -- The Stonewrought Dam
+        name = "The Stonewrought Dam",
+        zone = "Loch Modan",
+        start = { npc = "Human Orphan", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Stonewrought Dam", spawns = {{46.6, 16.2}} },
+        }
+    },
+    
+    [172] = { -- Children's Week (Horde)
+        name = "Children's Week",
+        zone = "Orgrimmar",
+        start = { npc = "Orphan Matron Battlewail", x = 57.4, y = 56.8 },
+        objectives = {
+            { type = "talk", name = "Orphan Matron Battlewail", spawns = {{57.4, 56.8}} },
+        }
+    },
+    
+    [910] = { -- Down at the Docks
+        name = "Down at the Docks",
+        zone = "The Barrens",
+        start = { npc = "Orcish Orphan", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Ratchet Docks", spawns = {{62.8, 38.4}} },
+        }
+    },
+    
+    [911] = { -- Gateway to the Frontier
+        name = "Gateway to the Frontier",
+        zone = "Ashenvale",
+        start = { npc = "Orcish Orphan", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Mor'shan Rampart", spawns = {{48.2, 11.4}} },
+        }
+    },
+    
+    [925] = { -- The Lordaeron Throne Room
+        name = "The Lordaeron Throne Room",
+        zone = "Undercity",
+        start = { npc = "Orcish Orphan", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Lordaeron Throne Room", spawns = {{66.4, 38.2}} },
+        }
+    },
+    
+    -- ===== HALLOW'S END =====
+    
+    [8311] = { -- Crashing the Wickerman Festival (Alliance)
+        name = "Crashing the Wickerman Festival",
+        zone = "Tirisfal Glades",
+        start = { npc = "Sergeant Hartman", x = 30.6, y = 51.6 },
+        objectives = {
+            { type = "item", name = "Wickerman Guardian Ember", spawns = {{54.8, 69.2}} },
+        }
+    },
+    
+    [8312] = { -- The Power of Pine (Alliance)
+        name = "The Power of Pine",
+        zone = "Ashenvale",
+        start = { npc = "Gretchen Dedmar", x = 34.6, y = 49.8 },
+        objectives = {
+            { type = "item", name = "Stink Bomb Cluster", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8322] = { -- The Wickerman Festival (Horde)
+        name = "The Wickerman Festival",
+        zone = "Tirisfal Glades",
+        start = { npc = "Darkcaller Yanka", x = 62.2, y = 67.4 },
+        objectives = {
+            { type = "talk", name = "Wickerman", spawns = {{54.8, 69.2}} },
+        }
+    },
+    
+    [8373] = { -- Stinking Up Southshore (Horde)
+        name = "Stinking Up Southshore",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Darkcaller Yanka", x = 62.2, y = 67.4 },
+        objectives = {
+            { type = "item", name = "Stink Bomb", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8355] = { -- Hallow's End Treats for Jesper
+        name = "Hallow's End Treats for Jesper",
+        zone = "Stormwind City",
+        start = { npc = "Jesper", x = 61.6, y = 75.0 },
+        objectives = {
+            { type = "item", name = "Handful of Treats", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8356] = { -- Hallow's End Treats for Spoops
+        name = "Hallow's End Treats for Spoops",
+        zone = "Orgrimmar",
+        start = { npc = "Spoops", x = 53.2, y = 78.6 },
+        objectives = {
+            { type = "item", name = "Handful of Treats", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8357] = { -- Rotten Eggs
+        name = "Rotten Eggs",
+        zone = "Tirisfal Glades",
+        start = { npc = "Innkeeper Norman", x = 66.2, y = 18.2 },
+        objectives = {
+            { type = "item", name = "Rotten Eggs", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8409] = { -- Costumed Orphan Matron
+        name = "Costumed Orphan Matron",
+        zone = "Stormwind City",
+        start = { npc = "Costumed Orphan Matron", x = 54.6, y = 51.2 },
+        objectives = {
+            { type = "item", name = "Handful of Candy", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== WINTER VEIL =====
+    
+    [6961] = { -- Greatfather Winter is Here! (Alliance)
+        name = "Greatfather Winter is Here!",
+        zone = "Ironforge",
+        start = { npc = "Wulmort Jinglepocket", x = 33.4, y = 67.8 },
+        objectives = {
+            { type = "talk", name = "Greatfather Winter", spawns = {{33.0, 65.4}} },
+        }
+    },
+    
+    [6962] = { -- Great-father Winter is Here! (Horde)
+        name = "Great-father Winter is Here!",
+        zone = "Orgrimmar",
+        start = { npc = "Kaymard Copperpinch", x = 53.2, y = 66.8 },
+        objectives = {
+            { type = "talk", name = "Great-father Winter", spawns = {{52.8, 65.8}} },
+        }
+    },
+    
+    [7022] = { -- Treats for Greatfather Winter (Alliance)
+        name = "Treats for Greatfather Winter",
+        zone = "Ironforge",
+        start = { npc = "Greatfather Winter", x = 33.0, y = 65.4 },
+        objectives = {
+            { type = "item", name = "Gingerbread Cookie", spawns = {{0, 0}} },
+            { type = "item", name = "Ice Cold Milk", spawns = {{0, 0}} },
+        }
+    },
+    
+    [7024] = { -- Treats for Great-father Winter (Horde)
+        name = "Treats for Great-father Winter",
+        zone = "Orgrimmar",
+        start = { npc = "Great-father Winter", x = 52.8, y = 65.8 },
+        objectives = {
+            { type = "item", name = "Gingerbread Cookie", spawns = {{0, 0}} },
+            { type = "item", name = "Ice Cold Milk", spawns = {{0, 0}} },
+        }
+    },
+    
+    [6963] = { -- Stolen Winter Veil Treats (Alliance)
+        name = "Stolen Winter Veil Treats",
+        zone = "Ironforge",
+        start = { npc = "Wulmort Jinglepocket", x = 33.4, y = 67.8 },
+        objectives = {
+            { type = "item", name = "Stolen Treats", spawns = {{35.2, 72.4}} },
+        }
+    },
+    
+    [6964] = { -- Stolen Winter Veil Treats (Horde)
+        name = "Stolen Winter Veil Treats",
+        zone = "Orgrimmar",
+        start = { npc = "Kaymard Copperpinch", x = 53.2, y = 66.8 },
+        objectives = {
+            { type = "item", name = "Stolen Treats", spawns = {{35.2, 72.4}} },
+        }
+    },
+    
+    [6983] = { -- You're a Mean One... (Alliance)
+        name = "You're a Mean One...",
+        zone = "Alterac Mountains",
+        start = { npc = "Wulmort Jinglepocket", x = 33.4, y = 67.8 },
+        objectives = {
+            { type = "kill", name = "The Abominable Greench", spawns = {{35.6, 72.8}} },
+        }
+    },
+    
+    [6984] = { -- You're a Mean One... (Horde)
+        name = "You're a Mean One...",
+        zone = "Alterac Mountains",
+        start = { npc = "Kaymard Copperpinch", x = 53.2, y = 66.8 },
+        objectives = {
+            { type = "kill", name = "The Abominable Greench", spawns = {{35.6, 72.8}} },
+        }
+    },
+    
+    [7043] = { -- The Reason for the Season (Alliance)
+        name = "The Reason for the Season",
+        zone = "Ironforge",
+        start = { npc = "Goli Krumn", x = 30.6, y = 68.8 },
+        objectives = {
+            { type = "talk", name = "Historian Karnik", spawns = {{77.8, 11.8}} },
+        }
+    },
+    
+    [7062] = { -- The Reason for the Season (Horde)
+        name = "The Reason for the Season",
+        zone = "Orgrimmar",
+        start = { npc = "Sagorne Creststrider", x = 38.6, y = 36.8 },
+        objectives = {
+            { type = "talk", name = "Historian Ju'pa", spawns = {{35.8, 67.8}} },
+        }
+    },
+    
+    [7042] = { -- Metzen the Reindeer (Alliance)
+        name = "Metzen the Reindeer",
+        zone = "Tanaris",
+        start = { npc = "Wulmort Jinglepocket", x = 33.4, y = 67.8 },
+        objectives = {
+            { type = "talk", name = "Metzen the Reindeer", spawns = {{73.6, 48.2}} },
+        }
+    },
+    
+    [7061] = { -- Metzen the Reindeer (Horde)
+        name = "Metzen the Reindeer",
+        zone = "Tanaris",
+        start = { npc = "Kaymard Copperpinch", x = 53.2, y = 66.8 },
+        objectives = {
+            { type = "talk", name = "Metzen the Reindeer", spawns = {{73.6, 48.2}} },
+        }
+    },
+    
+    [8744] = { -- Winter Veil Presents
+        name = "A Smokywood Pastures' Thank You!",
+        zone = "Ironforge",
+        start = { npc = "Wulmort Jinglepocket", x = 33.4, y = 67.8 },
+        objectives = {
+            { type = "item", name = "Smokywood Pastures Special Gift", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8746] = { -- Smokywood Pastures Thank You
+        name = "A Smokywood Pastures' Thank You!",
+        zone = "Orgrimmar",
+        start = { npc = "Kaymard Copperpinch", x = 53.2, y = 66.8 },
+        objectives = {
+            { type = "item", name = "Smokywood Pastures Special Gift", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8763] = { -- The Hero of the Day (Alliance)
+        name = "The Hero of the Day",
+        zone = "Ironforge",
+        start = { npc = "Greatfather Winter", x = 33.0, y = 65.4 },
+        objectives = {
+            { type = "item", name = "Deeprock Salt", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8799] = { -- The Hero of the Day (Horde)
+        name = "The Hero of the Day",
+        zone = "Orgrimmar",
+        start = { npc = "Great-father Winter", x = 52.8, y = 65.8 },
+        objectives = {
+            { type = "item", name = "Deeprock Salt", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- ===== AHN'QIRAJ WAR EFFORT =====
+    
+    -- WAR EFFORT MATERIAL TURN-INS (Alliance)
+    [8492] = { -- A Donation of Wool (Alliance)
+        name = "A Donation of Wool",
+        zone = "Ironforge",
+        start = { npc = "Bonnie Stoneflayer", x = 75.6, y = 10.2 },
+        objectives = {
+            { type = "item", name = "Wool Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8493] = { -- A Donation of Silk (Alliance)
+        name = "A Donation of Silk",
+        zone = "Ironforge",
+        start = { npc = "Bonnie Stoneflayer", x = 75.6, y = 10.2 },
+        objectives = {
+            { type = "item", name = "Silk Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8494] = { -- A Donation of Mageweave (Alliance)
+        name = "A Donation of Mageweave",
+        zone = "Ironforge",
+        start = { npc = "Bonnie Stoneflayer", x = 75.6, y = 10.2 },
+        objectives = {
+            { type = "item", name = "Mageweave Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8495] = { -- A Donation of Runecloth (Alliance)
+        name = "A Donation of Runecloth",
+        zone = "Ironforge",
+        start = { npc = "Bonnie Stoneflayer", x = 75.6, y = 10.2 },
+        objectives = {
+            { type = "item", name = "Runecloth Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8505] = { -- Copper Bars (Alliance)
+        name = "Copper Bar Donation",
+        zone = "Ironforge",
+        start = { npc = "Dame Twinbraid", x = 74.8, y = 9.0 },
+        objectives = {
+            { type = "item", name = "Copper Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8506] = { -- Iron Bars (Alliance)
+        name = "Iron Bar Donation",
+        zone = "Ironforge",
+        start = { npc = "Dame Twinbraid", x = 74.8, y = 9.0 },
+        objectives = {
+            { type = "item", name = "Iron Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8507] = { -- Thorium Bars (Alliance)
+        name = "Thorium Bar Donation",
+        zone = "Ironforge",
+        start = { npc = "Dame Twinbraid", x = 74.8, y = 9.0 },
+        objectives = {
+            { type = "item", name = "Thorium Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8509] = { -- Purple Lotus (Alliance)
+        name = "Purple Lotus",
+        zone = "Ironforge",
+        start = { npc = "Herbalist Proudfeather", x = 49.8, y = 5.2 },
+        objectives = {
+            { type = "item", name = "Purple Lotus", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8510] = { -- Arthas' Tears (Alliance)
+        name = "Arthas' Tears",
+        zone = "Ironforge",
+        start = { npc = "Herbalist Proudfeather", x = 49.8, y = 5.2 },
+        objectives = {
+            { type = "item", name = "Arthas' Tears", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8512] = { -- Stranglekelp (Alliance)
+        name = "Stranglekelp",
+        zone = "Ironforge",
+        start = { npc = "Herbalist Proudfeather", x = 49.8, y = 5.2 },
+        objectives = {
+            { type = "item", name = "Stranglekelp", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8513] = { -- Light Leather (Alliance)
+        name = "Light Leather",
+        zone = "Ironforge",
+        start = { npc = "Marta Finespindle", x = 73.8, y = 9.6 },
+        objectives = {
+            { type = "item", name = "Light Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8514] = { -- Medium Leather (Alliance)
+        name = "Medium Leather",
+        zone = "Ironforge",
+        start = { npc = "Marta Finespindle", x = 73.8, y = 9.6 },
+        objectives = {
+            { type = "item", name = "Medium Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8515] = { -- Thick Leather (Alliance)
+        name = "Thick Leather",
+        zone = "Ironforge",
+        start = { npc = "Marta Finespindle", x = 73.8, y = 9.6 },
+        objectives = {
+            { type = "item", name = "Thick Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8518] = { -- Spotted Yellowtail (Alliance)
+        name = "Spotted Yellowtail",
+        zone = "Ironforge",
+        start = { npc = "Banik Darkhammer", x = 75.0, y = 10.8 },
+        objectives = {
+            { type = "item", name = "Spotted Yellowtail", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8520] = { -- Roast Raptor (Alliance)
+        name = "Roast Raptor",
+        zone = "Ironforge",
+        start = { npc = "Banik Darkhammer", x = 75.0, y = 10.8 },
+        objectives = {
+            { type = "item", name = "Roast Raptor", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8522] = { -- Rainbow Fin Albacore (Alliance)
+        name = "Rainbow Fin Albacore",
+        zone = "Ironforge",
+        start = { npc = "Banik Darkhammer", x = 75.0, y = 10.8 },
+        objectives = {
+            { type = "item", name = "Rainbow Fin Albacore", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- WAR EFFORT MATERIAL TURN-INS (Horde)
+    [8532] = { -- A Donation of Wool (Horde)
+        name = "A Donation of Wool",
+        zone = "Orgrimmar",
+        start = { npc = "Rashona Straglash", x = 37.8, y = 87.2 },
+        objectives = {
+            { type = "item", name = "Wool Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8533] = { -- A Donation of Silk (Horde)
+        name = "A Donation of Silk",
+        zone = "Orgrimmar",
+        start = { npc = "Rashona Straglash", x = 37.8, y = 87.2 },
+        objectives = {
+            { type = "item", name = "Silk Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8534] = { -- A Donation of Mageweave (Horde)
+        name = "A Donation of Mageweave",
+        zone = "Orgrimmar",
+        start = { npc = "Rashona Straglash", x = 37.8, y = 87.2 },
+        objectives = {
+            { type = "item", name = "Mageweave Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8535] = { -- A Donation of Runecloth (Horde)
+        name = "A Donation of Runecloth",
+        zone = "Orgrimmar",
+        start = { npc = "Rashona Straglash", x = 37.8, y = 87.2 },
+        objectives = {
+            { type = "item", name = "Runecloth Bandage", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8543] = { -- Tin Bars (Horde)
+        name = "Tin Bar Donation",
+        zone = "Orgrimmar",
+        start = { npc = "Nast Frizzbrik", x = 38.0, y = 85.6 },
+        objectives = {
+            { type = "item", name = "Tin Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8545] = { -- Mithril Bars (Horde)
+        name = "Mithril Bar Donation",
+        zone = "Orgrimmar",
+        start = { npc = "Nast Frizzbrik", x = 38.0, y = 85.6 },
+        objectives = {
+            { type = "item", name = "Mithril Bar", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8548] = { -- Peacebloom (Horde)
+        name = "Peacebloom",
+        zone = "Orgrimmar",
+        start = { npc = "Herbalist Furrypaw", x = 36.8, y = 85.8 },
+        objectives = {
+            { type = "item", name = "Peacebloom", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8549] = { -- Firebloom (Horde)
+        name = "Firebloom",
+        zone = "Orgrimmar",
+        start = { npc = "Herbalist Furrypaw", x = 36.8, y = 85.8 },
+        objectives = {
+            { type = "item", name = "Firebloom", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8556] = { -- Heavy Leather (Horde)
+        name = "Heavy Leather",
+        zone = "Orgrimmar",
+        start = { npc = "Skinner Kur'tan", x = 37.6, y = 86.8 },
+        objectives = {
+            { type = "item", name = "Heavy Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8557] = { -- Rugged Leather (Horde)
+        name = "Rugged Leather",
+        zone = "Orgrimmar",
+        start = { npc = "Skinner Kur'tan", x = 37.6, y = 86.8 },
+        objectives = {
+            { type = "item", name = "Rugged Leather", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8563] = { -- Lean Wolf Steaks (Horde)
+        name = "Lean Wolf Steaks",
+        zone = "Orgrimmar",
+        start = { npc = "Veteran Cook Marossha", x = 38.2, y = 86.6 },
+        objectives = {
+            { type = "item", name = "Lean Wolf Steak", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8564] = { -- Baked Salmon (Horde)
+        name = "Baked Salmon",
+        zone = "Orgrimmar",
+        start = { npc = "Veteran Cook Marossha", x = 38.2, y = 86.6 },
+        objectives = {
+            { type = "item", name = "Baked Salmon", spawns = {{0, 0}} },
+        }
+    },
+    
+    -- SCARAB LORD QUEST CHAIN
+    [8286] = { -- The Path of the Righteous (Start of chain)
+        name = "The Path of the Righteous",
+        zone = "Silithus",
+        start = { npc = "Baristolth of the Shifting Sands", x = 51.8, y = 38.0 },
+        objectives = {
+            { type = "item", name = "Silithid Carapace Fragment", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8288] = { -- The Hand of the Righteous
+        name = "The Hand of the Righteous",
+        zone = "Silithus",
+        start = { npc = "Baristolth of the Shifting Sands", x = 51.8, y = 38.0 },
+        objectives = {
+            { type = "item", name = "Silithid Armor Fragments", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8301] = { -- Only One May Rise
+        name = "Only One May Rise",
+        zone = "Silithus",
+        start = { npc = "Anachronos", x = 65.4, y = 49.8 },
+        objectives = {
+            { type = "talk", name = "Kandrostrasz", spawns = {{29.2, 90.5}} },
+        }
+    },
+    
+    [8302] = { -- The Nightmare's Corruption
+        name = "The Nightmare's Corruption",
+        zone = "Silithus",
+        start = { npc = "Kandrostrasz", x = 29.2, y = 90.5 },
+        objectives = {
+            { type = "item", name = "Nightmare Engulfed Object", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8303] = { -- Eranikus, Tyrant of the Dream
+        name = "Eranikus, Tyrant of the Dream",
+        zone = "Silithus",
+        start = { npc = "Malfurion Stormrage", x = 0, y = 0 },
+        objectives = {
+            { type = "talk", name = "Anachronos", spawns = {{65.4, 49.8}} },
+        }
+    },
+    
+    [8304] = { -- Tyrande and Remulos
+        name = "Tyrande and Remulos",
+        zone = "Moonglade",
+        start = { npc = "Anachronos", x = 65.4, y = 49.8 },
+        objectives = {
+            { type = "talk", name = "Keeper Remulos", spawns = {{36.2, 42.4}} },
+        }
+    },
+    
+    [8305] = { -- The Charge of the Dragonflights
+        name = "The Charge of the Dragonflights",
+        zone = "Silithus",
+        start = { npc = "Anachronos", x = 65.4, y = 49.8 },
+        objectives = {
+            { type = "item", name = "Red Shard of the Scale of the Sands", spawns = {{0, 0}} },
+            { type = "item", name = "Blue Shard of the Scale of the Sands", spawns = {{0, 0}} },
+            { type = "item", name = "Green Shard of the Scale of the Sands", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8287] = { -- Anachronos
+        name = "Anachronos",
+        zone = "Tanaris",
+        start = { npc = "Baristolth of the Shifting Sands", x = 51.8, y = 38.0 },
+        objectives = {
+            { type = "talk", name = "Anachronos", spawns = {{65.4, 49.8}} },
+        }
+    },
+    
+    [8519] = { -- Treasure of the Timeless One
+        name = "Treasure of the Timeless One",
+        zone = "Silithus",
+        start = { npc = "Anachronos", x = 65.4, y = 49.8 },
+        objectives = {
+            { type = "talk", name = "The Gong", spawns = {{29.0, 95.0}} },
+        }
+    },
+    
+    [8742] = { -- The Scepter of the Shifting Sands
+        name = "The Scepter of the Shifting Sands",
+        zone = "Silithus",
+        start = { npc = "Anachronos", x = 65.4, y = 49.8 },
+        objectives = {
+            { type = "item", name = "Scepter of the Shifting Sands", spawns = {{0, 0}} },
+        }
+    },
+    
+    [8743] = { -- Bang a Gong!
+        name = "Bang a Gong!",
+        zone = "Silithus",
+        start = { npc = "Scarab Gong", x = 29.0, y = 95.0 },
+        objectives = {
+            { type = "talk", name = "Scarab Gong", spawns = {{29.0, 95.0}} },
+        }
+    },
+
+    -----------------------------------------
+    -- Eastern Plaguelands Quests
+    -----------------------------------------
+
+    -- Light's Hope Chapel Quests
+    [5281] = { -- The Argent Hold
+        name = "The Argent Hold",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Duke Nicholas Zverenhoff", x = 81.5, y = 59.8 },
+        objectives = {
+            { type = "talk", name = "Rohan the Assassin", spawns = {{80.3, 57.4}} },
+        }
+    },
+
+    [5282] = { -- The Argent Dawn
+        name = "The Argent Dawn",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Lord Maxwell Tyrosus", x = 81.6, y = 58.0 },
+        objectives = {
+            { type = "talk", name = "Duke Nicholas Zverenhoff", spawns = {{81.5, 59.8}} },
+        }
+    },
+
+    [5241] = { -- Zaeldarr the Outcast
+        name = "Zaeldarr the Outcast",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Caretaker Alen", x = 79.4, y = 63.8 },
+        objectives = {
+            { type = "kill", name = "Zaeldarr the Outcast", spawns = {{27.4, 85.2}} },
+        }
+    },
+
+    [5251] = { -- Hameya's Plea
+        name = "Hameya's Plea",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Hameya's Plea", x = 70.8, y = 49.5 },
+        objectives = {
+            { type = "kill", name = "Infiltrator Hameya", spawns = {{27.2, 84.8}} },
+        }
+    },
+
+    [5542] = { -- Demon Dogs
+        name = "Demon Dogs",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
+        objectives = {
+            { type = "kill", name = "Plaguehound Runt", spawns = {
+                {23.4, 68.1}, {25.8, 70.2}, {24.2, 66.5}, {26.1, 68.8}
+            }},
+            { type = "kill", name = "Plaguehound", spawns = {
+                {27.3, 72.4}, {28.9, 69.1}, {26.5, 71.8}, {29.4, 73.2}
+            }},
+        }
+    },
+
+    [5543] = { -- Blood Tinged Skies
+        name = "Blood Tinged Skies",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
+        objectives = {
+            { type = "kill", name = "Plaguebat", spawns = {
+                {48.2, 44.8}, {50.1, 46.3}, {47.5, 43.2}, {51.8, 45.1},
+                {49.3, 42.7}, {52.4, 47.6}
+            }},
+        }
+    },
+
+    [5544] = { -- Carrion Grubbage
+        name = "Carrion Grubbage",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
+        objectives = {
+            { type = "item", name = "Slab of Carrion Worm Meat", spawns = {
+                {55.2, 63.8}, {56.8, 61.4}, {54.1, 65.2}, {57.9, 64.5}
+            }},
+        }
+    },
+
+    [5742] = { -- Redemption
+        name = "Redemption",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
+        objectives = {
+            { type = "talk", name = "Tirion Fordring", spawns = {{7.5, 43.6}} },
+        }
+    },
+
+    [5944] = { -- Of Forgotten Memories
+        name = "Of Forgotten Memories",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
+        objectives = {
+            { type = "kill", name = "Mercutio Filthgorger", spawns = {{28.4, 86.2}} },
+        }
+    },
+
+    [5681] = { -- Of Lost Honor
+        name = "Of Lost Honor",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
+        objectives = {
+            { type = "item", name = "Symbol of Lost Honor", spawns = {{71.2, 33.8}} },
+        }
+    },
+
+    [5845] = { -- Of Love and Family
+        name = "Of Love and Family",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Tirion Fordring", x = 7.5, y = 43.6 },
+        objectives = {
+            { type = "item", name = "Of Love and Family", spawns = {{31.2, 42.1}} },
+        }
+    },
+
+    -- Pamela Redpath Chain
+    [5142] = { -- Sister Pamela
+        name = "Sister Pamela",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Carlin Redpath", x = 81.4, y = 59.4 },
+        objectives = {
+            { type = "talk", name = "Pamela Redpath", spawns = {{32.8, 83.6}} },
+        }
+    },
+
+    [5149] = { -- Pamela's Doll
+        name = "Pamela's Doll",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Pamela Redpath", x = 32.8, y = 83.6 },
+        objectives = {
+            { type = "item", name = "Pamela's Doll's Left Side", spawns = {{32.2, 82.5}} },
+            { type = "item", name = "Pamela's Doll's Right Side", spawns = {{34.8, 84.1}} },
+            { type = "item", name = "Pamela's Doll's Head", spawns = {{33.5, 85.2}} },
+        }
+    },
+
+    [5152] = { -- Uncle Carlin
+        name = "Uncle Carlin",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Pamela Redpath", x = 32.8, y = 83.6 },
+        objectives = {
+            { type = "talk", name = "Carlin Redpath", spawns = {{81.4, 59.4}} },
+        }
+    },
+
+    [5168] = { -- Defenders of Darrowshire
+        name = "Defenders of Darrowshire",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Carlin Redpath", x = 81.4, y = 59.4 },
+        objectives = {
+            { type = "item", name = "Resonating Skull", spawns = {
+                {24.8, 78.2}, {26.1, 80.5}, {23.5, 76.8}, {25.9, 82.1}
+            }},
+            { type = "item", name = "Mystic Crystal", spawns = {
+                {35.2, 68.4}, {37.8, 70.1}, {34.5, 66.8}
+            }},
+        }
+    },
+
+    [5206] = { -- Heroes of Darrowshire
+        name = "Heroes of Darrowshire",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Carlin Redpath", x = 81.4, y = 59.4 },
+        objectives = {
+            { type = "item", name = "Skull of Horgus", spawns = {{54.2, 65.8}} },
+            { type = "item", name = "Shattered Sword of Marduk", spawns = {{14.5, 33.2}} },
+        }
+    },
+
+    [5181] = { -- Battle of Darrowshire
+        name = "Battle of Darrowshire",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Carlin Redpath", x = 81.4, y = 59.4 },
+        objectives = {
+            { type = "talk", name = "Joseph Redpath", spawns = {{32.8, 83.6}} },
+        }
+    },
+
+    -- Cauldron Quests
+    [5226] = { -- Skeletal Fragments
+        name = "Skeletal Fragments",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 81.8, y = 59.2 },
+        objectives = {
+            { type = "item", name = "Skeletal Fragment", spawns = {
+                {22.4, 68.5}, {24.8, 70.2}, {26.1, 67.8}, {23.5, 72.1},
+                {27.3, 69.4}, {25.2, 71.8}
+            }},
+        }
+    },
+
+    [5228] = { -- Mold Rhymes With...
+        name = "Mold Rhymes With...",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Archmage Angela Dosantos", x = 81.6, y = 59.9 },
+        objectives = {
+            { type = "item", name = "Cauldron Lord's Crest", spawns = {{26.2, 74.8}} },
+        }
+    },
+
+    [5229] = { -- Dalson's Tears Cauldron
+        name = "Dalson's Tears Cauldron",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Archmage Angela Dosantos", x = 81.6, y = 59.9 },
+        objectives = {
+            { type = "talk", name = "Dalson's Tears Cauldron", spawns = {{47.8, 52.3}} },
+        }
+    },
+
+    [5233] = { -- Gahrron's Withering Cauldron
+        name = "Gahrron's Withering Cauldron",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Archmage Angela Dosantos", x = 81.6, y = 59.9 },
+        objectives = {
+            { type = "talk", name = "Gahrron's Withering Cauldron", spawns = {{62.8, 58.4}} },
+        }
+    },
+
+    [5235] = { -- Writhing Haunt Cauldron
+        name = "Writhing Haunt Cauldron",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Archmage Angela Dosantos", x = 81.6, y = 59.9 },
+        objectives = {
+            { type = "talk", name = "Writhing Haunt Cauldron", spawns = {{52.3, 66.1}} },
+        }
+    },
+
+    [5237] = { -- Felstone Field Cauldron
+        name = "Felstone Field Cauldron",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Archmage Angela Dosantos", x = 81.6, y = 59.9 },
+        objectives = {
+            { type = "talk", name = "Felstone Field Cauldron", spawns = {{36.8, 56.2}} },
+        }
+    },
+
+    -- Nathanos Blightcaller Chain (Horde)
+    [6133] = { -- The Ranger Lord's Behest
+        name = "The Ranger Lord's Behest",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Nathanos Blightcaller", x = 26.7, y = 74.9 },
+        objectives = {
+            { type = "kill", name = "Quel'lithien Protector", spawns = {
+                {70.2, 14.8}, {72.5, 16.1}, {68.8, 13.4}, {71.4, 17.2}
+            }},
+        }
+    },
+
+    [6134] = { -- Stormwind Ho!
+        name = "Stormwind Ho!",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Nathanos Blightcaller", x = 26.7, y = 74.9 },
+        objectives = {
+            { type = "item", name = "SI:7 Signet Ring", spawns = {
+                {23.4, 68.2}, {25.8, 70.5}, {24.1, 66.8}
+            }},
+        }
+    },
+
+    -- Miscellaneous EPL Quests
+    [5961] = { -- An Active Agent
+        name = "An Active Agent",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Betina Bigglezink", x = 81.4, y = 59.3 },
+        objectives = {
+            { type = "item", name = "Plague Lurker Sample", spawns = {
+                {4.2, 36.8}, {5.8, 34.2}, {6.5, 38.1}, {3.9, 35.5}
+            }},
+        }
+    },
+
+    [6025] = { -- Savage Flora
+        name = "Savage Flora",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Betina Bigglezink", x = 81.4, y = 59.3 },
+        objectives = {
+            { type = "item", name = "Bloodpetal Sprout", spawns = {
+                {4.8, 32.1}, {6.2, 34.5}, {5.1, 30.8}, {7.4, 33.2}
+            }},
+        }
+    },
+
+    [6041] = { -- The Restless Souls
+        name = "The Restless Souls",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Egan", x = 12.2, y = 34.1 },
+        objectives = {
+            { type = "kill", name = "Araj's Scarab", spawns = {
+                {42.8, 68.5}, {44.2, 70.1}, {41.5, 66.8}
+            }},
+        }
+    },
+
+    [5212] = { -- Augustus' Receipt Book
+        name = "Augustus' Receipt Book",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Magistrate Marduke", x = 75.8, y = 53.4 },
+        objectives = {
+            { type = "item", name = "Augustus' Receipt Book", spawns = {{47.2, 65.8}} },
+        }
+    },
+
+    [5213] = { -- A Plague Upon Thee
+        name = "A Plague Upon Thee",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Nathaniel Dumah", x = 83.2, y = 69.0 },
+        objectives = {
+            { type = "item", name = "Termite Mound Powder", spawns = {
+                {46.8, 44.2}, {48.5, 46.8}, {45.1, 42.5}
+            }},
+        }
+    },
+
+    [5601] = { -- The Undercroft
+        name = "The Undercroft",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Carlin Redpath", x = 81.4, y = 59.4 },
+        objectives = {
+            { type = "kill", name = "Undercroft Sentry", spawns = {
+                {27.2, 85.4}, {28.8, 87.1}, {26.5, 83.8}
+            }},
+        }
+    },
+
+    [6021] = { -- Villains of Darrowshire
+        name = "Villains of Darrowshire",
+        zone = "Eastern Plaguelands",
+        start = { npc = "Carlin Redpath", x = 81.4, y = 59.4 },
+        objectives = {
+            { type = "kill", name = "Horgus the Ravager", spawns = {{54.2, 65.8}} },
+        }
+    },
+
+    -----------------------------------------
+    -- Western Plaguelands Quests
+    -----------------------------------------
+
+    -- Chillwind Camp Quests (Alliance)
+    [4984] = { -- Clear the Way
+        name = "Clear the Way",
+        zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.8, y = 83.6 },
+        objectives = {
+            { type = "kill", name = "Skeletal Flayer", spawns = {
+                {41.2, 70.5}, {43.8, 72.1}, {40.5, 68.8}, {44.2, 74.3}
+            }},
+            { type = "kill", name = "Slave Worker", spawns = {
+                {45.8, 69.2}, {47.4, 71.8}, {44.1, 67.5}
+            }},
+        }
+    },
+
+    [4985] = { -- The Scourge Cauldrons
+        name = "The Scourge Cauldrons",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 42.4, y = 83.8 },
+        objectives = {
+            { type = "talk", name = "Felstone Field Cauldron", spawns = {{36.8, 56.2}} },
+        }
+    },
+
+    [5097] = { -- Target: Felstone Field
+        name = "Target: Felstone Field",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 42.4, y = 83.8 },
+        objectives = {
+            { type = "kill", name = "Cauldron Lord Bilemaw", spawns = {{36.2, 54.8}} },
+        }
+    },
+
+    [5098] = { -- Target: Dalson's Tears
+        name = "Target: Dalson's Tears",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 42.4, y = 83.8 },
+        objectives = {
+            { type = "kill", name = "Cauldron Lord Malvinious", spawns = {{46.8, 52.1}} },
+        }
+    },
+
+    [5217] = { -- Target: Writhing Haunt
+        name = "Target: Writhing Haunt",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 42.4, y = 83.8 },
+        objectives = {
+            { type = "kill", name = "Cauldron Lord Razarch", spawns = {{52.8, 66.4}} },
+        }
+    },
+
+    [5219] = { -- Target: Gahrron's Withering
+        name = "Target: Gahrron's Withering",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 42.4, y = 83.8 },
+        objectives = {
+            { type = "kill", name = "Cauldron Lord Soulwrath", spawns = {{62.4, 57.8}} },
+        }
+    },
+
+    -- Andorhal Quests
+    [5092] = { -- All Along the Watchtowers
+        name = "All Along the Watchtowers",
+        zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.8, y = 83.6 },
+        objectives = {
+            { type = "talk", name = "Andorhal Tower 1", spawns = {{46.2, 71.8}} },
+            { type = "talk", name = "Andorhal Tower 2", spawns = {{42.8, 66.2}} },
+            { type = "talk", name = "Andorhal Tower 3", spawns = {{39.2, 69.5}} },
+            { type = "talk", name = "Andorhal Tower 4", spawns = {{36.8, 71.2}} },
+        }
+    },
+
+    [5089] = { -- Araj the Summoner
+        name = "Araj the Summoner",
+        zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.8, y = 83.6 },
+        objectives = {
+            { type = "kill", name = "Araj the Summoner", spawns = {{45.2, 69.4}} },
+        }
+    },
+
+    [5515] = { -- Araj's Scarab
+        name = "Araj's Scarab",
+        zone = "Western Plaguelands",
+        start = { npc = "High Priestess MacDonnell", x = 42.4, y = 83.8 },
+        objectives = {
+            { type = "item", name = "Araj's Scarab", spawns = {{45.2, 69.4}} },
+        }
+    },
+
+    [4986] = { -- Scholomance
+        name = "Scholomance",
+        zone = "Western Plaguelands",
+        start = { npc = "Commander Ashlam Valorfist", x = 42.8, y = 83.6 },
+        objectives = {
+            { type = "talk", name = "Alchemist Arbington", spawns = {{42.6, 83.4}} },
+        }
+    },
+
+    -- Plagued Lands Chain
+    [5086] = { -- The Wildlife Suffers Too
+        name = "The Wildlife Suffers Too",
+        zone = "Western Plaguelands",
+        start = { npc = "Mulgris Deepriver", x = 53.4, y = 64.8 },
+        objectives = {
+            { type = "kill", name = "Diseased Wolf", spawns = {
+                {38.2, 54.8}, {40.5, 56.2}, {37.1, 52.5}, {41.8, 58.4}
+            }},
+        }
+    },
+
+    [5087] = { -- The Wildlife Suffers Too
+        name = "The Wildlife Suffers Too",
+        zone = "Western Plaguelands",
+        start = { npc = "Mulgris Deepriver", x = 53.4, y = 64.8 },
+        objectives = {
+            { type = "kill", name = "Sickly Deer", spawns = {
+                {50.2, 62.1}, {52.8, 64.5}, {48.5, 60.8}, {54.1, 66.2}
+            }},
+        }
+    },
+
+    [5088] = { -- Glyphed Oaken Branch
+        name = "Glyphed Oaken Branch",
+        zone = "Western Plaguelands",
+        start = { npc = "Mulgris Deepriver", x = 53.4, y = 64.8 },
+        objectives = {
+            { type = "item", name = "Glyphed Oaken Branch", spawns = {{35.8, 52.4}} },
+        }
+    },
+
+    -- Caravan Quests
+    [5903] = { -- The Caravan Road
+        name = "The Caravan Road",
+        zone = "Western Plaguelands",
+        start = { npc = "Kirsta Deepshadow", x = 49.2, y = 76.8 },
+        objectives = {
+            { type = "talk", name = "Caravaneer Ruzzgot", spawns = {{50.8, 77.2}} },
+        }
+    },
+
+    [5904] = { -- Ambush at the Crossroads
+        name = "Ambush at the Crossroads",
+        zone = "Western Plaguelands",
+        start = { npc = "Kirsta Deepshadow", x = 49.2, y = 76.8 },
+        objectives = {
+            { type = "kill", name = "Scarlet Mage", spawns = {
+                {54.2, 67.8}, {56.5, 69.2}, {52.8, 65.5}
+            }},
+            { type = "kill", name = "Scarlet Knight", spawns = {
+                {55.8, 68.4}, {58.1, 70.8}, {53.5, 66.2}
+            }},
+        }
+    },
+
+    [5944] = { -- Scarlet Diversions
+        name = "Scarlet Diversions",
+        zone = "Western Plaguelands",
+        start = { npc = "Kirsta Deepshadow", x = 49.2, y = 76.8 },
+        objectives = {
+            { type = "item", name = "Scarlet Crusade Orders", spawns = {{56.8, 36.2}} },
+        }
+    },
+
+    -- Hearthglen Quests
+    [5943] = { -- A Plague Upon Thee
+        name = "A Plague Upon Thee",
+        zone = "Western Plaguelands",
+        start = { npc = "Kirsta Deepshadow", x = 49.2, y = 76.8 },
+        objectives = {
+            { type = "talk", name = "Hearthglen Stable", spawns = {{45.8, 18.2}} },
+        }
+    },
+
+    [5222] = { -- The Mark of the Lightbringer
+        name = "The Mark of the Lightbringer",
+        zone = "Western Plaguelands",
+        start = { npc = "Anchorite Truuen", x = 42.6, y = 84.2 },
+        objectives = {
+            { type = "item", name = "Mark of the Lightbringer", spawns = {{45.4, 18.8}} },
+        }
+    },
+
+    -- Bulwark Quests (Horde)
+    [5093] = { -- A Plague Upon Thee
+        name = "A Plague Upon Thee",
+        zone = "Western Plaguelands",
+        start = { npc = "Apothecary Nathaniel Dumah", x = 83.2, y = 69.0 },
+        objectives = {
+            { type = "item", name = "Plague Termites", spawns = {{46.8, 52.8}} },
+        }
+    },
+
+    [5094] = { -- Return to Nathanos
+        name = "Return to Nathanos",
+        zone = "Western Plaguelands",
+        start = { npc = "High Executor Derrington", x = 83.1, y = 69.2 },
+        objectives = {
+            { type = "talk", name = "Nathanos Blightcaller", spawns = {{26.7, 74.9}} },
+        }
+    },
+
+    -- Miscellaneous WPL Quests
+    [5060] = { -- The Annals of Darrowshire
+        name = "The Annals of Darrowshire",
+        zone = "Western Plaguelands",
+        start = { npc = "Chromie", x = 39.5, y = 66.8 },
+        objectives = {
+            { type = "item", name = "Annals of Darrowshire", spawns = {{40.8, 74.2}} },
+        }
+    },
+
+    [5052] = { -- Little Pamela
+        name = "Little Pamela",
+        zone = "Western Plaguelands",
+        start = { npc = "Marlene Redpath", x = 49.2, y = 78.2 },
+        objectives = {
+            { type = "talk", name = "Pamela Redpath", spawns = {{32.8, 83.6}} },
+        }
+    },
+
+    [5228] = { -- Unfinished Business
+        name = "Unfinished Business",
+        zone = "Western Plaguelands",
+        start = { npc = "Kirsta Deepshadow", x = 49.2, y = 76.8 },
+        objectives = {
+            { type = "kill", name = "Huntsman Radley", spawns = {{55.4, 23.8}} },
+            { type = "kill", name = "Cavalier Durgen", spawns = {{57.2, 35.6}} },
+        }
+    },
+
+    [5507] = { -- Unfinished Business
+        name = "Unfinished Business",
+        zone = "Western Plaguelands",
+        start = { npc = "Kirsta Deepshadow", x = 49.2, y = 76.8 },
+        objectives = {
+            { type = "kill", name = "Cavalier Durgen", spawns = {{57.2, 35.6}} },
+        }
+    },
+
+    [5508] = { -- Unfinished Business
+        name = "Unfinished Business",
+        zone = "Western Plaguelands",
+        start = { npc = "Kirsta Deepshadow", x = 49.2, y = 76.8 },
+        objectives = {
+            { type = "kill", name = "Instructor Malicia", spawns = {{45.8, 18.4}} },
+        }
+    },
+
+    -- ====================
+    -- WINTERSPRING QUESTS (~30)
+    -- ====================
+
+    [5082] = { -- Ursius of the Shardtooth
+        name = "Ursius of the Shardtooth",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.8, y = 9.6 },
+        objectives = {
+            { type = "kill", name = "Ursius", spawns = {{57.4, 14.8}} },
+        }
+    },
+
+    [5083] = { -- Brumeran of the Chillwind
+        name = "Brumeran of the Chillwind",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.8, y = 9.6 },
+        objectives = {
+            { type = "kill", name = "Brumeran", spawns = {{54.6, 42.8}} },
+        }
+    },
+
+    [5084] = { -- Shy-Rotam
+        name = "Shy-Rotam",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.8, y = 9.6 },
+        objectives = {
+            { type = "kill", name = "Shy-Rotam", spawns = {{49.6, 9.8}} },
+        }
+    },
+
+    [5085] = { -- Frostsaber Provisions
+        name = "Frostsaber Provisions",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.8, y = 9.6 },
+        objectives = {
+            { type = "item", name = "Shardtooth Meat", spawns = {{59.2, 18.4}, {55.8, 12.6}} },
+            { type = "item", name = "Chillwind Meat", spawns = {{54.2, 40.6}, {52.8, 35.4}} },
+        }
+    },
+
+    [5087] = { -- Winterfall Firewater
+        name = "Winterfall Firewater",
+        zone = "Winterspring",
+        start = { npc = "Rivern Frostwind", x = 49.8, y = 9.6 },
+        objectives = {
+            { type = "item", name = "Winterfall Firewater", spawns = {{68.4, 36.2}, {67.8, 34.8}} },
+        }
+    },
+
+    [4842] = { -- Are We There, Yeti?
+        name = "Are We There, Yeti?",
+        zone = "Winterspring",
+        start = { npc = "Umi Rumplesnicker", x = 61.2, y = 37.6 },
+        objectives = {
+            { type = "item", name = "Pristine Yeti Hide", spawns = {{67.4, 40.2}, {64.8, 35.6}} },
+        }
+    },
+
+    [977] = { -- Are We There, Yeti?
+        name = "Are We There, Yeti?",
+        zone = "Winterspring",
+        start = { npc = "Umi Rumplesnicker", x = 61.2, y = 37.6 },
+        objectives = {
+            { type = "item", name = "Cured Yeti Hide", spawns = {{67.4, 40.2}} },
+        }
+    },
+
+    [5163] = { -- Are We There, Yeti?
+        name = "Are We There, Yeti?",
+        zone = "Winterspring",
+        start = { npc = "Umi Rumplesnicker", x = 61.2, y = 37.6 },
+        objectives = {
+            { type = "use", name = "Umi's Mechanical Yeti", spawns = {{28.4, 77.6}} },
+        }
+    },
+
+    [5248] = { -- Duke Nicholas Zverenhoff
+        name = "Duke Nicholas Zverenhoff",
+        zone = "Winterspring",
+        start = { npc = "Donova Snowden", x = 31.4, y = 45.2 },
+        objectives = {
+            { type = "talk", name = "Duke Nicholas Zverenhoff", spawns = {{81.6, 59.8}} },
+        }
+    },
+
+    [975] = { -- The Everlook Report
+        name = "The Everlook Report",
+        zone = "Winterspring",
+        start = { npc = "Donova Snowden", x = 31.4, y = 45.2 },
+        objectives = {
+            { type = "talk", name = "Winfiel Halter", spawns = {{61.6, 38.6}} },
+        }
+    },
+
+    [969] = { -- Threat of the Winterfall
+        name = "Threat of the Winterfall",
+        zone = "Winterspring",
+        start = { npc = "Donova Snowden", x = 31.4, y = 45.2 },
+        objectives = {
+            { type = "kill", name = "Winterfall Furbolg", spawns = {{27.6, 36.4}, {24.8, 40.2}} },
+        }
+    },
+
+    [5121] = { -- Winterfall Activity
+        name = "Winterfall Activity",
+        zone = "Winterspring",
+        start = { npc = "Donova Snowden", x = 31.4, y = 45.2 },
+        objectives = {
+            { type = "item", name = "Empty Firewater Flask", spawns = {{24.8, 50.6}, {27.2, 47.8}} },
+        }
+    },
+
+    [5123] = { -- Falling to Corruption
+        name = "Falling to Corruption",
+        zone = "Winterspring",
+        start = { npc = "Donova Snowden", x = 31.4, y = 45.2 },
+        objectives = {
+            { type = "item", name = "Deadwood Ritual Totem", spawns = {{63.2, 6.4}} },
+        }
+    },
+
+    [5128] = { -- Mystery Goo
+        name = "Mystery Goo",
+        zone = "Winterspring",
+        start = { npc = "Donova Snowden", x = 31.4, y = 45.2 },
+        objectives = {
+            { type = "talk", name = "Chemist Fuely", spawns = {{42.6, 74.2}} },
+        }
+    },
+
+    [5981] = { -- Cache of Mau'ari
+        name = "Cache of Mau'ari",
+        zone = "Winterspring",
+        start = { npc = "Mau'ari", x = 31.8, y = 45.2 },
+        objectives = {
+            { type = "collect", name = "Winterfall Spirit Beads", spawns = {{67.4, 36.8}, {24.8, 48.6}} },
+        }
+    },
+
+    [3783] = { -- Delivery for Marin
+        name = "Delivery for Marin",
+        zone = "Winterspring",
+        start = { npc = "Harlo Wigglesworth", x = 59.4, y = 50.2 },
+        objectives = {
+            { type = "talk", name = "Marin Noggenfogger", spawns = {{52.2, 28.4}} },
+        }
+    },
+
+    [6028] = { -- Luck Be With You
+        name = "Luck Be With You",
+        zone = "Winterspring",
+        start = { npc = "Legacki", x = 59.6, y = 50.8 },
+        objectives = {
+            { type = "item", name = "Crystalized Luck", spawns = {{59.4, 72.6}, {56.8, 65.4}} },
+        }
+    },
+
+    [6030] = { -- You're a Mean One...
+        name = "You're a Mean One...",
+        zone = "Winterspring",
+        start = { npc = "Strange Snowman", x = 35.8, y = 65.2 },
+        objectives = {
+            { type = "kill", name = "The Abominable Greench", spawns = {{35.2, 72.4}} },
+        }
+    },
+
+    [6031] = { -- A Smokywood Pastures Thank You!
+        name = "A Smokywood Pastures Thank You!",
+        zone = "Winterspring",
+        start = { npc = "Wulmort Jinglepocket", x = 60.0, y = 36.4 },
+        objectives = {
+            { type = "talk", name = "Greatfather Winter", spawns = {{33.4, 67.8}} },
+        }
+    },
+
+    [5250] = { -- High Chief Winterfall
+        name = "High Chief Winterfall",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 31.4, y = 45.6 },
+        objectives = {
+            { type = "kill", name = "High Chief Winterfall", spawns = {{68.4, 35.8}} },
+        }
+    },
+
+    [5253] = { -- The Final Piece
+        name = "The Final Piece",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 31.4, y = 45.6 },
+        objectives = {
+            { type = "talk", name = "Kelek Skykeeper", spawns = {{64.8, 16.4}} },
+        }
+    },
+
+    [5244] = { -- Words of the High Chief
+        name = "Words of the High Chief",
+        zone = "Winterspring",
+        start = { npc = "Salfa", x = 31.4, y = 45.6 },
+        objectives = {
+            { type = "item", name = "High Chief's Headdress", spawns = {{68.4, 35.8}} },
+        }
+    },
+
+    [6604] = { -- Chillwind Point
+        name = "Chillwind Point",
+        zone = "Winterspring",
+        start = { npc = "Storm Shadowhoof", x = 31.6, y = 45.2 },
+        objectives = {
+            { type = "talk", name = "Commander Ashlam Valorfist", spawns = {{43.4, 84.6}} },
+        }
+    },
+
+    [6603] = { -- The Ruins of Kel'Theril
+        name = "The Ruins of Kel'Theril",
+        zone = "Winterspring",
+        start = { npc = "Donova Snowden", x = 31.4, y = 45.2 },
+        objectives = {
+            { type = "explore", name = "Ruins of Kel'Theril", spawns = {{53.4, 42.8}} },
+        }
+    },
+
+    [5245] = { -- Troubled Spirits of Kel'Theril
+        name = "Troubled Spirits of Kel'Theril",
+        zone = "Winterspring",
+        start = { npc = "Jaron Stoneshaper", x = 61.4, y = 37.8 },
+        objectives = {
+            { type = "item", name = "Highborne Relic Fragment", spawns = {{53.2, 42.4}, {55.8, 44.6}} },
+        }
+    },
+
+    [5247] = { -- Enraged Spirits
+        name = "Enraged Spirits",
+        zone = "Winterspring",
+        start = { npc = "Jaron Stoneshaper", x = 61.4, y = 37.8 },
+        objectives = {
+            { type = "kill", name = "Suffering Highborne", spawns = {{53.4, 43.2}, {54.8, 41.6}} },
+        }
+    },
+
+    [4781] = { -- Sisters of the Sands
+        name = "Sisters of the Sands",
+        zone = "Winterspring",
+        start = { npc = "Jessica Redpath", x = 62.2, y = 37.4 },
+        objectives = {
+            { type = "talk", name = "Natalia Mar'alith", spawns = {{49.2, 36.8}} },
+        }
+    },
+
+    [4842] = { -- Strange Sources
+        name = "Strange Sources",
+        zone = "Winterspring",
+        start = { npc = "Lorekeeper Lydros", x = 60.8, y = 37.2 },
+        objectives = {
+            { type = "explore", name = "Spirit of Azuregos", spawns = {{55.2, 52.8}} },
+        }
+    },
+
+    [982] = { -- It's a Secret to Everybody
+        name = "It's a Secret to Everybody",
+        zone = "Winterspring",
+        start = { npc = "Crashsite", x = 52.4, y = 32.6 },
+        objectives = {
+            { type = "item", name = "A Wrecked Raft", spawns = {{52.4, 32.6}} },
+        }
+    },
+
+    -- ====================
+    -- UN'GORO CRATER QUESTS (~30)
+    -- ====================
+
+    [3844] = { -- Williden's Journal
+        name = "Williden's Journal",
+        zone = "Un'Goro Crater",
+        start = { npc = "Williden Marshal", x = 43.6, y = 7.4 },
+        objectives = {
+            { type = "talk", name = "Curator Thorius", spawns = {{77.2, 12.4}} },
+        }
+    },
+
+    [3845] = { -- Expedition Salvation
+        name = "Expedition Salvation",
+        zone = "Un'Goro Crater",
+        start = { npc = "Williden Marshal", x = 43.6, y = 7.4 },
+        objectives = {
+            { type = "item", name = "Crate of Foodstuffs", spawns = {{68.4, 36.2}, {71.2, 42.8}} },
+        }
+    },
+
+    [3882] = { -- Shizzle's Flyer
+        name = "Shizzle's Flyer",
+        zone = "Un'Goro Crater",
+        start = { npc = "Shizzle", x = 44.2, y = 7.8 },
+        objectives = {
+            { type = "item", name = "Webbed Pterrordax Wing", spawns = {{49.6, 57.4}, {52.2, 61.8}} },
+        }
+    },
+
+    [3883] = { -- Chasing A-Me 01
+        name = "Chasing A-Me 01",
+        zone = "Un'Goro Crater",
+        start = { npc = "Karna Remtravel", x = 43.8, y = 8.6 },
+        objectives = {
+            { type = "find", name = "A-Me 01", spawns = {{62.4, 17.2}} },
+        }
+    },
+
+    [4243] = { -- Chasing A-Me 01
+        name = "Chasing A-Me 01",
+        zone = "Un'Goro Crater",
+        start = { npc = "A-Me 01", x = 62.4, y = 17.2 },
+        objectives = {
+            { type = "escort", name = "A-Me 01", spawns = {{43.8, 8.6}} },
+        }
+    },
+
+    [4289] = { -- Larion and Muigin
+        name = "Larion and Muigin",
+        zone = "Un'Goro Crater",
+        start = { npc = "Larion", x = 45.2, y = 8.4 },
+        objectives = {
+            { type = "item", name = "Un'Goro Lasher Seed", spawns = {{37.4, 25.6}, {42.8, 38.4}} },
+        }
+    },
+
+    [4145] = { -- Muigin and Larion
+        name = "Muigin and Larion",
+        zone = "Un'Goro Crater",
+        start = { npc = "Muigin", x = 42.6, y = 9.6 },
+        objectives = {
+            { type = "item", name = "Un'Goro Stomper Seed", spawns = {{52.4, 44.6}, {48.2, 36.8}} },
+        }
+    },
+
+    [4492] = { -- Lost!
+        name = "Lost!",
+        zone = "Un'Goro Crater",
+        start = { npc = "Spraggle Frock", x = 43.4, y = 8.2 },
+        objectives = {
+            { type = "escort", name = "Ringo", spawns = {{62.8, 68.4}} },
+        }
+    },
+
+    [4501] = { -- A Little Help From My Friends
+        name = "A Little Help From My Friends",
+        zone = "Un'Goro Crater",
+        start = { npc = "Ringo", x = 62.8, y = 68.4 },
+        objectives = {
+            { type = "escort", name = "Ringo", spawns = {{43.4, 8.2}} },
+        }
+    },
+
+    [4141] = { -- The Apes of Un'Goro
+        name = "The Apes of Un'Goro",
+        zone = "Un'Goro Crater",
+        start = { npc = "Torwa Pathfinder", x = 71.8, y = 76.2 },
+        objectives = {
+            { type = "item", name = "Un'Goro Gorilla Pelt", spawns = {{62.4, 16.8}, {64.2, 18.4}} },
+            { type = "item", name = "Un'Goro Thunderer Pelt", spawns = {{57.2, 22.6}, {59.8, 24.4}} },
+        }
+    },
+
+    [4142] = { -- The Fare of Lar'korwi
+        name = "The Fare of Lar'korwi",
+        zone = "Un'Goro Crater",
+        start = { npc = "Torwa Pathfinder", x = 71.8, y = 76.2 },
+        objectives = {
+            { type = "item", name = "Ravasaur Pheromone Gland", spawns = {{60.4, 72.8}, {63.2, 68.4}} },
+        }
+    },
+
+    [4148] = { -- The Bait for Lar'korwi
+        name = "The Bait for Lar'korwi",
+        zone = "Un'Goro Crater",
+        start = { npc = "Torwa Pathfinder", x = 71.8, y = 76.2 },
+        objectives = {
+            { type = "item", name = "Ravasaur Egg", spawns = {{68.2, 61.4}} },
+        }
+    },
+
+    [4292] = { -- The Scent of Lar'korwi
+        name = "The Scent of Lar'korwi",
+        zone = "Un'Goro Crater",
+        start = { npc = "Torwa Pathfinder", x = 71.8, y = 76.2 },
+        objectives = {
+            { type = "kill", name = "Lar'korwi", spawns = {{80.2, 49.6}} },
+        }
+    },
+
+    [4284] = { -- Roll the Bones
+        name = "Roll the Bones",
+        zone = "Un'Goro Crater",
+        start = { npc = "Spark Nilminer", x = 44.2, y = 7.6 },
+        objectives = {
+            { type = "item", name = "Dinosaur Bone", spawns = {{64.8, 12.4}, {71.4, 28.6}, {54.2, 58.4}} },
+        }
+    },
+
+    [3884] = { -- Super Sticky
+        name = "Super Sticky",
+        zone = "Un'Goro Crater",
+        start = { npc = "Spark Nilminer", x = 44.2, y = 7.6 },
+        objectives = {
+            { type = "item", name = "Super Sticky Tar", spawns = {{48.6, 22.4}, {50.4, 18.2}} },
+        }
+    },
+
+    [974] = { -- It's a Secret to Everybody
+        name = "It's a Secret to Everybody",
+        zone = "Un'Goro Crater",
+        start = { npc = "A Wrecked Raft", x = 7.8, y = 18.6 },
+        objectives = {
+            { type = "explore", name = "Wrecked Raft", spawns = {{7.8, 18.6}} },
+        }
+    },
+
+    [2944] = { -- Linken's Memory
+        name = "Linken's Memory",
+        zone = "Un'Goro Crater",
+        start = { npc = "J.D. Collie", x = 43.6, y = 7.2 },
+        objectives = {
+            { type = "talk", name = "Eridan Bluewind", spawns = {{52.8, 64.2}} },
+        }
+    },
+
+    [3942] = { -- A Linken Adventure
+        name = "A Linken Adventure",
+        zone = "Un'Goro Crater",
+        start = { npc = "Donova Snowden", x = 31.4, y = 45.2 },
+        objectives = {
+            { type = "talk", name = "Linken", spawns = {{43.6, 8.6}} },
+        }
+    },
+
+    [3961] = { -- It's Dangerous to Go Alone
+        name = "It's Dangerous to Go Alone",
+        zone = "Un'Goro Crater",
+        start = { npc = "Linken", x = 43.6, y = 8.6 },
+        objectives = {
+            { type = "item", name = "Faded Photograph", spawns = {{67.4, 32.8}} },
+        }
+    },
+
+    [3962] = { -- Linken's Sword
+        name = "Linken's Sword",
+        zone = "Un'Goro Crater",
+        start = { npc = "Linken", x = 43.6, y = 8.6 },
+        objectives = {
+            { type = "item", name = "Silver Totem of Aquementas", spawns = {{27.4, 68.2}} },
+        }
+    },
+
+    [3908] = { -- The Northern Pylon
+        name = "The Northern Pylon",
+        zone = "Un'Goro Crater",
+        start = { npc = "J.D. Collie", x = 43.6, y = 7.2 },
+        objectives = {
+            { type = "explore", name = "Northern Crystal Pylon", spawns = {{56.4, 12.6}} },
+        }
+    },
+
+    [3909] = { -- The Eastern Pylon
+        name = "The Eastern Pylon",
+        zone = "Un'Goro Crater",
+        start = { npc = "J.D. Collie", x = 43.6, y = 7.2 },
+        objectives = {
+            { type = "explore", name = "Eastern Crystal Pylon", spawns = {{77.2, 50.4}} },
+        }
+    },
+
+    [3910] = { -- The Western Pylon
+        name = "The Western Pylon",
+        zone = "Un'Goro Crater",
+        start = { npc = "J.D. Collie", x = 43.6, y = 7.2 },
+        objectives = {
+            { type = "explore", name = "Western Crystal Pylon", spawns = {{23.4, 59.2}} },
+        }
+    },
+
+    [4284] = { -- Crystal Charge
+        name = "Crystal Charge",
+        zone = "Un'Goro Crater",
+        start = { npc = "J.D. Collie", x = 43.6, y = 7.2 },
+        objectives = {
+            { type = "item", name = "Red Power Crystal", spawns = {{52.6, 44.8}, {48.4, 38.2}} },
+            { type = "item", name = "Blue Power Crystal", spawns = {{54.2, 62.6}, {59.8, 54.4}} },
+        }
+    },
+
+    [4401] = { -- Crystal Restore
+        name = "Crystal Restore",
+        zone = "Un'Goro Crater",
+        start = { npc = "J.D. Collie", x = 43.6, y = 7.2 },
+        objectives = {
+            { type = "item", name = "Yellow Power Crystal", spawns = {{32.6, 38.4}, {35.8, 42.2}} },
+            { type = "item", name = "Green Power Crystal", spawns = {{40.2, 56.8}, {44.6, 52.4}} },
+        }
+    },
+
+    [4503] = { -- Crystals of Power
+        name = "Crystals of Power",
+        zone = "Un'Goro Crater",
+        start = { npc = "J.D. Collie", x = 43.6, y = 7.2 },
+        objectives = {
+            { type = "item", name = "Red Power Crystal", spawns = {{52.6, 44.8}} },
+            { type = "item", name = "Blue Power Crystal", spawns = {{54.2, 62.6}} },
+            { type = "item", name = "Yellow Power Crystal", spawns = {{32.6, 38.4}} },
+            { type = "item", name = "Green Power Crystal", spawns = {{40.2, 56.8}} },
+        }
+    },
+
+    [3881] = { -- Beware of Pterrordax
+        name = "Beware of Pterrordax",
+        zone = "Un'Goro Crater",
+        start = { npc = "Hol'anyee Marshal", x = 43.2, y = 8.2 },
+        objectives = {
+            { type = "item", name = "Pterrordax Sinew", spawns = {{49.4, 57.6}, {52.8, 62.4}} },
+        }
+    },
+
+    [4291] = { -- An Orphan Looking For a Home
+        name = "An Orphan Looking For a Home",
+        zone = "Un'Goro Crater",
+        start = { npc = "Hol'anyee Marshal", x = 43.2, y = 8.2 },
+        objectives = {
+            { type = "item", name = "Pterrordax Egg", spawns = {{51.4, 58.8}} },
+        }
+    },
+
+    [3941] = { -- Finding the Source
+        name = "Finding the Source",
+        zone = "Un'Goro Crater",
+        start = { npc = "Krakle", x = 44.6, y = 7.4 },
+        objectives = {
+            { type = "use", name = "Empty Jar", spawns = {{30.8, 50.4}} },
+        }
+    },
+
+    [4006] = { -- The Mighty U'cha
+        name = "The Mighty U'cha",
+        zone = "Un'Goro Crater",
+        start = { npc = "Torwa Pathfinder", x = 71.8, y = 76.2 },
+        objectives = {
+            { type = "kill", name = "U'cha", spawns = {{68.4, 12.8}} },
+        }
+    },
+
+    -- ====================
+    -- FELWOOD QUESTS (~25)
+    -- ====================
+
+    [4101] = { -- Welcome to Felwood
+        name = "Welcome to Felwood",
+        zone = "Felwood",
+        start = { npc = "Greta Mosshoof", x = 51.2, y = 82.2 },
+        objectives = {
+            { type = "talk", name = "Maybess Riverbreeze", spawns = {{46.8, 83.2}} },
+        }
+    },
+
+    [4102] = { -- Cleansing Felwood
+        name = "Cleansing Felwood",
+        zone = "Felwood",
+        start = { npc = "Maybess Riverbreeze", x = 46.8, y = 83.2 },
+        objectives = {
+            { type = "item", name = "Corrupted Soul Shard", spawns = {{42.4, 67.8}, {38.6, 58.4}, {44.2, 54.2}} },
+        }
+    },
+
+    [5156] = { -- Forces of Jaedenar
+        name = "Forces of Jaedenar",
+        zone = "Felwood",
+        start = { npc = "Greta Mosshoof", x = 51.2, y = 82.2 },
+        objectives = {
+            { type = "kill", name = "Jaedenar Hound", spawns = {{35.2, 58.6}, {36.8, 60.4}} },
+            { type = "kill", name = "Jaedenar Guardian", spawns = {{34.6, 59.2}, {37.2, 61.8}} },
+            { type = "kill", name = "Jaedenar Cultist", spawns = {{35.8, 57.4}, {38.4, 59.6}} },
+        }
+    },
+
+    [5157] = { -- Collection of the Corrupt Water
+        name = "Collection of the Corrupt Water",
+        zone = "Felwood",
+        start = { npc = "Greta Mosshoof", x = 51.2, y = 82.2 },
+        objectives = {
+            { type = "item", name = "Corrupt Water Sample", spawns = {{57.4, 87.2}} },
+        }
+    },
+
+    [5158] = { -- Felbound Ancients
+        name = "Felbound Ancients",
+        zone = "Felwood",
+        start = { npc = "Maybess Riverbreeze", x = 46.8, y = 83.2 },
+        objectives = {
+            { type = "kill", name = "Warpwood Moss Flayer", spawns = {{54.2, 86.8}, {56.4, 84.2}} },
+            { type = "kill", name = "Warpwood Shredder", spawns = {{55.8, 88.4}, {52.6, 85.6}} },
+        }
+    },
+
+    [5165] = { -- Corrupted Sabers
+        name = "Corrupted Sabers",
+        zone = "Felwood",
+        start = { npc = "Winna Hazzard", x = 50.4, y = 45.2 },
+        objectives = {
+            { type = "use", name = "Cat Figurine", spawns = {{47.2, 88.6}} },
+        }
+    },
+
+    [5202] = { -- Timbermaw Ally
+        name = "Timbermaw Ally",
+        zone = "Felwood",
+        start = { npc = "Nafien", x = 64.4, y = 8.2 },
+        objectives = {
+            { type = "kill", name = "Deadwood Warrior", spawns = {{62.8, 10.4}, {64.2, 12.6}} },
+            { type = "kill", name = "Deadwood Pathfinder", spawns = {{63.4, 9.8}, {65.6, 11.2}} },
+            { type = "kill", name = "Deadwood Gardener", spawns = {{61.8, 8.6}, {63.2, 14.4}} },
+        }
+    },
+
+    [5203] = { -- Speak to Salfa
+        name = "Speak to Salfa",
+        zone = "Felwood",
+        start = { npc = "Nafien", x = 64.4, y = 8.2 },
+        objectives = {
+            { type = "talk", name = "Salfa", spawns = {{64.8, 10.2}} },
+        }
+    },
+
+    [6041] = { -- Deadwood of the North
+        name = "Deadwood of the North",
+        zone = "Felwood",
+        start = { npc = "Salfa", x = 64.8, y = 10.2 },
+        objectives = {
+            { type = "kill", name = "Deadwood Avenger", spawns = {{60.2, 6.4}, {62.4, 8.8}} },
+            { type = "kill", name = "Deadwood Shaman", spawns = {{61.8, 5.2}, {63.6, 7.6}} },
+        }
+    },
+
+    [6162] = { -- Feathers for Nafien
+        name = "Feathers for Nafien",
+        zone = "Felwood",
+        start = { npc = "Nafien", x = 64.4, y = 8.2 },
+        objectives = {
+            { type = "item", name = "Deadwood Headdress Feather", spawns = {{62.4, 10.2}, {63.8, 12.4}} },
+        }
+    },
+
+    [4421] = { -- Cleansing of the Corrupted
+        name = "Cleansing of the Corrupted",
+        zone = "Felwood",
+        start = { npc = "Taronn Redfeather", x = 62.4, y = 24.6 },
+        objectives = {
+            { type = "kill", name = "Cursed Ooze", spawns = {{43.2, 46.8}, {44.8, 48.2}} },
+            { type = "kill", name = "Tainted Ooze", spawns = {{45.6, 44.4}, {42.4, 50.6}} },
+        }
+    },
+
+    [4441] = { -- Verifying the Corruption
+        name = "Verifying the Corruption",
+        zone = "Felwood",
+        start = { npc = "Taronn Redfeather", x = 62.4, y = 24.6 },
+        objectives = {
+            { type = "item", name = "Flute of the Horde", spawns = {{35.4, 59.8}} },
+        }
+    },
+
+    [4906] = { -- A Final Blow
+        name = "A Final Blow",
+        zone = "Felwood",
+        start = { npc = "Captured Arkonarin", x = 35.4, y = 59.2 },
+        objectives = {
+            { type = "kill", name = "Trey Lightforge", spawns = {{35.2, 58.4}} },
+        }
+    },
+
+    [5021] = { -- Rescue from Jaedenar
+        name = "Rescue from Jaedenar",
+        zone = "Felwood",
+        start = { npc = "Arko'narin", x = 51.0, y = 82.0 },
+        objectives = {
+            { type = "escort", name = "Arei", spawns = {{49.8, 14.6}} },
+        }
+    },
+
+    [5022] = { -- Arei's Escape
+        name = "Arei's Escape",
+        zone = "Felwood",
+        start = { npc = "Arei", x = 49.8, y = 14.6 },
+        objectives = {
+            { type = "escort", name = "Arei", spawns = {{54.2, 86.4}} },
+        }
+    },
+
+    [4462] = { -- Truly Corrupted
+        name = "Truly Corrupted",
+        zone = "Felwood",
+        start = { npc = "Horde Emissary", x = 51.4, y = 82.4 },
+        objectives = {
+            { type = "item", name = "Emerald Flame", spawns = {{35.8, 60.4}} },
+        }
+    },
+
+    [4464] = { -- Purified!
+        name = "Purified!",
+        zone = "Felwood",
+        start = { npc = "Jessir Moonbow", x = 51.2, y = 82.6 },
+        objectives = {
+            { type = "use", name = "Cenarion Beacon", spawns = {{32.4, 66.8}} },
+        }
+    },
+
+    [5243] = { -- Dousing the Flames of Protection
+        name = "Dousing the Flames of Protection",
+        zone = "Felwood",
+        start = { npc = "Eridan Bluewind", x = 51.2, y = 81.4 },
+        objectives = {
+            { type = "use", name = "Jaedenar Fire", spawns = {{35.4, 58.2}, {37.2, 60.8}} },
+        }
+    },
+
+    [5244] = { -- A Strange Red Key
+        name = "A Strange Red Key",
+        zone = "Felwood",
+        start = { npc = "Item Drop", x = 35.6, y = 59.4 },
+        objectives = {
+            { type = "talk", name = "Eridan Bluewind", spawns = {{51.2, 81.4}} },
+        }
+    },
+
+    [5245] = { -- Shadow Keep Key
+        name = "Shadow Keep Key",
+        zone = "Felwood",
+        start = { npc = "Eridan Bluewind", x = 51.2, y = 81.4 },
+        objectives = {
+            { type = "kill", name = "Shadow Lord Fel'dan", spawns = {{35.2, 57.8}} },
+        }
+    },
+
+    [5385] = { -- Well of Corruption
+        name = "Well of Corruption",
+        zone = "Felwood",
+        start = { npc = "Maybess Riverbreeze", x = 46.8, y = 83.2 },
+        objectives = {
+            { type = "use", name = "Empty Canteen", spawns = {{34.6, 60.2}} },
+        }
+    },
+
+    [5886] = { -- Flute of Xavaric
+        name = "Flute of Xavaric",
+        zone = "Felwood",
+        start = { npc = "Item Drop", x = 40.2, y = 56.8 },
+        objectives = {
+            { type = "talk", name = "Eridan Bluewind", spawns = {{51.2, 81.4}} },
+        }
+    },
+
+    [5887] = { -- Felbound Trial
+        name = "Felbound Trial",
+        zone = "Felwood",
+        start = { npc = "Eridan Bluewind", x = 51.2, y = 81.4 },
+        objectives = {
+            { type = "kill", name = "Xavaric", spawns = {{40.4, 54.2}} },
+        }
+    },
+
+    [4261] = { -- Cry of the Thunderhawk
+        name = "Cry of the Thunderhawk",
+        zone = "Felwood",
+        start = { npc = "Maybess Riverbreeze", x = 46.8, y = 83.2 },
+        objectives = {
+            { type = "item", name = "Thunderhawk Feather", spawns = {{38.4, 22.6}, {41.2, 25.8}} },
+        }
+    },
+
+    -- ====================
+    -- BURNING STEPPES QUESTS (~20)
+    -- ====================
+
+    [4182] = { -- Broodling Essence
+        name = "Broodling Essence",
+        zone = "Burning Steppes",
+        start = { npc = "Tinkee Steamboil", x = 65.2, y = 23.8 },
+        objectives = {
+            { type = "item", name = "Broodling Essence", spawns = {{35.4, 52.6}, {37.8, 48.2}, {32.6, 56.4}} },
+        }
+    },
+
+    [4183] = { -- Felnok Steelspring
+        name = "Felnok Steelspring",
+        zone = "Burning Steppes",
+        start = { npc = "Tinkee Steamboil", x = 65.2, y = 23.8 },
+        objectives = {
+            { type = "talk", name = "Felnok Steelspring", spawns = {{61.4, 38.6}} },
+        }
+    },
+
+    [4263] = { -- Dragonkin Menace
+        name = "Dragonkin Menace",
+        zone = "Burning Steppes",
+        start = { npc = "Helendis Riverhorn", x = 84.6, y = 68.6 },
+        objectives = {
+            { type = "kill", name = "Black Broodling", spawns = {{35.2, 50.4}, {38.6, 48.8}} },
+            { type = "kill", name = "Black Dragonspawn", spawns = {{36.4, 52.2}, {34.8, 54.6}} },
+            { type = "kill", name = "Black Drake", spawns = {{32.8, 58.4}, {37.2, 56.2}} },
+        }
+    },
+
+    [4264] = { -- The True Masters
+        name = "The True Masters",
+        zone = "Burning Steppes",
+        start = { npc = "Helendis Riverhorn", x = 84.6, y = 68.6 },
+        objectives = {
+            { type = "talk", name = "Magistrate Solomon", spawns = {{28.6, 41.2}} },
+        }
+    },
+
+    [4284] = { -- A Taste of Flame
+        name = "A Taste of Flame",
+        zone = "Burning Steppes",
+        start = { npc = "Cyrus Therepentous", x = 95.2, y = 31.6 },
+        objectives = {
+            { type = "item", name = "Dragonkin Ember", spawns = {{36.4, 50.8}, {34.2, 54.2}} },
+        }
+    },
+
+    [4024] = { -- KILL ON SIGHT: Dark Iron Dwarves
+        name = "KILL ON SIGHT: Dark Iron Dwarves",
+        zone = "Burning Steppes",
+        start = { npc = "Wanted Poster", x = 65.4, y = 24.2 },
+        objectives = {
+            { type = "kill", name = "Dark Iron Slaver", spawns = {{66.2, 54.8}, {68.4, 52.6}} },
+            { type = "kill", name = "Dark Iron Taskmaster", spawns = {{67.8, 56.2}, {65.2, 58.4}} },
+        }
+    },
+
+    [4064] = { -- KILL ON SIGHT: High Ranking Dark Iron Officials
+        name = "KILL ON SIGHT: High Ranking Dark Iron Officials",
+        zone = "Burning Steppes",
+        start = { npc = "Wanted Poster", x = 65.4, y = 24.2 },
+        objectives = {
+            { type = "kill", name = "Dark Iron Overseer", spawns = {{70.2, 45.6}} },
+            { type = "kill", name = "Dark Iron Warlock", spawns = {{68.4, 47.8}, {72.6, 44.2}} },
+        }
+    },
+
+    [4286] = { -- Krom'grul
+        name = "Krom'grul",
+        zone = "Burning Steppes",
+        start = { npc = "Oralius", x = 84.4, y = 68.2 },
+        objectives = {
+            { type = "kill", name = "Krom'grul", spawns = {{79.2, 45.6}} },
+        }
+    },
+
+    [4223] = { -- Blackrock Stronghold
+        name = "Blackrock Stronghold",
+        zone = "Burning Steppes",
+        start = { npc = "Sergeant Wyldar", x = 84.8, y = 68.8 },
+        objectives = {
+            { type = "kill", name = "Blackrock Champion", spawns = {{78.4, 36.2}, {76.8, 38.4}} },
+            { type = "kill", name = "Blackrock Veteran", spawns = {{80.2, 34.6}, {82.6, 32.8}} },
+        }
+    },
+
+    [4224] = { -- Blackrock Orcs
+        name = "Blackrock Orcs",
+        zone = "Burning Steppes",
+        start = { npc = "Corporal Kalbak", x = 84.2, y = 69.4 },
+        objectives = {
+            { type = "kill", name = "Blackrock Soldier", spawns = {{83.4, 44.6}, {85.8, 42.2}} },
+            { type = "kill", name = "Blackrock Sorcerer", spawns = {{81.6, 46.8}, {84.2, 48.4}} },
+        }
+    },
+
+    [4126] = { -- Gor'tesh the Brute Lord
+        name = "Gor'tesh the Brute Lord",
+        zone = "Burning Steppes",
+        start = { npc = "Oralius", x = 84.4, y = 68.2 },
+        objectives = {
+            { type = "kill", name = "Gor'tesh", spawns = {{39.8, 28.4}} },
+        }
+    },
+
+    [4201] = { -- Ogre Head On A Stick = Party
+        name = "Ogre Head On A Stick = Party",
+        zone = "Burning Steppes",
+        start = { npc = "Oralius", x = 84.4, y = 68.2 },
+        objectives = {
+            { type = "use", name = "Gor'tesh's Lopped Off Head", spawns = {{39.4, 43.6}} },
+        }
+    },
+
+    [4301] = { -- The Pack Mistress
+        name = "The Pack Mistress",
+        zone = "Burning Steppes",
+        start = { npc = "Helendis Riverhorn", x = 84.6, y = 68.6 },
+        objectives = {
+            { type = "kill", name = "Halycon", spawns = {{33.4, 74.8}} },
+        }
+    },
+
+    [4481] = { -- Sealing the Barrier
+        name = "Sealing the Barrier",
+        zone = "Burning Steppes",
+        start = { npc = "Kalaran Windblade", x = 39.4, y = 51.2 },
+        objectives = {
+            { type = "use", name = "Kalaran's Key", spawns = {{34.8, 62.4}} },
+        }
+    },
+
+    [4486] = { -- The Rise of the Machines
+        name = "The Rise of the Machines",
+        zone = "Burning Steppes",
+        start = { npc = "Lokhtos Darkbargainer", x = 74.2, y = 67.8 },
+        objectives = {
+            { type = "kill", name = "War Golem", spawns = {{41.2, 48.6}, {43.6, 46.2}} },
+            { type = "item", name = "Intact War Golem Head", spawns = {{42.4, 47.4}} },
+        }
+    },
+
+    [4308] = { -- Maxwell's Mission
+        name = "Maxwell's Mission",
+        zone = "Burning Steppes",
+        start = { npc = "Marshal Maxwell", x = 84.6, y = 68.4 },
+        objectives = {
+            { type = "kill", name = "Blackrock Scout", spawns = {{76.2, 51.4}, {78.8, 49.6}} },
+        }
+    },
+
+    [4322] = { -- General Drakkisath's Demise
+        name = "General Drakkisath's Demise",
+        zone = "Burning Steppes",
+        start = { npc = "Marshal Maxwell", x = 84.6, y = 68.4 },
+        objectives = {
+            { type = "kill", name = "General Drakkisath", spawns = {{34.2, 25.8}} },
+        }
+    },
+
+    [4265] = { -- A Crumpled Up Note
+        name = "A Crumpled Up Note",
+        zone = "Burning Steppes",
+        start = { npc = "Item Drop", x = 66.4, y = 52.8 },
+        objectives = {
+            { type = "talk", name = "Oralius", spawns = {{84.4, 68.2}} },
+        }
+    },
+
+    [4266] = { -- Overmaster Pyron
+        name = "Overmaster Pyron",
+        zone = "Burning Steppes",
+        start = { npc = "Oralius", x = 84.4, y = 68.2 },
+        objectives = {
+            { type = "kill", name = "Overmaster Pyron", spawns = {{52.6, 67.4}} },
+        }
+    },
+
+    -- ====================
+    -- SEARING GORGE QUESTS (~15)
+    -- ====================
+
+    [3441] = { -- Caught!
+        name = "Caught!",
+        zone = "Searing Gorge",
+        start = { npc = "Kalaran Windblade", x = 39.0, y = 39.2 },
+        objectives = {
+            { type = "talk", name = "Kalaran Windblade", spawns = {{39.0, 39.2}} },
+        }
+    },
+
+    [3442] = { -- Ledger from Tanaris
+        name = "Ledger from Tanaris",
+        zone = "Searing Gorge",
+        start = { npc = "Item Drop", x = 39.4, y = 39.6 },
+        objectives = {
+            { type = "talk", name = "Lanie Reed", spawns = {{37.2, 26.4}} },
+        }
+    },
+
+    [3443] = { -- Suntara Stones
+        name = "Suntara Stones",
+        zone = "Searing Gorge",
+        start = { npc = "Kalaran Windblade", x = 39.0, y = 39.2 },
+        objectives = {
+            { type = "escort", name = "Dorius Stonetender", spawns = {{74.4, 19.2}} },
+        }
+    },
+
+    [3452] = { -- STOLEN: Smithing Tuyere and Lookout's Spyglass
+        name = "STOLEN: Smithing Tuyere and Lookout's Spyglass",
+        zone = "Searing Gorge",
+        start = { npc = "Wanted Poster", x = 37.8, y = 26.8 },
+        objectives = {
+            { type = "item", name = "Smithing Tuyere", spawns = {{44.2, 36.4}} },
+            { type = "item", name = "Lookout's Spyglass", spawns = {{42.8, 68.6}} },
+        }
+    },
+
+    [3453] = { -- WANTED: Overseer Maltorius
+        name = "WANTED: Overseer Maltorius",
+        zone = "Searing Gorge",
+        start = { npc = "Wanted Poster", x = 37.8, y = 26.8 },
+        objectives = {
+            { type = "kill", name = "Overseer Maltorius", spawns = {{43.6, 34.8}} },
+        }
+    },
+
+    [3481] = { -- Forging the Shaft
+        name = "Forging the Shaft",
+        zone = "Searing Gorge",
+        start = { npc = "Kalaran Windblade", x = 39.0, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Thorium Plated Dagger", spawns = {{44.6, 38.2}} },
+        }
+    },
+
+    [3483] = { -- The Key to Freedom
+        name = "The Key to Freedom",
+        zone = "Searing Gorge",
+        start = { npc = "Kalaran Windblade", x = 39.0, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Grimesilt Prison Key", spawns = {{46.2, 42.8}} },
+        }
+    },
+
+    [3484] = { -- Return to Kalaran
+        name = "Return to Kalaran",
+        zone = "Searing Gorge",
+        start = { npc = "Grumnus Steelshaper", x = 37.4, y = 26.2 },
+        objectives = {
+            { type = "talk", name = "Kalaran Windblade", spawns = {{39.0, 39.2}} },
+        }
+    },
+
+    [3501] = { -- The Flawless Flame
+        name = "The Flawless Flame",
+        zone = "Searing Gorge",
+        start = { npc = "Kalaran Windblade", x = 39.0, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Heart of the Mountain", spawns = {{36.8, 54.2}, {34.2, 48.6}} },
+        }
+    },
+
+    [3523] = { -- Divine Retribution
+        name = "Divine Retribution",
+        zone = "Searing Gorge",
+        start = { npc = "Kalaran Windblade", x = 39.0, y = 39.2 },
+        objectives = {
+            { type = "talk", name = "Overseer Oilfist", spawns = {{68.4, 56.2}} },
+        }
+    },
+
+    [3542] = { -- Curse These Fat Fingers
+        name = "Curse These Fat Fingers",
+        zone = "Searing Gorge",
+        start = { npc = "Lanie Reed", x = 37.2, y = 26.4 },
+        objectives = {
+            { type = "item", name = "Grimsite Outhouse Key", spawns = {{47.4, 46.8}} },
+        }
+    },
+
+    [7729] = { -- The Cauldron
+        name = "The Cauldron",
+        zone = "Searing Gorge",
+        start = { npc = "Hansel Heavyhands", x = 37.6, y = 26.6 },
+        objectives = {
+            { type = "kill", name = "Slave Worker", spawns = {{48.2, 42.4}, {50.6, 38.8}} },
+            { type = "kill", name = "Slavering Ember Worg", spawns = {{46.4, 44.6}, {52.2, 40.2}} },
+        }
+    },
+
+    [7730] = { -- Incendosaurs? Whateverosaurs is More Like It
+        name = "Incendosaurs? Whateverosaurs is More Like It",
+        zone = "Searing Gorge",
+        start = { npc = "Hansel Heavyhands", x = 37.6, y = 26.6 },
+        objectives = {
+            { type = "kill", name = "Incendosaur", spawns = {{50.4, 48.6}, {52.8, 46.2}} },
+        }
+    },
+
+    [7728] = { -- What the Flux?
+        name = "What the Flux?",
+        zone = "Searing Gorge",
+        start = { npc = "Master Smith Burninate", x = 38.2, y = 28.4 },
+        objectives = {
+            { type = "item", name = "Indurium Fluxed Ore", spawns = {{48.2, 34.6}, {52.4, 32.8}} },
+        }
+    },
+
+    [7727] = { -- JOB OPPORTUNITY: Culling the Competition
+        name = "JOB OPPORTUNITY: Culling the Competition",
+        zone = "Searing Gorge",
+        start = { npc = "Hansel Heavyhands", x = 37.6, y = 26.6 },
+        objectives = {
+            { type = "kill", name = "Dark Iron Steamsmith", spawns = {{44.6, 28.4}, {42.8, 30.6}} },
+        }
+    },
+
+    -- ====================
+    -- AZSHARA QUESTS (~15)
+    -- ====================
+
+    [3382] = { -- Facing Negolash
+        name = "Facing Negolash",
+        zone = "Azshara",
+        start = { npc = "Captain Vanessa Beltis", x = 51.8, y = 87.4 },
+        objectives = {
+            { type = "kill", name = "Negolash", spawns = {{52.4, 90.6}} },
+        }
+    },
+
+    [3385] = { -- The Decay of Azshara
+        name = "The Decay of Azshara",
+        zone = "Azshara",
+        start = { npc = "Serendipity", x = 53.6, y = 21.8 },
+        objectives = {
+            { type = "item", name = "Toxic Spray", spawns = {{14.2, 76.4}, {12.8, 72.6}} },
+        }
+    },
+
+    [3403] = { -- Spiritual Unrest
+        name = "Spiritual Unrest",
+        zone = "Azshara",
+        start = { npc = "Loh'atu", x = 11.6, y = 78.4 },
+        objectives = {
+            { type = "kill", name = "Highborne Apparition", spawns = {{13.4, 67.2}, {15.8, 64.6}} },
+            { type = "kill", name = "Highborne Lichling", spawns = {{14.2, 70.8}, {16.4, 68.2}} },
+        }
+    },
+
+    [3404] = { -- Restoring the Necklace
+        name = "Restoring the Necklace",
+        zone = "Azshara",
+        start = { npc = "Loh'atu", x = 11.6, y = 78.4 },
+        objectives = {
+            { type = "item", name = "Highborne Relic Fragment", spawns = {{14.6, 66.8}, {16.2, 70.4}} },
+        }
+    },
+
+    [3481] = { -- Kim'jael Indeed!
+        name = "Kim'jael Indeed!",
+        zone = "Azshara",
+        start = { npc = "Kim'jael", x = 53.4, y = 21.6 },
+        objectives = {
+            { type = "item", name = "Kim'jael's Equipment", spawns = {{49.6, 26.8}, {51.2, 24.4}} },
+        }
+    },
+
+    [3504] = { -- The Sunken Temple
+        name = "The Sunken Temple",
+        zone = "Azshara",
+        start = { npc = "Marvon Rivetseeker", x = 53.2, y = 21.4 },
+        objectives = {
+            { type = "talk", name = "Jade", spawns = {{45.8, 54.6}} },
+        }
+    },
+
+    [3505] = { -- Xylem's Apprentice
+        name = "Xylem's Apprentice",
+        zone = "Azshara",
+        start = { npc = "Sanath Lim-yo", x = 28.4, y = 50.2 },
+        objectives = {
+            { type = "talk", name = "Andron Gant", spawns = {{28.6, 49.8}} },
+        }
+    },
+
+    [3561] = { -- Meeting with the Master
+        name = "Meeting with the Master",
+        zone = "Azshara",
+        start = { npc = "Andron Gant", x = 28.6, y = 49.8 },
+        objectives = {
+            { type = "talk", name = "Xylem", spawns = {{29.4, 40.6}} },
+        }
+    },
+
+    [3601] = { -- The Ruins of Eldarath
+        name = "The Ruins of Eldarath",
+        zone = "Azshara",
+        start = { npc = "Serendipity", x = 53.6, y = 21.8 },
+        objectives = {
+            { type = "item", name = "Eldarath Artifact", spawns = {{33.4, 52.6}, {36.8, 48.2}} },
+        }
+    },
+
+    [3621] = { -- Delivery to Xylem
+        name = "Delivery to Xylem",
+        zone = "Azshara",
+        start = { npc = "Sanath Lim-yo", x = 28.4, y = 50.2 },
+        objectives = {
+            { type = "talk", name = "Xylem", spawns = {{29.4, 40.6}} },
+        }
+    },
+
+    [3641] = { -- Timbermaw Patrollers
+        name = "Timbermaw Patrollers",
+        zone = "Azshara",
+        start = { npc = "Kelek Skykeeper", x = 11.4, y = 76.8 },
+        objectives = {
+            { type = "kill", name = "Timbermaw Ursa", spawns = {{8.4, 77.2}, {10.6, 79.4}} },
+            { type = "kill", name = "Timbermaw Totemic", spawns = {{9.2, 75.6}, {7.8, 78.8}} },
+        }
+    },
+
+    [5534] = { -- The Demon Hunter
+        name = "The Demon Hunter",
+        zone = "Azshara",
+        start = { npc = "Lario Ularion", x = 51.6, y = 21.2 },
+        objectives = {
+            { type = "talk", name = "Loramus Thalipedes", spawns = {{77.4, 91.6}} },
+        }
+    },
+
+    [5535] = { -- Courser Antlers
+        name = "Courser Antlers",
+        zone = "Azshara",
+        start = { npc = "Ogtinc", x = 42.2, y = 42.6 },
+        objectives = {
+            { type = "item", name = "Courser Antlers", spawns = {{55.4, 32.8}, {57.2, 28.6}} },
+        }
+    },
+
+    [5536] = { -- The Ancient Leaf
+        name = "The Ancient Leaf",
+        zone = "Azshara",
+        start = { npc = "Vartrus the Ancient", x = 22.4, y = 54.6 },
+        objectives = {
+            { type = "item", name = "Petrified Bark", spawns = {{25.4, 52.4}, {27.8, 56.2}} },
+        }
+    },
+
+    [5537] = { -- A Simple Forgery
+        name = "A Simple Forgery",
+        zone = "Azshara",
+        start = { npc = "Xylem", x = 29.4, y = 40.6 },
+        objectives = {
+            { type = "item", name = "Forged Tablet", spawns = {{34.6, 46.8}} },
+        }
+    },
+
+    -- ====================
+    -- BLASTED LANDS QUESTS (~12)
+    -- ====================
+
+    [2583] = { -- Fallen Hero of the Horde
+        name = "Fallen Hero of the Horde",
+        zone = "Blasted Lands",
+        start = { npc = "Fallen Hero of the Horde", x = 40.4, y = 14.6 },
+        objectives = {
+            { type = "talk", name = "Corporal Thund Splithoof", spawns = {{66.2, 24.8}} },
+        }
+    },
+
+    [2585] = { -- The Fallen Hero
+        name = "The Fallen Hero",
+        zone = "Blasted Lands",
+        start = { npc = "Fallen Hero of the Horde", x = 40.4, y = 14.6 },
+        objectives = {
+            { type = "item", name = "Horde War Token", spawns = {{44.2, 38.6}, {46.8, 42.4}} },
+        }
+    },
+
+    [2601] = { -- Servant of Allistarj
+        name = "Servant of Allistarj",
+        zone = "Blasted Lands",
+        start = { npc = "Fallen Hero of the Horde", x = 40.4, y = 14.6 },
+        objectives = {
+            { type = "kill", name = "Servant of Allistarj", spawns = {{46.2, 36.8}} },
+        }
+    },
+
+    [2602] = { -- Servant of Sevine
+        name = "Servant of Sevine",
+        zone = "Blasted Lands",
+        start = { npc = "Fallen Hero of the Horde", x = 40.4, y = 14.6 },
+        objectives = {
+            { type = "kill", name = "Servant of Sevine", spawns = {{42.8, 40.2}} },
+        }
+    },
+
+    [2603] = { -- Servant of Grol
+        name = "Servant of Grol",
+        zone = "Blasted Lands",
+        start = { npc = "Fallen Hero of the Horde", x = 40.4, y = 14.6 },
+        objectives = {
+            { type = "kill", name = "Servant of Grol", spawns = {{52.4, 32.6}} },
+        }
+    },
+
+    [2622] = { -- Razelikh's Minions
+        name = "Razelikh's Minions",
+        zone = "Blasted Lands",
+        start = { npc = "Fallen Hero of the Horde", x = 40.4, y = 14.6 },
+        objectives = {
+            { type = "kill", name = "Lady Sevine", spawns = {{38.6, 48.2}} },
+            { type = "kill", name = "Grol the Destroyer", spawns = {{43.4, 32.4}} },
+        }
+    },
+
+    [2784] = { -- Kum'isha's Endeavors
+        name = "Kum'isha's Endeavors",
+        zone = "Blasted Lands",
+        start = { npc = "Kum'isha the Collector", x = 51.4, y = 35.8 },
+        objectives = {
+            { type = "item", name = "Flawless Draenethyst Sphere", spawns = {{54.2, 28.6}, {56.8, 32.4}} },
+        }
+    },
+
+    [2801] = { -- The Basilisk's Bite
+        name = "The Basilisk's Bite",
+        zone = "Blasted Lands",
+        start = { npc = "Bloodmage Drazial", x = 50.6, y = 14.2 },
+        objectives = {
+            { type = "item", name = "Basilisk Brain", spawns = {{58.4, 21.6}, {62.2, 18.4}} },
+        }
+    },
+
+    [2824] = { -- Vulture's Vigor
+        name = "Vulture's Vigor",
+        zone = "Blasted Lands",
+        start = { npc = "Bloodmage Lynnore", x = 51.2, y = 14.4 },
+        objectives = {
+            { type = "item", name = "Vulture Gizzard", spawns = {{44.8, 22.6}, {48.2, 26.4}} },
+        }
+    },
+
+    [2825] = { -- The Decisive Striker
+        name = "The Decisive Striker",
+        zone = "Blasted Lands",
+        start = { npc = "Bloodmage Drazial", x = 50.6, y = 14.2 },
+        objectives = {
+            { type = "item", name = "Snickerfang Jowl", spawns = {{56.2, 34.8}, {52.6, 38.2}} },
+        }
+    },
+
+    [2837] = { -- Everything Counts In Large Amounts
+        name = "Everything Counts In Large Amounts",
+        zone = "Blasted Lands",
+        start = { npc = "Kum'isha the Collector", x = 51.4, y = 35.8 },
+        objectives = {
+            { type = "item", name = "Imperfect Draenethyst Fragment", spawns = {{48.4, 42.6}, {45.2, 38.4}} },
+        }
+    },
+
+    [3628] = { -- Thadius Grimshade
+        name = "Thadius Grimshade",
+        zone = "Blasted Lands",
+        start = { npc = "Vahlarriel Demonslayer", x = 66.4, y = 19.2 },
+        objectives = {
+            { type = "talk", name = "Thadius Grimshade", spawns = {{66.8, 21.4}} },
+        }
+    },
+
+    -- ====================
+    -- DESOLACE QUESTS (~20)
+    -- ====================
+
+    [1365] = { -- Centaur Bounty
+        name = "Centaur Bounty",
+        zone = "Desolace",
+        start = { npc = "Felgur Twocuts", x = 66.4, y = 10.8 },
+        objectives = {
+            { type = "item", name = "Centaur Ear", spawns = {{70.2, 28.4}, {62.8, 34.6}, {56.4, 42.2}} },
+        }
+    },
+
+    [1366] = { -- Kodo Roundup
+        name = "Kodo Roundup",
+        zone = "Desolace",
+        start = { npc = "Smeed Scrabblescrew", x = 60.6, y = 38.2 },
+        objectives = {
+            { type = "escort", name = "Aged Kodo", spawns = {{56.8, 58.4}, {52.4, 62.6}, {48.6, 56.2}} },
+        }
+    },
+
+    [1367] = { -- Kodo Bones
+        name = "Kodo Bones",
+        zone = "Desolace",
+        start = { npc = "Bibbly F'utzbuckle", x = 62.4, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Kodo Bone", spawns = {{52.6, 58.8}, {48.2, 62.4}, {54.4, 56.2}} },
+        }
+    },
+
+    [1368] = { -- Ghost-o-plasm Round Up
+        name = "Ghost-o-plasm Round Up",
+        zone = "Desolace",
+        start = { npc = "Hornizz Brimbuzzle", x = 47.2, y = 54.6 },
+        objectives = {
+            { type = "item", name = "Ghost-o-plasm", spawns = {{65.4, 92.2}, {68.2, 88.6}} },
+        }
+    },
+
+    [1433] = { -- Bone Collector
+        name = "Bone Collector",
+        zone = "Desolace",
+        start = { npc = "Bibbly F'utzbuckle", x = 62.4, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Kodo Bone", spawns = {{52.2, 60.4}, {50.8, 56.6}} },
+        }
+    },
+
+    [1434] = { -- Gelkis Alliance
+        name = "Gelkis Alliance",
+        zone = "Desolace",
+        start = { npc = "Uthek the Wise", x = 36.2, y = 79.4 },
+        objectives = {
+            { type = "kill", name = "Magram Marauder", spawns = {{72.4, 46.2}, {68.8, 52.6}} },
+            { type = "kill", name = "Magram Windchaser", spawns = {{70.2, 48.8}, {66.4, 54.2}} },
+        }
+    },
+
+    [1436] = { -- Magram Alliance
+        name = "Magram Alliance",
+        zone = "Desolace",
+        start = { npc = "Warug", x = 74.8, y = 68.2 },
+        objectives = {
+            { type = "kill", name = "Gelkis Outrunner", spawns = {{36.4, 72.6}, {32.8, 78.2}} },
+            { type = "kill", name = "Gelkis Scout", spawns = {{34.2, 76.8}, {38.6, 74.4}} },
+        }
+    },
+
+    [1438] = { -- Stealing Supplies
+        name = "Stealing Supplies",
+        zone = "Desolace",
+        start = { npc = "Uthek the Wise", x = 36.2, y = 79.4 },
+        objectives = {
+            { type = "item", name = "Magram Supply Sack", spawns = {{72.6, 44.8}, {68.2, 50.4}} },
+        }
+    },
+
+    [1439] = { -- Khan Dez'hepah
+        name = "Khan Dez'hepah",
+        zone = "Desolace",
+        start = { npc = "Uthek the Wise", x = 36.2, y = 79.4 },
+        objectives = {
+            { type = "kill", name = "Khan Dez'hepah", spawns = {{70.4, 45.6}} },
+        }
+    },
+
+    [1440] = { -- Khan Jehn
+        name = "Khan Jehn",
+        zone = "Desolace",
+        start = { npc = "Uthek the Wise", x = 36.2, y = 79.4 },
+        objectives = {
+            { type = "kill", name = "Khan Jehn", spawns = {{72.8, 48.2}} },
+        }
+    },
+
+    [1441] = { -- Khan Hratha
+        name = "Khan Hratha",
+        zone = "Desolace",
+        start = { npc = "Uthek the Wise", x = 36.2, y = 79.4 },
+        objectives = {
+            { type = "kill", name = "Khan Hratha", spawns = {{28.4, 64.6}} },
+        }
+    },
+
+    [1453] = { -- Against the Kolkar
+        name = "Against the Kolkar",
+        zone = "Desolace",
+        start = { npc = "Warug", x = 74.8, y = 68.2 },
+        objectives = {
+            { type = "kill", name = "Kolkar Marauder", spawns = {{72.4, 72.8}, {68.6, 78.2}} },
+        }
+    },
+
+    [1454] = { -- Against Lord Azrethoc
+        name = "Against Lord Azrethoc",
+        zone = "Desolace",
+        start = { npc = "Warug", x = 74.8, y = 68.2 },
+        objectives = {
+            { type = "kill", name = "Lord Azrethoc", spawns = {{22.6, 74.4}} },
+        }
+    },
+
+    [1455] = { -- Befouled by Satyr
+        name = "Befouled by Satyr",
+        zone = "Desolace",
+        start = { npc = "Takata Steelblade", x = 52.4, y = 54.2 },
+        objectives = {
+            { type = "kill", name = "Hatefury Satyr", spawns = {{28.4, 62.6}, {32.2, 58.8}} },
+            { type = "kill", name = "Hatefury Shadowstalker", spawns = {{30.6, 60.2}, {26.8, 64.4}} },
+        }
+    },
+
+    [1459] = { -- The Burning of Spirits
+        name = "The Burning of Spirits",
+        zone = "Desolace",
+        start = { npc = "Maurin Bonesplitter", x = 52.2, y = 53.4 },
+        objectives = {
+            { type = "item", name = "Burning Gem", spawns = {{28.2, 60.4}, {32.6, 56.8}} },
+        }
+    },
+
+    [1477] = { -- Brutal Politics
+        name = "Brutal Politics",
+        zone = "Desolace",
+        start = { npc = "Gurda Wildmane", x = 76.2, y = 22.4 },
+        objectives = {
+            { type = "kill", name = "Ongeku", spawns = {{68.4, 72.6}} },
+        }
+    },
+
+    [5501] = { -- Sceptre of Light
+        name = "Sceptre of Light",
+        zone = "Desolace",
+        start = { npc = "Azore Aldamort", x = 38.8, y = 27.2 },
+        objectives = {
+            { type = "item", name = "Sceptre of Light", spawns = {{54.6, 26.8}} },
+        }
+    },
+
+    [5741] = { -- Book of the Ancients
+        name = "Book of the Ancients",
+        zone = "Desolace",
+        start = { npc = "Azore Aldamort", x = 38.8, y = 27.2 },
+        objectives = {
+            { type = "item", name = "Book of the Ancients", spawns = {{28.4, 6.8}} },
+        }
+    },
+
+    [6134] = { -- Shadowprey Village
+        name = "Shadowprey Village",
+        zone = "Desolace",
+        start = { npc = "Thalon", x = 26.2, y = 68.4 },
+        objectives = {
+            { type = "talk", name = "Mai'Lahii", spawns = {{22.6, 72.8}} },
+        }
+    },
+
+    [6143] = { -- Other Fish to Fry
+        name = "Other Fish to Fry",
+        zone = "Desolace",
+        start = { npc = "Mai'Lahii", x = 22.6, y = 72.8 },
+        objectives = {
+            { type = "item", name = "Soft-shelled Clam Meat", spawns = {{32.4, 68.6}, {28.8, 72.2}} },
+        }
+    },
+
+    -- ====================
+    -- FERALAS QUESTS (~25)
+    -- ====================
+
+    [2863] = { -- War on the Woodpaw
+        name = "War on the Woodpaw",
+        zone = "Feralas",
+        start = { npc = "Hadoken Swiftstrider", x = 74.8, y = 42.6 },
+        objectives = {
+            { type = "kill", name = "Woodpaw Gnoll", spawns = {{71.2, 56.4}, {68.6, 52.8}} },
+            { type = "kill", name = "Woodpaw Brute", spawns = {{69.4, 54.2}, {66.8, 58.6}} },
+        }
+    },
+
+    [2869] = { -- Alpha Strike
+        name = "Alpha Strike",
+        zone = "Feralas",
+        start = { npc = "Hadoken Swiftstrider", x = 74.8, y = 42.6 },
+        objectives = {
+            { type = "kill", name = "Woodpaw Alpha", spawns = {{72.4, 48.6}, {68.8, 52.2}} },
+        }
+    },
+
+    [2870] = { -- Woodpaw Investigation
+        name = "Woodpaw Investigation",
+        zone = "Feralas",
+        start = { npc = "Hadoken Swiftstrider", x = 74.8, y = 42.6 },
+        objectives = {
+            { type = "item", name = "Large Leather Backpack", spawns = {{72.6, 56.8}} },
+        }
+    },
+
+    [2872] = { -- The Battle Plans
+        name = "The Battle Plans",
+        zone = "Feralas",
+        start = { npc = "Large Leather Backpack", x = 72.6, y = 56.8 },
+        objectives = {
+            { type = "talk", name = "Hadoken Swiftstrider", spawns = {{74.8, 42.6}} },
+        }
+    },
+
+    [2873] = { -- A New Cloak's Sheen
+        name = "A New Cloak's Sheen",
+        zone = "Feralas",
+        start = { npc = "Krueg Skullsplitter", x = 74.4, y = 43.2 },
+        objectives = {
+            { type = "item", name = "Glossy Feather", spawns = {{56.2, 36.8}, {52.4, 42.6}} },
+        }
+    },
+
+    [2879] = { -- Gordunni Cobalt
+        name = "Gordunni Cobalt",
+        zone = "Feralas",
+        start = { npc = "Orwin Gizzmick", x = 74.6, y = 43.8 },
+        objectives = {
+            { type = "item", name = "Gordunni Cobalt", spawns = {{60.2, 24.6}, {58.8, 28.4}} },
+        }
+    },
+
+    [2902] = { -- The Ogres of Feralas
+        name = "The Ogres of Feralas",
+        zone = "Feralas",
+        start = { npc = "Rok Orhan", x = 74.2, y = 44.6 },
+        objectives = {
+            { type = "kill", name = "Gordunni Ogre", spawns = {{58.4, 26.8}, {54.6, 32.2}} },
+            { type = "kill", name = "Gordunni Brute", spawns = {{56.2, 28.4}, {52.8, 34.6}} },
+        }
+    },
+
+    [2903] = { -- The Gordunni Orb
+        name = "The Gordunni Orb",
+        zone = "Feralas",
+        start = { npc = "Rok Orhan", x = 74.2, y = 44.6 },
+        objectives = {
+            { type = "item", name = "Gordunni Orb", spawns = {{58.6, 22.4}} },
+        }
+    },
+
+    [2904] = { -- Gordunni Shaman
+        name = "Gordunni Shaman",
+        zone = "Feralas",
+        start = { npc = "Rok Orhan", x = 74.2, y = 44.6 },
+        objectives = {
+            { type = "kill", name = "Gordunni Shaman", spawns = {{56.8, 24.2}, {54.2, 28.6}} },
+            { type = "kill", name = "Gordunni Warlock", spawns = {{58.4, 22.8}, {52.6, 26.4}} },
+        }
+    },
+
+    [2970] = { -- Screecher Spirits
+        name = "Screecher Spirits",
+        zone = "Feralas",
+        start = { npc = "Yeh'kinya", x = 45.2, y = 43.6 },
+        objectives = {
+            { type = "item", name = "Screecher Spirit", spawns = {{56.4, 58.2}, {52.8, 62.6}} },
+        }
+    },
+
+    [2972] = { -- The Stave of Equinex
+        name = "The Stave of Equinex",
+        zone = "Feralas",
+        start = { npc = "Troyas Moonbreeze", x = 31.8, y = 45.2 },
+        objectives = {
+            { type = "item", name = "Equinex Monolith Flame", spawns = {{38.4, 13.6}, {40.2, 16.8}} },
+        }
+    },
+
+    [2973] = { -- The Ruins of Solarsal
+        name = "The Ruins of Solarsal",
+        zone = "Feralas",
+        start = { npc = "Shandris Feathermoon", x = 30.4, y = 46.2 },
+        objectives = {
+            { type = "explore", name = "Solarsal Gazebo", spawns = {{26.8, 52.4}} },
+        }
+    },
+
+    [2974] = { -- Return to Feathermoon Stronghold
+        name = "Return to Feathermoon Stronghold",
+        zone = "Feralas",
+        start = { npc = "Solarsal Gazebo", x = 26.8, y = 52.4 },
+        objectives = {
+            { type = "talk", name = "Shandris Feathermoon", spawns = {{30.4, 46.2}} },
+        }
+    },
+
+    [2975] = { -- Against the Hatecrest
+        name = "Against the Hatecrest",
+        zone = "Feralas",
+        start = { npc = "Latronicus Moonspear", x = 30.6, y = 46.4 },
+        objectives = {
+            { type = "kill", name = "Hatecrest Naga", spawns = {{26.4, 64.8}, {28.2, 68.6}} },
+            { type = "kill", name = "Hatecrest Siren", spawns = {{24.6, 62.4}, {22.8, 66.2}} },
+        }
+    },
+
+    [2976] = { -- Against Lord Shalzaru
+        name = "Against Lord Shalzaru",
+        zone = "Feralas",
+        start = { npc = "Latronicus Moonspear", x = 30.6, y = 46.4 },
+        objectives = {
+            { type = "kill", name = "Lord Shalzaru", spawns = {{28.4, 71.2}} },
+        }
+    },
+
+    [2977] = { -- Delivering the Relic
+        name = "Delivering the Relic",
+        zone = "Feralas",
+        start = { npc = "Latronicus Moonspear", x = 30.6, y = 46.4 },
+        objectives = {
+            { type = "talk", name = "Vestia Moonspear", spawns = {{30.8, 45.6}} },
+        }
+    },
+
+    [2978] = { -- The High Wilderness
+        name = "The High Wilderness",
+        zone = "Feralas",
+        start = { npc = "Angelas Moonbreeze", x = 32.4, y = 43.8 },
+        objectives = {
+            { type = "kill", name = "Feral Scar Yeti", spawns = {{56.4, 72.8}, {58.2, 68.4}} },
+            { type = "kill", name = "Rage Scar Yeti", spawns = {{54.6, 74.2}, {52.8, 70.6}} },
+        }
+    },
+
+    [2982] = { -- Improved Quality
+        name = "Improved Quality",
+        zone = "Feralas",
+        start = { npc = "Pratt McGrubben", x = 30.2, y = 43.4 },
+        objectives = {
+            { type = "item", name = "Thick Yeti Hide", spawns = {{56.8, 70.4}, {54.2, 74.6}} },
+        }
+    },
+
+    [3791] = { -- Dark Heart
+        name = "Dark Heart",
+        zone = "Feralas",
+        start = { npc = "Talo Thornhoof", x = 76.2, y = 43.4 },
+        objectives = {
+            { type = "item", name = "Edana's Dark Heart", spawns = {{51.4, 10.2}} },
+        }
+    },
+
+    [3841] = { -- Zapped Giants
+        name = "Zapped Giants",
+        zone = "Feralas",
+        start = { npc = "Zorbin Fandazzle", x = 44.4, y = 43.2 },
+        objectives = {
+            { type = "kill", name = "Cliff Giant", spawns = {{46.2, 18.6}, {48.8, 22.4}} },
+            { type = "kill", name = "Land Walker", spawns = {{44.6, 20.2}, {42.8, 24.8}} },
+        }
+    },
+
+    [4120] = { -- Fuel for the Zapping
+        name = "Fuel for the Zapping",
+        zone = "Feralas",
+        start = { npc = "Zorbin Fandazzle", x = 44.4, y = 43.2 },
+        objectives = {
+            { type = "item", name = "Water Elemental Core", spawns = {{46.8, 46.2}, {48.4, 42.6}} },
+        }
+    },
+
+    [4129] = { -- A Strange Request
+        name = "A Strange Request",
+        zone = "Feralas",
+        start = { npc = "Witch Doctor Uzer'i", x = 74.6, y = 43.6 },
+        objectives = {
+            { type = "item", name = "Hippogryph Egg", spawns = {{56.2, 32.4}, {58.8, 28.6}} },
+        }
+    },
+
+    [4135] = { -- Natural Materials
+        name = "Natural Materials",
+        zone = "Feralas",
+        start = { npc = "Witch Doctor Uzer'i", x = 74.6, y = 43.6 },
+        objectives = {
+            { type = "item", name = "Sprite Darter Scale", spawns = {{66.4, 56.2}, {62.8, 52.8}} },
+        }
+    },
+
+    [7001] = { -- The Strength of Corruption
+        name = "The Strength of Corruption",
+        zone = "Feralas",
+        start = { npc = "Talo Thornhoof", x = 76.2, y = 43.4 },
+        objectives = {
+            { type = "item", name = "Corrupted Soul Shard", spawns = {{58.2, 66.4}, {54.6, 62.8}} },
+        }
+    },
+
+    [7721] = { -- Perfect Yeti Hide
+        name = "Perfect Yeti Hide",
+        zone = "Feralas",
+        start = { npc = "Pratt McGrubben", x = 30.2, y = 43.4 },
+        objectives = {
+            { type = "item", name = "Perfect Yeti Hide", spawns = {{56.4, 72.2}, {58.8, 68.6}} },
+        }
+    },
+
+    -- ====================
+    -- TANARIS QUESTS (~20)
+    -- ====================
+
+    [1707] = { -- Water Pouch Bounty
+        name = "Water Pouch Bounty",
+        zone = "Tanaris",
+        start = { npc = "Spigot Operator Luglunket", x = 50.4, y = 27.6 },
+        objectives = {
+            { type = "item", name = "Wastewander Water Pouch", spawns = {{60.4, 34.2}, {64.8, 38.6}} },
+        }
+    },
+
+    [1690] = { -- Wastewander Justice
+        name = "Wastewander Justice",
+        zone = "Tanaris",
+        start = { npc = "Chief Engineer Bilgewhizzle", x = 52.4, y = 28.8 },
+        objectives = {
+            { type = "kill", name = "Wastewander Bandit", spawns = {{62.4, 32.6}, {58.8, 36.2}} },
+            { type = "kill", name = "Wastewander Thief", spawns = {{60.2, 34.8}, {56.6, 38.4}} },
+        }
+    },
+
+    [1691] = { -- More Wastewander Justice
+        name = "More Wastewander Justice",
+        zone = "Tanaris",
+        start = { npc = "Chief Engineer Bilgewhizzle", x = 52.4, y = 28.8 },
+        objectives = {
+            { type = "kill", name = "Wastewander Shadow Mage", spawns = {{64.2, 36.8}, {60.6, 40.4}} },
+            { type = "kill", name = "Wastewander Assassin", spawns = {{62.8, 38.2}, {58.4, 42.6}} },
+        }
+    },
+
+    [2781] = { -- Thistleshrub Valley
+        name = "Thistleshrub Valley",
+        zone = "Tanaris",
+        start = { npc = "Tran'rek", x = 51.6, y = 26.8 },
+        objectives = {
+            { type = "kill", name = "Thistleshrub Dew Collector", spawns = {{28.4, 66.2}, {32.6, 62.8}} },
+            { type = "kill", name = "Thistleshrub Rootshaper", spawns = {{30.2, 64.6}, {26.8, 68.4}} },
+        }
+    },
+
+    [2864] = { -- Gahz'ridian
+        name = "Gahz'ridian",
+        zone = "Tanaris",
+        start = { npc = "Marvon Rivetseeker", x = 52.6, y = 45.8 },
+        objectives = {
+            { type = "item", name = "Gahz'ridian Ornament", spawns = {{46.4, 38.2}, {44.8, 42.6}, {48.2, 36.8}} },
+        }
+    },
+
+    [2865] = { -- The Thirsty Goblin
+        name = "The Thirsty Goblin",
+        zone = "Tanaris",
+        start = { npc = "Marin Noggenfogger", x = 52.2, y = 28.4 },
+        objectives = {
+            { type = "item", name = "Dew Gland", spawns = {{28.6, 65.4}, {32.4, 61.8}} },
+        }
+    },
+
+    [2875] = { -- Noxious Lair Investigation
+        name = "Noxious Lair Investigation",
+        zone = "Tanaris",
+        start = { npc = "Alchemist Pestlezugg", x = 51.8, y = 27.2 },
+        objectives = {
+            { type = "item", name = "Centipaar Insect Parts", spawns = {{34.6, 46.8}, {38.2, 42.4}} },
+        }
+    },
+
+    [2882] = { -- Southsea Shakedown
+        name = "Southsea Shakedown",
+        zone = "Tanaris",
+        start = { npc = "Security Chief Bilgewhizzle", x = 50.8, y = 27.4 },
+        objectives = {
+            { type = "kill", name = "Southsea Pirate", spawns = {{68.4, 42.6}, {72.2, 46.8}} },
+            { type = "kill", name = "Southsea Freebooter", spawns = {{70.6, 44.2}, {66.8, 48.4}} },
+        }
+    },
+
+    [2883] = { -- Pirate Hats Ahoy!
+        name = "Pirate Hats Ahoy!",
+        zone = "Tanaris",
+        start = { npc = "Haughty Modiste", x = 50.6, y = 28.6 },
+        objectives = {
+            { type = "item", name = "Southsea Pirate Hat", spawns = {{68.2, 44.4}, {72.6, 48.2}} },
+        }
+    },
+
+    [2877] = { -- Ship Schedules
+        name = "Ship Schedules",
+        zone = "Tanaris",
+        start = { npc = "Crank Fizzlebub", x = 51.4, y = 29.2 },
+        objectives = {
+            { type = "item", name = "Southsea Ship Schedule", spawns = {{70.4, 46.6}} },
+        }
+    },
+
+    [3520] = { -- Tooga's Quest
+        name = "Tooga's Quest",
+        zone = "Tanaris",
+        start = { npc = "Tooga", x = 36.4, y = 44.8 },
+        objectives = {
+            { type = "escort", name = "Tooga", spawns = {{36.4, 44.8}} },
+        }
+    },
+
+    [3161] = { -- Gadgetzan Water Survey
+        name = "Gadgetzan Water Survey",
+        zone = "Tanaris",
+        start = { npc = "Senior Surveyor Fizzledowser", x = 50.2, y = 27.8 },
+        objectives = {
+            { type = "explore", name = "Surveyed Land", spawns = {{38.6, 28.4}} },
+        }
+    },
+
+    [992] = { -- Cactus Apple Surprise
+        name = "Cactus Apple Surprise",
+        zone = "Tanaris",
+        start = { npc = "Dirge Quikcleave", x = 52.6, y = 29.4 },
+        objectives = {
+            { type = "item", name = "Cactus Apple", spawns = {{46.2, 38.6}, {48.8, 42.4}, {44.4, 36.2}} },
+        }
+    },
+
+    [82] = { -- Scarab Shells
+        name = "Scarab Shells",
+        zone = "Tanaris",
+        start = { npc = "Tran'rek", x = 51.6, y = 26.8 },
+        objectives = {
+            { type = "item", name = "Intact Scarab Shell", spawns = {{36.4, 44.2}, {38.8, 48.6}} },
+        }
+    },
+
+    [1560] = { -- The Dunemaul Compound
+        name = "The Dunemaul Compound",
+        zone = "Tanaris",
+        start = { npc = "Andi Lynn", x = 52.8, y = 46.2 },
+        objectives = {
+            { type = "kill", name = "Dunemaul Brute", spawns = {{42.4, 58.6}, {46.8, 54.2}} },
+            { type = "kill", name = "Dunemaul Enforcer", spawns = {{44.2, 56.8}, {48.6, 52.4}} },
+        }
+    },
+
+    [5863] = { -- WANTED: Andre Firebeard
+        name = "WANTED: Andre Firebeard",
+        zone = "Tanaris",
+        start = { npc = "Wanted Poster", x = 51.2, y = 26.4 },
+        objectives = {
+            { type = "kill", name = "Andre Firebeard", spawns = {{72.8, 47.4}} },
+        }
+    },
+
+    [5865] = { -- WANTED: Caliph Scorpidsting
+        name = "WANTED: Caliph Scorpidsting",
+        zone = "Tanaris",
+        start = { npc = "Wanted Poster", x = 51.2, y = 26.4 },
+        objectives = {
+            { type = "kill", name = "Caliph Scorpidsting", spawns = {{62.6, 38.2}} },
+        }
+    },
+
+    [8366] = { -- The Scrimshank Redemption
+        name = "The Scrimshank Redemption",
+        zone = "Tanaris",
+        start = { npc = "Senior Surveyor Fizzledowser", x = 50.2, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Scrimshank's Surveying Gear", spawns = {{56.4, 72.8}} },
+        }
+    },
+
+    [5648] = { -- Super Sticky
+        name = "Super Sticky",
+        zone = "Tanaris",
+        start = { npc = "Tran'rek", x = 51.6, y = 26.8 },
+        objectives = {
+            { type = "item", name = "Silithid Goo", spawns = {{54.6, 68.2}, {52.8, 72.4}} },
+        }
+    },
+
+    [351] = { -- Divino-matic Rod
+        name = "Divino-matic Rod",
+        zone = "Tanaris",
+        start = { npc = "Chief Engineer Bilgewhizzle", x = 52.4, y = 28.8 },
+        objectives = {
+            { type = "item", name = "Divino-matic Rod", spawns = {{38.4, 28.6}} },
+        }
+    },
+
+    -- ====================
+    -- HINTERLANDS QUESTS (~20)
+    -- ====================
+
+    [7839] = { -- Cannibalistic Cousins
+        name = "Cannibalistic Cousins",
+        zone = "The Hinterlands",
+        start = { npc = "Otho Moji'ko", x = 79.2, y = 79.4 },
+        objectives = {
+            { type = "kill", name = "Vilebranch Scalper", spawns = {{62.4, 68.2}, {58.6, 72.8}} },
+            { type = "kill", name = "Vilebranch Soothsayer", spawns = {{60.2, 70.4}, {56.8, 74.6}} },
+        }
+    },
+
+    [7844] = { -- Message to the Wildhammer
+        name = "Message to the Wildhammer",
+        zone = "The Hinterlands",
+        start = { npc = "Otho Moji'ko", x = 79.2, y = 79.4 },
+        objectives = {
+            { type = "talk", name = "Gryphon Master Talonaxe", spawns = {{14.6, 44.2}} },
+        }
+    },
+
+    [7809] = { -- Hunt the Savages
+        name = "Hunt the Savages",
+        zone = "The Hinterlands",
+        start = { npc = "Primal Torntusk", x = 78.8, y = 78.2 },
+        objectives = {
+            { type = "kill", name = "Savage Owlbeast", spawns = {{54.2, 58.6}, {50.8, 62.4}} },
+        }
+    },
+
+    [7815] = { -- Avenging the Fallen
+        name = "Avenging the Fallen",
+        zone = "The Hinterlands",
+        start = { npc = "Primal Torntusk", x = 78.8, y = 78.2 },
+        objectives = {
+            { type = "kill", name = "Vilebranch Headhunter", spawns = {{62.8, 66.4}, {58.2, 70.8}} },
+        }
+    },
+
+    [7826] = { -- Troll Necklace Bounty
+        name = "Troll Necklace Bounty",
+        zone = "The Hinterlands",
+        start = { npc = "Fraggar Thundermantle", x = 14.2, y = 43.6 },
+        objectives = {
+            { type = "item", name = "Troll Tribal Necklace", spawns = {{48.4, 65.2}, {52.6, 61.8}, {56.8, 58.4}} },
+        }
+    },
+
+    [7828] = { -- Skulk Rock Clean-up
+        name = "Skulk Rock Clean-up",
+        zone = "The Hinterlands",
+        start = { npc = "Fraggar Thundermantle", x = 14.2, y = 43.6 },
+        objectives = {
+            { type = "kill", name = "Green Sludge", spawns = {{56.4, 44.2}, {58.8, 48.6}} },
+            { type = "kill", name = "Jade Ooze", spawns = {{54.6, 46.8}, {52.2, 50.4}} },
+        }
+    },
+
+    [7829] = { -- Lard Lost His Lunch
+        name = "Lard Lost His Lunch",
+        zone = "The Hinterlands",
+        start = { npc = "Lard", x = 80.4, y = 81.2 },
+        objectives = {
+            { type = "item", name = "Lard's Special Picnic Basket", spawns = {{68.2, 63.4}} },
+        }
+    },
+
+    [7830] = { -- Stalking the Stalkers
+        name = "Stalking the Stalkers",
+        zone = "The Hinterlands",
+        start = { npc = "Huntsman Markhor", x = 78.6, y = 80.8 },
+        objectives = {
+            { type = "kill", name = "Razorbeak Skylord", spawns = {{44.6, 52.8}, {48.2, 56.4}} },
+            { type = "kill", name = "Razorbeak Gryphon", spawns = {{46.4, 54.2}, {42.8, 58.6}} },
+        }
+    },
+
+    [7835] = { -- Vilebranch Hooligans
+        name = "Vilebranch Hooligans",
+        zone = "The Hinterlands",
+        start = { npc = "Mystic Yayo'jin", x = 79.4, y = 78.6 },
+        objectives = {
+            { type = "kill", name = "Vilebranch Warrior", spawns = {{62.2, 64.8}, {58.6, 68.2}} },
+            { type = "kill", name = "Vilebranch Hideskinner", spawns = {{60.4, 66.4}, {56.8, 70.6}} },
+        }
+    },
+
+    [7861] = { -- Summoning Shadra
+        name = "Summoning Shadra",
+        zone = "The Hinterlands",
+        start = { npc = "Mystic Yayo'jin", x = 79.4, y = 78.6 },
+        objectives = {
+            { type = "kill", name = "Shadra", spawns = {{33.4, 51.6}} },
+        }
+    },
+
+    [7862] = { -- Venom Bottles
+        name = "Venom Bottles",
+        zone = "The Hinterlands",
+        start = { npc = "Apothecary Lydon", x = 78.4, y = 81.4 },
+        objectives = {
+            { type = "item", name = "Venom Bottle", spawns = {{59.2, 76.4}, {62.8, 78.2}} },
+        }
+    },
+
+    [2988] = { -- Featherbeard's Endorsement
+        name = "Featherbeard's Endorsement",
+        zone = "The Hinterlands",
+        start = { npc = "Falstad Wildhammer", x = 14.4, y = 44.8 },
+        objectives = {
+            { type = "talk", name = "Gryphon Master Featherbeard", spawns = {{32.6, 58.2}} },
+        }
+    },
+
+    [2990] = { -- Witherbark Cages
+        name = "Witherbark Cages",
+        zone = "The Hinterlands",
+        start = { npc = "Gryphon Master Talonaxe", x = 14.6, y = 44.2 },
+        objectives = {
+            { type = "use", name = "Witherbark Cage", spawns = {{26.8, 48.6}, {28.4, 52.2}, {24.6, 56.4}} },
+        }
+    },
+
+    [2993] = { -- Reclaiming the Eggs
+        name = "Reclaiming the Eggs",
+        zone = "The Hinterlands",
+        start = { npc = "Agnar Beastamer", x = 14.8, y = 43.4 },
+        objectives = {
+            { type = "item", name = "Gryphon Egg", spawns = {{28.2, 49.6}, {30.6, 53.8}} },
+        }
+    },
+
+    [2877] = { -- Rhapsody's Kalimdor Kocktail
+        name = "Rhapsody's Kalimdor Kocktail",
+        zone = "The Hinterlands",
+        start = { npc = "Rhapsody Shindigger", x = 26.4, y = 48.8 },
+        objectives = {
+            { type = "item", name = "Violet Tragan", spawns = {{34.6, 58.4}, {38.2, 54.6}} },
+        }
+    },
+
+    [7843] = { -- The Altar of Zul
+        name = "The Altar of Zul",
+        zone = "The Hinterlands",
+        start = { npc = "Primal Torntusk", x = 78.8, y = 78.2 },
+        objectives = {
+            { type = "explore", name = "Altar of Zul", spawns = {{49.2, 68.4}} },
+        }
+    },
+
+    [7849] = { -- Revenge of the Jintha'Alor
+        name = "Revenge of Jintha'Alor",
+        zone = "The Hinterlands",
+        start = { npc = "Elder Torntusk", x = 79.6, y = 79.8 },
+        objectives = {
+            { type = "kill", name = "Vile Priestess Hexx", spawns = {{59.4, 78.6}} },
+        }
+    },
+
+    [7850] = { -- Saving Sharpbeak
+        name = "Saving Sharpbeak",
+        zone = "The Hinterlands",
+        start = { npc = "Sharpbeak Cage", x = 58.6, y = 78.2 },
+        objectives = {
+            { type = "escort", name = "Sharpbeak", spawns = {{58.6, 78.2}} },
+        }
+    },
+
+    [7871] = { -- Testing the Vessel
+        name = "Testing the Vessel",
+        zone = "The Hinterlands",
+        start = { npc = "Apothecary Lydon", x = 78.4, y = 81.4 },
+        objectives = {
+            { type = "kill", name = "Hitah'ya the Keeper", spawns = {{62.4, 74.8}} },
+        }
+    },
+
+    [7872] = { -- Job Opening: Guard Captain of Revantusk Village
+        name = "Job Opening: Guard Captain of Revantusk Village",
+        zone = "The Hinterlands",
+        start = { npc = "Primal Torntusk", x = 78.8, y = 78.2 },
+        objectives = {
+            { type = "kill", name = "Vilebranch Berserker", spawns = {{56.2, 66.8}, {58.8, 62.4}} },
+            { type = "kill", name = "Vilebranch Shadow Hunter", spawns = {{54.6, 68.2}, {60.4, 64.6}} },
+        }
+    },
+
+    -- ====================
+    -- STRANGLETHORN VALE QUESTS (~35)
+    -- ====================
+
+    -- Nesingwary Expedition
+    [185] = { -- Raptor Mastery
+        name = "Raptor Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Hemet Nesingwary", x = 35.7, y = 10.8 },
+        objectives = {
+            { type = "kill", name = "Stranglethorn Raptor", spawns = {{28.4, 14.6}, {31.2, 18.8}} },
+        }
+    },
+
+    [186] = { -- Raptor Mastery
+        name = "Raptor Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Hemet Nesingwary", x = 35.7, y = 10.8 },
+        objectives = {
+            { type = "kill", name = "Stranglethorn Tigress", spawns = {{30.6, 16.2}, {27.8, 20.4}} },
+        }
+    },
+
+    [187] = { -- Raptor Mastery
+        name = "Raptor Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Hemet Nesingwary", x = 35.7, y = 10.8 },
+        objectives = {
+            { type = "kill", name = "Jungle Stalker", spawns = {{32.4, 12.8}, {35.6, 8.4}} },
+        }
+    },
+
+    [188] = { -- Raptor Mastery
+        name = "Raptor Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Hemet Nesingwary", x = 35.7, y = 10.8 },
+        objectives = {
+            { type = "kill", name = "Tethis", spawns = {{28.6, 43.2}} },
+        }
+    },
+
+    [583] = { -- Tiger Mastery
+        name = "Tiger Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Ajeck Rouack", x = 35.6, y = 10.6 },
+        objectives = {
+            { type = "kill", name = "Young Stranglethorn Tiger", spawns = {{31.4, 17.6}, {28.2, 21.8}} },
+        }
+    },
+
+    [584] = { -- Tiger Mastery
+        name = "Tiger Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Ajeck Rouack", x = 35.6, y = 10.6 },
+        objectives = {
+            { type = "kill", name = "Stranglethorn Tiger", spawns = {{33.6, 14.2}, {30.8, 19.6}} },
+        }
+    },
+
+    [585] = { -- Tiger Mastery
+        name = "Tiger Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Ajeck Rouack", x = 35.6, y = 10.6 },
+        objectives = {
+            { type = "kill", name = "Elder Stranglethorn Tiger", spawns = {{29.4, 48.6}, {32.8, 52.4}} },
+        }
+    },
+
+    [193] = { -- Tiger Mastery
+        name = "Tiger Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Ajeck Rouack", x = 35.6, y = 10.6 },
+        objectives = {
+            { type = "kill", name = "Sin'Dall", spawns = {{32.2, 17.4}} },
+        }
+    },
+
+    [190] = { -- Panther Mastery
+        name = "Panther Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Sir S. J. Erlgadin", x = 35.5, y = 10.5 },
+        objectives = {
+            { type = "kill", name = "Young Panther", spawns = {{40.2, 10.4}, {42.6, 14.8}} },
+        }
+    },
+
+    [191] = { -- Panther Mastery
+        name = "Panther Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Sir S. J. Erlgadin", x = 35.5, y = 10.5 },
+        objectives = {
+            { type = "kill", name = "Panther", spawns = {{38.8, 12.6}, {41.2, 8.2}} },
+        }
+    },
+
+    [192] = { -- Panther Mastery
+        name = "Panther Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Sir S. J. Erlgadin", x = 35.5, y = 10.5 },
+        objectives = {
+            { type = "kill", name = "Shadowmaw Panther", spawns = {{45.4, 16.8}, {48.2, 12.6}} },
+        }
+    },
+
+    [194] = { -- Panther Mastery
+        name = "Panther Mastery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Sir S. J. Erlgadin", x = 35.5, y = 10.5 },
+        objectives = {
+            { type = "kill", name = "Bhag'thera", spawns = {{49.8, 20.6}} },
+        }
+    },
+
+    [208] = { -- Big Game Hunter
+        name = "Big Game Hunter",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Hemet Nesingwary", x = 35.7, y = 10.8 },
+        objectives = {
+            { type = "kill", name = "King Bangalash", spawns = {{38.6, 35.2}} },
+        }
+    },
+
+    -- Bloodsail Buccaneers
+    [595] = { -- The Bloodsail Buccaneers
+        name = "The Bloodsail Buccaneers",
+        zone = "Stranglethorn Vale",
+        start = { npc = "First Mate Crazz", x = 27.0, y = 77.3 },
+        objectives = {
+            { type = "talk", name = "Bloodsail Traitor", spawns = {{27.4, 69.6}} },
+        }
+    },
+
+    [597] = { -- The Bloodsail Buccaneers
+        name = "The Bloodsail Buccaneers",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Bloodsail Traitor", x = 27.4, y = 69.6 },
+        objectives = {
+            { type = "item", name = "Bloodsail Charts", spawns = {{25.6, 63.4}} },
+            { type = "item", name = "Bloodsail Orders", spawns = {{26.8, 65.2}} },
+        }
+    },
+
+    [599] = { -- The Bloodsail Buccaneers
+        name = "The Bloodsail Buccaneers",
+        zone = "Stranglethorn Vale",
+        start = { npc = "First Mate Crazz", x = 27.0, y = 77.3 },
+        objectives = {
+            { type = "kill", name = "Bloodsail Swashbuckler", spawns = {{24.4, 62.8}, {26.2, 66.4}} },
+            { type = "kill", name = "Bloodsail Warlock", spawns = {{25.8, 64.2}, {23.6, 68.6}} },
+        }
+    },
+
+    [604] = { -- Cortello's Riddle
+        name = "Cortello's Riddle",
+        zone = "Stranglethorn Vale",
+        start = { npc = "A Soggy Scroll", x = 26.6, y = 79.2 },
+        objectives = {
+            { type = "item", name = "Cortello's Riddle", spawns = {{33.4, 51.8}} },
+        }
+    },
+
+    -- Venture Company
+    [600] = { -- Venture Company Mining
+        name = "Venture Company Mining",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Crank Fizzlebub", x = 27.1, y = 77.1 },
+        objectives = {
+            { type = "kill", name = "Venture Co. Geologist", spawns = {{42.4, 18.6}, {44.8, 22.2}} },
+            { type = "kill", name = "Venture Co. Miner", spawns = {{43.6, 20.4}, {41.2, 24.8}} },
+        }
+    },
+
+    [605] = { -- Jungle Secrets
+        name = "Jungle Secrets",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Krazek", x = 27.0, y = 77.2 },
+        objectives = {
+            { type = "talk", name = "Corporal Kaleb", x = 47.6, y = 10.2 },
+        }
+    },
+
+    [201] = { -- Singing Blue Shards
+        name = "Singing Blue Shards",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Crank Fizzlebub", x = 27.1, y = 77.1 },
+        objectives = {
+            { type = "item", name = "Singing Crystal Shards", spawns = {{41.6, 33.2}, {44.2, 37.8}} },
+        }
+    },
+
+    [606] = { -- Bwemba's Spirit
+        name = "Bwemba's Spirit",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Bwemba", x = 35.4, y = 10.2 },
+        objectives = {
+            { type = "kill", name = "Bloodscalp Mystic", spawns = {{34.2, 19.6}, {31.8, 23.4}} },
+        }
+    },
+
+    -- Kurzen's Mystery
+    [202] = { -- Colonel Kurzen
+        name = "Colonel Kurzen",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Lieutenant Doren", x = 47.6, y = 10.2 },
+        objectives = {
+            { type = "kill", name = "Colonel Kurzen", spawns = {{45.6, 8.4}} },
+        }
+    },
+
+    [203] = { -- Kurzen's Mystery
+        name = "Kurzen's Mystery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Brother Nimetz", x = 47.8, y = 11.4 },
+        objectives = {
+            { type = "item", name = "Kurzen's Diary", spawns = {{46.2, 9.6}} },
+        }
+    },
+
+    [204] = { -- Troll Witchery
+        name = "Troll Witchery",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Brother Nimetz", x = 47.8, y = 11.4 },
+        objectives = {
+            { type = "item", name = "Bloodscalp Totem", spawns = {{35.6, 24.2}, {32.8, 28.6}} },
+        }
+    },
+
+    [569] = { -- Special Forces
+        name = "Special Forces",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Lieutenant Doren", x = 47.6, y = 10.2 },
+        objectives = {
+            { type = "kill", name = "Kurzen Elite", spawns = {{46.8, 10.4}, {44.2, 8.8}} },
+            { type = "kill", name = "Kurzen Headshrinker", spawns = {{45.4, 11.6}, {43.8, 9.2}} },
+        }
+    },
+
+    [207] = { -- Bad Medicine
+        name = "Bad Medicine",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Sergeant Yohwa", x = 47.4, y = 10.6 },
+        objectives = {
+            { type = "kill", name = "Kurzen Medicine Man", spawns = {{44.6, 11.2}, {46.2, 8.6}} },
+            { type = "item", name = "Jungle Remedy", spawns = {{45.2, 10.4}, {43.8, 12.8}} },
+        }
+    },
+
+    -- Zanzil
+    [610] = { -- Zanzil's Secret
+        name = "Zanzil's Secret",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Crank Fizzlebub", x = 27.1, y = 77.1 },
+        objectives = {
+            { type = "item", name = "Zanzil's Mixture", spawns = {{34.6, 51.2}, {37.2, 54.8}} },
+        }
+    },
+
+    [1119] = { -- Zanzil's Mixture
+        name = "Zanzil's Mixture",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Crank Fizzlebub", x = 27.1, y = 77.1 },
+        objectives = {
+            { type = "kill", name = "Zanzil Minion", spawns = {{35.2, 52.4}, {38.6, 49.8}} },
+        }
+    },
+
+    [1118] = { -- Voodoo Dues
+        name = "Voodoo Dues",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Krazek", x = 27.0, y = 77.2 },
+        objectives = {
+            { type = "item", name = "Jon-Jon's Golden Spyglass", spawns = {{39.4, 58.6}} },
+            { type = "item", name = "Maury's Clubbed Foot", spawns = {{35.8, 51.2}} },
+            { type = "item", name = "Chucky's Huge Ring", spawns = {{37.6, 53.8}} },
+        }
+    },
+
+    -- Skullsplitter Trolls
+    [209] = { -- Skullsplitter Tusks
+        name = "Skullsplitter Tusks",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Kebok", x = 27.2, y = 77.0 },
+        objectives = {
+            { type = "item", name = "Skullsplitter Tusk", spawns = {{46.8, 40.2}, {50.4, 36.8}} },
+        }
+    },
+
+    [572] = { -- Split Bone Necklace
+        name = "Split Bone Necklace",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Nimboya", x = 32.4, y = 27.8 },
+        objectives = {
+            { type = "item", name = "Split Bone Necklace", spawns = {{47.2, 38.6}, {51.6, 34.4}} },
+        }
+    },
+
+    [581] = { -- Bloodscalp Ears
+        name = "Bloodscalp Ears",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Kebok", x = 27.2, y = 77.0 },
+        objectives = {
+            { type = "item", name = "Bloodscalp Ear", spawns = {{33.8, 22.4}, {31.2, 26.6}} },
+        }
+    },
+
+    -- Booty Bay Quests
+    [587] = { -- Water Elementals
+        name = "Water Elementals",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Krazek", x = 27.0, y = 77.2 },
+        objectives = {
+            { type = "item", name = "Water Elemental Bracers", spawns = {{22.4, 58.6}, {24.8, 62.2}} },
+        }
+    },
+
+    [580] = { -- Some Assembly Required
+        name = "Some Assembly Required",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Drizzlik", x = 28.2, y = 77.6 },
+        objectives = {
+            { type = "item", name = "Snapjaw Crocolisk Skin", spawns = {{20.6, 67.4}, {23.2, 71.8}} },
+        }
+    },
+
+    [577] = { -- Excelsior
+        name = "Excelsior",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Drizzlik", x = 28.2, y = 77.6 },
+        objectives = {
+            { type = "item", name = "Elder Crocolisk Skin", spawns = {{24.4, 68.6}, {21.8, 72.4}} },
+        }
+    },
+
+    [189] = { -- Mok'thardin's Enchantment
+        name = "Mok'thardin's Enchantment",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Far Seer Mok'thardin", x = 32.2, y = 29.2 },
+        objectives = {
+            { type = "kill", name = "Shadowmaw Panther", spawns = {{45.6, 15.8}, {48.4, 12.4}} },
+        }
+    },
+
+    [570] = { -- Mok'thardin's Enchantment
+        name = "Mok'thardin's Enchantment",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Far Seer Mok'thardin", x = 32.2, y = 29.2 },
+        objectives = {
+            { type = "item", name = "Pristine Tigress Fang", spawns = {{30.8, 17.2}, {33.4, 13.6}} },
+        }
+    },
+
+    [571] = { -- Mok'thardin's Enchantment
+        name = "Mok'thardin's Enchantment",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Far Seer Mok'thardin", x = 32.2, y = 29.2 },
+        objectives = {
+            { type = "kill", name = "Sin'Dall", spawns = {{32.2, 17.4}} },
+        }
+    },
+
+    [596] = { -- Hostile Takeover
+        name = "Hostile Takeover",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Kebok", x = 27.2, y = 77.0 },
+        objectives = {
+            { type = "kill", name = "Foreman Cozzle", spawns = {{42.8, 18.6}} },
+            { type = "item", name = "Cozzle's Key", spawns = {{42.8, 18.6}} },
+        }
+    },
+
+    [213] = { -- The Brave and the Bold
+        name = "The Brave and the Bold",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Brother Nimetz", x = 47.8, y = 11.4 },
+        objectives = {
+            { type = "item", name = "Medal of Courage", spawns = {{46.4, 7.2}} },
+        }
+    },
+
+    -- ====================
+    -- ARATHI HIGHLANDS QUESTS (~20)
+    -- ====================
+
+    -- Stromgarde Keep
+    [639] = { -- Stromgarde Badges
+        name = "Stromgarde Badges",
+        zone = "Arathi Highlands",
+        start = { npc = "Captain Nials", x = 46.0, y = 46.0 },
+        objectives = {
+            { type = "item", name = "Stromgarde Badge", spawns = {{27.4, 62.8}, {30.2, 58.4}} },
+        }
+    },
+
+    [640] = { -- Sigil of Strom
+        name = "Sigil of Strom",
+        zone = "Arathi Highlands",
+        start = { npc = "Captain Nials", x = 46.0, y = 46.0 },
+        objectives = {
+            { type = "item", name = "Sigil of Strom", spawns = {{32.6, 56.2}, {28.8, 60.6}} },
+        }
+    },
+
+    [641] = { -- The Princess Trapped
+        name = "The Princess Trapped",
+        zone = "Arathi Highlands",
+        start = { npc = "Captain Nials", x = 46.0, y = 46.0 },
+        objectives = {
+            { type = "talk", name = "Princess Myzrael", spawns = {{55.2, 51.8}} },
+        }
+    },
+
+    [642] = { -- Stones of Binding
+        name = "Stones of Binding",
+        zone = "Arathi Highlands",
+        start = { npc = "Princess Myzrael", x = 55.2, y = 51.8 },
+        objectives = {
+            { type = "item", name = "Burning Key", spawns = {{62.8, 34.4}} },
+            { type = "item", name = "Cresting Key", spawns = {{70.2, 46.6}} },
+            { type = "item", name = "Thundering Key", spawns = {{48.6, 78.2}} },
+        }
+    },
+
+    -- Hammerfall Quests (Horde)
+    [643] = { -- Foul Magics
+        name = "Foul Magics",
+        zone = "Arathi Highlands",
+        start = { npc = "Keeper Bel'varil", x = 75.2, y = 33.8 },
+        objectives = {
+            { type = "item", name = "Bloodstone Amulet", spawns = {{36.4, 58.2}, {33.8, 62.6}} },
+        }
+    },
+
+    [644] = { -- Hammerfall
+        name = "Hammerfall",
+        zone = "Arathi Highlands",
+        start = { npc = "Drum Fel", x = 75.4, y = 34.2 },
+        objectives = {
+            { type = "talk", name = "Tor'gan", spawns = {{73.8, 35.6}} },
+        }
+    },
+
+    [645] = { -- Prison Break In
+        name = "Prison Break In",
+        zone = "Arathi Highlands",
+        start = { npc = "Shakes O'Breen", x = 73.6, y = 36.4 },
+        objectives = {
+            { type = "kill", name = "Stromgarde Guard", spawns = {{29.4, 60.2}, {32.6, 56.8}} },
+            { type = "item", name = "Stromgarde Key", spawns = {{30.8, 58.4}} },
+        }
+    },
+
+    [646] = { -- The Broken Sigil
+        name = "The Broken Sigil",
+        zone = "Arathi Highlands",
+        start = { npc = "Drum Fel", x = 75.4, y = 34.2 },
+        objectives = {
+            { type = "item", name = "Shattered Sigil", spawns = {{31.2, 59.6}, {28.4, 63.8}} },
+        }
+    },
+
+    -- Witherbark Trolls
+    [647] = { -- Witherbark Braves
+        name = "Witherbark Braves",
+        zone = "Arathi Highlands",
+        start = { npc = "Drum Fel", x = 75.4, y = 34.2 },
+        objectives = {
+            { type = "kill", name = "Witherbark Troll", spawns = {{62.4, 68.8}, {58.6, 72.2}} },
+            { type = "kill", name = "Witherbark Axe Thrower", spawns = {{60.8, 70.4}, {56.2, 74.6}} },
+        }
+    },
+
+    [648] = { -- Hunting in Arathi
+        name = "Hunting in Arathi",
+        zone = "Arathi Highlands",
+        start = { npc = "Tor'gan", x = 73.8, y = 35.6 },
+        objectives = {
+            { type = "kill", name = "Witherbark Shadowcaster", spawns = {{64.2, 66.4}, {61.8, 70.8}} },
+        }
+    },
+
+    [649] = { -- Trollbane
+        name = "Trollbane",
+        zone = "Arathi Highlands",
+        start = { npc = "Zengu", x = 74.2, y = 34.8 },
+        objectives = {
+            { type = "item", name = "Trol'kalar", spawns = {{34.6, 54.2}} },
+        }
+    },
+
+    [650] = { -- Myzrael's Allies
+        name = "Myzrael's Allies",
+        zone = "Arathi Highlands",
+        start = { npc = "Princess Myzrael", x = 55.2, y = 51.8 },
+        objectives = {
+            { type = "talk", name = "Skuerto", spawns = {{40.4, 48.6}} },
+        }
+    },
+
+    -- Boulderfist Ogres
+    [651] = { -- Guile of the Raptor
+        name = "Guile of the Raptor",
+        zone = "Arathi Highlands",
+        start = { npc = "Tor'gan", x = 73.8, y = 35.6 },
+        objectives = {
+            { type = "item", name = "Highland Raptor Eye", spawns = {{42.6, 39.2}, {46.8, 35.4}} },
+        }
+    },
+
+    [672] = { -- Boulderfist Brutes
+        name = "Boulderfist Brutes",
+        zone = "Arathi Highlands",
+        start = { npc = "Drum Fel", x = 75.4, y = 34.2 },
+        objectives = {
+            { type = "kill", name = "Boulderfist Brute", spawns = {{50.4, 40.6}, {54.8, 36.2}} },
+            { type = "kill", name = "Boulderfist Mage", spawns = {{52.6, 38.4}, {48.2, 42.8}} },
+        }
+    },
+
+    [673] = { -- Call to Arms
+        name = "Call to Arms",
+        zone = "Arathi Highlands",
+        start = { npc = "Drum Fel", x = 75.4, y = 34.2 },
+        objectives = {
+            { type = "kill", name = "Boulderfist Ogre", spawns = {{51.2, 41.8}, {55.6, 37.4}} },
+        }
+    },
+
+    [674] = { -- Death From Below
+        name = "Death From Below",
+        zone = "Arathi Highlands",
+        start = { npc = "Skuerto", x = 40.4, y = 48.6 },
+        objectives = {
+            { type = "kill", name = "Daggerspine Raiders", spawns = {{21.6, 34.2}, {18.4, 38.8}} },
+        }
+    },
+
+    [675] = { -- Land Ho!
+        name = "Land Ho!",
+        zone = "Arathi Highlands",
+        start = { npc = "Captain O'Breen", x = 32.4, y = 81.6 },
+        objectives = {
+            { type = "talk", name = "Shakes O'Breen", spawns = {{73.6, 36.4}} },
+        }
+    },
+
+    [676] = { -- Stolen Artifacts
+        name = "Stolen Artifacts",
+        zone = "Arathi Highlands",
+        start = { npc = "Tanar Shadowsong", x = 45.8, y = 47.2 },
+        objectives = {
+            { type = "item", name = "Stolen Artifact", spawns = {{24.6, 32.8}, {28.2, 36.4}} },
+        }
+    },
+
+    [677] = { -- Trelane's Defenses
+        name = "Trelane's Defenses",
+        zone = "Arathi Highlands",
+        start = { npc = "Apprentice Kryten", x = 46.2, y = 47.8 },
+        objectives = {
+            { type = "item", name = "Azure Agate", spawns = {{32.4, 30.6}, {36.8, 26.2}} },
+        }
+    },
+
+    [678] = { -- Summoned Monsters
+        name = "Summoned Monsters",
+        zone = "Arathi Highlands",
+        start = { npc = "Captain Nials", x = 46.0, y = 46.0 },
+        objectives = {
+            { type = "kill", name = "Otto", spawns = {{53.8, 64.2}} },
+            { type = "kill", name = "Falconcrest", spawns = {{56.4, 60.8}} },
+        }
+    },
+
+    [679] = { -- Worth Its Weight in Gold
+        name = "Worth Its Weight in Gold",
+        zone = "Arathi Highlands",
+        start = { npc = "Apprentice Kryten", x = 46.2, y = 47.8 },
+        objectives = {
+            { type = "item", name = "Raptor Teeth", spawns = {{44.2, 36.8}, {48.6, 32.4}} },
+        }
+    },
+
+    [680] = { -- Go to Refuge Point
+        name = "Go to Refuge Point",
+        zone = "Arathi Highlands",
+        start = { npc = "Commander Stillwater", x = 75.6, y = 33.4 },
+        objectives = {
+            { type = "talk", name = "Captain Nials", spawns = {{46.0, 46.0}} },
+        }
+    },
+
+    -- ====================
+    -- SWAMP OF SORROWS QUESTS (~15)
+    -- ====================
+
+    -- Stonard Quests (Horde)
+    [699] = { -- Draenethyst Crystals
+        name = "Draenethyst Crystals",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Lord Itharius", x = 21.4, y = 53.6 },
+        objectives = {
+            { type = "item", name = "Draenethyst Crystal", spawns = {{68.4, 45.2}, {72.6, 41.8}} },
+        }
+    },
+
+    [1393] = { -- The Lost Caravan
+        name = "The Lost Caravan",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Fallen Hero of the Horde", x = 34.2, y = 66.8 },
+        objectives = {
+            { type = "item", name = "Locked Strongbox", spawns = {{61.4, 22.6}} },
+        }
+    },
+
+    [1418] = { -- Noboru the Cudgel
+        name = "Noboru the Cudgel",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Helcular", x = 44.8, y = 56.2 },
+        objectives = {
+            { type = "kill", name = "Noboru the Cudgel", spawns = {{65.2, 18.4}} },
+        }
+    },
+
+    -- Magtoor Quests
+    [1389] = { -- Draenei Tomb
+        name = "Draenei Tomb",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Magtoor", x = 26.6, y = 31.4 },
+        objectives = {
+            { type = "item", name = "Broken Draenei Relics", spawns = {{62.8, 22.4}, {65.4, 18.8}} },
+        }
+    },
+
+    [1392] = { -- Mercy for the Cursed
+        name = "Mercy for the Cursed",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Magtoor", x = 26.6, y = 31.4 },
+        objectives = {
+            { type = "kill", name = "Lost One Chieftain", spawns = {{64.6, 17.2}} },
+        }
+    },
+
+    [1424] = { -- Nothing But The Truth
+        name = "Nothing But The Truth",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Oralius", x = 44.6, y = 57.8 },
+        objectives = {
+            { type = "item", name = "Corrupt Ooze", spawns = {{58.2, 30.4}, {54.8, 34.6}} },
+        }
+    },
+
+    -- Sunken Temple Prerequisites
+    [1445] = { -- Pool of Tears
+        name = "Pool of Tears",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Holaaru", x = 26.4, y = 32.8 },
+        objectives = {
+            { type = "item", name = "Atal'ai Artifact", spawns = {{50.6, 41.2}, {54.2, 37.8}} },
+        }
+    },
+
+    [1446] = { -- The Temple of Atal'Hakkar
+        name = "The Temple of Atal'Hakkar",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Lord Itharius", x = 21.4, y = 53.6 },
+        objectives = {
+            { type = "talk", name = "Itharius", spawns = {{21.4, 53.6}} },
+        }
+    },
+
+    [1447] = { -- Into the Depths
+        name = "Into the Depths",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Lord Itharius", x = 21.4, y = 53.6 },
+        objectives = {
+            { type = "explore", name = "Temple of Atal'Hakkar Entrance", spawns = {{69.4, 44.8}} },
+        }
+    },
+
+    [1475] = { -- The Atal'ai Exile
+        name = "The Atal'ai Exile",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Fel'Zerul", x = 46.2, y = 54.6 },
+        objectives = {
+            { type = "talk", name = "Jammal'an the Prophet", spawns = {{64.8, 48.2}} },
+        }
+    },
+
+    [1448] = { -- Secret of the Circle
+        name = "Secret of the Circle",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Marvon Rivetseeker", x = 52.4, y = 47.6 },
+        objectives = {
+            { type = "item", name = "Circle of Elements", spawns = {{68.2, 46.4}} },
+        }
+    },
+
+    [1449] = { -- The Sunken Temple
+        name = "The Sunken Temple",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Marvon Rivetseeker", x = 52.4, y = 47.6 },
+        objectives = {
+            { type = "explore", name = "Sunken Temple Instance Portal", spawns = {{69.6, 45.2}} },
+        }
+    },
+
+    [1450] = { -- Essence of Eranikus
+        name = "Essence of Eranikus",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Lord Itharius", x = 21.4, y = 53.6 },
+        objectives = {
+            { type = "item", name = "Essence of Eranikus", spawns = {{69.8, 44.6}} },
+        }
+    },
+
+    [1394] = { -- Fallen Hero of the Horde
+        name = "Fallen Hero of the Horde",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Fallen Hero of the Horde", x = 34.2, y = 66.8 },
+        objectives = {
+            { type = "talk", name = "Oralius", spawns = {{44.6, 57.8}} },
+        }
+    },
+
+    [1451] = { -- The Omen of Dread
+        name = "The Omen of Dread",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Dispatch Commander Metz", x = 45.4, y = 56.4 },
+        objectives = {
+            { type = "kill", name = "Shade of Eranikus", spawns = {{70.2, 43.8}} },
+        }
+    },
+
+    -- ====================
+    -- DUSTWALLOW MARSH QUESTS (~20)
+    -- ====================
+
+    -- Theramore Quests (Alliance)
+    [1177] = { -- They Call Him Smiling Jim
+        name = "They Call Him Smiling Jim",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Captain Garran Vimes", x = 68.2, y = 48.6 },
+        objectives = {
+            { type = "talk", name = "Smiling Jim", spawns = {{67.4, 51.2}} },
+        }
+    },
+
+    [1202] = { -- Inspecting the Ruins
+        name = "Inspecting the Ruins",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Captain Garran Vimes", x = 68.2, y = 48.6 },
+        objectives = {
+            { type = "explore", name = "Ruins of Theramore", spawns = {{55.6, 26.4}} },
+        }
+    },
+
+    [1218] = { -- Lieutenant Paval Reethe
+        name = "Lieutenant Paval Reethe",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Captain Garran Vimes", x = 68.2, y = 48.6 },
+        objectives = {
+            { type = "talk", name = "Lieutenant Paval Reethe", spawns = {{42.8, 14.6}} },
+        }
+    },
+
+    [1219] = { -- Daelin's Men
+        name = "Daelin's Men",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Lieutenant Paval Reethe", x = 42.8, y = 14.6 },
+        objectives = {
+            { type = "item", name = "Theramore Medal", spawns = {{55.2, 25.8}, {58.6, 22.4}} },
+        }
+    },
+
+    [1220] = { -- The Orc Report
+        name = "The Orc Report",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Captain Garran Vimes", x = 68.2, y = 48.6 },
+        objectives = {
+            { type = "item", name = "Spy's Report", spawns = {{36.4, 31.8}} },
+        }
+    },
+
+    -- Missing Diplomat Chain
+    [1241] = { -- The Missing Diplomat
+        name = "The Missing Diplomat",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Captain Garran Vimes", x = 68.2, y = 48.6 },
+        objectives = {
+            { type = "talk", name = "Private Hendel", spawns = {{66.8, 44.2}} },
+        }
+    },
+
+    [1242] = { -- The Missing Diplomat
+        name = "The Missing Diplomat",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Private Hendel", x = 66.8, y = 44.2 },
+        objectives = {
+            { type = "explore", name = "Sentry Point", spawns = {{59.4, 41.6}} },
+        }
+    },
+
+    [1243] = { -- The Missing Diplomat
+        name = "The Missing Diplomat",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Archmage Tervosh", x = 66.4, y = 49.8 },
+        objectives = {
+            { type = "kill", name = "Private Hendel", spawns = {{66.8, 44.2}} },
+        }
+    },
+
+    [1244] = { -- The Missing Diplomat
+        name = "The Missing Diplomat",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Jaina Proudmoore", x = 66.2, y = 47.6 },
+        objectives = {
+            { type = "talk", name = "King Varian Wrynn", spawns = {{66.2, 47.6}} },
+        }
+    },
+
+    -- Brackenwall Quests (Horde)
+    [1164] = { -- Challenge Overlord Mok'Morokk
+        name = "Challenge Overlord Mok'Morokk",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Draz'Zilb", x = 36.8, y = 31.2 },
+        objectives = {
+            { type = "kill", name = "Overlord Mok'Morokk", spawns = {{36.4, 30.8}} },
+        }
+    },
+
+    [1165] = { -- Hungry!
+        name = "Hungry!",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Mok'Morokk", x = 36.4, y = 30.8 },
+        objectives = {
+            { type = "item", name = "Mirefin Head", spawns = {{45.6, 17.2}, {48.2, 13.8}} },
+        }
+    },
+
+    [1166] = { -- The Brood of Onyxia
+        name = "The Brood of Onyxia",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Mok'Morokk", x = 36.4, y = 30.8 },
+        objectives = {
+            { type = "item", name = "Onyxia Whelp Egg", spawns = {{50.8, 75.4}, {54.2, 71.6}} },
+        }
+    },
+
+    [1167] = { -- Army of the Black Dragon
+        name = "Army of the Black Dragon",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Tharg", x = 37.2, y = 32.6 },
+        objectives = {
+            { type = "kill", name = "Firemane Dragonspawn", spawns = {{52.4, 73.8}, {48.6, 77.2}} },
+        }
+    },
+
+    [1168] = { -- Identifying the Brood
+        name = "Identifying the Brood",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Draz'Zilb", x = 36.8, y = 31.2 },
+        objectives = {
+            { type = "item", name = "Infused Dragonscale", spawns = {{51.2, 74.6}, {55.8, 70.2}} },
+        }
+    },
+
+    [1186] = { -- Tabetha's Assistance
+        name = "Tabetha's Assistance",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Tabetha", x = 46.2, y = 57.4 },
+        objectives = {
+            { type = "talk", name = "Archmage Tervosh", spawns = {{66.4, 49.8}} },
+        }
+    },
+
+    [1187] = { -- The Arcane Flames
+        name = "The Arcane Flames",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Tabetha", x = 46.2, y = 57.4 },
+        objectives = {
+            { type = "item", name = "Burning Ember", spawns = {{52.6, 56.8}, {48.4, 60.2}} },
+        }
+    },
+
+    [1251] = { -- Twilight of Kings
+        name = "Twilight of Kings",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Jaina Proudmoore", x = 66.2, y = 47.6 },
+        objectives = {
+            { type = "talk", name = "Highlord Bolvar Fordragon", spawns = {{66.2, 47.6}} },
+        }
+    },
+
+    [1188] = { -- The Terror of Theramore
+        name = "The Terror of Theramore",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Guard Byron", x = 64.8, y = 50.6 },
+        objectives = {
+            { type = "kill", name = "Theramore Deserter", spawns = {{44.2, 22.6}, {47.8, 18.4}} },
+        }
+    },
+
+    [1189] = { -- Defias in Dustwallow
+        name = "Defias in Dustwallow",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Captain Garran Vimes", x = 68.2, y = 48.6 },
+        objectives = {
+            { type = "kill", name = "Defias Renegade", spawns = {{52.8, 24.6}, {56.4, 20.2}} },
+        }
+    },
+
+    [1252] = { -- The King's Command
+        name = "The King's Command",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Lady Jaina Proudmoore", x = 66.2, y = 47.6 },
+        objectives = {
+            { type = "talk", name = "King Varian Wrynn", spawns = {{66.2, 47.6}} },
+        }
+    },
+
+    -- ====================
+    -- SILITHUS QUESTS (~25)
+    -- ====================
+
+    [8276] = { -- Cenarion Holdout
+        name = "Cenarion Holdout",
+        zone = "Silithus",
+        start = { npc = "Volcor", x = 53.6, y = 35.4 },
+        objectives = {
+            { type = "talk", name = "Windcaller Proudhorn", spawns = {{51.4, 38.6}} },
+        }
+    },
+
+    [8280] = { -- Report to General Kirika
+        name = "Report to General Kirika",
+        zone = "Silithus",
+        start = { npc = "Windcaller Proudhorn", x = 51.4, y = 38.6 },
+        objectives = {
+            { type = "talk", name = "General Kirika", spawns = {{54.8, 36.2}} },
+        }
+    },
+
+    [8279] = { -- The Twilight Mystery
+        name = "The Twilight Mystery",
+        zone = "Silithus",
+        start = { npc = "Geologist Larksbane", x = 53.4, y = 35.8 },
+        objectives = {
+            { type = "item", name = "Twilight Tablet Fragment", spawns = {{29.4, 10.6}, {32.2, 14.8}} },
+        }
+    },
+
+    [8281] = { -- Twilight Geolords
+        name = "Twilight Geolords",
+        zone = "Silithus",
+        start = { npc = "Geologist Larksbane", x = 53.4, y = 35.8 },
+        objectives = {
+            { type = "kill", name = "Twilight Geolord", spawns = {{25.4, 12.8}, {28.6, 16.4}} },
+        }
+    },
+
+    [8283] = { -- Twilight Lexicon
+        name = "Twilight Lexicon",
+        zone = "Silithus",
+        start = { npc = "Geologist Larksbane", x = 53.4, y = 35.8 },
+        objectives = {
+            { type = "item", name = "Twilight Lexicon Chapter 1", spawns = {{29.4, 10.6}} },
+            { type = "item", name = "Twilight Lexicon Chapter 2", spawns = {{21.2, 13.4}} },
+            { type = "item", name = "Twilight Lexicon Chapter 3", spawns = {{25.8, 8.2}} },
+        }
+    },
+
+    [8301] = { -- Breaking the Code
+        name = "Breaking the Code",
+        zone = "Silithus",
+        start = { npc = "Frankal Stonebridge", x = 53.2, y = 36.2 },
+        objectives = {
+            { type = "item", name = "Encrypted Twilight Text", spawns = {{27.4, 12.6}, {31.8, 9.4}} },
+        }
+    },
+
+    [8303] = { -- Into the Maw of Madness
+        name = "Into the Maw of Madness",
+        zone = "Silithus",
+        start = { npc = "Commander Mar'alith", x = 49.6, y = 37.4 },
+        objectives = {
+            { type = "explore", name = "Hive'Zora", spawns = {{28.4, 50.6}} },
+        }
+    },
+
+    [8306] = { -- The Calling
+        name = "The Calling",
+        zone = "Silithus",
+        start = { npc = "Commander Mar'alith", x = 49.6, y = 37.4 },
+        objectives = {
+            { type = "kill", name = "Twilight Prophet", spawns = {{26.8, 11.4}} },
+        }
+    },
+
+    [8307] = { -- Secret Communication
+        name = "Secret Communication",
+        zone = "Silithus",
+        start = { npc = "Bor Wildmane", x = 51.8, y = 37.6 },
+        objectives = {
+            { type = "item", name = "Twilight Codex", spawns = {{23.4, 16.2}} },
+        }
+    },
+
+    [8311] = { -- Hive in the Tower
+        name = "Hive in the Tower",
+        zone = "Silithus",
+        start = { npc = "Beetix Ficklespragg", x = 54.4, y = 35.2 },
+        objectives = {
+            { type = "explore", name = "Hive'Ashi", spawns = {{57.4, 62.6}} },
+        }
+    },
+
+    [8314] = { -- Hive'Regal Scouts
+        name = "Hive'Regal Scouts",
+        zone = "Silithus",
+        start = { npc = "Beetix Ficklespragg", x = 54.4, y = 35.2 },
+        objectives = {
+            { type = "kill", name = "Hive'Regal Scout", spawns = {{63.4, 52.8}, {67.2, 48.6}} },
+        }
+    },
+
+    [8315] = { -- Hive'Regal Hivewing Stinger
+        name = "Hive'Regal Hivewing Stinger",
+        zone = "Silithus",
+        start = { npc = "Beetix Ficklespragg", x = 54.4, y = 35.2 },
+        objectives = {
+            { type = "item", name = "Hive'Regal Hivewing Stinger", spawns = {{65.2, 56.4}, {68.4, 52.8}} },
+        }
+    },
+
+    [8316] = { -- Hive'Ashi Drones
+        name = "Hive'Ashi Drones",
+        zone = "Silithus",
+        start = { npc = "Beetix Ficklespragg", x = 54.4, y = 35.2 },
+        objectives = {
+            { type = "kill", name = "Hive'Ashi Drone", spawns = {{57.6, 63.2}, {59.4, 58.8}} },
+        }
+    },
+
+    [8317] = { -- Hive'Zora Stingers
+        name = "Hive'Zora Stingers",
+        zone = "Silithus",
+        start = { npc = "Beetix Ficklespragg", x = 54.4, y = 35.2 },
+        objectives = {
+            { type = "item", name = "Hive'Zora Stinger", spawns = {{29.4, 52.6}, {32.8, 48.4}} },
+        }
+    },
+
+    [8318] = { -- Threat from the Sea
+        name = "Threat from the Sea",
+        zone = "Silithus",
+        start = { npc = "Khur Hornstriker", x = 51.2, y = 38.4 },
+        objectives = {
+            { type = "kill", name = "Twilight Marauder", spawns = {{74.2, 22.8}, {76.8, 18.4}} },
+        }
+    },
+
+    [8282] = { -- Scouring of the Desert
+        name = "Scouring of the Desert",
+        zone = "Silithus",
+        start = { npc = "Hermit Ortell", x = 69.2, y = 78.4 },
+        objectives = {
+            { type = "item", name = "Silithus Venom Sample", spawns = {{57.4, 64.2}, {63.8, 56.8}} },
+        }
+    },
+
+    [8287] = { -- Deadly Desert Venom
+        name = "Deadly Desert Venom",
+        zone = "Silithus",
+        start = { npc = "Beetix Ficklespragg", x = 54.4, y = 35.2 },
+        objectives = {
+            { type = "item", name = "Venomous Scorpid Blood", spawns = {{42.6, 68.4}, {48.2, 72.6}} },
+        }
+    },
+
+    [8305] = { -- Securing the Supply Lines
+        name = "Securing the Supply Lines",
+        zone = "Silithus",
+        start = { npc = "Windcaller Proudhorn", x = 51.4, y = 38.6 },
+        objectives = {
+            { type = "kill", name = "Dredge Worm", spawns = {{42.4, 42.8}, {46.8, 38.6}} },
+        }
+    },
+
+    [8288] = { -- The Twilight's Hammer
+        name = "The Twilight's Hammer",
+        zone = "Silithus",
+        start = { npc = "Commander Mar'alith", x = 49.6, y = 37.4 },
+        objectives = {
+            { type = "kill", name = "Twilight Avenger", spawns = {{25.8, 14.2}, {28.4, 10.6}} },
+            { type = "kill", name = "Twilight Keeper", spawns = {{22.6, 16.8}, {19.4, 13.2}} },
+        }
+    },
+
+    [8304] = { -- Noggle's Last Hope
+        name = "Noggle's Last Hope",
+        zone = "Silithus",
+        start = { npc = "Noggle Ficklespragg", x = 54.8, y = 34.4 },
+        objectives = {
+            { type = "item", name = "Crystal Scarab", spawns = {{43.4, 42.8}} },
+        }
+    },
+
+    [8322] = { -- Wanted: Deathclasp
+        name = "Wanted: Deathclasp",
+        zone = "Silithus",
+        start = { npc = "Wanted Poster", x = 52.4, y = 38.2 },
+        objectives = {
+            { type = "kill", name = "Deathclasp", spawns = {{46.8, 80.4}} },
+        }
+    },
+
+    [8319] = { -- Target: Hive Controllers
+        name = "Target: Hive Controllers",
+        zone = "Silithus",
+        start = { npc = "Commander Mar'alith", x = 49.6, y = 37.4 },
+        objectives = {
+            { type = "kill", name = "Hive Controller", spawns = {{64.2, 54.8}, {28.6, 52.4}} },
+        }
+    },
+
+    [8284] = { -- True Believers
+        name = "True Believers",
+        zone = "Silithus",
+        start = { npc = "Hermit Ortell", x = 69.2, y = 78.4 },
+        objectives = {
+            { type = "item", name = "Twilight Cultist robe", spawns = {{26.4, 14.8}} },
+            { type = "item", name = "Twilight Cultist Mantle", spawns = {{28.2, 12.6}} },
+            { type = "item", name = "Twilight Cultist Cowl", spawns = {{24.8, 10.2}} },
+        }
+    },
+
+    [8328] = { -- Abyssal Signets
+        name = "Abyssal Signets",
+        zone = "Silithus",
+        start = { npc = "Bor Wildmane", x = 51.8, y = 37.6 },
+        objectives = {
+            { type = "item", name = "Abyssal Signet", spawns = {{26.8, 12.4}, {23.4, 15.8}} },
+        }
+    },
+
+    [8333] = { -- Abyssal Crests
+        name = "Abyssal Crests",
+        zone = "Silithus",
+        start = { npc = "Bor Wildmane", x = 51.8, y = 37.6 },
+        objectives = {
+            { type = "item", name = "Abyssal Crest", spawns = {{28.2, 10.8}, {25.6, 14.4}} },
+        }
+    },
+
+    -----------------------------------------
+    -- BADLANDS QUESTS
+    -----------------------------------------
+    
+    [718] = { -- Martek the Exiled
+        name = "Martek the Exiled",
+        zone = "Badlands",
+        start = { npc = "Fizzle Brassbolts", x = 77.8, y = 77.2 },
+        objectives = {
+            { type = "talk", name = "Martek the Exiled", spawns = {{42.2, 52.8}} },
+        }
+    },
+    
+    [733] = { -- Barbecued Buzzard Wings
+        name = "Barbecued Buzzard Wings",
+        zone = "Badlands",
+        start = { npc = "Rigglefuzz", x = 42.4, y = 52.9 },
+        objectives = {
+            { type = "kill", name = "Buzzard", spawns = {
+                {16.4, 60.2}, {18.2, 57.8}, {14.8, 55.4}, {20.1, 62.3},
+                {22.4, 58.6}, {17.6, 54.2}, {19.8, 60.8}, {15.2, 58.1}
+            }},
+        }
+    },
+    
+    [719] = { -- Indurium
+        name = "Indurium",
+        zone = "Badlands",
+        start = { npc = "Martek the Exiled", x = 42.2, y = 52.8 },
+        objectives = {
+            { type = "item", name = "Indurium Flake", spawns = {
+                {52.4, 28.6}, {50.8, 26.2}, {54.2, 30.4}, {48.6, 27.8},
+                {53.1, 25.4}, {51.6, 29.8}
+            }},
+        }
+    },
+    
+    [705] = { -- A Dwarf and His Tools
+        name = "A Dwarf and His Tools",
+        zone = "Badlands",
+        start = { npc = "Prospector Ryedol", x = 53.2, y = 43.4 },
+        objectives = {
+            { type = "item", name = "Ryedol's Lucky Pick", spawns = {{52.8, 30.2}} },
+        }
+    },
+    
+    [720] = { -- News for Fizzle
+        name = "News for Fizzle",
+        zone = "Badlands",
+        start = { npc = "Martek the Exiled", x = 42.2, y = 52.8 },
+        objectives = {
+            { type = "talk", name = "Fizzle Brassbolts", spawns = {{77.8, 77.2}} },
+        }
+    },
+    
+    [709] = { -- Solution to Doom
+        name = "Solution to Doom",
+        zone = "Badlands",
+        start = { npc = "Lucien Tosselwrench", x = 25.8, y = 44.2 },
+        objectives = {
+            { type = "item", name = "Fissure Plant", spawns = {
+                {65.4, 38.2}, {63.8, 40.6}, {67.2, 36.8}, {61.4, 42.4}
+            }},
+        }
+    },
+    
+    [734] = { -- Sigil of the Hammer
+        name = "Sigil of the Hammer",
+        zone = "Badlands",
+        start = { npc = "Rigglefuzz", x = 42.4, y = 52.9 },
+        objectives = {
+            { type = "kill", name = "Shadowforge Surveyor", spawns = {
+                {27.4, 42.8}, {29.2, 44.6}, {25.8, 40.2}, {31.4, 46.8}
+            }},
+            { type = "kill", name = "Shadowforge Digger", spawns = {
+                {28.6, 43.4}, {26.2, 41.8}, {30.4, 45.2}, {32.1, 44.6}
+            }},
+        }
+    },
+    
+    [710] = { -- Coolant Heads Prevail
+        name = "Coolant Heads Prevail",
+        zone = "Badlands",
+        start = { npc = "Lotwil Veriatus", x = 25.8, y = 44.8 },
+        objectives = {
+            { type = "item", name = "Frost Oil", spawns = {} },
+            { type = "item", name = "Gyrochronatom", spawns = {} },
+        }
+    },
+    
+    [737] = { -- A Sign of Hope
+        name = "A Sign of Hope",
+        zone = "Badlands",
+        start = { npc = "Prospector Ryedol", x = 53.2, y = 43.4 },
+        objectives = {
+            { type = "item", name = "Crumpled Map", spawns = {{52.6, 29.8}} },
+        }
+    },
+    
+    [738] = { -- A Sign of Hope (Part 2)
+        name = "A Sign of Hope",
+        zone = "Badlands",
+        start = { npc = "Hammertoe Grez", x = 53.4, y = 43.2 },
+        objectives = {
+            { type = "kill", name = "Shadowforge Relic Hunter", spawns = {
+                {37.8, 10.4}, {39.2, 12.6}, {35.4, 8.8}, {41.2, 14.2}
+            }},
+        }
+    },
+    
+    [739] = { -- Amulet of Secrets
+        name = "Amulet of Secrets",
+        zone = "Badlands",
+        start = { npc = "Hammertoe Grez", x = 53.4, y = 43.2 },
+        objectives = {
+            { type = "item", name = "Hammertoe's Amulet", spawns = {{37.8, 11.2}} },
+        }
+    },
+    
+    [703] = { -- Badlands Reagent Run
+        name = "Badlands Reagent Run",
+        zone = "Badlands",
+        start = { npc = "Jarkal Mossmeld", x = 2.6, y = 46.0 },
+        objectives = {
+            { type = "item", name = "Buzzard Gizzard", spawns = {{16.4, 60.2}, {18.2, 57.8}} },
+            { type = "item", name = "Crag Coyote Fang", spawns = {{58.4, 24.6}, {56.2, 28.4}} },
+            { type = "item", name = "Rock Elemental Shard", spawns = {{38.6, 72.4}, {40.2, 70.8}} },
+        }
+    },
+    
+    [773] = { -- Broken Alliances
+        name = "Broken Alliances",
+        zone = "Badlands",
+        start = { npc = "Gorn", x = 6.4, y = 47.2 },
+        objectives = {
+            { type = "talk", name = "Boss Tho'grun", spawns = {{42.8, 10.6}} },
+        }
+    },
+    
+    [774] = { -- Broken Alliances (Part 2)
+        name = "Broken Alliances",
+        zone = "Badlands",
+        start = { npc = "Boss Tho'grun", x = 42.8, y = 10.6 },
+        objectives = {
+            { type = "kill", name = "Boss Tho'grun", spawns = {{42.8, 10.6}} },
+            { type = "kill", name = "Thog'ferth", spawns = {{42.6, 10.8}} },
+        }
+    },
+    
+    [782] = { -- Power Stones
+        name = "Power Stones",
+        zone = "Badlands",
+        start = { npc = "Rigglefuzz", x = 42.4, y = 52.9 },
+        objectives = {
+            { type = "item", name = "Powerstones", spawns = {
+                {38.4, 10.2}, {40.6, 12.8}, {36.2, 8.6}, {42.4, 14.4}
+            }},
+        }
+    },
+    
+    [721] = { -- Murdaloc
+        name = "Murdaloc",
+        zone = "Badlands",
+        start = { npc = "Lotwil Veriatus", x = 25.8, y = 44.8 },
+        objectives = {
+            { type = "kill", name = "Murdaloc", spawns = {{15.8, 86.2}} },
+        }
+    },
+    
+    [2418] = { -- Study of the Elements: Rock
+        name = "Study of the Elements: Rock",
+        zone = "Badlands",
+        start = { npc = "Lotwil Veriatus", x = 25.8, y = 44.8 },
+        objectives = {
+            { type = "kill", name = "Lesser Rock Elemental", spawns = {
+                {38.2, 72.6}, {40.4, 74.8}, {36.8, 70.2}, {42.6, 76.4}
+            }},
+        }
+    },
+    
+    [2419] = { -- Study of the Elements: Rock (Part 2)
+        name = "Study of the Elements: Rock",
+        zone = "Badlands",
+        start = { npc = "Lotwil Veriatus", x = 25.8, y = 44.8 },
+        objectives = {
+            { type = "kill", name = "Rock Elemental", spawns = {
+                {25.4, 68.6}, {27.2, 70.4}, {23.8, 66.2}, {29.4, 72.8}
+            }},
+        }
+    },
+
+    -----------------------------------------
+    -- THOUSAND NEEDLES QUESTS
+    -----------------------------------------
+    
+    [4767] = { -- Test of Faith
+        name = "Test of Faith",
+        zone = "Thousand Needles",
+        start = { npc = "Dorn Plainstalker", x = 54.0, y = 43.0 },
+        objectives = {
+            { type = "item", name = "Leap of Faith", spawns = {{26.4, 32.2}} },
+        }
+    },
+    
+    [4770] = { -- Test of Endurance
+        name = "Test of Endurance",
+        zone = "Thousand Needles",
+        start = { npc = "Dorn Plainstalker", x = 54.0, y = 43.0 },
+        objectives = {
+            { type = "kill", name = "Grenka Bloodscreech", spawns = {{23.8, 24.6}} },
+        }
+    },
+    
+    [5147] = { -- Henrig Lonebrow's Journal
+        name = "Henrig Lonebrow's Journal",
+        zone = "Thousand Needles",
+        start = { npc = "Henrig Lonebrow's Journal", x = 30.8, y = 24.6 },
+        objectives = {
+            { type = "talk", name = "Freewind Post", spawns = {{45.2, 50.6}} },
+        }
+    },
+    
+    [1148] = { -- Alien Egg
+        name = "Alien Egg",
+        zone = "Thousand Needles",
+        start = { npc = "Alien Egg", x = 56.4, y = 56.8 },
+        objectives = {
+            { type = "talk", name = "Hagar Lightninghoof", spawns = {{45.2, 49.8}} },
+        }
+    },
+    
+    [1149] = { -- Serpent Wild
+        name = "Serpent Wild",
+        zone = "Thousand Needles",
+        start = { npc = "Hagar Lightninghoof", x = 45.2, y = 49.8 },
+        objectives = {
+            { type = "kill", name = "Serpent", spawns = {
+                {52.6, 54.2}, {54.8, 56.4}, {50.2, 52.6}, {56.4, 58.8}
+            }},
+        }
+    },
+    
+    [5151] = { -- Parts of the Swarm
+        name = "Parts of the Swarm",
+        zone = "Thousand Needles",
+        start = { npc = "Moktar Kansen", x = 21.4, y = 32.2 },
+        objectives = {
+            { type = "kill", name = "Silithid Searcher", spawns = {
+                {59.2, 68.4}, {61.4, 70.6}, {57.6, 66.2}, {63.8, 72.8}
+            }},
+            { type = "kill", name = "Silithid Hive Drone", spawns = {
+                {60.4, 69.2}, {62.6, 71.4}, {58.8, 67.6}, {64.2, 73.2}
+            }},
+        }
+    },
+    
+    [5152] = { -- Parts of the Swarm (Part 2)
+        name = "Parts of the Swarm",
+        zone = "Thousand Needles",
+        start = { npc = "Moktar Kansen", x = 21.4, y = 32.2 },
+        objectives = {
+            { type = "talk", name = "Korran", spawns = {{52.8, 53.6}} },
+        }
+    },
+    
+    [1112] = { -- Steelsnap
+        name = "Steelsnap",
+        zone = "Thousand Needles",
+        start = { npc = "Motega Firemane", x = 45.0, y = 50.6 },
+        objectives = {
+            { type = "kill", name = "Steelsnap", spawns = {{16.2, 20.8}} },
+        }
+    },
+    
+    [1113] = { -- Freewind Brave
+        name = "Freewind Brave",
+        zone = "Thousand Needles",
+        start = { npc = "Cliffwatcher Longhorn", x = 45.4, y = 50.2 },
+        objectives = {
+            { type = "kill", name = "Galak Scout", spawns = {
+                {18.4, 26.6}, {20.2, 28.4}, {16.8, 24.2}, {22.6, 30.8}
+            }},
+            { type = "kill", name = "Galak Mauler", spawns = {
+                {19.6, 27.4}, {21.4, 29.2}, {17.2, 25.6}, {23.8, 31.4}
+            }},
+        }
+    },
+    
+    [5762] = { -- Salt Flat Venom
+        name = "Salt Flat Venom",
+        zone = "Thousand Needles",
+        start = { npc = "Fizzle Brassbolts", x = 78.2, y = 77.0 },
+        objectives = {
+            { type = "kill", name = "Scorpid Reaver", spawns = {
+                {82.4, 54.6}, {84.2, 56.8}, {80.6, 52.4}, {86.8, 58.2}
+            }},
+            { type = "kill", name = "Scorpid Terror", spawns = {
+                {83.6, 55.4}, {85.4, 57.6}, {81.2, 53.2}, {87.4, 59.6}
+            }},
+        }
+    },
+    
+    [1176] = { -- The Swarm Grows
+        name = "The Swarm Grows",
+        zone = "Thousand Needles",
+        start = { npc = "Korran", x = 52.8, y = 53.6 },
+        objectives = {
+            { type = "item", name = "Silithid Heart", spawns = {{60.2, 68.8}, {62.4, 70.4}} },
+        }
+    },
+    
+    [1186] = { -- Protect Kanati Greycloud
+        name = "Protect Kanati Greycloud",
+        zone = "Thousand Needles",
+        start = { npc = "Kanati Greycloud", x = 21.6, y = 32.4 },
+        objectives = {
+            { type = "escort", name = "Kanati Greycloud", spawns = {{21.6, 32.4}} },
+        }
+    },
+    
+    [5761] = { -- Hardened Shells
+        name = "Hardened Shells",
+        zone = "Thousand Needles",
+        start = { npc = "Pozzik", x = 78.8, y = 77.4 },
+        objectives = {
+            { type = "item", name = "Hardened Tortoise Shell", spawns = {
+                {72.4, 78.2}, {74.6, 80.4}, {70.2, 76.6}, {76.8, 82.2}
+            }},
+        }
+    },
+    
+    [1190] = { -- Homeward Bound
+        name = "Homeward Bound",
+        zone = "Thousand Needles",
+        start = { npc = "Lakota Windsong", x = 17.2, y = 40.6 },
+        objectives = {
+            { type = "escort", name = "Lakota Windsong", spawns = {{17.2, 40.6}} },
+        }
+    },
+    
+    [1191] = { -- The Bait for Lar'korwi
+        name = "The Bait for Lar'korwi",
+        zone = "Thousand Needles",
+        start = { npc = "Quest Chest", x = 26.4, y = 36.8 },
+        objectives = {
+            { type = "item", name = "Lar'korwi's Head", spawns = {{28.6, 34.2}} },
+        }
+    },
+
+    -----------------------------------------
+    -- ASHENVALE QUESTS
+    -----------------------------------------
+    
+    [1010] = { -- Bathran's Hair
+        name = "Bathran's Hair",
+        zone = "Ashenvale",
+        start = { npc = "Orendil Broadleaf", x = 26.2, y = 38.6 },
+        objectives = {
+            { type = "item", name = "Bathran's Hair", spawns = {
+                {31.4, 22.6}, {33.2, 24.4}, {29.8, 20.2}, {35.6, 26.8}
+            }},
+        }
+    },
+    
+    [1020] = { -- Culling the Threat
+        name = "Culling the Threat",
+        zone = "Ashenvale",
+        start = { npc = "Shindrell Swiftfire", x = 34.6, y = 49.0 },
+        objectives = {
+            { type = "kill", name = "Dal Bloodclaw", spawns = {{78.4, 48.6}} },
+        }
+    },
+    
+    [991] = { -- The Tower of Althalaxx
+        name = "The Tower of Althalaxx",
+        zone = "Ashenvale",
+        start = { npc = "Sentinel Elissa Starbreeze", x = 23.0, y = 53.4 },
+        objectives = {
+            { type = "talk", name = "Balthule Shadowstrike", spawns = {{29.6, 26.4}} },
+        }
+    },
+    
+    [1022] = { -- Satyr Horns
+        name = "Satyr Horns",
+        zone = "Ashenvale",
+        start = { npc = "Illiyana", x = 36.6, y = 49.6 },
+        objectives = {
+            { type = "kill", name = "Bleakwither", spawns = {
+                {81.2, 50.4}, {79.6, 48.8}, {83.4, 52.2}, {77.8, 46.6}
+            }},
+            { type = "kill", name = "Xavian Betrayer", spawns = {
+                {80.4, 49.6}, {82.6, 51.2}, {78.2, 47.4}, {84.8, 53.6}
+            }},
+        }
+    },
+    
+    [1054] = { -- The Howling Vale
+        name = "The Howling Vale",
+        zone = "Ashenvale",
+        start = { npc = "Sentinel Melyria Frostshadow", x = 50.6, y = 39.2 },
+        objectives = {
+            { type = "item", name = "Howling Pendant", spawns = {{53.2, 29.4}} },
+        }
+    },
+    
+    [1023] = { -- Vile Satyr! Dryads in Danger!
+        name = "Vile Satyr! Dryads in Danger!",
+        zone = "Ashenvale",
+        start = { npc = "Illiyana", x = 36.6, y = 49.6 },
+        objectives = {
+            { type = "kill", name = "Geltharis", spawns = {{81.4, 48.2}} },
+        }
+    },
+    
+    [6482] = { -- Raene's Cleansing
+        name = "Raene's Cleansing",
+        zone = "Ashenvale",
+        start = { npc = "Raene Wolfrunner", x = 36.4, y = 49.8 },
+        objectives = {
+            { type = "item", name = "Iron Shaft", spawns = {{71.6, 68.4}} },
+        }
+    },
+    
+    [6503] = { -- Raene's Cleansing (Part 2)
+        name = "Raene's Cleansing",
+        zone = "Ashenvale",
+        start = { npc = "Raene Wolfrunner", x = 36.4, y = 49.8 },
+        objectives = {
+            { type = "item", name = "Wooden Key", spawns = {{54.8, 35.2}} },
+        }
+    },
+    
+    [1008] = { -- The Zoram Strand
+        name = "The Zoram Strand",
+        zone = "Ashenvale",
+        start = { npc = "Shindrell Swiftfire", x = 34.6, y = 49.0 },
+        objectives = {
+            { type = "kill", name = "Wrathtail Priestess", spawns = {
+                {14.2, 23.6}, {12.8, 25.4}, {16.4, 21.2}, {10.6, 27.8}
+            }},
+            { type = "kill", name = "Wrathtail Sorceress", spawns = {
+                {13.4, 24.2}, {15.6, 22.8}, {11.2, 26.6}, {17.8, 20.4}
+            }},
+        }
+    },
+    
+    [1025] = { -- Shadumbra's Head
+        name = "Shadumbra's Head",
+        zone = "Ashenvale",
+        start = { npc = "Senani Thunderheart", x = 73.4, y = 61.6 },
+        objectives = {
+            { type = "kill", name = "Shadumbra", spawns = {{63.2, 52.4}} },
+        }
+    },
+    
+    [1013] = { -- Forsaken Diseases
+        name = "Forsaken Diseases",
+        zone = "Ashenvale",
+        start = { npc = "Kayneth Stillwind", x = 34.4, y = 48.4 },
+        objectives = {
+            { type = "item", name = "Bottle of Disease", spawns = {{79.2, 73.4}} },
+        }
+    },
+    
+    [1021] = { -- Troll Charm
+        name = "Troll Charm",
+        zone = "Ashenvale",
+        start = { npc = "Advisor Willadson", x = 34.2, y = 80.0 },
+        objectives = {
+            { type = "item", name = "Troll Charm", spawns = {
+                {72.4, 71.6}, {74.2, 73.4}, {70.8, 69.2}, {76.6, 75.8}
+            }},
+        }
+    },
+    
+    [1024] = { -- Stonetalon Standstill
+        name = "Stonetalon Standstill",
+        zone = "Ashenvale",
+        start = { npc = "Sentinel Thenysil", x = 34.6, y = 48.6 },
+        objectives = {
+            { type = "talk", name = "Kaela Shadowspear", spawns = {{80.2, 91.6}} },
+        }
+    },
+    
+    [1058] = { -- Gerenzo Wrenchwhistle
+        name = "Gerenzo Wrenchwhistle",
+        zone = "Ashenvale",
+        start = { npc = "Kayneth Stillwind", x = 34.4, y = 48.4 },
+        objectives = {
+            { type = "kill", name = "Gerenzo Wrenchwhistle", spawns = {{66.2, 72.8}} },
+        }
+    },
+    
+    [1016] = { -- Playing Possum
+        name = "Playing Possum",
+        zone = "Ashenvale",
+        start = { npc = "Hooded Corpse", x = 80.2, y = 73.6 },
+        objectives = {
+            { type = "talk", name = "Krattok", spawns = {{78.4, 72.2}} },
+        }
+    },
+    
+    [1026] = { -- The Branch of Cenarius
+        name = "The Branch of Cenarius",
+        zone = "Ashenvale",
+        start = { npc = "Kayneth Stillwind", x = 34.4, y = 48.4 },
+        objectives = {
+            { type = "item", name = "Branch of Cenarius", spawns = {{76.2, 44.8}} },
+        }
+    },
+    
+    [1056] = { -- Ordanus
+        name = "Ordanus",
+        zone = "Ashenvale",
+        start = { npc = "Cenarius' Legacy", x = 76.4, y = 45.2 },
+        objectives = {
+            { type = "kill", name = "Ordanus", spawns = {{61.4, 51.8}} },
+        }
+    },
+    
+    [1033] = { -- The Ancient Statuette
+        name = "The Ancient Statuette",
+        zone = "Ashenvale",
+        start = { npc = "Talen", x = 26.6, y = 38.4 },
+        objectives = {
+            { type = "item", name = "Ancient Statuette", spawns = {{13.8, 28.6}} },
+        }
+    },
+    
+    [4581] = { -- Blackfathom Villainy (Alliance)
+        name = "Blackfathom Villainy",
+        zone = "Ashenvale",
+        start = { npc = "Argent Guard Thaelrid", x = 14.6, y = 14.2 },
+        objectives = {
+            { type = "kill", name = "Twilight Lord Kelris", spawns = {{15.2, 13.8}} },
+        }
+    },
+    
+    [6504] = { -- Raene's Cleansing (Part 3)
+        name = "Raene's Cleansing",
+        zone = "Ashenvale",
+        start = { npc = "Shyn", x = 55.4, y = 36.8 },
+        objectives = {
+            { type = "item", name = "Teronis' Journal", spawns = {{20.8, 41.2}} },
+        }
+    },
+    
+    [1057] = { -- Velinde Starsong
+        name = "Velinde Starsong",
+        zone = "Ashenvale",
+        start = { npc = "An Offering to Elune", x = 52.4, y = 30.6 },
+        objectives = {
+            { type = "talk", name = "Velinde Starsong", spawns = {{50.6, 25.4}} },
+        }
+    },
+    
+    [1003] = { -- Elemental Bracers
+        name = "Elemental Bracers",
+        zone = "Ashenvale",
+        start = { npc = "Sentinel Starblaze", x = 34.8, y = 49.2 },
+        objectives = {
+            { type = "kill", name = "Befouled Water Elemental", spawns = {
+                {18.4, 32.6}, {20.2, 34.4}, {16.8, 30.2}, {22.6, 36.8}
+            }},
+        }
+    },
+    
+    [1017] = { -- An Aggressive Defense
+        name = "An Aggressive Defense",
+        zone = "Ashenvale",
+        start = { npc = "Valusha", x = 73.2, y = 61.8 },
+        objectives = {
+            { type = "kill", name = "Laughing Sister", spawns = {
+                {60.4, 74.6}, {62.2, 76.4}, {58.8, 72.2}, {64.6, 78.8}
+            }},
+            { type = "kill", name = "Tangled Horror", spawns = {
+                {61.6, 75.4}, {63.4, 77.2}, {59.2, 73.6}, {65.8, 79.4}
+            }},
+        }
+    },
+    
+    [1052] = { -- Blessings of the Ancients
+        name = "Blessings of the Ancients",
+        zone = "Ashenvale",
+        start = { npc = "An Offering to Elune", x = 52.4, y = 30.6 },
+        objectives = {
+            { type = "talk", name = "Ancient of Lore", spawns = {{54.2, 28.8}} },
+        }
+    },
+
+    -----------------------------------------
+    -- STONETALON MOUNTAINS QUESTS
+    -----------------------------------------
+    
+    [1087] = { -- Goblin Invaders
+        name = "Goblin Invaders",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Seereth Stonebreak", x = 35.4, y = 6.8 },
+        objectives = {
+            { type = "kill", name = "Venture Co. Logger", spawns = {
+                {67.2, 50.4}, {65.8, 48.6}, {69.4, 52.2}, {63.6, 46.8}
+            }},
+            { type = "kill", name = "Venture Co. Deforester", spawns = {
+                {68.4, 51.2}, {66.2, 49.4}, {70.6, 53.6}, {64.8, 47.2}
+            }},
+        }
+    },
+    
+    [1088] = { -- The Spirits of Stonetalon
+        name = "The Spirits of Stonetalon",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Seereth Stonebreak", x = 35.4, y = 6.8 },
+        objectives = {
+            { type = "talk", name = "Ziz Fizziks", spawns = {{58.4, 62.8}} },
+        }
+    },
+    
+    [1089] = { -- Goblinn Enemies
+        name = "Goblin Enemies",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Ziz Fizziks", x = 58.4, y = 62.8 },
+        objectives = {
+            { type = "kill", name = "Venture Co. Operator", spawns = {
+                {63.8, 42.6}, {65.6, 44.4}, {61.4, 40.2}, {67.8, 46.8}
+            }},
+            { type = "kill", name = "Venture Co. Machine Smith", spawns = {
+                {64.6, 43.4}, {66.4, 45.2}, {62.2, 41.6}, {68.2, 47.4}
+            }},
+        }
+    },
+    
+    [1091] = { -- Gerenzo's Orders
+        name = "Gerenzo's Orders",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Ziz Fizziks", x = 58.4, y = 62.8 },
+        objectives = {
+            { type = "item", name = "Gerenzo's Orders", spawns = {{63.4, 40.2}} },
+        }
+    },
+    
+    [1093] = { -- Super Reaper 6000
+        name = "Super Reaper 6000",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Ziz Fizziks", x = 58.4, y = 62.8 },
+        objectives = {
+            { type = "item", name = "Super Reaper 6000 Blueprint", spawns = {{65.8, 44.6}} },
+        }
+    },
+    
+    [1068] = { -- Arachnophobia
+        name = "Arachnophobia",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Sentinel Thenysil", x = 80.6, y = 91.8 },
+        objectives = {
+            { type = "kill", name = "Besseleth", spawns = {{57.4, 76.2}} },
+        }
+    },
+    
+    [1062] = { -- Bloodfury Bloodline
+        name = "Bloodfury Bloodline",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Keeper Albagorm", x = 42.4, y = 16.2 },
+        objectives = {
+            { type = "kill", name = "Bloodfury Roguefeather", spawns = {
+                {31.2, 58.6}, {33.4, 60.4}, {29.6, 56.2}, {35.8, 62.8}
+            }},
+        }
+    },
+    
+    [1085] = { -- Elemental War
+        name = "Elemental War",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Tsunaman", x = 47.2, y = 64.4 },
+        objectives = {
+            { type = "kill", name = "Fledgling Pterrordax", spawns = {
+                {32.4, 66.8}, {34.2, 68.6}, {30.6, 64.2}, {36.8, 70.4}
+            }},
+        }
+    },
+    
+    [1084] = { -- Cycle of Rebirth
+        name = "Cycle of Rebirth",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Tammra Windfield", x = 47.6, y = 58.8 },
+        objectives = {
+            { type = "item", name = "Gaea Seeds", spawns = {
+                {45.4, 28.6}, {47.2, 30.4}, {43.8, 26.2}, {49.6, 32.8}
+            }},
+        }
+    },
+    
+    [1086] = { -- New Life
+        name = "New Life",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Tammra Windfield", x = 47.6, y = 58.8 },
+        objectives = {
+            { type = "item", name = "Charred Vale Sprout", spawns = {{35.2, 68.4}} },
+        }
+    },
+    
+    [6421] = { -- Shredding Machines
+        name = "Shredding Machines",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Ziz Fizziks", x = 58.4, y = 62.8 },
+        objectives = {
+            { type = "kill", name = "Venture Co. Shredder", spawns = {
+                {66.4, 48.2}, {68.2, 50.6}, {64.6, 46.4}, {70.8, 52.8}
+            }},
+        }
+    },
+    
+    [1064] = { -- Reclaiming the Charred Vale
+        name = "Reclaiming the Charred Vale",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Keeper Albagorm", x = 42.4, y = 16.2 },
+        objectives = {
+            { type = "kill", name = "Charred Ancient", spawns = {
+                {30.6, 74.8}, {32.4, 76.6}, {28.2, 72.4}, {34.8, 78.2}
+            }},
+            { type = "kill", name = "Burning Ravager", spawns = {
+                {31.4, 75.6}, {33.2, 77.4}, {29.6, 73.2}, {35.4, 79.6}
+            }},
+        }
+    },
+    
+    [1083] = { -- Earthen Arise
+        name = "Earthen Arise",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Tsunaman", x = 47.2, y = 64.4 },
+        objectives = {
+            { type = "talk", name = "Gogger Rock Keeper", spawns = {{35.8, 44.2}} },
+        }
+    },
+    
+    [1081] = { -- Harpies Threaten
+        name = "Harpies Threaten",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Shindrell Swiftfire", x = 36.2, y = 7.6 },
+        objectives = {
+            { type = "kill", name = "Bloodfury Storm Witch", spawns = {
+                {40.4, 56.8}, {42.2, 58.6}, {38.6, 54.2}, {44.8, 60.4}
+            }},
+            { type = "kill", name = "Bloodfury Roguefeather", spawns = {
+                {41.2, 57.4}, {43.4, 59.2}, {39.6, 55.6}, {45.6, 61.8}
+            }},
+        }
+    },
+    
+    [6548] = { -- Windshear Mine Cleanup
+        name = "Windshear Mine Cleanup",
+        zone = "Stonetalon Mountains",
+        start = { npc = "Ziz Fizziks", x = 58.4, y = 62.8 },
+        objectives = {
+            { type = "kill", name = "Venture Co. Miner", spawns = {
+                {62.2, 38.6}, {64.4, 40.4}, {60.6, 36.2}, {66.8, 42.8}
+            }},
+        }
+    },
+
+    -----------------------------------------
+    -- WETLANDS QUESTS
+    -----------------------------------------
+    
+    [279] = { -- The Algaz Gauntlet
+        name = "The Algaz Gauntlet",
+        zone = "Wetlands",
+        start = { npc = "Valstag Ironjaw", x = 10.6, y = 56.8 },
+        objectives = {
+            { type = "talk", name = "Mountaineer Stormpike", spawns = {{50.6, 6.2}} },
+        }
+    },
+    
+    [469] = { -- The Third Fleet
+        name = "The Third Fleet",
+        zone = "Wetlands",
+        start = { npc = "First Mate Fitzsimmons", x = 8.6, y = 58.4 },
+        objectives = {
+            { type = "item", name = "First Mate's Log", spawns = {{19.2, 23.8}} },
+        }
+    },
+    
+    [470] = { -- The Cursed Crew
+        name = "The Cursed Crew",
+        zone = "Wetlands",
+        start = { npc = "First Mate Fitzsimmons", x = 8.6, y = 58.4 },
+        objectives = {
+            { type = "kill", name = "Cursed Sailor", spawns = {
+                {17.4, 22.6}, {19.2, 24.4}, {15.6, 20.2}, {21.8, 26.8}
+            }},
+            { type = "kill", name = "Captain Halyndor", spawns = {{18.6, 23.4}} },
+        }
+    },
+    
+    [471] = { -- Lifting the Curse
+        name = "Lifting the Curse",
+        zone = "Wetlands",
+        start = { npc = "First Mate Fitzsimmons", x = 8.6, y = 58.4 },
+        objectives = {
+            { type = "item", name = "Intrepid's Locked Strongbox", spawns = {{18.2, 24.6}} },
+        }
+    },
+    
+    [280] = { -- A Grim Task
+        name = "A Grim Task",
+        zone = "Wetlands",
+        start = { npc = "Valstag Ironjaw", x = 10.6, y = 56.8 },
+        objectives = {
+            { type = "kill", name = "Chieftain Nek'rosh", spawns = {{54.2, 40.6}} },
+        }
+    },
+    
+    [275] = { -- Digging Through the Ooze
+        name = "Digging Through the Ooze",
+        zone = "Wetlands",
+        start = { npc = "Sida", x = 8.2, y = 55.8 },
+        objectives = {
+            { type = "item", name = "Lost Supplies", spawns = {
+                {48.6, 33.4}, {50.4, 35.2}, {46.2, 31.6}, {52.8, 37.8}
+            }},
+        }
+    },
+    
+    [296] = { -- Mosshide Gnolls
+        name = "Mosshide Gnolls",
+        zone = "Wetlands",
+        start = { npc = "Rethiel the Greenwarden", x = 56.2, y = 40.4 },
+        objectives = {
+            { type = "kill", name = "Mosshide Gnoll", spawns = {
+                {64.4, 27.6}, {66.2, 29.4}, {62.6, 25.2}, {68.8, 31.8}
+            }},
+            { type = "kill", name = "Mosshide Mongrel", spawns = {
+                {65.2, 28.4}, {67.4, 30.2}, {63.8, 26.6}, {69.6, 32.4}
+            }},
+        }
+    },
+    
+    [297] = { -- Thwarting Kolkar Aggression
+        name = "Thwarting Kolkar Aggression",
+        zone = "Wetlands",
+        start = { npc = "Rethiel the Greenwarden", x = 56.2, y = 40.4 },
+        objectives = {
+            { type = "kill", name = "Mosshide Alpha", spawns = {{68.6, 32.8}} },
+        }
+    },
+    
+    [1249] = { -- Dragonmaw Gates
+        name = "Dragonmaw Gates",
+        zone = "Wetlands",
+        start = { npc = "Valstag Ironjaw", x = 10.6, y = 56.8 },
+        objectives = {
+            { type = "kill", name = "Dragonmaw Raider", spawns = {
+                {52.4, 41.6}, {54.2, 43.4}, {50.6, 39.2}, {56.8, 45.8}
+            }},
+            { type = "kill", name = "Dragonmaw Grunt", spawns = {
+                {53.2, 42.4}, {55.4, 44.2}, {51.6, 40.6}, {57.6, 46.4}
+            }},
+        }
+    },
+    
+    [276] = { -- Repair Parts
+        name = "Repair Parts",
+        zone = "Wetlands",
+        start = { npc = "Karl Boran", x = 8.8, y = 55.4 },
+        objectives = {
+            { type = "item", name = "Copper Modulator", spawns = {{61.6, 24.2}} },
+        }
+    },
+    
+    [303] = { -- Ormer's Revenge (Part 1)
+        name = "Ormer's Revenge",
+        zone = "Wetlands",
+        start = { npc = "Ormer Ironbraid", x = 56.4, y = 11.2 },
+        objectives = {
+            { type = "kill", name = "Mottled Raptor", spawns = {
+                {62.4, 15.6}, {64.2, 17.4}, {60.8, 13.2}, {66.6, 19.8}
+            }},
+        }
+    },
+    
+    [305] = { -- Ormer's Revenge (Part 2)
+        name = "Ormer's Revenge",
+        zone = "Wetlands",
+        start = { npc = "Ormer Ironbraid", x = 56.4, y = 11.2 },
+        objectives = {
+            { type = "kill", name = "Mottled Screecher", spawns = {
+                {63.2, 16.4}, {65.4, 18.2}, {61.6, 14.6}, {67.8, 20.4}
+            }},
+            { type = "kill", name = "Mottled Razormaw", spawns = {
+                {64.8, 17.8}, {66.2, 19.6}, {62.4, 15.2}, {68.6, 21.2}
+            }},
+        }
+    },
+    
+    [306] = { -- Ormer's Revenge (Part 3)
+        name = "Ormer's Revenge",
+        zone = "Wetlands",
+        start = { npc = "Ormer Ironbraid", x = 56.4, y = 11.2 },
+        objectives = {
+            { type = "kill", name = "Sarltooth", spawns = {{62.8, 28.4}} },
+        }
+    },
+    
+    [294] = { -- Uncovering the Past
+        name = "Uncovering the Past",
+        zone = "Wetlands",
+        start = { npc = "Prospector Whelgar", x = 56.6, y = 11.4 },
+        objectives = {
+            { type = "item", name = "Whelgar's Lost Helmet", spawns = {{33.4, 46.2}} },
+            { type = "item", name = "Whelgar's Shield", spawns = {{39.6, 42.8}} },
+            { type = "item", name = "Whelgar's Crowbar", spawns = {{42.2, 49.6}} },
+        }
+    },
+    
+    [285] = { -- Drop It then Rock It!
+        name = "Drop It then Rock It!",
+        zone = "Wetlands",
+        start = { npc = "Fradd Swiftgear", x = 56.8, y = 11.6 },
+        objectives = {
+            { type = "item", name = "Crude Flint", spawns = {
+                {52.6, 58.4}, {54.4, 60.2}, {50.2, 56.6}, {56.8, 62.8}
+            }},
+        }
+    },
+    
+    -- ============================================================================
+    -- HILLSBRAD FOOTHILLS - Southshore, Tarren Mill, Yeti Cave
+    -- ============================================================================
+    
+    [538] = { -- Bartolo's Yeti Fur Cloak
+        name = "Bartolo's Yeti Fur Cloak",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Bartolo Ginsetti", x = 50.4, y = 58.6 },
+        objectives = {
+            { type = "item", name = "Yeti Fur", spawns = {
+                {44.6, 47.2}, {42.8, 48.6}, {43.4, 50.2}, {45.2, 46.8}
+            }},
+        }
+    },
+    
+    [539] = { -- Soothing Turtle Bisque
+        name = "Soothing Turtle Bisque",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Chef Jessen", x = 51.2, y = 58.4 },
+        objectives = {
+            { type = "item", name = "Turtle Meat", spawns = {
+                {30.2, 70.4}, {28.6, 72.8}, {32.4, 68.6}, {26.8, 74.2}
+            }},
+            { type = "item", name = "Soothing Spices", spawns = {{51.2, 58.4}} },
+        }
+    },
+    
+    [540] = { -- Crushridge Warmongers
+        name = "Crushridge Warmongers",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Marshal Redpath", x = 51.6, y = 58.2 },
+        objectives = {
+            { type = "kill", name = "Crushridge Warmonger", spawns = {
+                {58.6, 21.4}, {60.2, 19.8}, {62.4, 22.6}, {64.8, 20.2}
+            }},
+        }
+    },
+    
+    [541] = { -- Syndicate Assassins
+        name = "Syndicate Assassins",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Magistrate Henry Maleb", x = 51.8, y = 58.8 },
+        objectives = {
+            { type = "kill", name = "Syndicate Assassin", spawns = {
+                {54.2, 19.6}, {52.8, 17.4}, {56.4, 20.8}, {50.6, 18.2}
+            }},
+        }
+    },
+    
+    [542] = { -- The Rescue
+        name = "The Rescue",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Magistrate Henry Maleb", x = 51.8, y = 58.8 },
+        objectives = {
+            { type = "turnin", name = "Rescue Prisoners", spawns = {{56.4, 17.2}, {58.2, 19.6}} },
+        }
+    },
+    
+    [543] = { -- WANTED: Syndicate Personnel
+        name = "WANTED: Syndicate Personnel",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Wanted Poster", x = 50.2, y = 59.4 },
+        objectives = {
+            { type = "kill", name = "Syndicate Rogue", spawns = {
+                {54.6, 16.8}, {56.2, 18.4}, {52.4, 17.6}
+            }},
+            { type = "kill", name = "Syndicate Watchman", spawns = {
+                {58.4, 20.2}, {60.6, 18.8}, {54.8, 19.4}
+            }},
+        }
+    },
+    
+    [544] = { -- Dangerous!
+        name = "Dangerous!",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Marshal Redpath", x = 51.6, y = 58.2 },
+        objectives = {
+            { type = "kill", name = "Stanley", spawns = {{35.2, 47.6}} },
+        }
+    },
+    
+    [545] = { -- Helcular's Revenge
+        name = "Helcular's Revenge",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Novice Thaivand", x = 62.4, y = 20.8 },
+        objectives = {
+            { type = "item", name = "Helcular's Rod", spawns = {{40.2, 79.6}} },
+        }
+    },
+    
+    [546] = { -- Helcular's Revenge (Part 2)
+        name = "Helcular's Revenge",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Flame of Azel", x = 62.4, y = 20.8 },
+        objectives = {
+            { type = "interact", name = "Flame of Uzel", spawns = {{42.6, 48.8}} },
+            { type = "interact", name = "Flame of Veraz", spawns = {{44.8, 52.4}} },
+        }
+    },
+    
+    [547] = { -- Battle of Hillsbrad
+        name = "Battle of Hillsbrad",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "High Executor Darthalia", x = 62.6, y = 20.2 },
+        objectives = {
+            { type = "kill", name = "Hillsbrad Peasant", spawns = {
+                {33.4, 46.8}, {35.2, 44.6}, {31.8, 48.2}
+            }},
+            { type = "kill", name = "Hillsbrad Footman", spawns = {
+                {32.6, 43.4}, {34.8, 45.2}, {30.4, 47.6}
+            }},
+        }
+    },
+    
+    [548] = { -- Battle of Hillsbrad (Part 2)
+        name = "Battle of Hillsbrad",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "High Executor Darthalia", x = 62.6, y = 20.2 },
+        objectives = {
+            { type = "kill", name = "Hillsbrad Farmer", spawns = {
+                {34.2, 48.4}, {36.8, 46.2}, {32.4, 50.6}
+            }},
+            { type = "item", name = "Hillsbrad Human Skull", spawns = {
+                {33.6, 47.2}, {35.4, 49.8}
+            }},
+        }
+    },
+    
+    [549] = { -- Elixir of Agony
+        name = "Elixir of Agony",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Apothecary Lydon", x = 61.6, y = 19.2 },
+        objectives = {
+            { type = "item", name = "Gray Bear Tongue", spawns = {
+                {47.4, 58.6}, {49.2, 56.4}, {45.8, 60.2}
+            }},
+            { type = "item", name = "Vile Fin Scale", spawns = {
+                {25.6, 71.4}, {27.2, 73.8}, {23.8, 69.6}
+            }},
+        }
+    },
+    
+    [550] = { -- Elixir of Agony (Part 2)
+        name = "Elixir of Agony",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Apothecary Lydon", x = 61.6, y = 19.2 },
+        objectives = {
+            { type = "item", name = "Mountain Lion Blood", spawns = {
+                {58.4, 42.6}, {60.2, 44.8}, {56.8, 40.2}
+            }},
+        }
+    },
+    
+    [551] = { -- Elixir of Pain
+        name = "Elixir of Pain",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Apothecary Lydon", x = 61.6, y = 19.2 },
+        objectives = {
+            { type = "item", name = "Spider Ichor", spawns = {
+                {52.4, 62.8}, {54.6, 64.2}, {50.8, 60.6}
+            }},
+        }
+    },
+    
+    [552] = { -- Humbert's Sword
+        name = "Humbert's Sword",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Deathguard Humbert", x = 62.8, y = 19.4 },
+        objectives = {
+            { type = "item", name = "Humbert's Sword", spawns = {{32.4, 45.8}} },
+        }
+    },
+    
+    [553] = { -- Souvenirs of Death
+        name = "Souvenirs of Death",
+        zone = "Hillsbrad Foothills",
+        start = { npc = "Deathguard Samsa", x = 62.2, y = 20.6 },
+        objectives = {
+            { type = "item", name = "Hillsbrad Human Skull", spawns = {
+                {33.2, 47.6}, {35.8, 45.4}, {31.6, 49.2}
+            }},
+        }
+    },
+    
+    -- ============================================================================
+    -- ALTERAC MOUNTAINS - Crushridge Ogres, Syndicate
+    -- ============================================================================
+    
+    [554] = { -- Crushridge Bounty
+        name = "Crushridge Bounty",
+        zone = "Alterac Mountains",
+        start = { npc = "Magistrate Burnside", x = 50.8, y = 57.6 },
+        objectives = {
+            { type = "item", name = "Crushridge Bounty", spawns = {
+                {43.2, 14.6}, {45.8, 16.2}, {41.4, 12.8}, {47.6, 18.4}
+            }},
+        }
+    },
+    
+    [555] = { -- Dark Council
+        name = "Dark Council",
+        zone = "Alterac Mountains",
+        start = { npc = "Magistrate Burnside", x = 50.8, y = 57.6 },
+        objectives = {
+            { type = "kill", name = "Nagaz", spawns = {{36.8, 32.4}} },
+            { type = "kill", name = "Muckrake", spawns = {{38.2, 34.6}} },
+            { type = "kill", name = "Glommus", spawns = {{40.4, 30.8}} },
+        }
+    },
+    
+    [556] = { -- Crown of the Ogre King
+        name = "Crown of the Ogre King",
+        zone = "Alterac Mountains",
+        start = { npc = "Magistrate Burnside", x = 50.8, y = 57.6 },
+        objectives = {
+            { type = "kill", name = "Mug'thol", spawns = {{39.6, 15.2}} },
+            { type = "item", name = "Crown of Mug'thol", spawns = {{39.6, 15.2}} },
+        }
+    },
+    
+    [557] = { -- Encrypted Letter
+        name = "Encrypted Letter",
+        zone = "Alterac Mountains",
+        start = { npc = "SI:7 Agent", x = 54.2, y = 48.8 },
+        objectives = {
+            { type = "turnin", name = "Deliver Letter to SI:7", spawns = {{54.2, 48.8}} },
+        }
+    },
+    
+    [558] = { -- Assassin's Contract
+        name = "Assassin's Contract",
+        zone = "Alterac Mountains",
+        start = { npc = "Ravenclaw Servant", x = 56.4, y = 40.2 },
+        objectives = {
+            { type = "item", name = "Assassin's Contract", spawns = {{55.8, 38.6}} },
+        }
+    },
+    
+    [559] = { -- Noble Deaths
+        name = "Noble Deaths",
+        zone = "Alterac Mountains",
+        start = { npc = "Magistrate Burnside", x = 50.8, y = 57.6 },
+        objectives = {
+            { type = "kill", name = "Syndicate Highwayman", spawns = {
+                {50.2, 38.4}, {52.6, 36.8}, {48.4, 40.2}
+            }},
+            { type = "kill", name = "Syndicate Pathstalker", spawns = {
+                {54.8, 42.6}, {56.2, 40.4}, {52.4, 44.8}
+            }},
+        }
+    },
+    
+    [560] = { -- Syndicate Emblems
+        name = "Syndicate Emblems",
+        zone = "Alterac Mountains",
+        start = { npc = "Varimathras", x = 56.2, y = 92.4 },
+        objectives = {
+            { type = "item", name = "Syndicate Emblem", spawns = {
+                {50.6, 36.8}, {52.4, 38.2}, {48.8, 34.6}, {54.2, 40.4}
+            }},
+        }
+    },
+    
+    [561] = { -- Baron's Demise
+        name = "Baron's Demise",
+        zone = "Alterac Mountains",
+        start = { npc = "Magistrate Burnside", x = 50.8, y = 57.6 },
+        objectives = {
+            { type = "kill", name = "Baron Vardus", spawns = {{46.8, 72.4}} },
+            { type = "item", name = "Baron's Head", spawns = {{46.8, 72.4}} },
+        }
+    },
+    
+    [562] = { -- Infiltration
+        name = "Infiltration",
+        zone = "Alterac Mountains",
+        start = { npc = "Argus Shadow Mage", x = 54.6, y = 44.2 },
+        objectives = {
+            { type = "kill", name = "Syndicate Spy", spawns = {
+                {48.2, 36.4}, {50.6, 38.8}, {46.4, 34.2}
+            }},
+        }
+    },
+    
+    [563] = { -- Dalaran Patrols
+        name = "Dalaran Patrols",
+        zone = "Alterac Mountains",
+        start = { npc = "Warden Belamoore", x = 18.4, y = 82.6 },
+        objectives = {
+            { type = "kill", name = "Dalaran Apprentice", spawns = {
+                {20.2, 78.4}, {22.6, 80.8}, {18.8, 76.2}
+            }},
+            { type = "kill", name = "Dalaran Mage", spawns = {
+                {24.4, 82.6}, {26.8, 84.2}, {22.2, 80.4}
+            }},
+        }
+    },
+    
+    -- ============================================================================
+    -- EASTERN KINGDOMS BREADCRUMB/TRAVEL QUESTS
+    -- ============================================================================
+    
+    [564] = { -- The Defense of Grom'gol
+        name = "The Defense of Grom'gol",
+        zone = "Stranglethorn Vale",
+        start = { npc = "Commander Aggro'gosh", x = 32.2, y = 29.4 },
+        objectives = {
+            { type = "turnin", name = "Speak to Far Watch Commander", spawns = {{32.2, 29.4}} },
+        }
+    },
+    
+    [565] = { -- Warchief's Command: Stranglethorn Vale
+        name = "Warchief's Command: Stranglethorn Vale",
+        zone = "Orgrimmar",
+        start = { npc = "Warchief's Command Board", x = 49.6, y = 76.8 },
+        objectives = {
+            { type = "turnin", name = "Report to Commander Aggro'gosh", spawns = {{32.2, 29.4}} },
+        }
+    },
+    
+    [566] = { -- Hero's Call: Duskwood
+        name = "Hero's Call: Duskwood",
+        zone = "Stormwind City",
+        start = { npc = "Hero's Call Board", x = 62.8, y = 71.6 },
+        objectives = {
+            { type = "turnin", name = "Report to Clerk Daltry", spawns = {{73.8, 44.6}} },
+        }
+    },
+    
+    [567] = { -- The Hermit of Swamp of Sorrows
+        name = "The Hermit of Swamp of Sorrows",
+        zone = "Redridge Mountains",
+        start = { npc = "Magistrate Solomon", x = 29.8, y = 44.6 },
+        objectives = {
+            { type = "turnin", name = "Find Anchorite Avuun", spawns = {{26.2, 32.8}} },
+        }
+    },
+    
+    [568] = { -- Into the Blasted Lands
+        name = "Into the Blasted Lands",
+        zone = "Swamp of Sorrows",
+        start = { npc = "Okrilla", x = 47.6, y = 55.2 },
+        objectives = {
+            { type = "turnin", name = "Report to Kasim Sharim", spawns = {{50.4, y = 14.8}} },
+        }
+    },
+    
+    [569] = { -- Report to Helcular
+        name = "Report to Helcular",
+        zone = "Undercity",
+        start = { npc = "Dark Ranger Lyana", x = 62.4, y = 49.8 },
+        objectives = {
+            { type = "turnin", name = "Find Helcular", spawns = {{62.2, 20.4}} },
+        }
+    },
+    
+    [570] = { -- Journey to Hillsbrad Foothills
+        name = "Journey to Hillsbrad Foothills",
+        zone = "Silverpine Forest",
+        start = { npc = "High Executor Hadrec", x = 43.4, y = 40.8 },
+        objectives = {
+            { type = "turnin", name = "Report to Tarren Mill", spawns = {{62.4, y = 19.6}} },
+        }
+    },
+    
+    [571] = { -- Reinforcements from Ironforge
+        name = "Reinforcements from Ironforge",
+        zone = "Ironforge",
+        start = { npc = "King Magni Bronzebeard", x = 39.4, y = 56.6 },
+        objectives = {
+            { type = "turnin", name = "Meet Mountaineer Stormpike", spawns = {{13.6, 47.2}} },
+        }
+    },
+    
+    [572] = { -- Trouble at Southshore
+        name = "Trouble at Southshore",
+        zone = "Ironforge",
+        start = { npc = "Daryl the Youngling", x = 51.4, y = 33.2 },
+        objectives = {
+            { type = "turnin", name = "Report to Magistrate Henry Maleb", spawns = {{51.8, 58.8}} },
+        }
+    },
+    
+    [573] = { -- Preserving Knowledge
+        name = "Preserving Knowledge",
+        zone = "Ironforge",
+        start = { npc = "Advisor Belgrum", x = 77.6, y = 10.4 },
+        objectives = {
+            { type = "turnin", name = "Speak with Prospector Stormpike", spawns = {{76.2, 12.8}} },
+        }
+    },
+    
+    [574] = { -- A Letter for Home
+        name = "A Letter for Home",
+        zone = "Stormwind City",
+        start = { npc = "Innkeeper Allison", x = 60.6, y = 75.2 },
+        objectives = {
+            { type = "turnin", name = "Deliver Letter", spawns = {{29.6, 68.4}} },
+        }
+    },
+    
+    [575] = { -- The Thandol Span
+        name = "The Thandol Span",
+        zone = "Wetlands",
+        start = { npc = "Rhag Garmason", x = 49.8, y = 18.2 },
+        objectives = {
+            { type = "turnin", name = "Report Situation", spawns = {{50.6, 4.4}} },
+        }
+    },
+    
+    [576] = { -- Call to Arms: Arathi Basin
+        name = "Call to Arms: Arathi Basin",
+        zone = "Arathi Highlands",
+        start = { npc = "Defiler's Representative", x = 73.2, y = 30.6 },
+        objectives = {
+            { type = "turnin", name = "Win Arathi Basin", spawns = {{73.2, 30.6}} },
+        }
+    },
+    
+    [577] = { -- Arathi Basin: Control Five Bases
+        name = "Arathi Basin: Control Five Bases",
+        zone = "Arathi Highlands",
+        start = { npc = "Defiler's Representative", x = 73.2, y = 30.6 },
+        objectives = {
+            { type = "turnin", name = "Control All Bases", spawns = {{73.2, 30.6}} },
+        }
+    },
+    
+    [578] = { -- The Call to Outland
+        name = "The Call to Outland",
+        zone = "Blasted Lands",
+        start = { npc = "Watch Commander Relthorn Netherwane", x = 58.6, y = 17.8 },
+        objectives = {
+            { type = "turnin", name = "Enter Dark Portal", spawns = {{58.4, 15.2}} },
+        }
+    },
+    
+    -- ============================================================================
+    -- KALIMDOR BREADCRUMB/TRAVEL QUESTS
+    -- ============================================================================
+    
+    [579] = { -- The Road to Theramore
+        name = "The Road to Theramore",
+        zone = "Dustwallow Marsh",
+        start = { npc = "Nat Pagle", x = 58.6, y = 60.2 },
+        objectives = {
+            { type = "turnin", name = "Report to Lady Jaina Proudmoore", spawns = {{66.2, 45.4}} },
+        }
+    },
+    
+    [580] = { -- Hero's Call: Dustwallow Marsh
+        name = "Hero's Call: Dustwallow Marsh",
+        zone = "Stormwind City",
+        start = { npc = "Hero's Call Board", x = 62.8, y = 71.6 },
+        objectives = {
+            { type = "turnin", name = "Speak with Captain Garran Vimes", spawns = {{68.4, 48.6}} },
+        }
+    },
+    
+    [581] = { -- Warchief's Command: Dustwallow Marsh
+        name = "Warchief's Command: Dustwallow Marsh",
+        zone = "Orgrimmar",
+        start = { npc = "Warchief's Command Board", x = 49.6, y = 76.8 },
+        objectives = {
+            { type = "turnin", name = "Report to Brackenwall Village", spawns = {{36.4, 31.8}} },
+        }
+    },
+    
+    [582] = { -- Journey to Feathermoon Stronghold
+        name = "Journey to Feathermoon Stronghold",
+        zone = "Darnassus",
+        start = { npc = "Shandris Feathermoon's Messenger", x = 42.6, y = 85.4 },
+        objectives = {
+            { type = "turnin", name = "Report to Shandris Feathermoon", spawns = {{30.2, 46.4}} },
+        }
+    },
+    
+    [583] = { -- Camp Mojache
+        name = "Camp Mojache",
+        zone = "Thunder Bluff",
+        start = { npc = "Courier Hammerfall", x = 46.8, y = 49.6 },
+        objectives = {
+            { type = "turnin", name = "Report to Hadoken Swiftstrider", spawns = {{76.2, 43.8}} },
+        }
+    },
+    
+    [584] = { -- The Barrens Crossroads
+        name = "The Barrens Crossroads",
+        zone = "Orgrimmar",
+        start = { npc = "Innkeeper Gryshka", x = 53.8, y = 78.6 },
+        objectives = {
+            { type = "turnin", name = "Find the Crossroads", spawns = {{51.6, 30.4}} },
+        }
+    },
+    
+    [585] = { -- Report to Kadrak
+        name = "Report to Kadrak",
+        zone = "The Barrens",
+        start = { npc = "Thork", x = 51.4, y = 30.8 },
+        objectives = {
+            { type = "turnin", name = "Find Kadrak", spawns = {{48.2, 5.6}} },
+        }
+    },
+    
+    [586] = { -- Journey to Astranaar
+        name = "Journey to Astranaar",
+        zone = "Teldrassil",
+        start = { npc = "Sentinel Elissa Starbreeze", x = 55.6, y = 52.4 },
+        objectives = {
+            { type = "turnin", name = "Report to Astranaar", spawns = {{35.8, 49.6}} },
+        }
+    },
+    
+    [587] = { -- Ashenvale Outrunners
+        name = "Ashenvale Outrunners",
+        zone = "Ashenvale",
+        start = { npc = "Sentinel Thenysil", x = 34.6, y = 48.8 },
+        objectives = {
+            { type = "kill", name = "Horde Scout", spawns = {
+                {38.2, 41.6}, {40.4, 43.8}, {36.8, 39.4}
+            }},
+        }
+    },
+    
+    [588] = { -- Supplies to Auberdine
+        name = "Supplies to Auberdine",
+        zone = "Darnassus",
+        start = { npc = "Elven Innkeeper", x = 62.4, y = 22.8 },
+        objectives = {
+            { type = "turnin", name = "Deliver Supplies to Auberdine", spawns = {{36.8, 44.2}} },
+        }
+    },
+    
+    [589] = { -- Deliver to MacKinley
+        name = "Deliver to MacKinley",
+        zone = "Booty Bay",
+        start = { npc = "Shaky Phillipe", x = 26.8, y = 73.6 },
+        objectives = {
+            { type = "turnin", name = "Find \"Sea Wolf\" MacKinley", spawns = {{27.8, 77.2}} },
+        }
+    },
+    
+    [590] = { -- The Gordunni Threat
+        name = "The Gordunni Threat",
+        zone = "Feralas",
+        start = { npc = "Rok Orhan", x = 75.4, y = 44.2 },
+        objectives = {
+            { type = "kill", name = "Gordunni Ogre", spawns = {
+                {60.2, 46.8}, {62.4, 48.6}, {58.6, 44.4}
+            }},
+        }
+    },
+    
+    [591] = { -- Tanaris Desert
+        name = "Tanaris Desert",
+        zone = "Thousand Needles",
+        start = { npc = "Kravel Koalbeard", x = 78.2, y = 77.4 },
+        objectives = {
+            { type = "turnin", name = "Report to Gadgetzan", spawns = {{51.6, 28.8}} },
+        }
+    },
+    
+    [592] = { -- Un'Goro Soil
+        name = "Un'Goro Soil",
+        zone = "Tanaris",
+        start = { npc = "Chief Engineer Bilgewhizzle", x = 52.4, y = 28.6 },
+        objectives = {
+            { type = "item", name = "Un'Goro Soil", spawns = {
+                {50.2, 76.4}, {52.8, 78.6}, {48.6, 74.2}
+            }},
+        }
+    },
+    
+    [593] = { -- Journey to Un'Goro Crater
+        name = "Journey to Un'Goro Crater",
+        zone = "Tanaris",
+        start = { npc = "Gnoarn", x = 51.8, y = 27.4 },
+        objectives = {
+            { type = "turnin", name = "Reach Marshal's Refuge", spawns = {{43.6, 8.2}} },
+        }
+    },
+    
+    -- ============================================================================
+    -- MISCELLANEOUS - World Bosses, Rare Mounts, Legendary Chains
+    -- ============================================================================
+    
+    [594] = { -- Azuregos
+        name = "Azuregos",
+        zone = "Azshara",
+        start = { npc = "Archmage Xylem", x = 29.6, y = 40.8 },
+        objectives = {
+            { type = "kill", name = "Azuregos", spawns = {{53.2, 76.4}} },
+        }
+    },
+    
+    [595] = { -- Lord Kazzak
+        name = "Lord Kazzak",
+        zone = "Blasted Lands",
+        start = { npc = "Kasim Sharim", x = 50.8, y = 14.4 },
+        objectives = {
+            { type = "kill", name = "Lord Kazzak", spawns = {{32.4, 47.8}} },
+        }
+    },
+    
+    [596] = { -- Emeriss
+        name = "Emeriss",
+        zone = "The Hinterlands",
+        start = { npc = "Keeper Remulos", x = 36.4, y = 42.8 },
+        objectives = {
+            { type = "kill", name = "Emeriss", spawns = {{62.2, 24.6}} },
+        }
+    },
+    
+    [597] = { -- Lethon
+        name = "Lethon",
+        zone = "Ashenvale",
+        start = { npc = "Keeper Remulos", x = 36.4, y = 42.8 },
+        objectives = {
+            { type = "kill", name = "Lethon", spawns = {{54.8, 35.2}} },
+        }
+    },
+    
+    [598] = { -- Taerar
+        name = "Taerar",
+        zone = "Duskwood",
+        start = { npc = "Keeper Remulos", x = 36.4, y = 42.8 },
+        objectives = {
+            { type = "kill", name = "Taerar", spawns = {{46.6, 38.4}} },
+        }
+    },
+    
+    [599] = { -- Ysondre
+        name = "Ysondre",
+        zone = "Feralas",
+        start = { npc = "Keeper Remulos", x = 36.4, y = 42.8 },
+        objectives = {
+            { type = "kill", name = "Ysondre", spawns = {{51.2, 10.6}} },
+        }
+    },
+    
+    [600] = { -- A Proper String
+        name = "A Proper String",
+        zone = "Silithus",
+        start = { npc = "Vethsera", x = 28.6, y = 92.4 },
+        objectives = {
+            { type = "item", name = "Mature Blue Dragon Sinew", spawns = {{53.2, 76.4}} },
+        }
+    },
+    
+    [601] = { -- Ancient Petrified Leaf
+        name = "Ancient Petrified Leaf",
+        zone = "Molten Core",
+        start = { npc = "Cache of the Firelord", x = 78.4, y = 56.2 },
+        objectives = {
+            { type = "item", name = "Ancient Petrified Leaf", spawns = {{78.4, 56.2}} },
+        }
+    },
+    
+    [602] = { -- The Eye of Shadow
+        name = "The Eye of Shadow",
+        zone = "Winterspring",
+        start = { npc = "Lord Kazzak", x = 59.2, y = 84.6 },
+        objectives = {
+            { type = "item", name = "Eye of Shadow", spawns = {{59.2, 84.6}} },
+        }
+    },
+    
+    [603] = { -- The Eye of Divinity
+        name = "The Eye of Divinity",
+        zone = "Molten Core",
+        start = { npc = "Majordomo Executus", x = 75.6, y = 55.4 },
+        objectives = {
+            { type = "item", name = "Eye of Divinity", spawns = {{75.6, 55.4}} },
+        }
+    },
+    
+    [604] = { -- Thunderaan the Windseeker
+        name = "Thunderaan the Windseeker",
+        zone = "Silithus",
+        start = { npc = "Highlord Demitrian", x = 22.8, y = 9.2 },
+        objectives = {
+            { type = "item", name = "Bindings of the Windseeker", spawns = {{75.6, 55.4}} },
+            { type = "item", name = "Essence of the Firelord", spawns = {{78.4, 56.2}} },
+        }
+    },
+    
+    [605] = { -- Deathcharger's Reins
+        name = "Deathcharger's Reins",
+        zone = "Stratholme",
+        start = { npc = "Baron Rivendare", x = 39.6, y = 19.8 },
+        objectives = {
+            { type = "kill", name = "Baron Rivendare", spawns = {{39.6, 19.8}} },
+        }
+    },
+    
+    [606] = { -- Swift Zulian Tiger
+        name = "Swift Zulian Tiger",
+        zone = "Zul'Gurub",
+        start = { npc = "High Priestess Jeklik", x = 50.2, y = 16.8 },
+        objectives = {
+            { type = "kill", name = "High Priest Thekal", spawns = {{50.2, 16.8}} },
+        }
+    },
+    
+    [607] = { -- Swift Razzashi Raptor
+        name = "Swift Razzashi Raptor",
+        zone = "Zul'Gurub",
+        start = { npc = "Bloodlord Mandokir", x = 59.4, y = 42.6 },
+        objectives = {
+            { type = "kill", name = "Bloodlord Mandokir", spawns = {{59.4, 42.6}} },
+        }
+    },
+    
+    [608] = { -- White Stallion Bridle
+        name = "White Stallion Bridle",
+        zone = "Elwynn Forest",
+        start = { npc = "Katie Hunter", x = 84.2, y = 65.4 },
+        objectives = {
+            { type = "turnin", name = "Purchase White Stallion", spawns = {{84.2, 65.4}} },
+        }
+    },
+    
+    [609] = { -- Black Stallion Bridle
+        name = "Black Stallion Bridle",
+        zone = "Elwynn Forest",
+        start = { npc = "Katie Hunter", x = 84.2, y = 65.4 },
+        objectives = {
+            { type = "turnin", name = "Purchase Black Stallion", spawns = {{84.2, 65.4}} },
+        }
+    },
+    
+    [610] = { -- Reins of the Swift Frostsaber
+        name = "Reins of the Swift Frostsaber",
+        zone = "Darnassus",
+        start = { npc = "Lelanai", x = 42.6, y = 33.8 },
+        objectives = {
+            { type = "turnin", name = "Purchase Swift Frostsaber", spawns = {{42.6, 33.8}} },
+        }
+    },
+    
+    [611] = { -- Horn of the Swift Brown Wolf
+        name = "Horn of the Swift Brown Wolf",
+        zone = "Orgrimmar",
+        start = { npc = "Ogunaro Wolfrunner", x = 69.4, y = 12.6 },
+        objectives = {
+            { type = "turnin", name = "Purchase Swift Brown Wolf", spawns = {{69.4, 12.6}} },
+        }
+    },
+    
+    [612] = { -- Whistle of the Ivory Raptor
+        name = "Whistle of the Ivory Raptor",
+        zone = "Durotar",
+        start = { npc = "Zjolnir", x = 55.2, y = 75.8 },
+        objectives = {
+            { type = "turnin", name = "Purchase Ivory Raptor", spawns = {{55.2, 75.8}} },
+        }
+    },
+    
+    [613] = { -- Reins of the Black War Tiger
+        name = "Reins of the Black War Tiger",
+        zone = "Stormwind City",
+        start = { npc = "Lieutenant Karter", x = 72.4, y = 56.8 },
+        objectives = {
+            { type = "turnin", name = "Purchase Black War Tiger", spawns = {{72.4, 56.8}} },
+        }
+    },
 }
+
 
 -- Lookup functions
 function VGuideQuestObjectives:GetQuestData(questId)
+    if not questId then return nil end
     return self.Data[questId]
 end
 
 function VGuideQuestObjectives:GetObjectivesByZone(zoneName)
     local results = {}
+    if not zoneName then return results end
     for questId, data in pairs(self.Data) do
-        if data.zone == zoneName then
+        if data and data.zone == zoneName and data.objectives then
             for _, obj in ipairs(data.objectives) do
-                table.insert(results, {
-                    questId = questId,
-                    questName = data.name,
-                    objective = obj
-                })
+                if obj then
+                    table.insert(results, {
+                        questId = questId,
+                        questName = data.name or "Unknown Quest",
+                        objective = obj
+                    })
+                end
             end
         end
     end
@@ -14407,7 +26864,9 @@ end
 
 -- Check if player has quest in log
 function VGuideQuestObjectives:PlayerHasQuest(questName)
+    if not questName then return false end
     local numEntries = GetNumQuestLogEntries()
+    if not numEntries then return false end
     for i = 1, numEntries do
         local title, _, _, isHeader = GetQuestLogTitle(i)
         if not isHeader and title == questName then
@@ -14420,17 +26879,20 @@ end
 -- Get all active quest objectives for a zone
 function VGuideQuestObjectives:GetActiveObjectivesForZone(zoneName)
     local results = {}
+    if not zoneName then return results end
     for questId, data in pairs(self.Data) do
-        if data.zone == zoneName then
+        if data and data.zone == zoneName and data.name then
             if self:PlayerHasQuest(data.name) then
-                for _, obj in ipairs(data.objectives) do
-                    -- Skip "start" types for active quests (we already have it)
-                    if obj.type ~= "start" then
-                        table.insert(results, {
-                            questId = questId,
-                            questName = data.name,
-                            objective = obj
-                        })
+                if data.objectives then
+                    for _, obj in ipairs(data.objectives) do
+                        -- Skip "start" types for active quests (we already have it)
+                        if obj and obj.type ~= "start" then
+                            table.insert(results, {
+                                questId = questId,
+                                questName = data.name,
+                                objective = obj
+                            })
+                        end
                     end
                 end
             end
@@ -14442,16 +26904,17 @@ end
 -- Get available quests (not yet accepted) for a zone
 function VGuideQuestObjectives:GetAvailableQuestsForZone(zoneName)
     local results = {}
+    if not zoneName then return results end
     for questId, data in pairs(self.Data) do
-        if data.zone == zoneName then
+        if data and data.zone == zoneName and data.name then
             -- Only show if we don't have the quest
             if not self:PlayerHasQuest(data.name) then
                 -- Check if quest has a start location
-                if data.start then
+                if data.start and data.start.x and data.start.y then
                     table.insert(results, {
                         questId = questId,
                         questName = data.name,
-                        npc = data.start.npc,
+                        npc = data.start.npc or "Unknown",
                         x = data.start.x,
                         y = data.start.y
                     })
