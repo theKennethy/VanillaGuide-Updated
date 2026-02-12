@@ -2186,7 +2186,6 @@ VGuideQuestObjectives.Data = {
         objectives = {
             { type = "talk", name = "Deathstalker Adamant", spawns = {{43.8, 68.4}} },
         }
-    }
     },
 
     [448] = { -- Resting in Pieces
