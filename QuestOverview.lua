@@ -23,14 +23,14 @@ VGuideQuestOverview.questLines = {}  -- Reusable font strings
 
 -- Configuration
 VGuideQuestOverview.config = {
-    width = 240,
-    height = 300,
-    maxHeight = 400,
-    minHeight = 60,
-    lineHeight = 14,
-    objLineHeight = 13,
-    questSpacing = 6,
-    bgAlpha = 0.75,
+    width = 260,
+    height = 320,
+    maxHeight = 450,
+    minHeight = 80,
+    lineHeight = 16,
+    objLineHeight = 14,
+    questSpacing = 4,
+    bgAlpha = 0.8,
     anchorPoint = "TOPRIGHT",
     offsetX = -25,
     offsetY = -180,
@@ -175,7 +175,7 @@ function VGuideQuestOverview:GetOrCreateLine(index, lineType)
         local fontString = self.scrollChild:CreateFontString(nil, "OVERLAY")
         fontString:SetFont("Fonts\\FRIZQT__.TTF", 11, "")
         fontString:SetJustifyH("LEFT")
-        fontString:SetWordWrap(true)
+        -- Note: SetWordWrap may not exist in 1.12, so we skip it
         self.questLines[key] = fontString
     end
     return self.questLines[key]
@@ -212,8 +212,7 @@ function VGuideQuestOverview:Update()
             local questLine = self:GetOrCreateLine(lineIndex, "quest")
             questLine:ClearAllPoints()
             questLine:SetPoint("TOPLEFT", self.scrollChild, "TOPLEFT", 0, yOffset)
-            questLine:SetWidth(contentWidth)
-            questLine:SetFont("Fonts\\FRIZQT__.TTF", 11, "")
+            questLine:SetFont("Fonts\\FRIZQT__.TTF", 11, "OUTLINE")
             
             -- Color by difficulty
             local playerLevel = UnitLevel("player")
@@ -233,9 +232,15 @@ function VGuideQuestOverview:Update()
             
             local questText = ""
             if isComplete then
-                questText = "|cFF00FF00[Done]|r "
+                questText = "|cFF00FF00[C]|r "
             end
-            questText = questText .. "|cFFFFFFFF[" .. level .. "]|r " .. title
+            
+            -- Truncate long quest names to prevent wrapping
+            local displayTitle = title
+            if string.len(title) > 28 then
+                displayTitle = string.sub(title, 1, 26) .. ".."
+            end
+            questText = questText .. "[" .. level .. "] " .. displayTitle
             
             questLine:SetText(questText)
             questLine:SetTextColor(r, g, b)
@@ -251,17 +256,16 @@ function VGuideQuestOverview:Update()
                     lineIndex = lineIndex + 1
                     local objLine = self:GetOrCreateLine(lineIndex, "obj")
                     objLine:ClearAllPoints()
-                    objLine:SetPoint("TOPLEFT", self.scrollChild, "TOPLEFT", 12, yOffset)
-                    objLine:SetWidth(contentWidth - 14)
-                    objLine:SetFont("Fonts\\FRIZQT__.TTF", 10, "")
+                    objLine:SetPoint("TOPLEFT", self.scrollChild, "TOPLEFT", 14, yOffset)
+                    objLine:SetFont("Fonts\\FRIZQT__.TTF", 10, "OUTLINE")
                     
-                    local prefix = "  - "
+                    local prefix = "- "
                     if finished then
                         objLine:SetText(prefix .. text)
                         objLine:SetTextColor(0.3, 1, 0.3)  -- Bright green
                     else
                         objLine:SetText(prefix .. text)
-                        objLine:SetTextColor(0.85, 0.85, 0.85)  -- Light gray
+                        objLine:SetTextColor(0.9, 0.9, 0.9)  -- Light gray
                     end
                     objLine:Show()
                     
